@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/wingy3181/dotfiles.svg?branch=master)](https://travis-ci.org/wingy3181/dotfiles)
 
+> :exclamation: **NOTE:** These dotfiles are still a :construction: WIP (Work In Progress) as I customize these scripts for my own usage.
+
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
 files described in the [`Local Settings`](#local-settings) section.
@@ -198,11 +200,31 @@ part, run the appropriate [`os` script](src/os).
 
 ## Acknowledgements
 
+A majority of this code is taken from [Cătălin Mariș'](https://github.com/alrra) [dotfiles](https://github.com/alrra/dotfiles).
+
 Inspiration and code was taken from many sources, including:
 
-* [Mathias Bynens'](https://github.com/mathiasbynens)
-  [dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [Mathias Bynens'](https://github.com/mathiasbynens) [dotfiles](https://github.com/mathiasbynens/dotfiles)
+* [Cătălin Mariș'](https://github.com/alrra) [dotfiles](https://github.com/alrra/dotfiles)
+* [Zach Holman's](https://github.com/holman) [dotfiles](https://github.com/holman/dotfiles)
+* [Paul Miller's](https://github.com/paulmillr) [dotfiles](https://github.com/paulmillr/dotfiles)
+* [Adam Eivy's](https://github.com/atomantic) [dotfiles](https://github.com/atomantic/dotfiles)
+* [Simon Owen's](https://github.com/s10wen) [dotfiles](https://github.com/s10wen/dotfiles)
+* [Paul Irish's](https://github.com/paulirish) [dotfiles](https://github.com/paulirish/dotfiles)
+* [Sourabh Bajaj's "Mac OS X Setup Guide"](http://sourabhbajaj.com/mac-setup/)
+* [Ryan Winchester's "Set up OS X for Web Development in 10 Minutes"](https://ryanwinchester.ca/posts/set-up-os-x-for-web-development-in-10-minutes)
 
+## References
+
+### dotfiles
+* [GitHub does dotfiles](https://dotfiles.github.io/)
+* [Awesome dotfiles](https://github.com/webpro/awesome-dotfiles)
+* [Setting up a new (OS X) development machine: Part 3 - Dotfiles and custom SSH config](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-3-dotfiles-rc-files-and-ssh-config)
+* [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles - Part 1](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
+* [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles - Part 2](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles-part-2--cms-23145)
+
+### OSX Commands
+* [OSX Default Values Command Reference](https://github.com/kevinSuttle/OSXDefaults/blob/master/REFERENCE.md)
 
 ## License
 
