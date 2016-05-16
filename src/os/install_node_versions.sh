@@ -41,13 +41,14 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
 
     # Install `nvm` and add the necessary configs to `~/.bash.local`
 
-    if [ ! -d "$NVM_DIRECTORY" ]; then
+    if [ ! -d "$NVM_DIRECTORY" ]; then # -d : True if file exists and is a directory.
 
         execute \
             "git clone --quiet $NVM_GIT_REPO_URL $NVM_DIRECTORY" \
             "nvm"
 
         if [ $? -eq 0 ]; then
+            # '>>' : file to append to
             execute \
                 "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
                     && source $HOME/.bash.local" \
@@ -56,7 +57,7 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
 
     fi
 
-    if [ -d "$NVM_DIRECTORY" ]; then
+    if [ -d "$NVM_DIRECTORY" ]; then # -d : True if file exists and is a directory.
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

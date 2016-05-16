@@ -3,6 +3,28 @@
 [![Build Status](https://travis-ci.org/wingy3181/dotfiles.svg?branch=master)](https://travis-ci.org/wingy3181/dotfiles)
 
 > :exclamation: **NOTE:** These dotfiles are still a :construction: WIP (Work In Progress) as I customize these scripts for my own usage.
+>
+> **TODO:**
+> - [ ] Chrome extensions
+> - [ ] Atom and its extensions
+> - [ ] zsh and/or fishshell
+> - [ ] Computer name in set_ui_and_ux_preferences.sh
+> - [ ] Show current computer name and prompt to change
+> - [ ] Setup create directories
+> - [ ] Setup symbolic links
+> - [ ] Prompt install each homebrew application or Y to all
+> - [ ] Aliases in /usr/local/bin (e.g. wstorm)
+
+> **OS X customisations**
+> - [ ] Independent displays -> Mission Control -> Check 'Displays have separate spaces'
+> - [ ] Show Keychain Access menu in menubar (http://blog.taylormcgann.com/tag/cgsession/)
+> - [ ] Show Launchpad keyboard shortcut -> option-command-L
+> - [ ] Generation of SSH key
+> - [ ] git config so that will not use global (see gitconfig https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855)
+> - [ ] change of hostname, computername, etc
+> - [ ] Update git to not use apple one and use brew installed one
+> - [ ] Lock screen shell script and alias
+> - [ ] Signing commits using GPG
 
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
@@ -40,7 +62,6 @@ The setup process will:
   [OS X](src/os/os_x/preferences/main.sh) /
   [Ubuntu](src/os/ubuntu/preferences/main.sh) preferences
 * Install [`vim` plugins](src/vim/vim/plugins)
-
 
 Setup process in action:
 
@@ -197,7 +218,6 @@ To update the dotfiles you can either run the [`setup`
 script](src/os/setup.sh) or, if you want to just update one particular
 part, run the appropriate [`os` script](src/os).
 
-
 ## Acknowledgements
 
 A majority of this code is taken from [Cătălin Mariș'](https://github.com/alrra) [dotfiles](https://github.com/alrra/dotfiles).
@@ -225,6 +245,91 @@ Inspiration and code was taken from many sources, including:
 
 ### OSX Commands
 * [OSX Default Values Command Reference](https://github.com/kevinSuttle/OSXDefaults/blob/master/REFERENCE.md)
+
+### Bash
+* [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/index.html)
+* [Advanced Bash Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html)
+  * [Internal Variables](http://www.tldp.org/LDP/abs/html/internalvariables.html)
+* [Reference Manual Variable Index](https://www.gnu.org/software/bash/manual/html_node/Variable-Index.html)
+* [Bash String manipulation](http://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
+* [Bash Array tutorial](http://www.thegeekstuff.com/2010/06/bash-array-tutorial/)
+# [Shell Colors: Colorizing Shell Scripts](http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html)
+*  http://askubuntu.com/questions/350208/what-does-2-dev-null-mean
+   - `> file` redirects stdout to file
+   - `1> file` redirects stdout to file
+   - `2> file` redirects stderr to file
+   - `&> file` redirects stdout and stderr to file
+   - `/dev/null` is the null device it takes any input you want and throws it away. It can be used to suppress any output.
+
+### dotfiles script breakdown
+
+<pre>
+-> os\setup.sh
+   [source] os\utils.sh
+   -> os\create_directories.sh
+   -> os\create_symbolic_links.sh
+   -> os\install_applications.sh
+      --------
+      FOR OS X
+      --------
+      -> os\os_x\installs\main.sh
+         [source] os\utils.sh
+         [source] os\os_x\installs\utils.sh]
+         -> os\os_x\installs\install_xcode.sh
+         -> os\os_x\installs\install_homebrew.sh
+         -> {Brew install bash shell + enhancements}
+         -> os\os_x\installs\change_default_bash_version.sh
+         -> {Brew install applications}
+         -> os\os_x\installs\update_and_upgrade.sh
+         -> os\os_x\installs\cleanup.sh
+      ----------
+      FOR UBUNTU
+      ----------
+      -> os\ubuntu\installs\main.sh
+         [source] os\utils.sh
+         [source] os\ubuntu\installs\utils.sh]
+         -> {apt get applications}
+
+
+   -> os\install_node_versions.sh
+   -> os\install_npm_packages.sh
+   -> os\set_preferences.sh
+      --------
+      FOR OS X
+      --------
+      -> os\os_x\preferences\main.sh
+      -> os\os_x\preferences\set_app_store_preferences.sh
+      -> os\os_x\preferences\set_chrome_preferences.sh
+      -> os\os_x\preferences\set_dashboard_preferences.sh
+      -> os\os_x\preferences\set_dock_preferences.sh
+      -> os\os_x\preferences\set_finder_preferences.sh
+      -> os\os_x\preferences\set_firefox_preferences.sh
+      -> os\os_x\preferences\set_keyboard_preferences.sh
+      -> os\os_x\preferences\set_language_and_region_preferences.sh
+      -> os\os_x\preferences\set_maps_preferences.sh
+      -> os\os_x\preferences\set_photos_preferences.sh
+      -> os\os_x\preferences\set_safari_preferences.sh
+      -> os\os_x\preferences\set_terminal_preferences.sh
+      -> os\os_x\preferences\set_textedit_preferences.sh
+      -> os\os_x\preferences\set_trackpad_preferences.sh
+      -> os\os_x\preferences\set_transmission_preferences.sh
+      -> os\os_x\preferences\set_ui_and_ux_preferences.sh
+
+      ----------
+      FOR UBUNTU
+      ----------
+      -> os\ubuntu\preferences\main.sh
+         [source] os\utils.sh
+         -> os\ubuntu\preferences\set_privacy_preferences.sh
+         -> os\ubuntu\preferences\set_terminal_preferences.sh
+         -> os\ubuntu\preferences\set_ui_and_ux_preferences.sh
+
+   -> os\initialize_git_repository.sh
+   -> os\update_content.sh
+      -> {Generate SSH key}
+   -> os\install_vim_plugins.sh
+   -> os\restart.sh
+</pre>
 
 ## License
 

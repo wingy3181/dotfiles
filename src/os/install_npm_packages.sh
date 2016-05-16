@@ -19,7 +19,7 @@ main() {
     # `~/.bash.local` was not sourced (this happens when the
     # `dotfiles` are set up for the first time)
 
-    if [ -z "$NVM_DIR" ] || ! cmd_exists "npm"; then
+    if [ -z "$NVM_DIR" ] || ! cmd_exists "npm"; then # -z : True if the length of string is zero.
         source "$HOME/.bash.local"
     fi
 

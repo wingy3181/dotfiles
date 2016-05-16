@@ -52,13 +52,20 @@ main() {
     for i in "${FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(cd .. && pwd)/$i"
+        # se 'substitute' command (See http://www.grymoire.com/Unix/Sed.html#uh-1)
+        # using regex '.*\/\(.*\)' and replacing topic folder with its contents
+        # For example, 'shell/bash_aliases' to 'bash_aliases'
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
-        if [ ! -e "$targetFile" ] || $skipQuestions; then
+        if [ ! -e "$targetFile" ] || $skipQuestions; then # -e : True if file exists (regardless of type).
 
             execute \
                 "ln -fs $sourceFile $targetFile" \
                 "$targetFile → $sourceFile"
+                # ln : make links between files
+                # -f : force = remove existing destination files
+                # -s : symbolic =make symbolic links instead of hard links (see https://www.youtube.com/watch?v=aO0OkNxDJ3c)
+
 
         elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
             print_success "$targetFile → $sourceFile"
@@ -87,4 +94,5 @@ main() {
 
 }
 
+# Pass '-y' to script to skip questions
 main "$@"

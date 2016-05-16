@@ -7,10 +7,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 brew_install() {
 
-    declare -r CMD="$4"
-    declare -r FORMULA="$2"
     declare -r FORMULA_READABLE_NAME="$1"
+    declare -r FORMULA="$2"
     declare -r TAP_VALUE="$3"
+    declare -r CMD="$4"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -25,7 +25,7 @@ brew_install() {
 
     # If `brew tap` needs to be executed, check if it executed correctly
 
-    if [ -n "$TAP_VALUE" ]; then
+    if [ -n "$TAP_VALUE" ]; then # -n : True if the length of string is nonzero.
         if ! brew_tap "$TAP_VALUE"; then
             print_error "$FORMULA_READABLE_NAME ('brew tap $TAP_VALUE' failed)"
             return 1

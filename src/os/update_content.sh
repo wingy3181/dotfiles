@@ -14,12 +14,13 @@ add_ssh_configs() {
 }
 
 copy_public_ssh_key_to_clipboard () {
-
+    # pbcopy normally means OS X
     if cmd_exists "pbcopy"; then
 
         pbcopy < "$1"
         print_result $? "Copy public SSH key to clipboard"
 
+    # xclip normally means Ubuntu
     elif cmd_exists "xclip"; then
 
         xclip -selection clip < "$1"
@@ -34,6 +35,10 @@ copy_public_ssh_key_to_clipboard () {
 generate_ssh_keys() {
     ask "Please provide an email address (email): " && printf "\n"
     ssh-keygen -t rsa -b 4096 -C "$(get_answer)" -f "$1"
+    #           │      │       │                  └───── The file name of the key
+    #           │      │       └────── Comment for key. The email address prompted is used in this particular case
+    #           │      └───────────── number of bits in the key. 4096 in this particular case
+    #           └─────────────────── type of key to generate. RSA V2 in this particular case
     print_result $? "Generate SSH keys"
 }
 
@@ -63,7 +68,7 @@ set_github_ssh_key() {
     # If there is already a file with that
     # name, generate another, unique, file name
 
-    if [ -f "$sshKeyFileName" ]; then
+    if [ -f "$sshKeyFileName" ]; then # -f : True if file exists and is a regular file.
         sshKeyFileName="$(mktemp -u "$HOME/.ssh/github_XXXXX")"
     fi
 
@@ -106,6 +111,9 @@ main() {
     if is_git_repository; then
 
         ssh -T git@github.com &> /dev/null
+        # Returns error code 1 when successfully authenticated but
+        # because GitHub does not provide shell access
+        # When it fails to successfully authenticate, it returns 255
         [ $? -ne 1 ] && set_github_ssh_key
 
         # Update content and remove untracked files

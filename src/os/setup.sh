@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ----------------------------------------------------------------------
+# | Declare read-only variables/constants                              |
+# ----------------------------------------------------------------------
+
 declare -r GITHUB_REPOSITORY="wingy3181/dotfiles"
 
 declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
@@ -8,6 +12,9 @@ declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSIT
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# ----------------------------------------------------------------------
+# | Declare variables                                                  |
+# ----------------------------------------------------------------------
 declare dotfilesDirectory="$HOME/projects/dotfiles"
 declare skipQuestions=false
 
@@ -16,10 +23,12 @@ declare skipQuestions=false
 # ----------------------------------------------------------------------
 
 download() {
-
+    # $1 : url to download
+    # $2 : file location to download to
     local url="$1"
     local output="$2"
 
+    # Try using curl first if it exists
     if command -v "curl" &> /dev/null; then
 
         curl -LsSo "$output" "$url" &> /dev/null
@@ -28,15 +37,16 @@ download() {
         #     │└─ don't show the progress meter
         #     └─ follow redirects
 
-        return $?
+        return $? # exit status of curl
 
+    # Otherwise try use wget if it exists
     elif command -v "wget" &> /dev/null; then
 
         wget -qO "$output" "$url" &> /dev/null
         #     │└─ write output to file
         #     └─ don't show output
 
-        return $?
+        return $? # exit status of wget
     fi
 
     return 1
@@ -63,7 +73,7 @@ download_dotfiles() {
 
         if ! answer_is_yes; then
             dotfilesDirectory=""
-            while [ -z "$dotfilesDirectory" ]; do
+            while [ -z "$dotfilesDirectory" ]; do # -z : True if the length of string is zero.
                 ask "Please specify another location for the dotfiles (path): "
                 dotfilesDirectory="$(get_answer)"
             done
@@ -71,14 +81,14 @@ download_dotfiles() {
 
         # Ensure the `dotfiles` directory is available
 
-        while [ -e "$dotfilesDirectory" ]; do
+        while [ -e "$dotfilesDirectory" ]; do # -e : True if file exists (regardless of type).
             ask_for_confirmation "'$dotfilesDirectory' already exists, do you want to overwrite it?"
             if answer_is_yes; then
                 rm -rf "$dotfilesDirectory"
                 break
             else
                 dotfilesDirectory=""
-                while [ -z "$dotfilesDirectory" ]; do
+                while [ -z "$dotfilesDirectory" ]; do # -z : True if the length of string is zero.
                     ask "Please specify another location for the dotfiles (path): "
                     dotfilesDirectory="$(get_answer)"
                 done
@@ -139,6 +149,14 @@ extract() {
 
     if command -v "tar" &> /dev/null; then
         tar -zxf "$archive" --strip-components 1 -C "$outputDir"
+        #    │││                  │            │  └─ change to directory (i.e. $outputDir)
+        #    │││                  │            └─ number of leading components from file names to strip
+        #    │││                  └─ strip NUMBER leading components from file names on extraction.
+        #    │││                     That is, the root folder
+        #    ││└─ use archive file (i.e. $archive)
+        #    │└─ extract files from an archive
+        #    └─ filter the archive through gzip
+        # See http://linux.die.net/man/1/tar
         return $?
     fi
 
@@ -147,24 +165,27 @@ extract() {
 }
 
 is_supported_version() {
-
-    declare -a v1=(${1//./ })
-    declare -a v2=(${2//./ })
+    # NOTE: This function is also in os/utils.sh
+    # Convert version number parts into array of parts by finding '.' and replacing with ' '
+    declare -a actual_version=(${1//./ })
+    declare -a minimum_version=(${2//./ })
     local i=""
 
-    # Fill empty positions in v1 with zeros
-    for (( i=${#v1[@]}; i<${#v2[@]}; i++ )); do
-        v1[i]=0
+    # Fill empty positions in actual_version with zeros. Note: ${#array[@]} returns ßthe length of the arrayß
+    for (( i=${#actual_version[@]}; i<${#minimum_version[@]}; i++ )); do
+        actual_version[i]=0
     done
 
-    for (( i=0; i<${#v1[@]}; i++ )); do
+    for (( i=0; i<${#actual_version[@]}; i++ )); do
 
-        # Fill empty positions in v2 with zeros
-        if [[ -z ${v2[i]} ]]; then
-            v2[i]=0
+        # Fill empty positions in minimum_version with zeros
+        if [[ -z ${minimum_version[i]} ]]; then
+            minimum_version[i]=0
         fi
 
-        if (( 10#${v1[i]} < 10#${v2[i]} )); then
+        # Treat version part as a decimal (base 10) number
+        # actual version part is less than minimum_version part required, so return error return codeß
+        if (( 10#${actual_version[i]} < 10#${minimum_version[i]} )); then
             return 1
         fi
 
@@ -257,7 +278,7 @@ main() {
 
     # Load utils
 
-    if [ -x "utils.sh" ]; then
+    if [ -x "utils.sh" ]; then # -x = True if file exists and is executable
         source "utils.sh" || exit 1
     else
         download_utils || exit 1
@@ -397,4 +418,5 @@ main() {
 
 }
 
+# Pass '-y' to script to skip questions
 main "$@"

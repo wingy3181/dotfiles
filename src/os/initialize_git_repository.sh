@@ -11,7 +11,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if [ -z "$GIT_ORIGIN" ]; then
+    if [ -z "$GIT_ORIGIN" ]; then # -z : True if the length of string is zero.
         print_error "Please provide a URL for the Git origin"
         exit 1
     fi
