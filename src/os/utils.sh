@@ -2,9 +2,12 @@
 
 answer_is_yes() {
     # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)
-    [[ "$REPLY" =~ ^[Yy]$ ]] \ # check $REPLY content against regular expression of a single character 'y' or 'Y' (starting and ending with)
-        && return 0 \          # See http://stackoverflow.com/questions/19441521/bash-regex-operator
-        || return 1            # and http://www.gnu.org/software/bash/manual/bashref.html#Conditional-Constructs
+    # check $REPLY content against regular expression of a single character 'y' or 'Y' (starting and ending with)
+    # See http://stackoverflow.com/questions/19441521/bash-regex-operator
+    # and http://www.gnu.org/software/bash/manual/bashref.html#Conditional-Constructs
+    [[ "$REPLY" =~ ^[Yy]$ ]] \
+        && return 0 \
+        || return 1
 
 }
 
