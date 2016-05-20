@@ -4,6 +4,10 @@
 
 dist: trusty
 
+branches:
+  only:
+    - master
+    
 before_install:
   - ./test/customize_environment.sh
   - ./src/os/setup.sh -y
