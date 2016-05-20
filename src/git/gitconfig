@@ -6,7 +6,7 @@
     ca  = !git add -A && git commit                 # Commit all changes
     co  = checkout
     cp  = cherry-pick
-    d   = diff
+    d   = g
     dc  = diff --cached
     g   = log --graph --pretty=custom               # Show custom graph
     l   = log --pretty=custom                       # Show custom log
@@ -18,6 +18,8 @@
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Find commits by source code
+    # $1 : text to search for in source code that changed or the filename itself
+    #      See https://git-scm.com/docs/git-log and search for pickaxe.
 
     cc = "!f() { \
         git log --pretty=custom --decorate --date=short -S\"$1\"; \
@@ -26,6 +28,9 @@
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Find commits by commit message
+    # $1 : text to search for in commit messages.
+    #      Some characters should be escaped with \\
+    #      e.g. \\[os\\]
 
     cm = "!f() { \
         git log --pretty=custom --decorate --date=short --grep=\"$1\"; \
@@ -34,6 +39,10 @@
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Credit an author on the latest commit
+    # -n : True if the length of string is nonzero.
+    # $1 : name
+    # $2 : email
+    # - C : re-use log message
 
     credit = "!f() { \
         if [ -n \"$1\" ] && [ -n \"$2\" ]; then \
@@ -54,6 +63,19 @@
 
     # Merge GitHub pull request on top of the current branch or,
     # if a branch name is specified, on top of the specified branch
+    # $1 : pull request number
+    # $2 : (optional) branch name to merge pull request on top of
+    #
+    # It does this by:
+    #    1. Fetching the remote PR locally
+    #    2. Checkout and reset current branch or checkout specified branch given in 2nd argument
+    #    3. Rebase PR branch on top of 2. above and remain checked out on PR branch
+    #    4. Checkout current/specified branch
+    #    5. Merge PR branch into current/specified branch (should be a fast-forward)
+    #    6. Delete PR branch
+    #    7. Amend last commit's message and adds 'Close #<PR number>''
+    #       -1 = limit number of commits to 1
+    #       %B = raw body (unwrapped subject and body)
 
     mpr = "!f() { \
         declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
@@ -102,17 +124,17 @@
 [core]
 
     abbrev = 12
-    attributesfile = ~/.gitattributes
-    autocrlf = input
+    attributesfile = ~/.gitattributes  # Tell git to use global/user-level gitattributes file
+    autocrlf = input                   # 'true' for Windows, 'input' for Mac/Linux. See https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#coreautocrlf-7kTgIgFwI4
     editor = vim
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore        # Tell git to use global/user-level gitignore file
 
 [commit]
 
     # Sign commits using GPG
     # https://help.github.com/articles/signing-commits-using-gpg/
 
-    gpgsign = true
+    gpgsign = false
 
 [diff "bin"]
 
@@ -128,6 +150,7 @@
     #                     │        │            └─ date (relative)
     #                     │        └─ decorations (branch, heads or tags)
     #                     └─ hash (abbreviated)
+    # See https://git-scm.com/docs/git-log#_pretty_formats for more info
 
 
 [push]
@@ -141,6 +164,7 @@
 
     # Don't guess the user's identity
     # https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855
+    # Available only after git 2.8+
 
     useConfigOnly = true
 

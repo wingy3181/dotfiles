@@ -1,4 +1,13 @@
 # Automatically normalize line endings for all text-based files
-# https://git-scm.com/docs/gitattributes#_end_of_line_conversion
+# due to differences between Windows and Mac/Linux systems on
+# how they treat line endings (i.e. \r\n versus \n)
+#   https://git-scm.com/docs/gitattributes#_end_of_line_conversion
+#     Set to string value "auto"
+#       When text is set to "auto", the path is marked for automatic end-of-line
+#       normalization. If Git decides that the content is text, its line endings
+#       are normalized to LF on checkin.
+#     Unspecified
+#       If the text attribute is unspecified, Git uses the core.autocrlf
+#       configuration variable to determine if the file should be converted.
 #
 # * text=auto
