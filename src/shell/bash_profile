@@ -21,7 +21,7 @@ source_bash_files() {
     for i in ${!FILES_TO_SOURCE[*]}; do
 
         file="$HOME/.${FILES_TO_SOURCE[$i]}"
-
+        # -r : True if file exists and is readable.
         [ -r "$file" ] \
             && source "$file"
 

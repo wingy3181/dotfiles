@@ -24,6 +24,12 @@ alias brewu="brew update \
 
 # Empty the trash, the main HDD and on all mounted volumes,
 # and clear Apple’s system logs to improve shell startup speed
+#
+# Use 'Console' to view Applie's system logs
+# (https://crucialsecurityblog.harris.com/2011/08/24/the-apple-system-log-%E2%80%93-part-2-%E2%80%93-console-app/)
+#
+# Also, clear history of files downloaded. OS X actually keeps a record of this!!!!
+# (See http://www.redmondpie.com/os-x-logs-every-file-you-download-heres-how-you-can-delete-it/)
 
 alias empty-trash="sudo rm -frv /Volumes/*/.Trashes; \
                    sudo rm -frv ~/.Trash; \
@@ -60,7 +66,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Get local IP
 
-alias local-ip="ipconfig getifaddr en1"
+alias local-ip="ipconfig getifaddr en0"   # en0 is typically for ethernet and en1 is typically for wifi. Use ifconfig -a to find out interface name
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

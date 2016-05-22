@@ -5,11 +5,13 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Disable beeping and window flashing
-set bell-style none
+# Enable beeping and window flashing
+# 'none', 'audible', 'visible'
+set bell-style audible
 
 # Use case-insensitive TAB autocompletion
 set completion-ignore-case on
 
 # Auto list TAB completions
-set show-all-if-ambiguous off
+# This will allow single tab completion as opposed to requiring a double tab. This makes things much more pleasant, in my opinion.
+set show-all-if-ambiguous on

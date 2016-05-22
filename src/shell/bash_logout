@@ -2,6 +2,10 @@
 
 # Clear console on exit
 
+# SHLVL
+# Incremented by one each time a new instance of Bash is started. This is intended to be a count of how deeply your Bash shells are nested.
+# Root is level 1
+
 [ "$SHLVL" == 1 ] \
     && command -v "clear" &> /dev/null  \
     && clear

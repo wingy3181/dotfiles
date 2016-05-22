@@ -12,6 +12,7 @@
     result="$( printf "scale=10;%s\n" "$*" | bc --mathlib | tr -d "\\\n" )"
     #                         remove the tailing "\" and "\n" ─┘
     #                         (large numbers are printed on multiple lines)
+    # See https://www.gnu.org/software/bc/manual/html_node/bc_toc.html
 
     if [[ "$result" == *.* ]]; then
         # Improve the output for decimal numbers
@@ -32,9 +33,9 @@
 # Create data URI from a file
 
 datauri() {
-
+    # $1 : file to generate data uri for
     local mimeType=""
-
+    # True if file exists and is a regular file.
     if [ -f "$1" ]; then
         mimeType=$(file -b --mime-type "$1")
         #                └─ do not prepend the filename to the output
@@ -46,6 +47,10 @@ datauri() {
         printf "data:%s;base64,%s" \
                     "$mimeType" \
                     "$(openssl base64 -in "$1" | tr -d "\n")"
+        #                │       │                │  └── Delete characters in string argument from string passed in
+        #                │       │                └── translate characters command
+        #                │       └── base64 encode file
+        #                └── convert input text to open ssl format? (technically this isn't actually needed)
     else
         printf "%s is not a file.\n" "$1"
     fi
@@ -55,10 +60,17 @@ datauri() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Delete files that match a certain pattern from the current directory
+# This lists the files deleted via the -ls option
 
 delete-files() {
+    # $1 : file pattern to search for files to delete
     local q="${1:-*.DS_Store}"
     find . -type f -name "$q" -ls -delete
+    #    |       |         |   |   └─── delete found files (or directories)
+    #    │       │         │   └─── list file information
+    #    │       │         └─── pattern of filename to search for
+    #    │       └──── search for files
+    #    └────── current directory to recursively traverse to find files
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -66,16 +78,23 @@ delete-files() {
 # Get gzip information (gzipped file size + reduction size)
 
 gz() {
+    # $1 : file to get gzip information from
 
+    # declare integers
     declare -i gzippedSize=0
     declare -i originalSize=0
 
+    # -f: True if file exists and is a regular file.
     if [ -f "$1" ]; then
+        # -s : True if file exists and has a size greater than zero.
         if [ -s "$1" ]; then
 
             originalSize=$( wc -c < "$1" )
+            # %12s\n : 12 chars long, convert to string, append \n
+            # See http://en.cppreference.com/w/cpp/io/c/fprintf
             printf "\n original size:   %12s\n" "$(hrfs "$originalSize")"
 
+            # gzip -c to standard output
             gzippedSize=$( gzip -c "$1" | wc -c )
             printf " gzipped size:    %12s\n" "$(hrfs "$gzippedSize")"
 
@@ -102,6 +121,7 @@ gz() {
 # (because `du -h` doesn't cut it for me)
 
 hrfs() {
+    # $1 : number to convert to file size
 
     printf "%s" "$1" |
     awk '{
@@ -125,9 +145,13 @@ hrfs() {
 
             }
         }' |
-    sed -e ":l; s/\([0-9]\)\([0-9]\{3\}\)/\1,\2/; t l"
-    #                          └─ add commas to the numbers
-    #                             (changes "1023.2 KB" to "1,023.2 KB")
+    sed -e ":l" -e "s/\([0-9]\)\([0-9]\{3\}\)/\1,\2/" -e "t l"
+    #                             └─ add commas to the numbers
+    #                                (changes "1023.2 KB" to "1,023.2 KB")
+    # See http://www.grymoire.com/Unix/Sed.html
+    # -e  : combine multiple commands by using -e before each command
+    # :l  : create label
+    # t l : execute code at label if a pattern match is found
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -135,6 +159,8 @@ hrfs() {
 # Create new directories and enter the first one
 
 mkd() {
+    # $* : arguments passed to mkd which is the directories to create
+    # -n : True if the length of string is nonzero.
     if [ -n "$*" ]; then
 
         mkdir -p "$@"
@@ -151,6 +177,9 @@ mkd() {
 # Search history
 
 qh() {
+    # $* : arguments passed to qh which is the search text
+    # HISTFILE : https://www.gnu.org/software/bash/manual/html_node/Bash-History-Facilities.html
+    #
     #           ┌─ enable colors for pipe
     #           │  ("--color=auto" enables colors only if
     #           │  the output is in the terminal)
@@ -164,6 +193,7 @@ qh() {
 # Search for text within the current directory
 
 qt() {
+    # $* : arguments passed to qt which is the search text
     grep -ir --color=always "$*" . | less -RX
     #     │└─ search all files under each directory, recursively
     #     └─ ignore case
@@ -173,6 +203,7 @@ qt() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Start an HTTP server from a directory, optionally specifying the port
+# $1 : Port to start server on (defaults to 8000)
 
 server() {
 
@@ -186,17 +217,23 @@ server() {
     # it is, open its address in the default browser
 
     while [ $i -lt $MAX_NUMBER_OF_TRIES ]; do
+        # lsof : list open files (and remember, in UNIX just about everything (including a network socket) is a file)
+        #   -i : select the listing of all Internet and x.25 (HP-UX) network files
+        #   -n : inhibit conversion of network number to host names for network files
+        #   -P : inhibit conversion of port number to port name for network files
+        # grep -i : ignore case
         if [ "$(lsof -i -nP | grep "$port" | grep -i "python")" != "" ]; then
             o "http://localhost:${port}/"
             break;
         fi
         i=$(( i + 1 ))
-        sleep 1
+        sleep 1 # sleep 1 second
     done &
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Start server
+    # - c: code to execute (See https://docs.python.org/2/using/cmdline.html)
     python -c "
 
 import sys

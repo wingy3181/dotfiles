@@ -16,16 +16,19 @@ alias cd..="cd .."
 
 alias :q="exit"
 alias c="clear"
-alias ch="history -c && > ~/.bash_history"
-alias e="vim --"
+alias ch="history -c && > ~/.bash_history"                      # clear history
+alias e="vim --"                                                # -- to indicate end of options in case filename starts with -
 alias g="git"
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"   # myip.opendns.com: name of resource record to lookup, @resolver1.opendns.com: name server to query
+                                                                # This asks the IP address of myip.opendns.com from the name server resolver1.opendns.com
+                                                                # which will return your external IP address
 alias ll="ls -l"
 alias m="man"
-alias map="xargs -n1"
+alias map="xargs -n1"                                           # map space delimited string to one item per row. Only enter input afterwards
+                                                                # See http://www.thegeekstuff.com/2013/12/xargs-examples/
 alias n="npm"
 alias q="exit"
-alias rm="rm -rf --"
+alias rm="rm -rf --"                                            # -- to indicate end of options in case filename starts with -
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

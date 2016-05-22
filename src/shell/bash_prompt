@@ -164,9 +164,12 @@ set_prompts() {
 
     # Prompt Statement variables
     # http://ss64.com/bash/syntax-prompt.html
+    # https://wiki.archlinux.org/index.php/Bash/Prompt_customization
 
     # ------------------------------------------------------------------
     # | PS1 - Default interactive prompt                               |
+    # |       This is the primary prompt which is displayed before     |
+    # |       each command.                                            |
     # ------------------------------------------------------------------
 
     PS1="\[\033]0;\W\007\]"         # Terminal title (set to the
@@ -186,6 +189,9 @@ set_prompts() {
 
     # ------------------------------------------------------------------
     # | PS2 - Continuation interactive prompt                          |
+    # |       This is the secondary prompt displayed when a command    |
+    # |       needs more input (e.g. a multi-line command)             |
+    # |      e.g.) '\' command
     # ------------------------------------------------------------------
 
     PS2="⚡ "

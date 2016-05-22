@@ -17,14 +17,14 @@ declare -a FILES_TO_SYMLINK=(
     "shell/curlrc"
     "shell/inputrc"
     "shell/screenrc"
-    "shell/tmux.conf"
+#    "shell/tmux.conf"
 
     "git/gitattributes"
     "git/gitconfig"
     "git/gitignore"
 
-    "vim/vim"
-    "vim/vimrc"
+#    "vim/vim"
+#    "vim/vimrc"
 
 )
 
@@ -52,7 +52,7 @@ main() {
     for i in "${FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(cd .. && pwd)/$i"
-        # se 'substitute' command (See http://www.grymoire.com/Unix/Sed.html#uh-1)
+        # sed 'substitute' command (See http://www.grymoire.com/Unix/Sed.html#uh-1)
         # using regex '.*\/\(.*\)' and replacing topic folder with its contents
         # For example, 'shell/bash_aliases' to 'bash_aliases'
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"

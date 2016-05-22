@@ -10,6 +10,11 @@
 #  - the actual colors are configured through the `LSCOLORS`
 #    environment variable (built-in defaults are used if this
 #    variable is not set)
+#
+# - The order of each two characters determines components
+# - The first character is the foreground colour
+# - The second character is the background colour
+# See REFERENCE-LC-COLOURS.md
 
 LSCOLORS=""
 
@@ -25,6 +30,7 @@ LSCOLORS+="ag" # Executable with setgid bit set
 LSCOLORS+="cc" # Directory writable to others, with sticky bit
 LSCOLORS+="bd" # Directory writable to others, without sticky bit
 
+# Use http://geoff.greer.fm/lscolors/ to preview gxfxcxdxcxegedabagccbd
 export LSCOLORS
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
