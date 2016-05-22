@@ -10,8 +10,8 @@
 > - [ ] zsh and/or fishshell
 > - [ ] Computer name in set_ui_and_ux_preferences.sh
 > - [ ] Show current computer name and prompt to change
-> - [ ] Setup create directories
-> - [ ] Setup symbolic links
+> - [X] Setup create directories
+> - [ ] Setup symbolic links for tmux, vim, atom
 > - [ ] Prompt install each homebrew application or Y to all
 > - [ ] Aliases in /usr/local/bin (e.g. wstorm)
 
@@ -20,11 +20,12 @@
 > - [ ] Show Keychain Access menu in menubar (http://blog.taylormcgann.com/tag/cgsession/)
 > - [ ] Show Launchpad keyboard shortcut -> option-command-L
 > - [ ] Generation of SSH key
-> - [ ] git config so that will not use global (see gitconfig https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855)
+> - [X] git config so that will not use global (see gitconfig https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855)
 > - [ ] change of hostname, computername, etc
-> - [ ] Update git to not use apple one and use brew installed one
+> - [X] Update git to not use apple one and use brew installed one
 > - [ ] Lock screen shell script and alias
 > - [ ] Signing commits using GPG
+> - [ ] Add cyip2 and Development to left hand of finder
 
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
@@ -251,6 +252,7 @@ Inspiration and code was taken from many sources, including:
 * [Advanced Bash Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html)
   * [Internal Variables](http://www.tldp.org/LDP/abs/html/internalvariables.html)
 * [Reference Manual Variable Index](https://www.gnu.org/software/bash/manual/html_node/Variable-Index.html)
+* [Bash Parameter Expansion](http://wiki.bash-hackers.org/syntax/pe)
 * [Bash String manipulation](http://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
 * [Bash Array tutorial](http://www.thegeekstuff.com/2010/06/bash-array-tutorial/)
 # [Shell Colors: Colorizing Shell Scripts](http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html)
