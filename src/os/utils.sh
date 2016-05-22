@@ -202,7 +202,7 @@ print_in_green() {
     #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
     #       |  | | └─────── m : Terminate escape sequence
     #       |  | └───────── 32 : Foreground colour green (see table in link given below)
-    #       |  └─────────── 0 :
+    #       |  └─────────── 0 : Normal text
     #       └────────────── \e[ : Begin escape sequence
     # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
     # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
@@ -216,7 +216,7 @@ print_in_purple() {
     #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
     #       |  | | └─────── m : Terminate escape sequence
     #       |  | └───────── 35 : Foreground colour magenta (see table in link given below)
-    #       |  └─────────── 0 :
+    #       |  └─────────── 0 : Normal text
     #       └────────────── \e[ : Begin escape sequence
     # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
     # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
@@ -230,7 +230,7 @@ print_in_red() {
     #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
     #       |  | | └─────── m : Terminate escape sequence
     #       |  | └───────── 31 : Foreground colour red (see table in link given below)
-    #       |  └─────────── 0 :
+    #       |  └─────────── 0 : Normal text
     #       └────────────── \e[ : Begin escape sequence
     # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
     # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
@@ -244,7 +244,7 @@ print_in_yellow() {
     #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
     #       |  | | └─────── m : Terminate escape sequence
     #       |  | └───────── 33 : Foreground colour yellow (see table in link given below)
-    #       |  └─────────── 0 :
+    #       |  └─────────── 0 : Normal text
     #       └────────────── \e[ : Begin escape sequence
     # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
     # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
