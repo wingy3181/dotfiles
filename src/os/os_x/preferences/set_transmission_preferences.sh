@@ -14,11 +14,11 @@ execute "defaults write org.m0k.transmission DownloadAsk -bool false" \
     "Don’t prompt for confirmation before downloading"
 
 execute "defaults write org.m0k.transmission DownloadChoice -string 'Constant' && \
-         defaults write org.m0k.transmission DownloadFolder -string '$HOME/Downloads'" \
+         defaults write org.m0k.transmission DownloadFolder -string '$HOME/Downloads/torrents/complete'" \
     "Use '~/Downloads' to store complete downloads"
 
 execute "defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true && \
-         defaults write org.m0k.transmission IncompleteDownloadFolder -string '$HOME/Downloads/torrents'" \
+         defaults write org.m0k.transmission IncompleteDownloadFolder -string '$HOME/Downloads/torrents/incomplete'" \
     "Use '~/Downloads/torrents' to store incomplete downloads"
 
 execute "defaults write org.m0k.transmission WarningDonate -bool false" \

@@ -7,7 +7,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n  Dashboard\n\n"
 
-execute "defaults write com.apple.dashboard mcx-disabled -bool true" \
+# dashboard-enabled-state: 1=off, 2=space, 3=overlay
+execute "defaults write com.apple.dashboard mcx-disabled -bool true && \
+         defaults write com.apple.dashboard dashboard-enabled-state -int 1" \
     "Disable Dashboard"
 
 # 'killall Dashboard' doesn't actually do anything. To apply

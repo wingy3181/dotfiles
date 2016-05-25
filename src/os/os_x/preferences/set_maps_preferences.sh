@@ -9,7 +9,7 @@ print_in_purple "\n  Maps\n\n"
 
 execute "defaults write com.apple.Maps LastClosedWindowViewOptions '{
             localizeLabels = 1;   // show labels in English
-            mapType = 11;         // show hybrid map
+            mapType = 0;          // show normal map
             trafficEnabled = 0;   // do not show traffic
          }'" \
     "Set view options"
