@@ -23,6 +23,8 @@ declare -a FILES_TO_SYMLINK=(
     "git/gitconfig"
     "git/gitignore"
 
+    "atom/atom"
+    
 #    "vim/vim"
 #    "vim/vimrc"
 

@@ -1,0 +1,26 @@
+"*":
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "vim-mode"
+    ]
+  editor:
+    fontSize: 10
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "d066aaa4-63cd-1f08-a0e5-c8efdcf5268d"
+  "git-plus": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap: {}
+  pigments:
+    markerType: "dot"
+  "toggle-packages":
+    togglePackages: [
+      "vim-mode"
+    ]
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false

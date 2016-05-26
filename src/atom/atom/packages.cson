@@ -1,0 +1,10 @@
+packages: [
+  "angularjs"
+  "editorconfig"
+  "git-plus"
+  "minimap"
+  "package-sync"
+  "pigments"
+  "toggle-packages"
+  "vim-mode"
+]
