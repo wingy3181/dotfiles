@@ -36,6 +36,10 @@ execute "defaults write com.apple.screensaver askForPassword -int 1 && \
          defaults write com.apple.screensaver askForPasswordDelay -int 0"\
     "Require password immediately after into sleep or screen saver mode"
 
+# System Preferences -> Mission Control -> Displays have separate Spaces (requires logout)
+execute "defaults write com.apple.spaces spans-displays -bool false" \
+    "Enable 'Displays have separate Spaces'"
+
 # http://osxdaily.com/2014/10/27/change-font-smoothing-text-os-x-yosemite/
 execute "defaults write NSGlobalDomain AppleFontSmoothing -int 2" \
     "Enable subpixel font rendering on non-Apple LCDs"
