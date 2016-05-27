@@ -59,7 +59,11 @@ main() {
         # For example, 'shell/bash_aliases' to 'bash_aliases'
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
-        if [ ! -e "$targetFile" ] || $skipQuestions; then # -e : True if file exists (regardless of type).
+        if [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
+            
+            print_success "$targetFile → $sourceFile"
+
+        elif [ ! -e "$targetFile" ] || $skipQuestions; then # -e : True if file exists (regardless of type).
 
             execute \
                 "ln -fs $sourceFile $targetFile" \
@@ -68,9 +72,6 @@ main() {
                 # -f : force = remove existing destination files
                 # -s : symbolic =make symbolic links instead of hard links (see https://www.youtube.com/watch?v=aO0OkNxDJ3c)
 
-
-        elif [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
-            print_success "$targetFile → $sourceFile"
         else
 
             if ! $skipQuestions; then
