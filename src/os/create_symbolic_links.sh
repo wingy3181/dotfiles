@@ -17,14 +17,14 @@ declare -a FILES_TO_SYMLINK=(
     "shell/curlrc"
     "shell/inputrc"
     "shell/screenrc"
-#    "shell/tmux.conf"
+    "shell/tmux.conf"
 
     "git/gitattributes"
     "git/gitconfig"
     "git/gitignore"
 
     "atom/atom"
-    
+
 #    "vim/vim"
 #    "vim/vimrc"
 
