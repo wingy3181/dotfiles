@@ -71,12 +71,6 @@ execute "defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bo
 execute "defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true" \
     "Expand print panel by default"
 
-execute "sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string 'Laptop' && \
-         sudo scutil --set ComputerName 'laptop' && \
-         sudo scutil --set HostName 'laptop' && \
-         sudo scutil --set LocalHostName 'laptop'" \
-    "Set computer name"
-
 # http://osxdaily.com/2011/07/19/automatically-restart-your-mac-if-it-freezes-in-os-x-lion/
 execute "sudo systemsetup -setrestartfreeze on" \
     "Restart automatically if the computer freezes"

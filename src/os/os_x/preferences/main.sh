@@ -7,6 +7,20 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 main() {
 
+    local skipQuestions=false
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    while :; do
+        case $1 in
+            -y|--yes) skipQuestions=true; break;;
+                   *) break;;
+        esac
+        shift 1
+    done
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     declare -a PROCESSES_TO_TERMINATE=(
         "cfprefsd"
     )
@@ -15,6 +29,11 @@ main() {
 
     ./set_app_store_preferences.sh
     ./set_chrome_preferences.sh
+    if $skipQuestions; then
+        ./set_computer_name.sh -y
+    else
+        ./set_computer_name.sh
+    fi
     ./set_dashboard_preferences.sh
     ./set_dock_preferences.sh
     ./set_finder_preferences.sh
@@ -38,4 +57,5 @@ main() {
 
 }
 
-main
+# Pass '-y' to script to skip questions
+main "$@"

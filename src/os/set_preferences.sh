@@ -8,6 +8,17 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 main() {
 
     local os=""
+    local skipQuestions=false
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    while :; do
+        case $1 in
+            -y|--yes) skipQuestions=true; break;;
+                   *) break;;
+        esac
+        shift 1
+    done
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -17,11 +28,16 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if [ "$os" == "osx" ]; then
-        ./os_x/preferences/main.sh
+        if $skipQuestions; then
+            ./os_x/preferences/main.sh -y
+        else
+            ./os_x/preferences/main.sh
+        fi
     elif [ "$os" == "ubuntu" ]; then
         ./ubuntu/preferences/main.sh
     fi
 
 }
 
-main
+# Pass '-y' to script to skip questions
+main "$@"
