@@ -3,6 +3,7 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && source "utils.sh"
 
+# https://nodejs.org/en/download/releases/
 declare -r -a NODE_VERSIONS=(
     "node"
 )
