@@ -7,8 +7,19 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 declare -r -a NPM_PACKAGES=(
     "babel-cli"
+    "bower"
+    "eslint"
+    "grunt-cli"
+    "gulp-cli"
+    "http-server"
     "jshint"
-    "svgo"
+    "jscs"
+    "karma-cli"
+    "localtunnel"
+    "npm-check"
+    "typescript"
+    "webpack"
+    "yo"
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
