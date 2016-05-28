@@ -33,3 +33,23 @@ execute "defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool
 
 execute "defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false" \
     "Disable smart dashes"
+
+# https://github.com/diimdeep/dotfiles/blob/master/osx/configure/hotkeys.sh
+# http://krypted.com/mac-os-x/defaults-symbolichotkeys/
+# http://stackoverflow.com/questions/21878482/what-do-the-parameter-values-in-applesymbolichotkeys-plist-dict-represent
+# System Preferenes -> Keyboard -> Shortcuts -> Launchpad & Dock -> Show Launchpad (alt-command-l)
+execute "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 160 \" \
+      <dict> \
+        <key>enabled</key><true/> \
+        <key>value</key><dict> \
+          <key>type</key><string>standard</string> \
+          <key>parameters</key> \
+          <array> \
+            <integer>108</integer> \
+            <integer>37</integer> \
+            <integer>1572864</integer> \
+          </array> \
+        </dict> \
+      </dict> \
+    \"" \
+    "Enable keyboard shortcut <alt-command-l> to 'Show Launchpad'"
