@@ -1,12 +1,12 @@
 [alias]
 
-    a   = commit --amend
+    a   = add
     br  = branch
     c   = commit
     ca  = !git add -A && git commit                 # Commit all changes
     co  = checkout
     cp  = cherry-pick
-    d   = g
+    d   = diff
     dc  = diff --cached
     g   = log --graph --pretty=custom               # Show custom graph
     l   = log --pretty=custom                       # Show custom log
