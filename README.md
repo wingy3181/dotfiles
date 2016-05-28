@@ -2,35 +2,11 @@
 
 [![Build Status](https://travis-ci.org/wingy3181/dotfiles.svg?branch=master)](https://travis-ci.org/wingy3181/dotfiles)
 
-> :exclamation: **NOTE:** These dotfiles are still a :construction: WIP (Work In Progress) as I customize these scripts for my own usage.
->
-> **TODO:**
-> - [ ] Chrome extensions
-> - [ ] Atom and its extensions
-> - [ ] zsh and/or fishshell
-> - [ ] Computer name in set_ui_and_ux_preferences.sh
-> - [ ] Show current computer name and prompt to change
-> - [X] Setup create directories
-> - [ ] Setup symbolic links for tmux, vim, atom
-> - [ ] Prompt install each homebrew application or Y to all
-> - [ ] Aliases in /usr/local/bin (e.g. wstorm)
-
-> **OS X customisations**
-> - [ ] Independent displays -> Mission Control -> Check 'Displays have separate spaces'
-> - [ ] Show Keychain Access menu in menubar (http://blog.taylormcgann.com/tag/cgsession/)
-> - [ ] Show Launchpad keyboard shortcut -> option-command-L
-> - [ ] Generation of SSH key
-> - [X] git config so that will not use global (see gitconfig https://github.com/git/git/blob/90f7b16b3adc78d4bbabbd426fb69aa78c714f71/Documentation/config.txt#L2847-L2855)
-> - [ ] change of hostname, computername, etc
-> - [X] Update git to not use apple one and use brew installed one
-> - [ ] Lock screen shell script and alias
-> - [ ] Signing commits using GPG
-> - [ ] Add cyip2 and Development to left hand of finder
+> :exclamation: **NOTE:** These dotfiles are still a :construction: WIP (Work In Progress) as I customise these scripts for my own usage.
 
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
 files described in the [`Local Settings`](#local-settings) section.
-
 
 ## Setup
 
