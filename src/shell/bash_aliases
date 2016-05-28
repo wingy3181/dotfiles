@@ -29,6 +29,7 @@ alias map="xargs -n1"                                           # map space deli
 alias n="npm"
 alias q="exit"
 alias rm="rm -rf --"                                            # -- to indicate end of options in case filename starts with -
+alias hosts='sudo $EDITOR /etc/hosts'                           # Open hosts file in default editor
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
