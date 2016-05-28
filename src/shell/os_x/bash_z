@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # -f : True if file exists and is a regular file.
-if  [ -f $(brew --prefix)/etc/profile.d/z.sh ]; then
+if  [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then
     # Load rupa's z (https://github.com/rupa/z) if installed
-    source $(brew --prefix)/etc/profile.d/z.sh
+    source "s$(brew --prefix)/etc/profile.d/z.sh"
 fi
