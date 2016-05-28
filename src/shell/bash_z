@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Rupa's Z - Jump to - (https://github.com/rupa/z)
+# - Consider reusing your current .z file if possible. it's painful to rebuild :)
+# - z is hooked up in .bash_profile
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+declare DOTFILES_DIR_PATH="$(dirname "$(dirname "$(readlink "${BASH_SOURCE[0]}")")")"
+
+source "$DOTFILES_DIR_PATH/os/utils.sh" \
+    && declare os="$(get_os)"
+
+# ----------------------------------------------------------------------
+
+if [ "$os" == "osx" ]; then
+    source "$DOTFILES_DIR_PATH/shell/os_x/bash_z"
+elif [ "$os" == "ubuntu" ]; then
+    # Not setup for Ubuntu yet
+    print_in_yellow "z (https://github.com/rupa/z) is not setup for Ubuntu yet."
+    #source "$DOTFILES_DIR_PATH/shell/ubuntu/bash_z"
+fi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Cleanup
+
+unset DOTFILES_DIR_PATH
+unset os
