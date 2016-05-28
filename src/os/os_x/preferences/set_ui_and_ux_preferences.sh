@@ -40,6 +40,10 @@ execute "defaults write com.apple.screensaver askForPassword -int 1 && \
 execute "defaults write com.apple.spaces spans-displays -bool false" \
     "Enable 'Displays have separate Spaces'"
 
+# System Preferences -> General -> Use dark menu bar and Dock
+execute "defaults write NSGlobalDomain AppleInterfaceStyle -string 'Dark'" \
+    "Use dark menu bar and Dock"
+
 # http://osxdaily.com/2014/10/27/change-font-smoothing-text-os-x-yosemite/
 execute "defaults write NSGlobalDomain AppleFontSmoothing -int 2" \
     "Enable subpixel font rendering on non-Apple LCDs"
