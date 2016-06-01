@@ -164,35 +164,6 @@ extract() {
 
 }
 
-is_supported_version() {
-    # NOTE: This function is also in os/utils.sh
-    # Convert version number parts into array of parts by finding '.' and replacing with ' '
-    declare -a actual_version=(${1//./ })
-    declare -a minimum_version=(${2//./ })
-    local i=""
-
-    # Fill empty positions in actual_version with zeros. Note: ${#array[@]} returns ßthe length of the arrayß
-    for (( i=${#actual_version[@]}; i<${#minimum_version[@]}; i++ )); do
-        actual_version[i]=0
-    done
-
-    for (( i=0; i<${#actual_version[@]}; i++ )); do
-
-        # Fill empty positions in minimum_version with zeros
-        if [[ -z ${minimum_version[i]} ]]; then
-            minimum_version[i]=0
-        fi
-
-        # Treat version part as a decimal (base 10) number
-        # actual version part is less than minimum_version part required, so return error return codeß
-        if (( 10#${actual_version[i]} < 10#${minimum_version[i]} )); then
-            return 1
-        fi
-
-    done
-
-}
-
 verify_os() {
 
     declare -r MINIMUM_OS_X_VERSION="10.10"
@@ -233,27 +204,8 @@ verify_os() {
 
 main() {
 
-    # Ensure the OS is supported and
-    # it's above the required version
-
-    verify_os || exit 1
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    while :; do
-        case $1 in
-            -y|--yes) skipQuestions=true; break;;
-                   *) break;;
-        esac
-        shift 1
-    done
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     # Ensure that the following actions
     # are made relative to this file's path
-    #
-    # http://mywiki.wooledge.org/BashFAQ/028
 
     cd "$(dirname "${BASH_SOURCE[0]}")" \
         || exit 1
@@ -267,6 +219,25 @@ main() {
     else
         download_utils || exit 1
     fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Ensure the OS is supported and
+    # it's above the required version
+
+    verify_os \
+        || exit 1
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    while :; do
+        case $1 in
+            -y|--yes) skipQuestions=true; break;;
+                   *) break;;
+        esac
+        shift 1
+    done
+
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

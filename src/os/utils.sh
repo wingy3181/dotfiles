@@ -182,7 +182,6 @@ is_git_repository() {
 }
 
 is_supported_version() {
-    # NOTE: This function is also in os/utils.sh
     # Convert version number parts into array of parts by finding '.' and replacing with ' '
     declare -a actual_version=(${1//./ })
     declare -a minimum_version=(${2//./ })
