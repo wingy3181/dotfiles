@@ -8,6 +8,17 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 main() {
 
     local os=""
+    local skipQuestions=false
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    while :; do
+        case $1 in
+            -y|--yes) skipQuestions=true; break;;
+                   *) break;;
+        esac
+        shift 1
+    done
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -19,11 +30,16 @@ main() {
     print_warning "This may take awhile, so please be patient!\n"
 
     if [ "$os" == "osx" ]; then
-        ./os_x/installs/main.sh
+        if $skipQuestions; then
+            ./os_x/installs/main.sh -y
+        else
+            ./os_x/installs/main.sh
+        fi
     elif [ "$os" == "ubuntu" ]; then
         ./ubuntu/installs/main.sh
     fi
 
 }
 
-main
+# Pass '-y' to script to skip questions
+main "$@"

@@ -1,11 +1,44 @@
 #!/bin/bash
 
+answer_is_no() {
+    # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)
+    # check $REPLY content against regular expression of a single character 'y' or 'Y' (starting and ending with)
+    # See http://stackoverflow.com/questions/19441521/bash-regex-operator
+    # and http://www.gnu.org/software/bash/manual/bashref.html#Conditional-Constructs
+    [[ "$REPLY" =~ ^[Nn]$ ]] \
+        && return 0 \
+        || return 1
+
+}
+
+answer_is_skip_all() {
+    # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)
+    # check $REPLY content against regular expression of a single character 'y' or 'Y' (starting and ending with)
+    # See http://stackoverflow.com/questions/19441521/bash-regex-operator
+    # and http://www.gnu.org/software/bash/manual/bashref.html#Conditional-Constructs
+    [[ "$REPLY" =~ ^[Ss]$ ]] \
+        && return 0 \
+        || return 1
+
+}
+
 answer_is_yes() {
     # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)
     # check $REPLY content against regular expression of a single character 'y' or 'Y' (starting and ending with)
     # See http://stackoverflow.com/questions/19441521/bash-regex-operator
     # and http://www.gnu.org/software/bash/manual/bashref.html#Conditional-Constructs
     [[ "$REPLY" =~ ^[Yy]$ ]] \
+        && return 0 \
+        || return 1
+
+}
+
+answer_is_yes_to_all() {
+    # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)
+    # check $REPLY content against regular expression of a single character 'y' or 'Y' (starting and ending with)
+    # See http://stackoverflow.com/questions/19441521/bash-regex-operator
+    # and http://www.gnu.org/software/bash/manual/bashref.html#Conditional-Constructs
+    [[ "$REPLY" =~ ^[Aa]$ ]] \
         && return 0 \
         || return 1
 
@@ -20,6 +53,15 @@ ask() {
 ask_for_confirmation() {
     # $1 : confirmation text
     print_question "$1 (y/n) "
+    read -r -n 1 # See http://ss64.com/bash/read.html
+    #     |  └─ read returns after reading 'n' rather than waiting for a complete line of input
+    #     └──── To not treat backslash as an escape character
+    printf "\n"
+}
+
+ask_for_install_application_confirmation() {
+    # $1 : install application confirmation text
+    print_question "$1 (y)es / (n)o / install (a)ll / (s)kip all? "
     read -r -n 1 # See http://ss64.com/bash/read.html
     #     |  └─ read returns after reading 'n' rather than waiting for a complete line of input
     #     └──── To not treat backslash as an escape character
