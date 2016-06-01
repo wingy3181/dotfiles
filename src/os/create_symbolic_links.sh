@@ -26,8 +26,8 @@ declare -a FILES_TO_SYMLINK=(
 
     "atom/atom"
 
-#    "vim/vim"
-#    "vim/vimrc"
+    "vim/vim"
+    "vim/vimrc"
 
 )
 
@@ -61,7 +61,7 @@ main() {
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
 
         if [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
-            
+
             print_success "$targetFile → $sourceFile"
 
         elif [ ! -e "$targetFile" ] || $skipQuestions; then # -e : True if file exists (regardless of type).
