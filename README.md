@@ -255,10 +255,10 @@ Inspiration and code was taken from many sources, including:
          [source] os\os_x\installs\utils.sh]
          -> os\os_x\installs\install_xcode.sh
          -> os\os_x\installs\install_homebrew.sh
+         -> os\os_x\installs\update_and_upgrade.sh
          -> {Brew install bash shell + enhancements}
          -> os\os_x\installs\change_default_bash_version.sh
          -> {Brew install applications}
-         -> os\os_x\installs\update_and_upgrade.sh
          -> os\os_x\installs\cleanup.sh
       ----------
       FOR UBUNTU
@@ -268,7 +268,7 @@ Inspiration and code was taken from many sources, including:
          [source] os\ubuntu\installs\utils.sh]
          -> {apt get applications}
 
-
+   -> os\install_and_configure_jenv.sh
    -> os\install_node_versions.sh
    -> os\install_npm_packages.sh
    -> os\set_preferences.sh
@@ -278,6 +278,7 @@ Inspiration and code was taken from many sources, including:
       -> os\os_x\preferences\main.sh
       -> os\os_x\preferences\set_app_store_preferences.sh
       -> os\os_x\preferences\set_chrome_preferences.sh
+      -> os\os_x\preferences\set_computer_name.sh
       -> os\os_x\preferences\set_dashboard_preferences.sh
       -> os\os_x\preferences\set_dock_preferences.sh
       -> os\os_x\preferences\set_finder_preferences.sh
@@ -288,6 +289,8 @@ Inspiration and code was taken from many sources, including:
       -> os\os_x\preferences\set_photos_preferences.sh
       -> os\os_x\preferences\set_safari_preferences.sh
       -> os\os_x\preferences\set_terminal_preferences.sh
+         -> os\os_x\preferences\set_custom_terminal_theme.applescript
+            -> os\os_x\preferences\Solarized Dark.terminal
       -> os\os_x\preferences\set_textedit_preferences.sh
       -> os\os_x\preferences\set_trackpad_preferences.sh
       -> os\os_x\preferences\set_transmission_preferences.sh

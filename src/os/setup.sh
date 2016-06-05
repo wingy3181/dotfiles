@@ -339,7 +339,10 @@ main() {
         elif answer_is_yes; then
             ./install_applications.sh
         fi
-        
+
+        print_in_green "\n  ---\n\n"
+
+        ./install_and_configure_jenv.sh
         print_in_green "\n  ---\n\n"
 
         ./install_node_versions.sh
