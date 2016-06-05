@@ -53,6 +53,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "Alfred" "alfred" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install_with_confirmation "Android File Transfer" "android-file-transfer" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -77,10 +81,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Chromium" "chromium" "caskroom/cask" "cask"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     brew_install_with_confirmation "Dropbox" "dropbox" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -95,6 +95,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "Gas Mask" "gas-mask" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install_with_confirmation "GIMP" "lisanet-gimp" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -103,7 +107,15 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "GnuPG" "gnugp"
+    brew_install_with_confirmation "GPG Tools" "gpgtools" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    brew_install_with_confirmation "Handbrake" "handbrake" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    brew_install_with_confirmation "Helium by Jaden Geller" "jadengeller-helium" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -123,6 +135,14 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "iTerm2" "iterm2" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    brew_install_with_confirmation "Java 6" "java6" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install_with_confirmation "Java 7" "java7" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -131,21 +151,18 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "jEnv" "jenv" "caskroom/cask" "cask"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     brew_install_with_confirmation "LICEcap" "licecap" "caskroom/cask" "cask"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    brew_install_with_confirmation "LibreOffice" "libreoffice" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     brew_install_with_confirmation "Opera" "opera" "caskroom/cask" "cask"
     brew_install_with_confirmation "Opera Beta" "opera-beta" "caskroom/versions" "cask"
     brew_install_with_confirmation "Opera Developer" "opera-developer" "caskroom/versions" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    #https://github.com/sindresorhus/quick-look-plugins
+    brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -166,6 +183,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "SourceTree" "sourcetree" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install_with_confirmation "Spectacle" "spectacle" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -182,6 +203,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "Tor Browser" "torbrowser" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install_with_confirmation "tree" "tree"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -194,11 +219,8 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # https://github.com/Homebrew/homebrew-core/blob/master/Formula/vim.rb
     brew_install_with_confirmation "Vim" "vim --override-system-vi"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    brew_install_with_confirmation "VirtualBox" "virtualbox" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
