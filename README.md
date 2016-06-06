@@ -269,6 +269,7 @@ Inspiration and code was taken from many sources, including:
          -> {apt get applications}
 
    -> os\install_and_configure_jenv.sh
+   -> os\install_and_configure_sdkman.sh
    -> os\install_node_versions.sh
    -> os\install_npm_packages.sh
    -> os\set_preferences.sh

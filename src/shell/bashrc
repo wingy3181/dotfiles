@@ -9,3 +9,7 @@
 # PS1 : Prompt String 1
 [ -n "$PS1" ] \
     && source ~/.bash_profile
+
+# Below statement to stop sdkman install script from adding it's initialisation in both .bashrc and .bash_profile files
+# See 'Attempt update of bash profiles' in install script at https://get.sdkman.io/ 
+# sdkman-init.sh
