@@ -10,7 +10,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # ----------------------------------------------------------------------
 
 main() {
-    
+
     local skipQuestions=false
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -27,10 +27,10 @@ main() {
 
     print_in_purple "\n  UI & UX\n\n"
 
-    declare -r netBiosName=$(defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName)
-    declare -r computerName=$(scutil --get ComputerName)
-    declare -r hostName=$(scutil --get HostName)
-    declare -r localHostName=$(scutil --get LocalHostName)
+    declare -r netBiosName=$(defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName &> /dev/null)
+    declare -r computerName=$(scutil --get ComputerName &> /dev/null)
+    declare -r hostName=$(scutil --get HostName &> /dev/null)
+    declare -r localHostName=$(scutil --get LocalHostName &> /dev/null)
 
     print_in_yellow "\
       Current NetBIOS name:     $netBiosName\n\
