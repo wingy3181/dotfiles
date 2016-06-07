@@ -369,7 +369,7 @@ main() {
     elif answer_is_yes; then
         ./set_preferences.sh
     fi
-    exit 0
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if cmd_exists "git"; then
