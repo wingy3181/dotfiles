@@ -415,6 +415,21 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Optional items & reminders"
+
+    print_optional_info "Add favourite locations (home & Development) to Finder sidebar"
+    print_optional_info "Install Beyond Compare"
+    print_optional_info "Install DataGrip (JetBrains)"
+    print_optional_info "Install Evernote"
+    print_optional_info "Install LibreOffice or Microsoft Office"
+    print_optional_info "Install Synergy"
+    print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/
+    print_optional_info "Set user profile picture"
+
+    printf "\n"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
     if ! $skipQuestions; then
 

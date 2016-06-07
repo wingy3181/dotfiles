@@ -264,6 +264,20 @@ print_in_purple() {
     # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
 }
 
+print_in_cyan_bold() {
+    # $1 : print text
+    printf "\e[1;36m%b\e[0m" "$1"
+    #       |  | | ||   └── \e[0m : Return to plain normal mode
+    #       |  | | |└────── %b : Characters from the string argument are printed until the end is reached
+    #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
+    #       |  | | └─────── m : Terminate escape sequence
+    #       |  | └───────── 36 : Foreground colour cyan (see table in link given below)
+    #       |  └─────────── 1 : Bold text
+    #       └────────────── \e[ : Begin escape sequence
+    # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
+    # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
+}
+
 print_in_red() {
     # $1 : print text
     printf "\e[0;31m%b\e[0m" "$1"
@@ -295,6 +309,11 @@ print_in_yellow() {
 print_info() {
     # $1 : info text
     print_in_purple "\n $1\n\n"
+}
+
+print_optional_info() {
+    # $1 : optional info text
+    print_in_cyan_bold "  [ ] $1\n"
 }
 
 print_question() {
