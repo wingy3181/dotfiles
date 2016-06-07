@@ -4,13 +4,27 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
     && source "utils.sh"
 
 # https://en.wikipedia.org/wiki/Java_version_history
-declare -r -a JAVA_VERSIONS=(
-    /Library/Java/JavaVirtualMachines/*/
-)
+declare -a JAVA_VERSIONS=()
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
+
+    local os=""
+    os="$(get_os)" \
+        || print_error "failed to get the kernel name"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    if [ "$os" == "osx" ]; then
+        JAVA_VERSIONS=(
+            /Library/Java/JavaVirtualMachines/*/Contents/Home
+        )
+    elif [ "$os" == "ubuntu" ]; then
+        JAVA_VERSIONS=(
+            /usr/lib/jvm/*/
+        )
+    fi
 
     declare -r JENV_DIRECTORY="$HOME/.jenv"
     declare -r JENV_GIT_REPO_URL="https://github.com/gcuisinier/jenv.git"
@@ -88,8 +102,8 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         for i in "${JAVA_VERSIONS[@]}"; do
             execute \
-                "jenv add ${i}Contents/Home/" \
-                "jenv (add: ${i}Contents/Home/)"
+                "jenv add ${i}" \
+                "jenv (add: ${i})"
         done
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

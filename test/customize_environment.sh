@@ -1,5 +1,7 @@
 #!/bin/bash
 
+declare -a JDKS_DIRECTORIES_TO_REMOVE=()
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Linux
@@ -18,6 +20,11 @@ if [ "$TRAVIS_OS_NAME" = "linux" ]; then
     # Install `ShellCheck` (required for testing)
     sudo apt-get install -qqy shellcheck
 
+    # Export directory where Java binaries are located in linux
+    JDKS_DIRECTORIES_TO_REMOVE=(
+        /usr/lib/jvm/*/
+    )
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # OS X
@@ -27,6 +34,11 @@ elif [ "$TRAVIS_OS_NAME" = "osx" ]; then
     # Install `ShellCheck` (required for testing)
     brew install shellcheck
 
+    # Export directory where Java binaries are located in linux
+    JDKS_DIRECTORIES_TO_REMOVE=(
+        /Library/Java/JavaVirtualMachines/*.jdk
+    )
+
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -35,3 +47,6 @@ fi
 # included by default by Travis CI
 
 rm -rf "$NVM_DIR"
+for i in "${JDKS_DIRECTORIES_TO_REMOVE[@]}"; do
+    sudo rm -rf "${i}"
+done

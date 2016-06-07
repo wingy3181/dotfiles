@@ -108,6 +108,27 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    if ! package_is_installed "oracle-java6-installer" \
+       || ! package_is_installed "oracle-java7-installer" \
+       || ! package_is_installed "oracle-java8-installer"; then
+
+        add_ppa "webupd8team/java" \
+            || print_error "Java (add PPA)"
+
+        update &> /dev/null \
+            || print_error "Java (resync package index files)"
+
+    fi
+
+    # Automatically answer `Yes` to the `Accept Oracle License` prompt #
+    # http://askubuntu.com/questions/190582/installing-java-automatically-with-silent-option
+    execute "echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections" "Accept Oracle License"
+    install_package "Java 6" "oracle-java6-installer"
+    install_package "Java 7" "oracle-java7-installer"
+    install_package "Java 8" "oracle-java8-installer"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     if ! package_is_installed "opera"; then
 
         add_key "https://deb.opera.com/archive.key" \
