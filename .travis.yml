@@ -7,9 +7,13 @@ dist: trusty
 branches:
   only:
     - master
-    
+
 before_install:
   - ./test/customize_environment.sh
+
+cache:
+  directories:
+    - /opt/homebrew-cask/Caskroom
 
 install:
   - ./src/os/setup.sh -y
