@@ -8,7 +8,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 brew_install_with_confirmation() {
 
     declare -r FORMULA_READABLE_NAME="$1"
-    
+
     # Install application if previous confirmation reply was 'install all'
     if [[ "$previousInstallApplicationConfirmationReply" =~ ^[aA]$ ]]; then
         brew_install "$@"
@@ -41,6 +41,12 @@ brew_install() {
     declare -r FORMULA="$2"
     declare -r TAP_VALUE="$3"
     declare -r CMD="$4"
+
+    # If environment variable is set and readable name does not match regex, then exit and don't bother installation
+    if [[ -n "$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX" && ! "$FORMULA_READABLE_NAME" =~ $INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX ]]; then
+        print_warning "$FORMULA_READABLE_NAME not installed as readable name did not match regex: \"$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX\""
+        return 1
+    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
