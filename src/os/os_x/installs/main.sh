@@ -81,6 +81,9 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     brew_install_with_confirmation "Dropbox" "dropbox" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
