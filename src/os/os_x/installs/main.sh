@@ -142,11 +142,11 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Java 6" "java6" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Java 6" "java6" "caskroom/versions" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Java 7" "java7" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Java 7" "java7" "caskroom/versions" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
