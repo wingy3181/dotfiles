@@ -50,6 +50,7 @@ main() {
     ./set_trackpad_preferences.sh
     ./set_transmission_preferences.sh
     ./set_ui_and_ux_preferences.sh
+    ./set_xtrafinder_preferences.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
