@@ -17,8 +17,6 @@ source "$DOTFILES_DIR_PATH/os/utils.sh" \
 
 if [ "$os" == "osx" ]; then
     source "$DOTFILES_DIR_PATH/shell/os_x/bash_autocomplete"
-elif [ "$os" == "ubuntu" ]; then
-    source "$DOTFILES_DIR_PATH/shell/ubuntu/bash_autocomplete"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

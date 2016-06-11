@@ -19,7 +19,6 @@ understand [what it does](src/os/setup.sh). Seriously, **DON'T**!)
 | OS | Snippet |
 |:---:|:---|
 | OS X | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh)"` |
-| Ubuntu | `bash -c "$(wget -qO - https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! :sparkles:
 
@@ -33,11 +32,9 @@ The setup process will:
   [`shell`](src/shell), and
   [`vim`](src/vim) files
 * Install applications / command-line tools for
-  [OS X](src/os/os_x/installs/main.sh) /
-  [Ubuntu](src/os/ubuntu/installs/main.sh)
+  [OS X](src/os/os_x/installs/main.sh)
 * Set custom
-  [OS X](src/os/os_x/preferences/main.sh) /
-  [Ubuntu](src/os/ubuntu/preferences/main.sh) preferences
+  [OS X](src/os/os_x/preferences/main.sh)
 * Install [`vim` plugins](src/vim/vim/plugins)
 
 Setup process in action:
@@ -48,13 +45,9 @@ Setup process in action:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/11821505/91e437be-a372-11e5-9500-025c316fe22c.gif" alt="Setup process on OS X" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/15118673/f41d9c8e-1615-11e6-9b25-5a4da543fef1.gif" alt="Setup process on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>OS X</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -72,13 +65,9 @@ Output for `git status`:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10561038/f9f11a28-7525-11e5-8e1d-a304ad3557f9.png" alt="Output for Git status on OS X" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/8397636/3708d218-1ddb-11e5-9d40-21c6871271b9.png" alt="Output for Git status on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>OS X</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -91,13 +80,9 @@ Output for `git log`:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10560966/e4ec08a6-7523-11e5-8941-4e12f6550a63.png" alt="Output for Git status on OS X" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560955/4b5e1300-7523-11e5-9e96-95ea67de9474.png" alt="Output for Git log on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>OS X</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -110,13 +95,9 @@ Output for `git log`:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10561007/498e1212-7525-11e5-8252-81503b3d6184.png" alt="tmux and vim on OS X" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560956/557ca2de-7523-11e5-9000-fc1e189a95f5.png" alt="tmux and vim on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>OS X</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -260,13 +241,6 @@ Inspiration and code was taken from many sources, including:
          -> os\os_x\installs\change_default_bash_version.sh
          -> {Brew install applications}
          -> os\os_x\installs\cleanup.sh
-      ----------
-      FOR UBUNTU
-      ----------
-      -> os\ubuntu\installs\main.sh
-         [source] os\utils.sh
-         [source] os\ubuntu\installs\utils.sh]
-         -> {apt get applications}
 
    -> os\install_and_configure_jenv.sh
    -> os\install_and_configure_sdkman.sh
@@ -296,15 +270,6 @@ Inspiration and code was taken from many sources, including:
       -> os\os_x\preferences\set_trackpad_preferences.sh
       -> os\os_x\preferences\set_transmission_preferences.sh
       -> os\os_x\preferences\set_ui_and_ux_preferences.sh
-
-      ----------
-      FOR UBUNTU
-      ----------
-      -> os\ubuntu\preferences\main.sh
-         [source] os\utils.sh
-         -> os\ubuntu\preferences\set_privacy_preferences.sh
-         -> os\ubuntu\preferences\set_terminal_preferences.sh
-         -> os\ubuntu\preferences\set_ui_and_ux_preferences.sh
 
    -> os\initialize_git_repository.sh
    -> os\update_content.sh

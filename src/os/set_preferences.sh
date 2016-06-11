@@ -33,8 +33,6 @@ main() {
         else
             ./os_x/preferences/main.sh
         fi
-    elif [ "$os" == "ubuntu" ]; then
-        ./ubuntu/preferences/main.sh
     fi
 
 }

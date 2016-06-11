@@ -37,8 +37,6 @@ alias hosts='sudo $EDITOR /etc/hosts'                           # Open hosts fil
 
 if [ "$os" == "osx" ]; then
     source "$DOTFILES_DIR_PATH/shell/os_x/bash_aliases"
-elif [ "$os" == "ubuntu" ]; then
-    source "$DOTFILES_DIR_PATH/shell/ubuntu/bash_aliases"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

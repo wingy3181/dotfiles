@@ -20,10 +20,6 @@ main() {
         JAVA_VERSIONS=(
             /Library/Java/JavaVirtualMachines/*/Contents/Home
         )
-    elif [ "$os" == "ubuntu" ]; then
-        JAVA_VERSIONS=(
-            /usr/lib/jvm/*/
-        )
     fi
 
     declare -r JENV_DIRECTORY="$HOME/.jenv"
