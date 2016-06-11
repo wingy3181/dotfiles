@@ -25,7 +25,7 @@ That's it! :sparkles:
 The setup process will:
 
 * Download the dotfiles on your computer (by default it will suggest
-  `~/projects/dotfiles`)
+  `~/.dotfiles`)
 * Create some additional [directories](src/os/create_directories.sh)
 * [Symlink](src/os/create_symbolic_links.sh) the
   [`git`](src/git),
