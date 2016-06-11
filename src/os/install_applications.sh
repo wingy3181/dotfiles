@@ -35,6 +35,8 @@ main() {
         else
             ./os_x/installs/main.sh
         fi
+    elif [ "$os" == "ubuntu" ]; then
+        ./ubuntu/installs/main.sh
     fi
 
 }
