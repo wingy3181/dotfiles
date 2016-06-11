@@ -69,6 +69,10 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    brew_install_with_confirmation "Bartender 2" "bartender" "caskroom/cask" "cask"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_install_with_confirmation "Cheatsheet" "cheatsheet" "caskroom/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
