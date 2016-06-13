@@ -27,11 +27,11 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if [ "$os" == "osx" ]; then
+    if [ "$os" == "macos" ]; then
         if $skipQuestions; then
-            ./os_x/preferences/main.sh -y
+            ./macos/preferences/main.sh -y
         else
-            ./os_x/preferences/main.sh
+            ./macos/preferences/main.sh
         fi
     fi
 

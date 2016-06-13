@@ -35,8 +35,8 @@ alias hosts='sudo $EDITOR /etc/hosts'                           # Open hosts fil
 
 # Load OS specific aliases
 
-if [ "$os" == "osx" ]; then
-    source "$DOTFILES_DIR_PATH/shell/os_x/bash_aliases"
+if [ "$os" == "macos" ]; then
+    source "$DOTFILES_DIR_PATH/shell/macos/bash_aliases"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

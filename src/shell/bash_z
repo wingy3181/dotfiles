@@ -13,8 +13,8 @@ source "$DOTFILES_DIR_PATH/os/utils.sh" \
 
 # ----------------------------------------------------------------------
 
-if [ "$os" == "osx" ]; then
-    source "$DOTFILES_DIR_PATH/shell/os_x/bash_z"
+if [ "$os" == "macos" ]; then
+    source "$DOTFILES_DIR_PATH/shell/macos/bash_z"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

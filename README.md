@@ -18,7 +18,7 @@ understand [what it does](src/os/setup.sh). Seriously, **DON'T**!)
 
 | OS | Snippet |
 |:---:|:---|
-| OS X | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh)"` |
+| macOS | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! :sparkles:
 
@@ -32,9 +32,9 @@ The setup process will:
   [`shell`](src/shell), and
   [`vim`](src/vim) files
 * Install applications / command-line tools for
-  [OS X](src/os/os_x/installs/main.sh)
+  [macOS](src/os/macos/installs/main.sh)
 * Set custom
-  [OS X](src/os/os_x/preferences/main.sh)
+  [macOS](src/os/macos/preferences/main.sh)
 * Install [`vim` plugins](src/vim/vim/plugins)
 
 Setup process in action:
@@ -43,12 +43,12 @@ Setup process in action:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/11821505/91e437be-a372-11e5-9500-025c316fe22c.gif" alt="Setup process on OS X" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1223565/11821505/91e437be-a372-11e5-9500-025c316fe22c.gif" alt="Setup process on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
-            <td>OS X</td>
-        </td>
+            <td>macOS</td>
+        </tr>
     </tbody>
 </table>
 
@@ -63,12 +63,12 @@ Output for `git status`:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10561038/f9f11a28-7525-11e5-8e1d-a304ad3557f9.png" alt="Output for Git status on OS X" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1223565/10561038/f9f11a28-7525-11e5-8e1d-a304ad3557f9.png" alt="Output for Git status on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
-            <td>OS X</td>
-        </td>
+            <td>macOS</td>
+        </tr>
     </tbody>
 </table>
 
@@ -78,12 +78,12 @@ Output for `git log`:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560966/e4ec08a6-7523-11e5-8941-4e12f6550a63.png" alt="Output for Git status on OS X" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1223565/10560966/e4ec08a6-7523-11e5-8941-4e12f6550a63.png" alt="Output for Git status on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
-            <td>OS X</td>
-        </td>
+            <td>macOS</td>
+        </tr>
     </tbody>
 </table>
 
@@ -93,12 +93,12 @@ Output for `git log`:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10561007/498e1212-7525-11e5-8252-81503b3d6184.png" alt="tmux and vim on OS X" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1223565/10561007/498e1212-7525-11e5-8252-81503b3d6184.png" alt="tmux and vim on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
-            <td>OS X</td>
-        </td>
+            <td>macOS</td>
+        </tr>
     </tbody>
 </table>
 
@@ -229,18 +229,18 @@ Inspiration and code was taken from many sources, including:
    -> os\create_symbolic_links.sh
    -> os\install_applications.sh
       --------
-      FOR OS X
+      FOR macOS
       --------
-      -> os\os_x\installs\main.sh
+      -> os\macos\installs\main.sh
          [source] os\utils.sh
-         [source] os\os_x\installs\utils.sh]
-         -> os\os_x\installs\install_xcode.sh
-         -> os\os_x\installs\install_homebrew.sh
-         -> os\os_x\installs\update_and_upgrade.sh
+         [source] os\macos\installs\utils.sh]
+         -> os\macos\installs\install_xcode.sh
+         -> os\macos\installs\install_homebrew.sh
+         -> os\macos\installs\update_and_upgrade.sh
          -> {Brew install bash shell + enhancements}
-         -> os\os_x\installs\change_default_bash_version.sh
+         -> os\macos\installs\change_default_bash_version.sh
          -> {Brew install applications}
-         -> os\os_x\installs\cleanup.sh
+         -> os\macos\installs\cleanup.sh
 
    -> os\install_and_configure_jenv.sh
    -> os\install_and_configure_sdkman.sh
@@ -248,28 +248,28 @@ Inspiration and code was taken from many sources, including:
    -> os\install_npm_packages.sh
    -> os\set_preferences.sh
       --------
-      FOR OS X
+      FOR macOS
       --------
-      -> os\os_x\preferences\main.sh
-      -> os\os_x\preferences\set_app_store_preferences.sh
-      -> os\os_x\preferences\set_chrome_preferences.sh
-      -> os\os_x\preferences\set_computer_name.sh
-      -> os\os_x\preferences\set_dashboard_preferences.sh
-      -> os\os_x\preferences\set_dock_preferences.sh
-      -> os\os_x\preferences\set_finder_preferences.sh
-      -> os\os_x\preferences\set_firefox_preferences.sh
-      -> os\os_x\preferences\set_keyboard_preferences.sh
-      -> os\os_x\preferences\set_language_and_region_preferences.sh
-      -> os\os_x\preferences\set_maps_preferences.sh
-      -> os\os_x\preferences\set_photos_preferences.sh
-      -> os\os_x\preferences\set_safari_preferences.sh
-      -> os\os_x\preferences\set_terminal_preferences.sh
-         -> os\os_x\preferences\set_custom_terminal_theme.applescript
-            -> os\os_x\preferences\Solarized Dark.terminal
-      -> os\os_x\preferences\set_textedit_preferences.sh
-      -> os\os_x\preferences\set_trackpad_preferences.sh
-      -> os\os_x\preferences\set_transmission_preferences.sh
-      -> os\os_x\preferences\set_ui_and_ux_preferences.sh
+      -> os\macos\preferences\main.sh
+      -> os\macos\preferences\set_app_store_preferences.sh
+      -> os\macos\preferences\set_chrome_preferences.sh
+      -> os\macos\preferences\set_computer_name.sh
+      -> os\macos\preferences\set_dashboard_preferences.sh
+      -> os\macos\preferences\set_dock_preferences.sh
+      -> os\macos\preferences\set_finder_preferences.sh
+      -> os\macos\preferences\set_firefox_preferences.sh
+      -> os\macos\preferences\set_keyboard_preferences.sh
+      -> os\macos\preferences\set_language_and_region_preferences.sh
+      -> os\macos\preferences\set_maps_preferences.sh
+      -> os\macos\preferences\set_photos_preferences.sh
+      -> os\macos\preferences\set_safari_preferences.sh
+      -> os\macos\preferences\set_terminal_preferences.sh
+         -> os\macos\preferences\set_custom_terminal_theme.applescript
+            -> os\macos\preferences\Solarized Dark.terminal
+      -> os\macos\preferences\set_textedit_preferences.sh
+      -> os\macos\preferences\set_trackpad_preferences.sh
+      -> os\macos\preferences\set_transmission_preferences.sh
+      -> os\macos\preferences\set_ui_and_ux_preferences.sh
 
    -> os\initialize_git_repository.sh
    -> os\update_content.sh

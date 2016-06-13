@@ -126,7 +126,7 @@ brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmar
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# `Safari Technology Preview` requires OS X 10.11.4 or later
+# `Safari Technology Preview` requires macOS X 10.11.4 or later
 # https://github.com/alrra/dotfiles/issues/26
 
 if is_supported_version "$(get_os_version)" "10.11.4"; then

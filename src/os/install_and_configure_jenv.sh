@@ -16,7 +16,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    if [ "$os" == "osx" ]; then
+    if [ "$os" == "macos" ]; then
         JAVA_VERSIONS=(
             /Library/Java/JavaVirtualMachines/*/Contents/Home
         )
