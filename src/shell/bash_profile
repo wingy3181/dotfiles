@@ -10,6 +10,7 @@ source_bash_files() {
     declare -r -a FILES_TO_SOURCE=(
         "bash_aliases"
         "bash_autocomplete"
+        "bash_bash-it"
         "bash_exports"
         "bash_functions"
         "bash_options"
@@ -42,7 +43,7 @@ unset -f source_bash_files
 
 clear
 
-# sdkman init snippet. See install script at https://get.sdkman.io/ 
+# sdkman init snippet. See install script at https://get.sdkman.io/
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"

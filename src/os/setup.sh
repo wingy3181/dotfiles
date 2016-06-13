@@ -326,6 +326,9 @@ main() {
 
         print_in_green "\n  ---\n\n"
 
+        ./install_and_configure_bash-it.sh
+        print_in_green "\n  ---\n\n"
+
         ./install_and_configure_jenv.sh
         print_in_green "\n  ---\n\n"
 
