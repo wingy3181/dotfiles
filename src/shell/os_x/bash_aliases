@@ -83,5 +83,7 @@ alias u="sudo softwareupdate --install --all \
             && brew upgrade --all \
             && brew cleanup \
             && brew cask cleanup \
+            && bash-it update \
+            && sdk selfupdate \
             && npm install -g npm \
             && npm update -g"
