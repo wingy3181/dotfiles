@@ -236,12 +236,17 @@ Inspiration and code was taken from many sources, including:
          [source] os\macos\installs\utils.sh]
          -> os\macos\installs\install_xcode.sh
          -> os\macos\installs\install_homebrew.sh
-         -> os\macos\installs\update_and_upgrade.sh
-         -> {Brew install bash shell + enhancements}
-         -> os\macos\installs\change_default_bash_version.sh
-         -> {Brew install applications}
-         -> os\macos\installs\cleanup.sh
+         -> {brew update}
+         -> {brew upgrade}
+         -> os\macos\installs\install_bash.sh
+            -> {brew install bash}
+            -> {change_default_bash_version}
+            -> {brew install bash}
+         -> os\macos\installs\install_apps.sh
+            -> {Brew install applications}
+         -> {brew_cleanup}
 
+   -> os\install_and_configure_bash-it.sh
    -> os\install_and_configure_jenv.sh
    -> os\install_and_configure_sdkman.sh
    -> os\install_node_versions.sh
@@ -251,25 +256,27 @@ Inspiration and code was taken from many sources, including:
       FOR macOS
       --------
       -> os\macos\preferences\main.sh
-      -> os\macos\preferences\set_app_store_preferences.sh
-      -> os\macos\preferences\set_chrome_preferences.sh
-      -> os\macos\preferences\set_computer_name.sh
-      -> os\macos\preferences\set_dashboard_preferences.sh
-      -> os\macos\preferences\set_dock_preferences.sh
-      -> os\macos\preferences\set_finder_preferences.sh
-      -> os\macos\preferences\set_firefox_preferences.sh
-      -> os\macos\preferences\set_keyboard_preferences.sh
-      -> os\macos\preferences\set_language_and_region_preferences.sh
-      -> os\macos\preferences\set_maps_preferences.sh
-      -> os\macos\preferences\set_photos_preferences.sh
-      -> os\macos\preferences\set_safari_preferences.sh
-      -> os\macos\preferences\set_terminal_preferences.sh
-         -> os\macos\preferences\set_custom_terminal_theme.applescript
-            -> os\macos\preferences\Solarized Dark.terminal
-      -> os\macos\preferences\set_textedit_preferences.sh
-      -> os\macos\preferences\set_trackpad_preferences.sh
-      -> os\macos\preferences\set_transmission_preferences.sh
-      -> os\macos\preferences\set_ui_and_ux_preferences.sh
+          [source] os\utils.sh
+          -> os\macos\preferences\set_app_store_preferences.sh
+          -> os\macos\preferences\set_chrome_preferences.sh
+          -> os\macos\preferences\set_computer_name.sh
+          -> os\macos\preferences\set_dashboard_preferences.sh
+          -> os\macos\preferences\set_dock_preferences.sh
+          -> os\macos\preferences\set_finder_preferences.sh
+          -> os\macos\preferences\set_firefox_preferences.sh
+          -> os\macos\preferences\set_keyboard_preferences.sh
+          -> os\macos\preferences\set_language_and_region_preferences.sh
+          -> os\macos\preferences\set_maps_preferences.sh
+          -> os\macos\preferences\set_photos_preferences.sh
+          -> os\macos\preferences\set_safari_preferences.sh
+          -> os\macos\preferences\set_terminal_preferences.sh
+             -> os\macos\preferences\set_custom_terminal_theme.applescript
+                -> os\macos\preferences\Solarized Dark.terminal
+          -> os\macos\preferences\set_textedit_preferences.sh
+          -> os\macos\preferences\set_trackpad_preferences.sh
+          -> os\macos\preferences\set_transmission_preferences.sh
+          -> os\macos\preferences\set_ui_and_ux_preferences.sh
+          -> os\macos\preferences\set_xtrafinder_preferences.sh
 
    -> os\initialize_git_repository.sh
    -> os\update_content.sh
