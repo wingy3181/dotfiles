@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 answer_is_no() {
     # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)

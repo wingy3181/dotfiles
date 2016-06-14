@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sudo shutdown -r now &> /dev/null
 #              |  └─ Immediately (alternative is +number, or yymmddhhmm)

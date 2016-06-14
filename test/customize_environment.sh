@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 declare -a JDKS_DIRECTORIES_TO_REMOVE=()
 

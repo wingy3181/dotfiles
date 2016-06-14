@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Shell Options
 # https://www.gnu.org/software/bash/manual/bashref.html#The-Shopt-Builtin

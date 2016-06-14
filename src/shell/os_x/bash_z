@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # -f : True if file exists and is a regular file.
 if  [ -f "$(brew --prefix)/etc/profile.d/z.sh" ]; then

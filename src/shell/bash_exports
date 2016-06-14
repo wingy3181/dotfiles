@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Shell Variables
 # http://linux.die.net/man/1/bash

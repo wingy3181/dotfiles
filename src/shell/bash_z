@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Rupa's Z - Jump to - (https://github.com/rupa/z)
 # - Consider reusing your current .z file if possible. it's painful to rebuild :)

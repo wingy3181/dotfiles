@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # See https://github.com/herrbischoff/awesome-osx-command-line for more options
 

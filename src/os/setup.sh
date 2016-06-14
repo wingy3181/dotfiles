@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ----------------------------------------------------------------------
 # | Declare read-only variables/constants                              |
