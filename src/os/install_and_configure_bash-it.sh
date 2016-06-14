@@ -25,9 +25,16 @@ main() {
 
     execute \
         "rm -rf '$BASHIT_DIR' \
-            && git clone --quiet '$BASHIT_GIT_REPO_URL' '$BASHIT_DIR' \
-            && source '$HOME/.bash_profile'" \
+            && git clone --quiet '$BASHIT_GIT_REPO_URL' '$BASHIT_DIR'" \
         "Install Bash-it"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Re-source ~/.bash_profile to pick bash-it in current terminal
+
+    execute \
+        "source '$HOME/.bash_profile'" \
+        "Re-source ~/.bash_profile"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
