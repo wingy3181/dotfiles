@@ -278,3 +278,56 @@ httpd.serve_forever()
     " "$port"
 
 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Upgrade jenv if it is installed
+
+upgrade-jenv() {
+
+    declare -r JENV_DIRECTORY="$HOME/.jenv"
+
+    if [ -d "$JENV_DIRECTORY" ]; then # -d : True if file exists and is a directory.
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        # Ensure the latest version of `jenv` is used
+
+        execute \
+            "cd $JENV_DIRECTORY \
+                && git fetch --quiet origin \
+                && git checkout --quiet \$(git describe --abbrev=0 --tags) \
+                && source $HOME/.bash.local \
+                && cd -" \
+            "jenv (upgrade)"
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Upgrade nvm if it is installed
+
+upgrade-nvm() {
+
+    declare -r NVM_DIRECTORY="$HOME/.nvm"
+
+    if [ -d "$NVM_DIRECTORY" ]; then # -d : True if file exists and is a directory.
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        # Ensure the latest version of `nvm` is used
+
+        execute \
+            "cd $NVM_DIRECTORY \
+                && git fetch --quiet origin \
+                && git checkout --quiet \$(git describe --abbrev=0 --tags) \
+                && source $NVM_DIRECTORY/nvm.sh \
+                && cd -" \
+            "nvm (upgrade)"
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    fi
+}
