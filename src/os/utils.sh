@@ -116,7 +116,6 @@ execute() {
     #   If parameter is unset or null, the expansion of word is substituted.
     #   Otherwise, the value of parameter is substituted.
     exitCode=$?
-    print_in_purple "$exitCode"
 
     if [ $exitCode -ne 0 ]; then
         print_error_stream "↳ ERROR:" < "$tmpFile"
