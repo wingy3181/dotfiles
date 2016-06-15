@@ -68,6 +68,7 @@ main() {
         "bash-it enable plugin base \
          && bash-it enable plugin battery \
          && bash-it enable plugin explain \
+         && bash-it enable plugin less-pretty-cat \
          && bash-it enable plugin proxy" \
         "Bash-it (enable plugins)"
 
