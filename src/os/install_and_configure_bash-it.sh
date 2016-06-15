@@ -52,8 +52,16 @@ main() {
 
     execute \
         "bash-it enable completion bash-it \
+         && bash-it enable completion docker \
+         && bash-it enable completion gradle \
+         && bash-it enable completion grunt \
+         && bash-it enable completion gulp \
+         && bash-it enable completion maven \
+         && bash-it enable completion npm \
          && bash-it enable completion sdkman \
-         && bash-it enable completion tmux" \
+         && bash-it enable completion tmux \
+         && bash-it enable completion vagrant \
+         && bash-it enable completion virtualbox" \
         "Bash-it (enable completions)"
 
     execute \
