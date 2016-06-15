@@ -108,7 +108,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         execute \
             "jenv global 1.8" \
-            "jenv (set 1.8 as global default - See ~./jenv/version)"
+            "jenv (set 1.8 as global default - See ~/.jenv/version)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
