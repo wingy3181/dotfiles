@@ -13,9 +13,7 @@ declare DOTFILES_DIR_PATH="$(dirname "$(dirname "$(readlink "${BASH_SOURCE[0]}")
 
 # ----------------------------------------------------------------------
 
-if [ "$os" == "macos" ]; then
-    . "$DOTFILES_DIR_PATH/shell/macos/bash_z"
-fi
+. "$DOTFILES_DIR_PATH/shell/$os/bash_z"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

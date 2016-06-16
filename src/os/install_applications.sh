@@ -29,12 +29,10 @@ main() {
 
     print_warning "This may take awhile, so please be patient!\n"
 
-    if [ "$os" == "macos" ]; then
-        if $skipQuestions; then
-            ./macos/installs/main.sh -y
-        else
-            ./macos/installs/main.sh
-        fi
+    if $skipQuestions; then
+        "./$os/installs/main.sh" -y
+    else
+        "./$os/installs/main.sh"
     fi
 
 }

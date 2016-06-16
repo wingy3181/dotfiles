@@ -22,9 +22,7 @@ enable_color_support() {
 
     # Load OS specific color support
 
-    if [ "$os" == "macos" ]; then
-        . "$DOTFILES_DIR_PATH/shell/macos/bash_colors"
-    fi
+    . "$DOTFILES_DIR_PATH/shell/$os/bash_colors"
 
 }
 
