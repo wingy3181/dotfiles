@@ -105,6 +105,26 @@ Output for `git log`:
 
 ## Customize
 
+### Environment Variables
+
+The `dotfiles` can be controlled during the installation by using the following environment variables (This is mainly used for the travis CI build):
+
+#### `DOTFILES_DEBUG_MODE`
+
+If the `DOTFILES_DEBUG_MODE` environment variable is set to `true`, it will output the standard out and error of the internal commands of each step to console.
+
+Otherwise, it will execute them quietly/silently.
+
+![DOTFILES_DEBUG_MODE](https://cloud.githubusercontent.com/assets/1212576/16102567/f929757a-33b3-11e6-8929-0f891fc1bc4c.png)
+
+#### `INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX`
+
+If the `INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX` environment variable is set, it will be used as a regular expression against the application's readable name (in `.\src\os\macos\installs\install_apps.sh`) and will only be installed if it matches.
+
+This is used to split the Travis CI build into multiple jobs so that it doesn't exceed the [maximum time limit](https://docs.travis-ci.com/user/customizing-the-build/#Build-Timeouts)
+
+![INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX](https://cloud.githubusercontent.com/assets/1212576/16102376/2c9e06e8-33b2-11e6-9174-d05a64f3fbcb.png)
+
 ### Local Settings
 
 The `dotfiles` can be easily extended to suit additional local
