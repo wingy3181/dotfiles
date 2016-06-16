@@ -296,7 +296,7 @@ upgrade-jenv() {
             "cd $JENV_DIRECTORY \
                 && git fetch --quiet origin \
                 && git checkout --quiet \$(git describe --abbrev=0 --tags) \
-                && source $HOME/.bash.local \
+                && . $HOME/.bash.local \
                 && cd -" \
             "jenv (upgrade)"
 
@@ -323,7 +323,7 @@ upgrade-nvm() {
             "cd $NVM_DIRECTORY \
                 && git fetch --quiet origin \
                 && git checkout --quiet \$(git describe --abbrev=0 --tags) \
-                && source $NVM_DIRECTORY/nvm.sh \
+                && . $NVM_DIRECTORY/nvm.sh \
                 && cd -" \
             "nvm (upgrade)"
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && source "utils.sh"
+    && . "utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,7 +31,7 @@ main() {
     # `dotfiles` are set up for the first time)
 
     if [ -z "$NVM_DIR" ] || ! cmd_exists "npm"; then # -z : True if the length of string is zero.
-        source "$HOME/.bash.local"
+        . "$HOME/.bash.local"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

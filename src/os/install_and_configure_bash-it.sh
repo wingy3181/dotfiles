@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && source "utils.sh"
+    && . "utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -33,7 +33,7 @@ main() {
     # Re-source ~/.bash_profile to pick bash-it in current terminal
 
     execute \
-        "source '$HOME/.bash_profile'" \
+        ". '$HOME/.bash_profile'" \
         "Re-source ~/.bash_profile"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

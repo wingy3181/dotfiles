@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && source "utils.sh"
+    && . "utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -24,8 +24,8 @@ main() {
         # NOTE: The init script is what adds the SDKs/candidiates to PATH (doesn't export)
         # sdkman-init.sh -> __sdkman_prepend_candidate_to_path -> sdkman-path-helpers.sh
         execute \
-            "source $SDKMAN_DIRECTORY/bin/sdkman-init.sh" \
-            "sdkman (source ~/.sdkman/bin/sdkman-init.sh)"
+            ". $SDKMAN_DIRECTORY/bin/sdkman-init.sh" \
+            "sdkman (. ~/.sdkman/bin/sdkman-init.sh)"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

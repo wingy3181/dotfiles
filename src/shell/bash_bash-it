@@ -34,4 +34,4 @@ export SCM_CHECK=true
 #export VCPROMPT_EXECUTABLE=~/.vcprompt/bin/vcprompt
 
 # Load Bash It
-[[ -d "$BASH_IT" ]] && source "$BASH_IT/bash_it.sh"
+[[ -d "$BASH_IT" ]] && . "$BASH_IT/bash_it.sh"

@@ -8,13 +8,13 @@
 
 declare DOTFILES_DIR_PATH="$(dirname "$(dirname "$(readlink "${BASH_SOURCE[0]}")")")"
 
-source "$DOTFILES_DIR_PATH/os/utils.sh" \
+. "$DOTFILES_DIR_PATH/os/utils.sh" \
     && declare os="$(get_os)"
 
 # ----------------------------------------------------------------------
 
 if [ "$os" == "macos" ]; then
-    source "$DOTFILES_DIR_PATH/shell/macos/bash_z"
+    . "$DOTFILES_DIR_PATH/shell/macos/bash_z"
 fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

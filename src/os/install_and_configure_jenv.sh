@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && source "utils.sh"
+    && . "utils.sh"
 
 # https://en.wikipedia.org/wiki/Java_version_history
 declare -a JAVA_VERSIONS=()
@@ -61,7 +61,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
             # '>>' : file to append to
             execute \
                 "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
-                    && source $HOME/.bash.local" \
+                    && . $HOME/.bash.local" \
                 "jenv (update ~/.bash.local)"
         fi
 
@@ -76,7 +76,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
             "cd $JENV_DIRECTORY \
                 && git fetch --quiet origin \
                 && git checkout --quiet \$(git describe --abbrev=0 --tags) \
-                && source $HOME/.bash.local" \
+                && . $HOME/.bash.local" \
             "jenv (upgrade)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
