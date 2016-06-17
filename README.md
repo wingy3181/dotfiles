@@ -153,8 +153,7 @@ alias starwars="telnet towel.blinkenlights.nl"
 
 # Set PATH additions
 
-PATH="/usr/local/bin:$PATH"
-PATH="$PATH:$HOME/projects/dotfiles/src/bin"
+PATH="$PATH:$HOME/Development/code/github/wingy3181/dotfiles/src/bin"
 
 export PATH
 
