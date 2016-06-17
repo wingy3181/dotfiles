@@ -7,5 +7,4 @@
 # Root is level 1
 
 [ "$SHLVL" == 1 ] \
-    && command -v "clear" &> /dev/null  \
-    && clear
+    && clear &> /dev/null
