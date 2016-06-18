@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -62,6 +62,10 @@ main() {
             "npm install --silent --global $i" \
             "$i"
     done
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    print_in_green "\n  ---\n\n"
 
 }
 

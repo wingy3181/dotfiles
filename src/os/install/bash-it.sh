@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -71,6 +71,10 @@ main() {
          && bash-it enable plugin less-pretty-cat \
          && bash-it enable plugin proxy" \
         "Bash-it (enable plugins)"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
+    print_in_green "\n  ---\n\n"
 
 }
 

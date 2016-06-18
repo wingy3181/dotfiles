@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
 
-    local os=""
     local skipQuestions=false
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -22,16 +21,20 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    os="$(get_os)" \
-        || print_error "failed to get the kernel name"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    print_warning "This may take awhile, so please be patient!\n"
 
     if $skipQuestions; then
-        "./$os/preferences/main.sh" -y
+        "./$(get_os)/main.sh" -y
     else
-        "./$os/preferences/main.sh"
+        "./$(get_os)/main.sh"
     fi
+
+    ./bash-it.sh
+    ./jenv.sh
+    ./sdkman.sh
+    ./node_versions.sh
+    ./npm_packages.sh
+    ./vim_plugins.sh
 
 }
 

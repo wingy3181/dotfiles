@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -11,6 +11,12 @@ main() {
     declare -r VUNDLE_GIT_REPO_URL="https://github.com/gmarik/Vundle.vim.git"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    if ! cmd_exists "vim"; then
+        exit 1
+    fi
+
+    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Check if `Git` is installed
 
@@ -46,6 +52,10 @@ main() {
         "cd $HOME/.vim/plugins/tern_for_vim \
             && npm install" \
         "Install extra parts for 'tern_for_vim'"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    print_in_green "\n  ---\n\n"
 
 }
 

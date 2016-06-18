@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # https://nodejs.org/en/download/releases/
 declare -r -a NODE_VERSIONS=(
@@ -90,6 +90,8 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
             "nvm (set default)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        print_in_green "\n  ---\n\n"
 
     fi
 

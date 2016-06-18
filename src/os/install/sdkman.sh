@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -70,6 +70,9 @@ main() {
         "sdkman (set interactive mode)"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    print_in_green "\n  ---\n\n"
+
 
 }
 

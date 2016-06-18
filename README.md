@@ -141,7 +141,7 @@ Here is a very simple example of a `~/.bash.local` file:
 
 ```bash
 
-#!/bin/bash
+#!/usr/bin/env bash
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -246,61 +246,62 @@ Inspiration and code was taken from many sources, including:
    [source] os\utils.sh
    -> os\create_directories.sh
    -> os\create_symbolic_links.sh
-   -> os\install_applications.sh
+   -> os\install\setup.sh
       --------
       FOR macOS
       --------
-      -> os\macos\installs\main.sh
+      -> os\install\macos\main.sh
          [source] os\utils.sh
          [source] os\macos\installs\utils.sh]
-         -> os\macos\installs\install_xcode.sh
-         -> os\macos\installs\install_homebrew.sh
+         -> os\install\macos\xcode.sh
+         -> os\install\macos\homebrew.sh
          -> {brew update}
          -> {brew upgrade}
-         -> os\macos\installs\install_bash.sh
+         -> os\install\macos\bash.sh
             -> {brew install bash}
             -> {change_default_bash_version}
             -> {brew install bash}
-         -> os\macos\installs\install_apps.sh
+         -> os\install\macos\apps.sh
             -> {Brew install applications}
          -> {brew_cleanup}
 
-   -> os\install_and_configure_bash-it.sh
-   -> os\install_and_configure_jenv.sh
-   -> os\install_and_configure_sdkman.sh
-   -> os\install_node_versions.sh
-   -> os\install_npm_packages.sh
-   -> os\set_preferences.sh
+      -> os\install\bash-it.sh
+      -> os\install\jenv.sh
+      -> os\install\sdkman.sh
+      -> os\install\node_versions.sh
+      -> os\install\npm_packages.sh
+      -> os\install\vim_plugins.sh
+
+   -> os\preferences\setup.sh
       --------
       FOR macOS
       --------
-      -> os\macos\preferences\main.sh
+      -> os\preferences\macos\main.sh
           [source] os\utils.sh
-          -> os\macos\preferences\set_app_store_preferences.sh
-          -> os\macos\preferences\set_chrome_preferences.sh
-          -> os\macos\preferences\set_computer_name.sh
-          -> os\macos\preferences\set_dashboard_preferences.sh
-          -> os\macos\preferences\set_dock_preferences.sh
-          -> os\macos\preferences\set_finder_preferences.sh
-          -> os\macos\preferences\set_firefox_preferences.sh
-          -> os\macos\preferences\set_keyboard_preferences.sh
-          -> os\macos\preferences\set_language_and_region_preferences.sh
-          -> os\macos\preferences\set_maps_preferences.sh
-          -> os\macos\preferences\set_photos_preferences.sh
-          -> os\macos\preferences\set_safari_preferences.sh
-          -> os\macos\preferences\set_terminal_preferences.sh
-             -> os\macos\preferences\set_custom_terminal_theme.applescript
-                -> os\macos\preferences\Solarized Dark.terminal
-          -> os\macos\preferences\set_textedit_preferences.sh
-          -> os\macos\preferences\set_trackpad_preferences.sh
-          -> os\macos\preferences\set_transmission_preferences.sh
-          -> os\macos\preferences\set_ui_and_ux_preferences.sh
-          -> os\macos\preferences\set_xtrafinder_preferences.sh
+          -> os\preferences\macos\app_store.sh
+          -> os\preferences\macos\chrome.sh
+          -> os\preferences\macos\computer_name.sh
+          -> os\preferences\macos\dashboard.sh
+          -> os\preferences\macos\dock.sh
+          -> os\preferences\macos\finder.sh
+          -> os\preferences\macos\firefox.sh
+          -> os\preferences\macos\keyboard.sh
+          -> os\preferences\macos\language_and_region.sh
+          -> os\preferences\macos\maps.sh
+          -> os\preferences\macos\photos.sh
+          -> os\preferences\macos\safari.sh
+          -> os\preferences\macos\terminal.sh
+             -> os\preferences\macos\set_terminal_theme.applescript
+                -> os\preferences\macos\Solarized Dark.terminal
+          -> os\preferences\macos\textedit.sh
+          -> os\preferences\macos\trackpad.sh
+          -> os\preferences\macos\transmission.sh
+          -> os\preferences\macos\ui_and_ux.sh
+          -> os\preferences\macos\xtrafinder.sh
 
    -> os\initialize_git_repository.sh
    -> os\update_content.sh
       -> {Generate SSH key}
-   -> os\install_vim_plugins.sh
    -> os\restart.sh
 </pre>
 

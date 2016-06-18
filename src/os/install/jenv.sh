@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "../utils.sh"
 
 # https://en.wikipedia.org/wiki/Java_version_history
 declare -a JAVA_VERSIONS=()
@@ -131,6 +131,8 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
             "jenv (enable plugins)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        print_in_green "\n  ---\n\n"
 
     fi
 

@@ -32,27 +32,30 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./install_xcode.sh
+    ./xcode.sh
+    print_in_green "\n  ---\n\n"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_in_green "\n  ---\n\n"
-    ./install_homebrew.sh
+    ./homebrew.sh
     brew_update
     brew_upgrade
-
     print_in_green "\n  ---\n\n"
-    ./install_bash.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    ./bash.sh
     print_in_green "\n  ---\n\n"
-    ./install_apps.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    ./apps.sh
     print_in_green "\n  ---\n\n"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     brew_cleanup
+    print_in_green "\n  ---\n\n"
 
 }
 
