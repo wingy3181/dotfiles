@@ -32,9 +32,9 @@ The setup process will:
   [`shell`](src/shell), and
   [`vim`](src/vim) files
 * Install applications / command-line tools for
-  [`macOS`](src/os/macos/installs/main.sh)
+  [`macOS`](src/os/install/macos)
 * Set custom
-  [`macOS`](src/os/macos/preferences/main.sh)
+  [`macOS`](src/os/preferences/macos)
 * Install [`vim` plugins](src/vim/vim/plugins)
 
 Setup process in action:
