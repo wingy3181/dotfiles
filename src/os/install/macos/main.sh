@@ -12,13 +12,8 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    while :; do
-        case $1 in
-            -y|--yes) skipQuestions=true; break;;
-                   *) break;;
-        esac
-        shift 1
-    done
+    skip_questions "$@" \
+        && skipQuestions=true
 
     # http://stackoverflow.com/questions/3236871/how-to-return-a-string-value-from-a-bash-function
     # - All variables declared inside a function will be shared with the calling environment.

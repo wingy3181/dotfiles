@@ -346,3 +346,17 @@ print_warning() {
     # $1 : warning text
     print_in_yellow "  [!] $1\n"
 }
+
+skip_questions() {
+
+     while :; do
+        case $1 in
+            -y|--yes) return 0;;
+                   *) break;;
+        esac
+        shift 1
+    done
+
+    return 1
+
+}
