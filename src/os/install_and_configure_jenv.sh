@@ -25,6 +25,8 @@ main() {
     declare -r JENV_DIRECTORY="$HOME/.jenv"
     declare -r JENV_GIT_REPO_URL="https://github.com/gcuisinier/jenv.git"
 
+    # Set macos system environment variable for JAVA_HOME just before 'jenv init -'
+    # https://github.com/gcuisinier/jenv/issues/44
     declare -r CONFIGS="
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -35,6 +37,7 @@ export JENV_DIR=\"$JENV_DIRECTORY\"
 [ -d \"\$JENV_DIR\" ] \\
     && export PATH=\"\$JENV_DIR/bin:\$PATH\"
 
+if which jenv > /dev/null && which launchctl > /dev/null; then eval launchctl setenv JAVA_HOME \"\$(jenv javahome)\"; fi
 if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 "
 
