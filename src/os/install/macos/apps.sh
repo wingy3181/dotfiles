@@ -213,6 +213,6 @@ brew_install_with_confirmation "XtraFinder" "xtrafinder" "caskroom/cask" "cask"
 
 brew_install_with_confirmation "z" "z"
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "Zopfli" "zopfli"
