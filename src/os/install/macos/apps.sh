@@ -164,6 +164,10 @@ brew_install_with_confirmation "TeamViewer" "teamviewer" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "The Silver Searcher (ag)" "the_silver_searcher"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "tmux" "tmux"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
