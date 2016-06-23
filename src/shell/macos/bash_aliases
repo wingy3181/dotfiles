@@ -7,6 +7,16 @@
 alias clear-dns-cache="sudo dscacheutil -flushcache; \
                        sudo killall -HUP mDNSResponder"
 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Google Chrome
+
+if [ -x  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome ]; then
+   # http://superuser.com/questions/187071/in-mac-os-x-how-often-is-tmp-deleted
+   alias chrome-insecure="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=\"/tmp/chrome_insecure_session\" --allow-outdated-plugins --disable-web-security &"
+fi
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Homebrew
