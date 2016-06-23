@@ -56,6 +56,10 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Install the specified `npm` packages
+    # NOTE: IMPORTANT - These only get installed on the default version of node set by nvm
+    #       and have to get re-installed when switching node versions via nvm
+    #       However, can use the `reinstall-packages-from` option of nvm
+    #       (See https://github.com/creationix/nvm/issues/668 and 'Usage' section within README.md at https://github.com/creationix/nvm)
 
     for i in "${NPM_PACKAGES[@]}"; do
         execute \
