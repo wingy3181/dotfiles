@@ -35,7 +35,7 @@ alias brewu="brew update \
 # Empty the trash, the main HDD and on all mounted volumes,
 # and clear Apple’s system logs to improve shell startup speed
 #
-# Use 'Console' to view Applie's system logs
+# Use 'Console' to view Apple's system logs
 # (https://crucialsecurityblog.harris.com/2011/08/24/the-apple-system-log-%E2%80%93-part-2-%E2%80%93-console-app/)
 #
 # Also, clear history of files downloaded. OS X actually keeps a record of this!!!!

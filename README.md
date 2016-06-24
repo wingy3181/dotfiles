@@ -231,7 +231,7 @@ Inspiration and code was taken from many sources, including:
 * [Bash Parameter Expansion](http://wiki.bash-hackers.org/syntax/pe)
 * [Bash String manipulation](http://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
 * [Bash Array tutorial](http://www.thegeekstuff.com/2010/06/bash-array-tutorial/)
-# [Shell Colors: Colorizing Shell Scripts](http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html)
+* [Shell Colors: Colorizing Shell Scripts](http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html)
 *  http://askubuntu.com/questions/350208/what-does-2-dev-null-mean
    - `> file` redirects stdout to file
    - `1> file` redirects stdout to file

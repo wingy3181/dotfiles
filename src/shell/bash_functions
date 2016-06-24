@@ -190,7 +190,7 @@ qh() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Search for text within the current directory
+# Search for text recursively within the current directory
 
 qt() {
     # $* : arguments passed to qt which is the search text
