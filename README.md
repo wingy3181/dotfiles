@@ -188,6 +188,39 @@ If you decide to fork this project, don't forget to substitute my
 username with your own in the [`setup` snippets](#setup) and [in the
 `setup` script](https://github.com/wingy3181/dotfiles/blob/1503cf23ef23f6e31342b140bcd246625160b94f/src/os/setup.sh#L3).
 
+## Tips and Tricks
+
+- ### How to see currently defined aliases and functions?
+  - #### Aliases
+  > [`dotfiles\src\shell\bash_aliases`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_aliases)<br/>
+  > [`dotfiles\src\shell\macos\bash_aliases`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/macos/bash_aliases)<br/>
+  > [`~\.bash_it\aliases\enabled\*.plugin.bash`](https://github.com/Bash-it/bash-it/tree/master/aliases/available)<br/>
+    - `alias` - show aliases and their definitions (including [bash-it enabled aliases](https://github.com/Bash-it/bash-it/tree/master/aliases/available))
+    - `bash-it show aliases` - show aliases enabled via bash-it
+  - #### Functions
+  > [`dotfiles\src\shell\bash_functions`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions)<br>
+  > [`~\.bash_it\plugins\enabled\*.plugin.bash`](https://github.com/Bash-it/bash-it/tree/master/plugins/available)<br/>
+    - `declare -F` - list name of all functions defined [(source)](http://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell)
+    - `type <function name>` - show function definition
+    - `glossary` - show functions enabled via bash-it with short description of each function
+    - `bash-it show plugins` - show plugins enabled via bash-it
+
+- ### Commonly used aliases/functions
+  - [**`afk`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/macos/bash_aliases#L73) - Lock computer
+  - [**`datauri`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions#L35) - Create data URI from a file
+  - [**`delete-files <file-pattern>`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions#L65) - Delete files that match a certain pattern from the current directory. This lists the files deleted via the -ls option
+  - [**`empty-trash`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/macos/bash_aliases#L44) - Empty the trash, the main HDD, all mounted volumes, clear Apple's [system logs](# (https://crucialsecurityblog.harris.com/2011/08/24/the-apple-system-log-%E2%80%93-part-2-%E2%80%93-console-app/) to improve shell startup speed and clear history of files downloaded ([logged internally in macOS](http://www.redmondpie.com/os-x-logs-every-file-you-download-heres-how-you-can-delete-it/))
+  - [**`git cc <search-text>`**](https://github.com/wingy3181/dotfiles/blob/master/src/git/gitconfig#L25) - Find commits by source code
+  - [**`git cm <search-text>`**](https://github.com/wingy3181/dotfiles/blob/master/src/git/gitconfig#L36) - Find commits by commit message
+  - [**`ip`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_aliases#L21) - Show external ip address
+  - [**`local-ip`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/macos/bash_aliases#L79) - Show local internal ip address
+  - [**`qh <search=text>`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions#L179) - Search history
+  - [**`qt <searchtext>`**](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions#L195) - Search for text recursively within the current directory
+
+- ### Setup JDKs in IntelliJ
+  > `~/Library/Preferences/IntelliJIdea2016.1/options/jdk.table.xml` stores the config that IntelliJ uses for the Project SDKs
+
+  - Follow these [instructions](http://stackoverflow.com/questions/31215452/intellij-idea-importing-gradle-project-getting-java-home-not-defined-yet?answertab=votes#tab-top) with the java SDKs installed at `~\.jenv\versions\*`
 
 ## Update
 
@@ -238,6 +271,80 @@ Inspiration and code was taken from many sources, including:
    - `2> file` redirects stderr to file
    - `&> file` redirects stdout and stderr to file
    - `/dev/null` is the null device it takes any input you want and throws it away. It can be used to suppress any output.
+
+### Bash Completion
+
+#### Overview
+- http://www.tldp.org/LDP/abs/html/tabexpansion.html
+- https://debian-administration.org/article/316/An_introduction_to_bash_completion_part_1
+- https://debian-administration.org/article/317/An_introduction_to_bash_completion_part_2
+
+#### More information and sources
+- **default/standard bash completion locations** - `/etc/bash_completion/*` and `/etc/bash_completion.d/*`
+- **bash-completion2** https://bash-completion.alioth.debian.org/ => https://github.com/scop/bash-completion
+  - *locations*:
+    - `$(brew --prefix)/share/bash-completion/bash_completion/*`
+    - `/usr/local/etc/bash_completion.d/*`
+  - *installed via [`dotfiles/src/os/install/macos/bash.sh`](https://github.com/wingy3181/dotfiles/blob/master/src/os/install/macos/bash.sh#L66)
+    (installing bash-completion2 via brew)* and sourced from [`dotfiles/src/shell/macos/bash_autocomplete`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/macos/bash_autocomplete)
+    (indirectly via [`~/.bash_profile`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_profile))<br/>
+    **NOTE**: After installing bash-completion2 the below [caveat](https://github.com/Homebrew/homebrew-versions/blob/246bf7d37ec262cd4ecf68b79f0933be64de2249/bash-completion2.rb#L59) is displayed
+
+  ```bash
+Add the following to your ~/.bash_profile:
+  if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+    . $(brew --prefix)/share/bash-completion/bash_completion
+  fi
+
+  Homebrew\'s own bash completion script has been linked into
+    /usr/local/share/bash-completion/completions
+  bash-completion will automatically source it when you invoke `brew`.
+
+  Any completion scripts in /usr/local/etc/bash_completion.d
+  will continue to be sourced as well.
+  ```
+  - **nvm** - `~/.nvm/bash_completion`
+    - setup in `~/.bash.local` by [`dotfiles/src/os/install/node_versions.sh`](https://github.com/wingy3181/dotfiles/blob/master/src/os/install/node_versions.sh#L54)
+
+  - **Bash-it** - `~/.bash_it/completion/enabled/*.completion.bash`
+    - setup by the following script breakdown:
+      - [`~/.bash_bash-it`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_bash-it)
+        - [`~/.bash_it/bash_it.sh`](https://github.com/Bash-it/bash-it/blob/master/bash_it.sh#L51)
+          - `~/.bash_it/completion/enabled/*.completion.bash`
+
+  - **jenv** - `~/.jenv/completions/jenv.bash`
+    - setup by the following script breakdown:
+      - `~/.bash.local` by [`dotfiles/src/os/install/jenv.sh`](https://github.com/wingy3181/dotfiles/blob/master/src/os/install/jenv.sh#L66)
+        - [`~/.jenv/bin/jenv`](https://github.com/gcuisinier/jenv/blob/master/bin/jenv) -> `~/.jenv/libexec/jenv-init` (symbolic link)
+          - ~/.jenv/libexec/jenv-init
+            - ~/.jenv/completions/jenv.bash
+
+  ```bash
+# ~/.bash.local
+export JENV_DIR="/Users/cyip2/.jenv"
+export PATH="$JENV_DIR/bin:$PATH"
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+  ```
+
+### [Homebrew](http://brew.sh/) and [Homebrew Cask](https://caskroom.github.io/)
+- Brew apps are staged to `/usr/local/Cellar` (`brew --cellar`) and symbolic linked to either `/usr/local/bin` or `/usr/local/opt/`
+> *<u>More information</u>*<br/>
+> See `HOMEBREW_*` environment variables set in the following scripts:
+> - https://github.com/Homebrew/brew/blob/master/bin/brew
+> - https://github.com/Homebrew/brew/blob/master/Library/brew.sh
+> - `brew --cache` = `~/Library/Caches/Homebrew`
+
+- Cask apps are staged to `/usr/local/Caskroom` and copied to `\Applications`
+> *<u>More information</u>*<br/>
+> See https://github.com/caskroom/homebrew-cask/blob/master/doc/man_page/brew-cask.1.md for 'man' page
+>
+> See https://github.com/caskroom/homebrew-cask/blob/master/lib/hbc/locations.rb<br/>
+> Specifically [caskroom](https://github.com/caskroom/homebrew-cask/blob/7b4a37122da07423d24dd2ec5a0994a8d15544b1/lib/hbc/locations.rb#L15),
+> [default_caskroom](https://github.com/caskroom/homebrew-cask/blob/7b4a37122da07423d24dd2ec5a0994a8d15544b1/lib/hbc/locations.rb#L11) and
+> [appdir](https://github.com/caskroom/homebrew-cask/blob/7b4a37122da07423d24dd2ec5a0994a8d15544b1/lib/hbc/locations.rb#L39) definitions<br/>
+> **NOTE: This can change (and has changed). For example, the PRs:**
+> - https://github.com/caskroom/homebrew-cask/pull/21857 - Change default Caskroom path
+> - https://github.com/caskroom/homebrew-cask/pull/13966 - Change artifact behavior to moving instead of symlinking
 
 ### dotfiles script breakdown
 
