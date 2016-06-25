@@ -37,7 +37,8 @@ export JENV_DIR=\"$JENV_DIRECTORY\"
 [ -d \"\$JENV_DIR\" ] \\
     && export PATH=\"\$JENV_DIR/bin:\$PATH\"
 
-if which jenv > /dev/null && which launchctl > /dev/null; then eval launchctl setenv JAVA_HOME \"\$(jenv javahome)\"; fi
+if which jenv > /dev/null && which launchctl > /dev/null && test -z \"$TMUX\"; then eval launchctl setenv JAVA_HOME \"\$(jenv javahome)\"; fi
+if which jenv > /dev/null && which launchctl > /dev/null && ! test -z \"$TMUX\"; then eval sudo launchctl setenv JAVA_HOME \"\$(jenv javahome)\"; fi
 if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 "
 
