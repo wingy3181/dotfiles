@@ -145,6 +145,8 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [Docker integration](https://plugins.jetbrains.com/plugin/7724)
     - [IdeaVim](https://plugins.jetbrains.com/plugin/164)
     - [LiveEdit](https://plugins.jetbrains.com/plugin/7007)
+    - [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896)
+    - [Markdown support](https://plugins.jetbrains.com/plugin/7793)
     - [NodeJS](https://plugins.jetbrains.com/plugin/6098)
     - [Scala](https://plugins.jetbrains.com/plugin/1347)
 - [Vim](http://www.vim.org/) - Advanced "display-oriented" text editor<br/>  
