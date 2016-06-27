@@ -86,7 +86,7 @@ alias o="open"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Update
+# Update - doesn't update vundle/tmux + their plugins
 
 alias u="sudo softwareupdate --install --all \
             && brew update \

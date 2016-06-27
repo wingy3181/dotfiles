@@ -43,7 +43,7 @@ unset -f source_bash_files
 # Clear system messages (e.g.: system copyright notice, the
 # date and time of the last login, the message of the day, etc.)
 
-clear
+if test -z "$TMUX"; then eval clear; fi
 
 # sdkman init snippet. See install script at https://get.sdkman.io/
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

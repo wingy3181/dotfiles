@@ -378,6 +378,7 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
       -> os\install\node_versions.sh
       -> os\install\npm_packages.sh
       -> os\install\vim_plugins.sh
+      -> os\install\tmux_plugins.sh
 
    -> os\preferences\setup.sh
       --------

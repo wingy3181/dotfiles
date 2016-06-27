@@ -19,7 +19,6 @@ declare -a FILES_TO_SYMLINK=(
     "shell/curlrc"
     "shell/inputrc"
     "shell/screenrc"
-    "shell/tmux.conf"
 
     "git/gitattributes"
     "git/gitconfig"
@@ -29,6 +28,8 @@ declare -a FILES_TO_SYMLINK=(
 
     "vim/vim"
     "vim/vimrc"
+
+    "tmux/tmux.conf"
 
 )
 

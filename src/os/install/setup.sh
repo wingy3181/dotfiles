@@ -30,6 +30,7 @@ main() {
     ./node_versions.sh
     ./npm_packages.sh
     ./vim_plugins.sh
+    ./tmux_plugins.sh
 
 }
 

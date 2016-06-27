@@ -249,6 +249,15 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [ShellCheck](https://www.shellcheck.net/) - Shell script linter
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to [ack](http://beyondgrep.com/), with a focus on speed.
 - [tmux](https://tmux.github.io/) - Terminal multiplexer to allow easy switching between several programs in one terminal and allow detachment and re-attachment to different terminals
+  _**NOTE**: [`tpm`](https://github.com/tmux-plugins/tpm) is used to manage the tmux plugins. See `dotfiles/src/os/install/tmux_plugins.sh` and `dotfiles/src/tmux/tmux.conf` on installation and setup_<br/>
+  - To update plugins for tmux via CLI, use the command `~/.tmux/plugins/tpm/bin/update_plugins all` (See https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_line.md for more information)
+  - Plugins
+    - [tpm](https://github.com/tmux-plugins/tpm) - Tmux plugin manager (required to use tpm)
+    - [tmux-battery](https://github.com/tmux-plugins/tmux-battery) - Plug and play battery percentage and icon indicator for Tmux.
+    - [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) - Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.
+    - [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-prefix-highlight) - Plugin that highlights when you press tmux prefix key.
+    - [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) - Persists tmux environment across system restarts.
+    - [tmux-sidebar](https://github.com/tmux-plugins/tmux-sidebar) - A sidebar with the directory tree for the current path. Tries to make tmux more IDE like.
 - [tree](http://mama.indstate.edu/users/ice/tree/) - Recursive directory listing command that produces a depth indented listing of files
 - [z](https://github.com/rupa/z) - Navigate/Jump around directories command based on frequency of most visited directories in history (alternatives are [autojump](https://github.com/wting/autojump), [Fasd](https://github.com/clvv/fasd) and [v](https://github.com/rupa/v))
 - [Zopfli](https://github.com/google/zopfli) - Compression command using Zopfli Compression Algorithm
