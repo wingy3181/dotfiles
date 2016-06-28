@@ -135,6 +135,10 @@ brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmar
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Retina Display Menu" "avibrazil-rdm" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # `Safari Technology Preview` requires macOS X 10.11.4 or later
 # https://github.com/alrra/dotfiles/issues/26
 

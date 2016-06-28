@@ -27,6 +27,7 @@ Personal Mac OS Development Setup instructions
 - [Gas Mask](http://clockwise.ee/) - Hosts file manager/editor of OS X
 - [Helium](http://heliumfloats.com/) - A floating browser window for OS X
 - [Quick Look plugins](https://github.com/sindresorhus/quick-look-plugins) - Plugins to Apple's quick preview feature for other file formats such as syntax highlighting for source code files, preview plain text files without or with unknown file extensions, markdown files, json files, csv files, etc.
+- [Retina Display Menu (rdm)](https://github.com/avibrazil/RDM) - Easily set Mac Retina display to higher unsupported resolutions.
 - [Snagit](https://www.techsmith.com/snagit.html) - Screen capture and editing tool
 - [Spectable](https://www.spectacleapp.com/) - Window controls via keyboard shortcuts (alternatives are [Divvy](http://mizage.com/divvy/), [SizeUp](http://www.irradiatedsoftware.com/sizeup/) & [Hyperdock](https://bahoom.com/hyperdock/))
 - [**Synergy\***](http://symless.com/synergy) - Keyboard and mouse sharing KVM software
