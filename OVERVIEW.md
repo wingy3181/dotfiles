@@ -245,6 +245,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 
 - ~~**[Zsh\*](http://www.zsh.org/) & [Oh My Zsh\*](https://github.com/robbyrussell/oh-my-zsh)**~~
 - [~~**Fishshell\***~~](https://fishshell.com/)
+- [htop](https://hisham.hm/htop) - an interactive process viewer for Unix/macOS 
 - [iTerm2](https://www.iterm2.com/) - Mac OS Terminal Replacement
 - [ShellCheck](https://www.shellcheck.net/) - Shell script linter
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to [ack](http://beyondgrep.com/), with a focus on speed.
