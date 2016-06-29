@@ -337,6 +337,7 @@ main() {
     print_optional_info "Install DataGrip (JetBrains)"
     print_optional_info "Install Evernote"
     print_optional_info "Install LibreOffice or Microsoft Office"
+    print_optional_info "Install Microsoft Rmote Desktop from App Store"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
     print_optional_info "Install Synergy"
     print_optional_info "Set minimalist menu bar with Bartender 2"

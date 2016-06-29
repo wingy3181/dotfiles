@@ -26,6 +26,7 @@ Personal Mac OS Development Setup instructions
 - [Disk Inventory X](http://www.derlien.com/) - Disk usage utility that shows the sizes of files and folders in a treemap view
 - [Gas Mask](http://clockwise.ee/) - Hosts file manager/editor of OS X
 - [Helium](http://heliumfloats.com/) - A floating browser window for OS X
+- [Microsoft Remote Desktop](https://itunes.apple.com/au/app/microsoft-remote-desktop/id715768417?mt=12) - Remote desktop client to Window machines
 - [Quick Look plugins](https://github.com/sindresorhus/quick-look-plugins) - Plugins to Apple's quick preview feature for other file formats such as syntax highlighting for source code files, preview plain text files without or with unknown file extensions, markdown files, json files, csv files, etc.
 - [Retina Display Menu (rdm)](https://github.com/avibrazil/RDM) - Easily set Mac Retina display to higher unsupported resolutions.
 - [Snagit](https://www.techsmith.com/snagit.html) - Screen capture and editing tool
@@ -246,7 +247,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 
 - ~~**[Zsh\*](http://www.zsh.org/) & [Oh My Zsh\*](https://github.com/robbyrussell/oh-my-zsh)**~~
 - [~~**Fishshell\***~~](https://fishshell.com/)
-- [htop](https://hisham.hm/htop) - an interactive process viewer for Unix/macOS 
+- [htop](https://hisham.hm/htop) - an interactive process viewer for Unix/macOS
 - [iTerm2](https://www.iterm2.com/) - Mac OS Terminal Replacement
 - [ShellCheck](https://www.shellcheck.net/) - Shell script linter
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to [ack](http://beyondgrep.com/), with a focus on speed.
