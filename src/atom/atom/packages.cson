@@ -2,6 +2,7 @@ packages: [
   "angularjs"
   "editorconfig"
   "git-plus"
+  "language-docker"
   "minimap"
   "package-sync"
   "pigments"

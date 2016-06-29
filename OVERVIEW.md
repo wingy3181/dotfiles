@@ -134,6 +134,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [angularjs](https://atom.io/packages/angularjs) - AngularJS support in Atom
     - [editorconfig](https://atom.io/packages/editorconfig) - Helps developers maintain consistent coding styles between different editors
     - [git-plus](https://atom.io/packages/git-plus) - Do git things without the terminal
+    - [language-docker](https://atom.io/packages/language-docker) - Dockerfile syntax highlighting
     - [minimap](https://atom.io/packages/minimap) - A preview of the full source code
     - [package-sync](https://atom.io/packages/package-sync) - Synchronises packages installed between computers
     - [pigments](https://atom.io/packages/pigments) - A package to display colors in project and files.
@@ -267,7 +268,8 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 
 ### Other
 - [~~**Beyond Compare\***~~](http://www.scootersoftware.com/) - Data comparison application/utility
-- [Docker Toolbox](https://www.docker.com/products/docker-toolbox) - Installer to setup Docker environments. Consists of:
+- [Docker for Mac](https://docs.docker.com/docker-for-mac/) - Installer to setup Docker environments natively for macOS
+- [Docker Toolbox](https://www.docker.com/products/docker-toolbox) - Installer to setup Docker environments indirectly through a boot2docker virtual machine image. Consists of:
   - [Docker Machine](https://docs.docker.com/machine/) - Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with `docker-machine` commands
   - [Docker Engine](https://docs.docker.com/engine/) - Engine for building and containerizing applications, and running them via `docker` commands
   - [Docker Compose](https://docs.docker.com/compose/) - Compose is a tool for defining and running multi-container Docker applications via `docker-compose` commands
