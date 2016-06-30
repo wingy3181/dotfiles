@@ -55,7 +55,7 @@ main() {
         # sed 'substitute' command (See http://www.grymoire.com/Unix/Sed.html#uh-1)
         # using regex '.*\/\(.*\)' and replacing topic folder with its contents
         # For example, 'shell/bash_aliases' to 'bash_aliases'
-        targetFile="$HOME/.$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+        targetFile="$HOME/.$(printf "%s" "$i" | sed "s/[^\/]*\/\(.*\)/\1/g")"
 
         if [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
 
