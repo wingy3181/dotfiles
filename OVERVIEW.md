@@ -145,6 +145,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [Intellij](https://www.jetbrains.com/idea/) - JetBrain's integrated development environment for Java development
   - Plugins
     - [.gitignore](https://plugins.jetbrains.com/plugin/7495)
+    - [BashSupport](https://plugins.jetbrains.com/plugin/4230)
     - [Docker integration](https://plugins.jetbrains.com/plugin/7724)
     - [IdeaVim](https://plugins.jetbrains.com/plugin/164)
     - [LiveEdit](https://plugins.jetbrains.com/plugin/7007)
