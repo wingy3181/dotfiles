@@ -253,6 +253,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [iTerm2](https://www.iterm2.com/) - Mac OS Terminal Replacement
 - [ShellCheck](https://www.shellcheck.net/) - Shell script linter
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to [ack](http://beyondgrep.com/), with a focus on speed.
+  - See [documentation](https://github.com/ggreer/the_silver_searcher/blob/master/doc/ag.1.md) for more details
 - [tmux](https://tmux.github.io/) - Terminal multiplexer to allow easy switching between several programs in one terminal and allow detachment and re-attachment to different terminals
   _**NOTE**: [`tpm`](https://github.com/tmux-plugins/tpm) is used to manage the tmux plugins. See `dotfiles/src/os/install/tmux_plugins.sh` and `dotfiles/src/tmux/tmux.conf` on installation and setup_<br/>
   - To update plugins for tmux via CLI, use the command `~/.tmux/plugins/tpm/bin/update_plugins all` (See https://github.com/tmux-plugins/tpm/blob/master/docs/managing_plugins_via_cmd_line.md for more information)
