@@ -48,6 +48,7 @@ Personal Mac OS Development Setup instructions
       - [LiveReload](https://chrome.google.com/webstore/detail/jnihajbhpnppcggbcgedagnkighmdlei)
       - [Octotree](https://github.com/buunguyen/octotree)
       - [Postman](https://chrome.google.com/webstore/detail/fhbjgbiflinjbdggehcddcbncdddomop)
+      - [Postman Interceptor](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo)
       - [~~Proxy SwitchySharp~~](https://chrome.google.com/webstore/detail/dpplabbmogkhghncfbfdeeokoefdjegm)
       - [Web Developer](http://chrispederick.com/work/web-developer)
     - Fun
