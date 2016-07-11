@@ -21,6 +21,8 @@
     togglePackages: [
       "vim-mode"
     ]
+  "tree-view":
+    hideIgnoredNames: true
   "vim-mode": {}
   welcome:
     showOnStartup: false
