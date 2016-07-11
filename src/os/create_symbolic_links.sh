@@ -31,6 +31,8 @@ declare -a FILES_TO_SYMLINK=(
 
     "tmux/tmux.conf"
 
+    "sshrc/sshrc"
+
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
