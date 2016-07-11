@@ -53,6 +53,8 @@ main() {
     execute \
         "bash-it enable completion bash-it \
          && bash-it enable completion docker \
+         && bash-it enable completion docker-compose \
+         && bash-it enable completion docker-machine \
          && bash-it enable completion gradle \
          && bash-it enable completion grunt \
          && bash-it enable completion gulp \
@@ -73,7 +75,7 @@ main() {
         "Bash-it (enable plugins)"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    
+
     print_in_green "\n  ---\n\n"
 
 }
