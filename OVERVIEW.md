@@ -139,6 +139,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [minimap](https://atom.io/packages/minimap) - A preview of the full source code
     - [package-sync](https://atom.io/packages/package-sync) - Synchronises packages installed between computers
     - [pigments](https://atom.io/packages/pigments) - A package to display colors in project and files.
+    - [project-manager](https://atom.io/packages/project-manager) - A package to managing switching projects easily within Atom.
     - [toggle-packages](https://atom.io/packages/toggle-packages) - A package for enabling and disabling packages
     - [vim-mode](https://atom.io/packages/vim-mode) - Add vim modal control
 - [~~**DataGrip\***~~](https://www.jetbrains.com/datagrip/) - JetBrain's integrated development environment for Database/SQL development

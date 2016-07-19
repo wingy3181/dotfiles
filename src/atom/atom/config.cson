@@ -17,6 +17,7 @@
   minimap: {}
   pigments:
     markerType: "dot"
+  "project-manager": {}
   "toggle-packages":
     togglePackages: [
       "vim-mode"

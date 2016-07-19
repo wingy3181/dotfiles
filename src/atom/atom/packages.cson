@@ -6,6 +6,7 @@ packages: [
   "minimap"
   "package-sync"
   "pigments"
+  "project-manager"
   "toggle-packages"
   "vim-mode"
 ]

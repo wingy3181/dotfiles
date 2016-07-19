@@ -4,3 +4,4 @@ blob-store
 compile-cache
 packages
 storage
+projects.cson
