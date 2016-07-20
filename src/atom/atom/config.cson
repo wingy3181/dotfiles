@@ -2,8 +2,8 @@
   core:
     autoHideMenuBar: true
     disabledPackages: [
-      "vim-mode"
       "linter"
+      "vim-mode"
     ]
   editor:
     fontSize: 10
@@ -20,6 +20,12 @@
   pigments:
     markerType: "dot"
   "project-manager": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
   "toggle-packages":
     togglePackages: [
       "vim-mode"

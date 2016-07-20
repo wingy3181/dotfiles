@@ -5,3 +5,5 @@ compile-cache
 packages
 storage
 projects.cson
+git-time-machine
+split-diff
