@@ -3,6 +3,7 @@
     autoHideMenuBar: true
     disabledPackages: [
       "vim-mode"
+      "linter"
     ]
   editor:
     fontSize: 10
@@ -12,6 +13,7 @@
   "exception-reporting":
     userId: "d066aaa4-63cd-1f08-a0e5-c8efdcf5268d"
   "git-plus": {}
+  linter: {}
   "markdown-preview":
     useGitHubStyle: true
   minimap: {}
@@ -21,6 +23,7 @@
   "toggle-packages":
     togglePackages: [
       "vim-mode"
+      "linter"
     ]
   "tree-view":
     hideIgnoredNames: true

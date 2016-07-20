@@ -32,3 +32,4 @@
 # https://atom.io/docs/latest/using-atom-basic-customization#cson
 'atom-text-editor':
   'ctrl-shift-v': 'toggle-packages:toggle-vim-mode'
+  'ctrl-shift-b': 'toggle-packages:toggle-linter'
