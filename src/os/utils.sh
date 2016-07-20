@@ -171,6 +171,42 @@ execute() {
 
 }
 
+execute_without_spinner() {
+
+    local tmpFile="$(mktemp /tmp/XXXXX)"
+    local exitCode=0
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # http://ss64.com/bash/eval.html
+    # The arguments are concatenated together into a single command, which is then read and executed,
+    # and its exit status returned as the exit status of eval. If there are no arguments or only empty
+    # arguments, the return status is zero.
+    if [[ $DOTFILES_DEBUG_MODE = "true" ]]; then
+        eval "$1"
+    else
+        eval "$1" \
+            &> /dev/null \
+            2> "$tmpFile"
+    fi
+
+    print_result $? "${2:-$1}"
+    # See http://unix.stackexchange.com/questions/122845/using-a-b-for-variable-assignment-in-scripts
+    # ${parameter:-word}
+    #   If parameter is unset or null, the expansion of word is substituted.
+    #   Otherwise, the value of parameter is substituted.
+    exitCode=$?
+
+    if [ $exitCode -ne 0 ]; then
+        print_error_stream "↳ ERROR:" < "$tmpFile"
+    fi
+
+    rm -rf "$tmpFile"
+
+    return $exitCode
+
+}
+
 get_answer() {
     # $REPLY is default variable assigned to after a 'read' command (See http://ss64.com/bash/read.html)
     printf "%s" "$REPLY"
