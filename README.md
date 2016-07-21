@@ -192,14 +192,19 @@ username with your own in the [`setup` snippets](#setup) and [in the
 
 - ### How to see currently defined aliases and functions?
   - #### Aliases
+
   > [`dotfiles\src\shell\bash_aliases`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_aliases)<br/>
   > [`dotfiles\src\shell\macos\bash_aliases`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/macos/bash_aliases)<br/>
   > [`~\.bash_it\aliases\enabled\*.plugin.bash`](https://github.com/Bash-it/bash-it/tree/master/aliases/available)<br/>
+
     - `alias` - show aliases and their definitions (including [bash-it enabled aliases](https://github.com/Bash-it/bash-it/tree/master/aliases/available))
     - `bash-it show aliases` - show aliases enabled via bash-it
+
   - #### Functions
+
   > [`dotfiles\src\shell\bash_functions`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions)<br>
   > [`~\.bash_it\plugins\enabled\*.plugin.bash`](https://github.com/Bash-it/bash-it/tree/master/plugins/available)<br/>
+  
     - `declare -F` - list name of all functions defined [(source)](http://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell)
     - `type <function name>` - show function definition
     - `glossary` - show functions enabled via bash-it with short description of each function
