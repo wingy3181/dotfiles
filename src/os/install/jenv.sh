@@ -63,7 +63,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         if [ $? -eq 0 ]; then
             # '>>' : file to append to
-            execute \
+            execute_without_spinner \
                 "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
                     && . $HOME/.bash.local" \
                 "jenv (update ~/.bash.local)"

@@ -129,7 +129,7 @@ execute() {
     # and its exit status returned as the exit status of eval. If there are no arguments or only empty
     # arguments, the return status is zero.
     if [[ $DOTFILES_DEBUG_MODE = "true" ]]; then
-        eval "$CMDS"
+        eval "$CMDS" &
     else
         eval "$CMDS" \
             &> /dev/null \

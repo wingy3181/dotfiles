@@ -32,7 +32,7 @@ main() {
 
     # Re-source ~/.bash_profile to pick bash-it in current terminal
 
-    execute \
+    execute_without_spinner \
         ". '$HOME/.bash_profile'" \
         "Re-source ~/.bash_profile"
 

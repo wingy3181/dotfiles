@@ -50,7 +50,7 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
 
         if [ $? -eq 0 ]; then
             # '>>' : file to append to
-            execute \
+            execute_without_spinner \
                 "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
                     && . $HOME/.bash.local" \
                 "nvm (update ~/.bash.local)"
