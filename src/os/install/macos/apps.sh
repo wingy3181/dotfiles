@@ -46,7 +46,7 @@ brew_install_with_confirmation "Docker for Mac" "docker" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Docker Toolbox" "dockertoolbox" "caskroom/cask" "cask"
+brew_install_with_confirmation "Docker Toolbox" "docker-toolbox" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
