@@ -11,6 +11,8 @@ declare -a DIRECTORIES=(
     "$HOME/Documents/ebook/_to-organise"
     "$HOME/Documents/ebook/_to-read-later"
     "$HOME/Documents/ebook/_read"
+    "$HOME/Downloads/nzb/complete"
+    "$HOME/Downloads/nzb/incomplete"
     "$HOME/Downloads/torrents/complete"
     "$HOME/Downloads/torrents/incomplete"
     "$HOME/Videos/_to-organise"
