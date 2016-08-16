@@ -69,6 +69,9 @@ main() {
     execute \
         "bash-it enable plugin base \
          && bash-it enable plugin battery \
+         && bash-it enable plugin docker-compose \
+         && bash-it enable plugin docker-machine \
+         && bash-it enable plugin docker \
          && bash-it enable plugin explain \
          && bash-it enable plugin less-pretty-cat \
          && bash-it enable plugin proxy" \
