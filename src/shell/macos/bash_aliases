@@ -15,7 +15,7 @@ alias clear-dns-cache="sudo dscacheutil -flushcache; \
 alias docker-for-mac-show-disk-size='hrfs $(stat -f "%z" ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2)'
 alias docker-for-mac-remove-disk-image="rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2"
 alias docker-for-mac-start-api-via-http="socat TCP-L:2376,fork UNIX:/var/run/docker.sock"
-alias docker-for-mac-ssh="docker run -it --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh"
+alias docker-for-mac-ssh="docker run -it --name docker-for-mac-xhyve-ssh --privileged --pid=host debian nsenter -t 1 -m -u -n -i sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
