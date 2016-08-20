@@ -12,8 +12,9 @@ alias clear-dns-cache="sudo dscacheutil -flushcache; \
 
 # Docker for Mac
 
-alias show-docker-for-mac-disk-size='hrfs $(stat -f "%z" ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2)'
-alias remove-docker-for-mac-disk-image="rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2"
+alias docker-for-mac-show-disk-size='hrfs $(stat -f "%z" ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2)'
+alias docker-for-mac-remove-disk-image="rm ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/Docker.qcow2"
+alias docker-for-mac-start-api-via-http="socat TCP-L:2376,fork UNIX:/var/run/docker.sock"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
