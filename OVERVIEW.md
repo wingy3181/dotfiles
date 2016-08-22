@@ -21,6 +21,7 @@ Personal Mac OS Development Setup instructions
 ### Utilities
 - [Android File Transfer](https://www.android.com/filetransfer/) - Browse and transfer files between your Mac computer and your Android device
 - [AppCleaner](https://freemacsoft.net/appcleaner/) - is a small application which allows you to thoroughly uninstall unwanted apps
+- [**Bandwidth+\***](https://itunes.apple.com/au/app/bandwidth+/id490461369?mt=12) - Display bandwidth usage in macOs status bar
 - [Bartender 2](https://www.macbartender.com/) - Menu bar organiser
 - [Cheatsheet](https://www.mediaatelier.com/CheatSheet/) - See keyboard shortcuts for application via hotkey
 - [Disk Inventory X](http://www.derlien.com/) - Disk usage utility that shows the sizes of files and folders in a treemap view
@@ -29,6 +30,7 @@ Personal Mac OS Development Setup instructions
 - [Microsoft Remote Desktop](https://itunes.apple.com/au/app/microsoft-remote-desktop/id715768417?mt=12) - Remote desktop client to Window machines
 - [Quick Look plugins](https://github.com/sindresorhus/quick-look-plugins) - Plugins to Apple's quick preview feature for other file formats such as syntax highlighting for source code files, preview plain text files without or with unknown file extensions, markdown files, json files, csv files, etc.
 - [Retina Display Menu (rdm)](https://github.com/avibrazil/RDM) - Easily set Mac Retina display to higher unsupported resolutions.
+- [sabnzbd](https://sabnzbd.org/) - Free and easy binary newsreader for nzbs
 - [Snagit](https://www.techsmith.com/snagit.html) - Screen capture and editing tool
 - [Spectable](https://www.spectacleapp.com/) - Window controls via keyboard shortcuts (alternatives are [Divvy](http://mizage.com/divvy/), [SizeUp](http://www.irradiatedsoftware.com/sizeup/) & [Hyperdock](https://bahoom.com/hyperdock/))
 - [**Synergy\***](http://symless.com/synergy) - Keyboard and mouse sharing KVM software
@@ -135,11 +137,18 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [angularjs](https://atom.io/packages/angularjs) - AngularJS support in Atom
     - [editorconfig](https://atom.io/packages/editorconfig) - Helps developers maintain consistent coding styles between different editors
     - [git-plus](https://atom.io/packages/git-plus) - Do git things without the terminal
+    - [git-time-machine](https://atom.io/packages/git-time-machine) - Visually interact with git commit history for a file
     - [language-docker](https://atom.io/packages/language-docker) - Dockerfile syntax highlighting
+    - [linter](https://atom.io/packages/linter) - A base linter provider for Atom. See http://atomlinter.github.io/ for a full list of available linters
+    - [linter-docker](https://atom.io/packages/linter-docker) - Linter plugin for Dockerfile's, using dockerlint
+    - [linter-jscs](https://atom.io/packages/linter-jscs) - Linter plugin for JavaScript, using JSCS
+    - [linter-markdown](https://atom.io/packages/linter-markdown) - Lint markdown on the fly, using remark-lint
+    - [logo-file-icons](https://atom.io/packages/logo-file-icons) - Add some nice logo icons to your files in Atom. Logos were taken from http://svgporn.com/
     - [minimap](https://atom.io/packages/minimap) - A preview of the full source code
     - [package-sync](https://atom.io/packages/package-sync) - Synchronises packages installed between computers
     - [pigments](https://atom.io/packages/pigments) - A package to display colors in project and files.
     - [project-manager](https://atom.io/packages/project-manager) - A package to managing switching projects easily within Atom.
+    - [terminal-plus](https://atom.io/packages/terminal-plus) - A terminal package for  Atom
     - [toggle-packages](https://atom.io/packages/toggle-packages) - A package for enabling and disabling packages
     - [vim-mode](https://atom.io/packages/vim-mode) - Add vim modal control
 - [~~**DataGrip\***~~](https://www.jetbrains.com/datagrip/) - JetBrain's integrated development environment for Database/SQL development
@@ -233,6 +242,8 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
   - Completions
     - [bash-it](https://github.com/Bash-it/bash-it/blob/master/completion/available/bash-it.completion.bash)
     - [docker](https://github.com/Bash-it/bash-it/blob/master/completion/available/docker.completion.bash)
+    - [docker-compose](https://github.com/Bash-it/bash-it/blob/master/completion/available/docker-compose.bash)
+    - [docker-machine](https://github.com/Bash-it/bash-it/blob/master/completion/available/docker-machine.bash)
     - [gradle](https://github.com/Bash-it/bash-it/blob/master/completion/available/gradle.completion.bash)
     - [grunt](https://github.com/Bash-it/bash-it/blob/master/completion/available/grunt.completion.bash)
     - [gulp](https://github.com/Bash-it/bash-it/blob/master/completion/available/gulp.completion.bash)
@@ -254,6 +265,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [htop](https://hisham.hm/htop) - an interactive process viewer for Unix/macOS
 - [iTerm2](https://www.iterm2.com/) - Mac OS Terminal Replacement
 - [ShellCheck](https://www.shellcheck.net/) - Shell script linter
+- [sshrc](https://github.com/Russell91/sshrc) - Bring your .bashrc, .vimrc, etc. with you when you ssh
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to [ack](http://beyondgrep.com/), with a focus on speed.
   - See [documentation](https://github.com/ggreer/the_silver_searcher/blob/master/doc/ag.1.md) for more details
 - [tmux](https://tmux.github.io/) - Terminal multiplexer to allow easy switching between several programs in one terminal and allow detachment and re-attachment to different terminals
