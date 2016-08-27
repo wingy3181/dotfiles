@@ -75,6 +75,24 @@ delete-files() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Search git repositories from current director and display report with
+# remote information
+
+git-remotes-list() {
+    echo "*********************************************************************"
+    echo "$PWD"
+    echo "*********************************************************************"
+    find -L . -name .git -type d  | while read -r d; do
+       cd "$d/.." || exit
+       # Same as: echo "$PWD" | sed -e 's|'"$OLDPWD"'||'
+       echo "${PWD//$OLDPWD/}"
+       printf "%s\n" "$(git remote -v | sed -e 's/^\(.*\)$/    \1/')"
+       cd "$OLDPWD" || exit
+    done
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Get gzip information (gzipped file size + reduction size)
 
 gz() {
