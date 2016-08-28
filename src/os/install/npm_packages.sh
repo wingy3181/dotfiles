@@ -15,6 +15,7 @@ declare -r -a NPM_PACKAGES=(
     "jshint"
     "jscs"
     "karma-cli"
+    "livereload"
     "localtunnel"
     "npm-check"
     "typescript"
