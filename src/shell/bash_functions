@@ -176,7 +176,7 @@ hrfs() {
 
 # Create new directories and enter the first one
 
-mkd() {
+mkcd() {
     # $* : arguments passed to mkd which is the directories to create
     # -n : True if the length of string is nonzero.
     if [ -n "$*" ]; then
