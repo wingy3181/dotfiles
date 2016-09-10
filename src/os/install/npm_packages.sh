@@ -7,6 +7,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 declare -r -a NPM_PACKAGES=(
     "babel-cli"
+    "browser-sync"
     "bower"
     "eslint"
     "grunt-cli"
