@@ -274,6 +274,19 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Create local config files"
+
+    if ! $skipQuestions; then
+        ask_for_confirmation "Do you want local config files for bash, git and vim to be created?"
+        printf "\n"
+    fi
+
+    if $skipQuestions || answer_is_yes; then
+        ./create_local_config_files.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     print_info "Install applications"
 
     if ! $skipQuestions; then
