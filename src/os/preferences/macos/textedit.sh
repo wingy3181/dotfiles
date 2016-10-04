@@ -13,7 +13,7 @@ execute "defaults write com.apple.TextEdit PlainTextEncoding -int 4 && \
     "Open and save files as UTF-8 encoded"
 
 # TextEdit -> Preferences -> New Document -> Format
-execute "defaults write com.apple.TextEdit RichText -" \
+execute "defaults write com.apple.TextEdit RichText 0" \
     "Use plain text mode for new documents"
 
 killall "TextEdit" &> /dev/null
