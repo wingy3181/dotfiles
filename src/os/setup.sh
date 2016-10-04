@@ -336,6 +336,7 @@ main() {
     print_optional_info "Install Beyond Compare"
     print_optional_info "Install DataGrip (JetBrains)"
     print_optional_info "Install Evernote"
+    print_optional_info "Install Keybase"
     print_optional_info "Install LibreOffice or Microsoft Office"
     print_optional_info "Install Bandwidth+ from App Store"
     print_optional_info "Install Microsoft Remote Desktop from App Store"
