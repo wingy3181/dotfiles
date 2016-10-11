@@ -229,7 +229,7 @@ brew_install_with_confirmation "Vagrant Manager" "vagrant-manager" "caskroom/cas
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/vim.rb
-brew_install_with_confirmation "Vim" "vim --override-system-vi"
+brew_install_with_confirmation "Vim" "vim --with-override-system-vi"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
