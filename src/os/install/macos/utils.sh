@@ -97,7 +97,7 @@ brew_install_with_confirmation() {
 
         previousInstallApplicationConfirmationReply="$(get_answer)"
     fi
-    
+
 }
 
 brew_tap() {
@@ -115,7 +115,7 @@ brew_update() {
 brew_upgrade() {
 
     execute \
-        "brew upgrade --all" \
+        "brew upgrade" \
         "brew (upgrade)"
 
 }
