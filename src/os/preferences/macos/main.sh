@@ -18,6 +18,13 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Close any open `System Preferences` panes in order to
+    # avoid overriding the preferences that are being changed.
+    
+    ./close_system_preferences_panes.applescript
+    
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     ./app_store.sh
     ./chrome.sh
     if $skipQuestions; then

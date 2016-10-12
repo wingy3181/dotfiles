@@ -204,7 +204,7 @@ username with your own in the [`setup` snippets](#setup) and [in the
 
   > [`dotfiles\src\shell\bash_functions`](https://github.com/wingy3181/dotfiles/blob/master/src/shell/bash_functions)<br>
   > [`~\.bash_it\plugins\enabled\*.plugin.bash`](https://github.com/Bash-it/bash-it/tree/master/plugins/available)<br/>
-  
+
     - `declare -F` - list name of all functions defined [(source)](http://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell)
     - `type <function name>` - show function definition
     - `glossary` - show functions enabled via bash-it with short description of each function
@@ -391,6 +391,7 @@ if which jenv > /dev/null; then eval "$(jenv init -)"; fi
       --------
       -> os\preferences\macos\main.sh
           [source] os\utils.sh
+          -> os\preferences\macos\close_system_preferences_panes.applescript
           -> os\preferences\macos\app_store.sh
           -> os\preferences\macos\chrome.sh
           -> os\preferences\macos\computer_name.sh
