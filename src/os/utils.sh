@@ -266,7 +266,7 @@ is_supported_version() {
     declare -a minimum_version=(${2//./ })
     local i=""
 
-    # Fill empty positions in actual_version with zeros. Note: ${#array[@]} returns ßthe length of the array
+    # Fill empty positions in actual_version with zeros. Note: ${#array[@]} returns the length of the array
     for (( i=${#actual_version[@]}; i<${#minimum_version[@]}; i++ )); do
         actual_version[i]=0
     done
@@ -282,6 +282,8 @@ is_supported_version() {
         # actual version part is less than minimum_version part required, so return error return codeß
         if (( 10#${actual_version[i]} < 10#${minimum_version[i]} )); then
             return 1
+        elif (( 10#${actual_version[i]} > 10#${minimum_version[i]} )); then
+            return 0
         fi
 
     done
