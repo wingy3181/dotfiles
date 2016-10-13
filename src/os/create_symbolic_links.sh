@@ -65,7 +65,7 @@ main() {
 
         elif [ ! -e "$targetFile" ] || $skipQuestions; then # -e : True if file exists (regardless of type).
 
-            execute \
+            execute_without_spinner \
                 "ln -fs $sourceFile $targetFile" \
                 "$targetFile → $sourceFile"
                 # ln : make links between files
@@ -81,7 +81,7 @@ main() {
 
                     rm -rf "$targetFile"
 
-                    execute \
+                    execute_without_spinner \
                         "ln -fs $sourceFile $targetFile" \
                         "$targetFile → $sourceFile"
 
