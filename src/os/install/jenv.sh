@@ -101,7 +101,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
         # Install the specified `java` versions
 
         for i in "${JAVA_VERSIONS[@]}"; do
-            execute \
+            execute_without_spinner \
                 "jenv add ${i}" \
                 "jenv (add: ${i})"
         done
@@ -110,7 +110,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         # By default, use version 1.8 of `java`
 
-        execute \
+        execute_without_spinner \
             "jenv global 1.8" \
             "jenv (set 1.8 as global default - See ~/.jenv/version)"
 
@@ -119,7 +119,7 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
         # Enable jenv plugins so that other command line tools are aware of which JDK is activated via jenv
         # See README.md of https://github.com/gcuisinier/jenv for more info
 
-        execute \
+        execute_without_spinner \
             "jenv enable-plugin ant \
              && jenv enable-plugin export \
              && jenv enable-plugin gradle \

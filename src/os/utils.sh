@@ -299,7 +299,7 @@ mkd() {
                 print_success "$1"
             fi
         else
-            execute "mkdir -p $1" "$1"
+            execute_without_spinner "mkdir -p $1" "$1"
             #               └── Create intermediate directories as required.
             #                   If this option is not specified, the full path
             #                   prefix of each operand must already exist.
