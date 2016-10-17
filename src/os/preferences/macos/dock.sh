@@ -14,9 +14,6 @@ execute "defaults write com.apple.dock autohide -bool true" \
 execute "defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true" \
     "Enable spring loading for all Dock items"
 
-execute "defaults write com.apple.dock expose-animation-duration -float 0.2" \
-    "Speed up Mission Control animations (control up)"
-
 # System Preferences -> Mission Control -> Group windows by application
 #   http://osxdaily.com/2012/07/30/expose-mac-os-x-mountain-lion/
 execute "defaults write com.apple.dock expose-group-by-app -bool false" \
