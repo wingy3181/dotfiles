@@ -202,6 +202,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 
 ### SCM
 - [Git](https://git-scm.com) - Distributed version control system
+- [Git Large File Storage](https://git-lfs.github.com/) - Extension to git for versioning large files
 - [SourceTree](https://www.sourcetreeapp.com/) - Git GUI Client (alternatives are [Tower2](https://www.git-tower.com/))
 
 ### SDK managers
@@ -265,6 +266,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [htop](https://hisham.hm/htop) - an interactive process viewer for Unix/macOS
 - [iTerm2](https://www.iterm2.com/) - Mac OS Terminal Replacement
 - [ShellCheck](https://www.shellcheck.net/) - Shell script linter
+- [socat](http://macappstore.org/socat/) - Multipurpose relay (See http://www.dest-unreach.org/socat/ for more information. Is used for docker so docker plugins can connect to docker daemon)
 - [sshrc](https://github.com/Russell91/sshrc) - Bring your .bashrc, .vimrc, etc. with you when you ssh
 - [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to [ack](http://beyondgrep.com/), with a focus on speed.
   - See [documentation](https://github.com/ggreer/the_silver_searcher/blob/master/doc/ag.1.md) for more details
@@ -278,6 +280,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-prefix-highlight) - Plugin that highlights when you press tmux prefix key.
     - [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) - Persists tmux environment across system restarts.
     - [tmux-sidebar](https://github.com/tmux-plugins/tmux-sidebar) - A sidebar with the directory tree for the current path. Tries to make tmux more IDE like.
+- [tmux (pasteboard / reattach-to-user-namespace)](https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard) - Fix `pbpaste` and `pbcopy` under macOS
 - [tree](http://mama.indstate.edu/users/ice/tree/) - Recursive directory listing command that produces a depth indented listing of files
 - [z](https://github.com/rupa/z) - Navigate/Jump around directories command based on frequency of most visited directories in history (alternatives are [autojump](https://github.com/wting/autojump), [Fasd](https://github.com/clvv/fasd) and [v](https://github.com/rupa/v))
 - [Zopfli](https://github.com/google/zopfli) - Compression command using Zopfli Compression Algorithm
@@ -291,6 +294,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
   - [Docker Compose](https://docs.docker.com/compose/) - Compose is a tool for defining and running multi-container Docker applications via `docker-compose` commands
   - [Kitematic](https://kitematic.com/) - the Docker GUI
   - Docker CLI environment
+- [**Keybase**](https://keybase.io/) - Social public key encryption
 - [~~Fiddler~~](http://www.telerik.com/fiddler) (**Windows only**) versus using Chrome's `chrome://net-internals`
 - [Oracle VirtualBox](https://www.virtualbox.org/) - VirtualBox is a general-purpose full virtualizer for x86 hardware
 - [GPGTools](https://gpgtools.org/) - Software tools for email and file encryption. See https://en.wikipedia.org/wiki/GPGTools for more details
