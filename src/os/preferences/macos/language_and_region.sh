@@ -8,14 +8,14 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n  Language & Region\n\n"
 
 # System Preferences -> Language & Region
-execute "defaults write NSGlobalDomain AppleLanguages -array 'en'" \
+execute "defaults write -g AppleLanguages -array 'en'" \
     "Set language"
 
-execute "defaults write NSGlobalDomain AppleLocale -string 'en_AU'" \
+execute "defaults write -g AppleLocale -string 'en_AU'" \
     "Set locale"
 
-execute "defaults write NSGlobalDomain AppleMeasurementUnits -string 'Centimeters'" \
+execute "defaults write -g AppleMeasurementUnits -string 'Centimeters'" \
     "Set measurement units"
 
-execute "defaults write NSGlobalDomain AppleMetricUnits -int 1" \
+execute "defaults write -g AppleMetricUnits -int 1" \
     "Set metric units"

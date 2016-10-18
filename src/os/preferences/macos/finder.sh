@@ -69,7 +69,7 @@ execute "defaults write com.apple.finder ShowRecentTags -bool true" \
     "Show recent tags"
 
 # Finder -> Preferences -> Advanced -> Show all filename extensions
-execute "defaults write NSGlobalDomain AppleShowAllExtensions -bool true" \
+execute "defaults write -g AppleShowAllExtensions -bool true" \
     "Show all filename extensions"
 
 # Finder -> Preferences -> View -> Show View Options -> Icon Size
