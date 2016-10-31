@@ -25,9 +25,7 @@ main() {
     # Try to get the path of the `Homebrew` git config file,
     # and if something fails, don't continue any further
 
-    homebrewGitConfigFilePath="$(brew --repository 2> /dev/null)/.git/config"
-
-    if [ $? -ne 0 ]; then
+    if homebrewGitConfigFilePath="$(brew --repository 2> /dev/null)/.git/config"; then
         print_error "brew (get config file path)"
         return 1
     fi

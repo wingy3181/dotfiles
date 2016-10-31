@@ -46,15 +46,13 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
 
         execute \
             "git clone --quiet $NVM_GIT_REPO_URL $NVM_DIRECTORY" \
-            "nvm"
+            "nvm" || return 1
 
-        if [ $? -eq 0 ]; then
-            # '>>' : file to append to
-            execute_without_spinner \
-                "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
-                    && . $HOME/.bash.local" \
-                "nvm (update ~/.bash.local)"
-        fi
+        # '>>' : file to append to
+        execute_without_spinner \
+            "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
+                && . $HOME/.bash.local" \
+            "nvm (update ~/.bash.local)"
 
     fi
 

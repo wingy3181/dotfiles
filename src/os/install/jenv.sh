@@ -59,15 +59,13 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         execute \
             "git clone --quiet $JENV_GIT_REPO_URL $JENV_DIRECTORY" \
-            "jenv (install)"
+            "jenv (install)" || return 1
 
-        if [ $? -eq 0 ]; then
-            # '>>' : file to append to
-            execute_without_spinner \
-                "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
-                    && . $HOME/.bash.local" \
-                "jenv (update ~/.bash.local)"
-        fi
+        # '>>' : file to append to
+        execute_without_spinner \
+            "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
+                && . $HOME/.bash.local" \
+            "jenv (update ~/.bash.local)"
 
     fi
 

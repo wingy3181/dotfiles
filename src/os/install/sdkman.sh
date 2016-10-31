@@ -18,15 +18,13 @@ main() {
 
     execute \
         "curl -s 'https://get.sdkman.io' | bash" \
-        "sdkman (install)"
+        "sdkman (install)" || return 1
 
-    if [ $? -eq 0 ]; then
-        # NOTE: The init script is what adds the SDKs/candidiates to PATH (doesn't export)
-        # sdkman-init.sh -> __sdkman_prepend_candidate_to_path -> sdkman-path-helpers.sh
-        execute_without_spinner \
-            ". $SDKMAN_DIRECTORY/bin/sdkman-init.sh" \
-            "sdkman (. ~/.sdkman/bin/sdkman-init.sh)"
-    fi
+    # NOTE: The init script is what adds the SDKs/candidiates to PATH (doesn't export)
+    # sdkman-init.sh -> __sdkman_prepend_candidate_to_path -> sdkman-path-helpers.sh
+    execute_without_spinner \
+        ". $SDKMAN_DIRECTORY/bin/sdkman-init.sh" \
+        "sdkman (. ~/.sdkman/bin/sdkman-init.sh)"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
