@@ -5,6 +5,7 @@
       "linter"
       "vim-mode"
     ]
+    telemetryConsent: "limited"
   editor:
     fontSize: 10
     invisibles: {}
