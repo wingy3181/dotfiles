@@ -26,6 +26,8 @@ main() {
     # and if something fails, don't continue any further
 
     if homebrewGitConfigFilePath="$(brew --repository 2> /dev/null)/.git/config"; then
+        printf "%s" "$path"
+    else
         print_error "brew (get config file path)"
         return 1
     fi
