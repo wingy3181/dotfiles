@@ -15,7 +15,7 @@ main() {
     declare -r NVM_DIRECTORY="$HOME/.nvm"
     declare -r NVM_GIT_REPO_URL="https://github.com/creationix/nvm.git"
 
-    declare -r CONFIGS="
+    declare -r NVM_CONFIGS="
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Node Version Manager
@@ -50,7 +50,7 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
 
         # '>>' : file to append to
         execute_without_spinner \
-            "printf '%s' '$CONFIGS' >> $HOME/.bash.local \
+            "printf '%s' '$NVM_CONFIGS' >> $HOME/.bash.local \
                 && . $HOME/.bash.local" \
             "nvm (update ~/.bash.local)"
 
@@ -86,6 +86,30 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
         execute \
             "nvm alias default node" \
             "nvm (set default)"
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        local nvmAutoSwitchFilePath=""
+        if nvmAutoSwitchFilePath="$(brew --prefix nvm-auto-switch 2> /dev/null)/nvm-auto-switch.sh"; then
+            declare -r NVM_AUTO_SWITCH_CONFIGS="
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Node Version Manager Auto Switch (https://github.com/lalitkapoor/nvm-auto-switch)
+
+export NVM_AUTOSWITCH_DIR=\"$nvmAutoSwitchFilePath\"
+
+[ -f \"\$NVM_AUTOSWITCH_DIR\" ] \\
+    && . \"\$NVM_AUTOSWITCH_DIR\"
+"
+
+            # '>>' : file to append to
+            execute_without_spinner \
+                "printf '%s' '$NVM_AUTO_SWITCH_CONFIGS' >> $HOME/.bash.local \
+                    && . $HOME/.bash.local" \
+                "nvm-auto-switch (update ~/.bash.local to source $nvmAutoSwitchFilePath)"
+        else
+            print_in_yellow "nvm-auto-switch not installed (skipping update to ~/.bash.local)"
+        fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
