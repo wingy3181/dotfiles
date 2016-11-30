@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/wingy3181/dotfiles.svg?branch=master)](https://travis-ci.org/wingy3181/dotfiles)
 
-> :exclamation: **NOTE:** These dotfiles are still a :construction: WIP (Work In Progress) as I customise these scripts for my own usage.
-
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
 files described in the [`Local Settings`](#local-settings) section.
@@ -43,7 +41,7 @@ Setup process in action:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/11821505/91e437be-a372-11e5-9500-025c316fe22c.gif" alt="Setup process on macOS" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1212576/20749882/4664117a-b748-11e6-8773-a9e93f3adb92.gif" alt="Setup process on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
@@ -63,7 +61,7 @@ Output for `git status`:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10561038/f9f11a28-7525-11e5-8e1d-a304ad3557f9.png" alt="Output for Git status on macOS" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1212576/20749004/9d64db84-b744-11e6-851b-d1f597d40d9f.png" alt="Output for Git status on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
@@ -78,7 +76,7 @@ Output for `git log`:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560966/e4ec08a6-7523-11e5-8941-4e12f6550a63.png" alt="Output for Git status on macOS" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1212576/20749003/9d62989c-b744-11e6-892b-a28981a00732.png" alt="Output for Git status on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
@@ -93,7 +91,7 @@ Output for `git log`:
     <tbody>
         <tr>
             <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10561007/498e1212-7525-11e5-8252-81503b3d6184.png" alt="tmux and vim on macOS" width="100%">
+                <img src="https://cloud.githubusercontent.com/assets/1212576/20749005/9d70a702-b744-11e6-8108-dd47a9afd247.png" alt="tmux and vim on macOS" width="100%">
             </td>
         </tr>
         <tr align="center">
