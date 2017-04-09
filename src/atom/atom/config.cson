@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "38cfcfd2-826f-4850-9547-a42133f99daa"
   core:
     autoHideMenuBar: true
     disabledPackages: [
@@ -17,6 +20,7 @@
     general:
       _analyticsUserId: "b87a31f7-4c7c-4a18-af7f-2ad25c52a013"
   linter: {}
+  "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
   minimap: {}
