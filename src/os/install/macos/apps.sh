@@ -116,7 +116,7 @@ brew_install_with_confirmation "iTerm2" "iterm2" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Keybase" "keybase" "caskroom/cask" "cask"
+# brew_install_with_confirmation "Keybase" "keybase" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
