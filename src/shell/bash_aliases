@@ -26,6 +26,7 @@ alias m="man"
 alias map="xargs -n1"                                           # map space delimited string to one item per row. Only enter input afterwards
                                                                 # See http://www.thegeekstuff.com/2013/12/xargs-examples/
 alias n="npm"
+alias nr="npm run"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
 alias q="exit"
 alias rm="rm -rf --"                                            # -- to indicate end of options in case filename starts with -
