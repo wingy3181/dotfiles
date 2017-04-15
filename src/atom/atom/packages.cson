@@ -2,6 +2,7 @@ packages: [
   "angularjs"
   "atom-beautify"
   "autocomplete-emojis"
+  "autocomplete-json"
   "busy-signal"
   "editorconfig"
   "git-plus"
