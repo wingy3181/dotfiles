@@ -1,0 +1,6 @@
+# Run `npm login` or `npm adduser` to add auth token to npm registry but DON'T check that in to my dotfiles!!!!
+init-author-name=Cheong Yip
+init-author-email=wingy3181@gmail.com
+init-author-url=https://wingcheongyip.com/
+init-license=MIT
+save-exact=true

@@ -26,6 +26,8 @@ declare -a FILES_TO_SYMLINK=(
 
     "atom/atom"
 
+    "npm/npmrc"
+
     "vim/vim"
     "vim/vimrc"
 
