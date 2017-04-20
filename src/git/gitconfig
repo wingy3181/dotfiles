@@ -55,6 +55,14 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Configure git with my personal information
+
+    cup = "!f() { \
+        git config user.name \"Cheong Yip\" && git config user.email \"wingy3181@gmail.com\"; \
+    }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # List remote branches
 
     lrb = "!f() { \
