@@ -2,6 +2,10 @@
   "atom-beautify":
     general:
       _analyticsUserId: "38cfcfd2-826f-4850-9547-a42133f99daa"
+  "autocomplete-plus":
+    fileBlacklist: [
+      "\" \""
+    ]
   core:
     autoHideMenuBar: true
     disabledPackages: [
@@ -22,6 +26,7 @@
   "linter-markdown":
     detectIgnore: false
   "linter-ui-default":
+    panelHeight: 240
     showPanel: true
   "markdown-preview":
     useGitHubStyle: true

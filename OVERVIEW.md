@@ -135,6 +135,9 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     _**NOTE**: `package-sync` is used to sync Atom packages across machines with the use of `dotfiles/src/atom/atom/packages.cson` and navigating to `Packages` -> `Package Sync` -> `Sync Packages` within Atom_
   - Packages
     - [angularjs](https://atom.io/packages/angularjs) - AngularJS support in Atom
+    - [atom-beautify](https://atom.io/packages/atom-beautify) - Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom
+    - [autocomplete-emojis](https://atom.io/packages/autocomplete-emojis) - Adds emoji autocompletion to autocomplete+
+    - [autocomplete-json](https://atom.io/packages/autocomplete-json) - Atom autocomplete+ plugin for semantic JSON completions
     - [editorconfig](https://atom.io/packages/editorconfig) - Helps developers maintain consistent coding styles between different editors
     - [git-plus](https://atom.io/packages/git-plus) - Do git things without the terminal
     - [git-time-machine](https://atom.io/packages/git-time-machine) - Visually interact with git commit history for a file
@@ -158,11 +161,13 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [.gitignore](https://plugins.jetbrains.com/plugin/7495)
     - [BashSupport](https://plugins.jetbrains.com/plugin/4230)
     - [Docker integration](https://plugins.jetbrains.com/plugin/7724)
+    - [IDE Features Trainer](https://plugins.jetbrains.com/plugin/8554-ide-features-trainer)
     - [IdeaVim](https://plugins.jetbrains.com/plugin/164)
     - [LiveEdit](https://plugins.jetbrains.com/plugin/7007)
     - [Markdown Navigator](https://plugins.jetbrains.com/plugin/7896)
     - [Markdown support](https://plugins.jetbrains.com/plugin/7793)
     - [NodeJS](https://plugins.jetbrains.com/plugin/6098)
+    - [Presentation Assistant](https://plugins.jetbrains.com/plugin/7345-presentation-assistant)
     - [Scala](https://plugins.jetbrains.com/plugin/1347)
 - [Vim](http://www.vim.org/) - Advanced "display-oriented" text editor<br/>  
   > **Learning vim references** :heavy_exclamation_mark:
