@@ -161,6 +161,7 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [.gitignore](https://plugins.jetbrains.com/plugin/7495)
     - [BashSupport](https://plugins.jetbrains.com/plugin/4230)
     - [Docker integration](https://plugins.jetbrains.com/plugin/7724)
+    - [Emoji Support Plugin](https://plugins.jetbrains.com/plugin/9174-emoji-support-plugin)
     - [IDE Features Trainer](https://plugins.jetbrains.com/plugin/8554-ide-features-trainer)
     - [IdeaVim](https://plugins.jetbrains.com/plugin/164)
     - [LiveEdit](https://plugins.jetbrains.com/plugin/7007)
