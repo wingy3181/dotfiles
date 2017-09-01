@@ -59,6 +59,7 @@ main() {
          && bash-it enable completion grunt \
          && bash-it enable completion gulp \
          && bash-it enable completion maven \
+         && bash-it enable completion ng \
          && bash-it enable completion npm \
          && bash-it enable completion sdkman \
          && bash-it enable completion tmux \
