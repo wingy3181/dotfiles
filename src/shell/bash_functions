@@ -187,6 +187,26 @@ relpath() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Adds symbolic link in 'topics' directory with $1 path to $2 optional path or current directory
+# - add-topic topics/subtopics
+# - add-topic topics/subtopics path (optional)
+# - add-topic topics/subtopics /path (optional)
+
+add-topic() {
+  # http://www.tldp.org/LDP/abs/html/parameter-substitution.html
+  # $1 : Path we wish to get relative path for
+  # $2 : Path from which to generate relative path from
+  # python -c "import os.path; print (os.path.relpath('$1','${2:-$PWD}'))" ;
+  local topicsPath="$(z -l topics | head -n 1 | awk '{ print $2 }')"
+  local destinationSymlink="$topicsPath/$1"
+  local destinationSymlinkParentDirectory=$(dirname "$destinationSymlink")
+  local sourceRelativePathFromTopics=$(relpath "${2:-$PWD}" "$destinationSymlinkParentDirectory")
+  echo "mkdir -p $destinationSymlinkParentDirectory && ln -s $sourceRelativePathFromTopics $destinationSymlink"
+  mkdir -p "$destinationSymlinkParentDirectory" && ln -s "$sourceRelativePathFromTopics" "$destinationSymlink"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Create new directories and enter the first one
 
 mkcd() {
