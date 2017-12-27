@@ -93,6 +93,67 @@ git-remotes-list() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Create config for topics folder. This config will be used by other computers
+# to sync the repositories.
+# Config:
+# - 1st column: Topic relative path from parent topics folder
+# - 2nd column: git clone url
+# - 3rd column: Relative path from parent topics folder to clone topic to
+
+create-topics-config() {
+    if [[ "$PWD" == *topics ]]
+    then
+        rm $PWD/.topics.config
+        find -L . -name .git -type d  -mindepth 2 | while read -r d; do
+           cd "$d/.." || exit
+           local topicRelativePath="${PWD//$OLDPWD/}"
+           local topicAbsolutePath="${PWD}"
+           local topicParentAbsolutePath="$(dirname $topicAbsolutePath)"
+           local symlinkRelativeToTopicPath="$(readlink $topicAbsolutePath)"
+           local symlinkAbsolutePath="$topicParentAbsolutePath/$symlinkRelativeToTopicPath"
+           local symlinkRelativeToTopicParentPath="$(relpath $symlinkAbsolutePath $OLDPWD)"
+           local gitUrl="$(git remote get-url origin)"
+           local configItem="$topicRelativePath $gitUrl $symlinkRelativeToTopicParentPath"
+           echo "$configItem"
+           echo "$configItem" >> $OLDPWD/.topics.config
+           cd "$OLDPWD" || exit
+        done
+    else
+        echo "Please run 'create-topics-config' under 'topics' directory"
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Sync config for topics folder from topics config
+# Config:
+# - 1st column: Topic relative path from parent topics folder
+# - 2nd column: git clone url
+# - 3rd column: Relative path from parent topics folder to clone topic to
+
+sync-topics-config() {
+    if [[ "$PWD" == *topics ]]
+    then
+        local topicsConfig="$PWD/.topics.config"
+        while read name
+        do
+            local gitCloneUrl="$(echo $name | awk '{ print $2 }')"
+            local gitDestinationPath="$(echo $name | awk '{ print $3 }')"
+            if [[ -d "$gitDestinationPath" ]]
+            then
+                echo "$gitDestinationPath already exists"
+            else
+                echo "git clone $gitCloneUrl $gitDestinationPath"
+                git clone $gitCloneUrl $gitDestinationPath
+            fi
+        done < $topicsConfig
+    else
+        echo "Please run 'sync-topics-config' under 'topics' directory"
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Get gzip information (gzipped file size + reduction size)
 
 gz() {
