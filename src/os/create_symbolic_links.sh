@@ -23,6 +23,7 @@ declare -a FILES_TO_SYMLINK=(
     "git/gitattributes"
     "git/gitconfig"
     "git/gitignore"
+    "git/git_commit_message_template"
 
     "atom/atom"
 

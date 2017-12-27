@@ -146,6 +146,7 @@
     # https://help.github.com/articles/signing-commits-using-gpg/
 
     gpgsign = false
+    template = ~/.git_commit_message_template
 
 [diff "bin"]
 
