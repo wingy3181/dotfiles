@@ -87,7 +87,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install "Bash Completion 2" "bash-completion2" "homebrew/versions"
+    brew_install "Bash Completion 2" "bash-completion@2"
 
 }
 
