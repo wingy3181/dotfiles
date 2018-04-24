@@ -239,11 +239,13 @@ execute "defaults write com.apple.finder XtraFinder_XFDualWindowActionPlugin -bo
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# DEPRECATED for OS X 10.13 and only allows this to be executed from the Recovery OS
 # https://www.trankynam.com/xtrafinder/sip.html
 # http://apple.stackexchange.com/questions/208478/how-do-i-disable-system-integrity-protection-sip-aka-rootless-on-os-x-10-11
 # This is so that XtraFinder works on OS X 10,11 - El Capitan
-execute "csrutil enable --without debug" \
-    "Partially disable System Integrity Protection"
+# 
+# execute "csrutil enable --without debug" \
+#    "Partially disable System Integrity Protection"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
