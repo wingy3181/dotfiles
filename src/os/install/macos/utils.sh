@@ -126,7 +126,15 @@ brew_update() {
     execute \
         "brew update" \
         "brew (update)"
-
+    
+    which brew
+    ls -al /usr/local/bin/brew
+    cat /usr/local/Homebrew/Library/Homebrew/brew.sh
+    # Hack to workaround the sudo issues on Travis CI
+    # Change brew so that it can be run as root
+    # Source: https://github.com/Homebrew/brew/blob/master/Library/Homebrew/brew.sh
+    [[ -z "${TRAVIS}" ]] && sed -i -e 's/\(check-run-command-as-root\)$//g' /usr/local/Homebrew/Library/Homebrew/brew.sh
+    cat /usr/local/Homebrew/Library/Homebrew/brew.sh
 }
 
 brew_upgrade() {
@@ -135,4 +143,13 @@ brew_upgrade() {
         "brew upgrade" \
         "brew (upgrade)"
 
+    which brew
+    ls -al /usr/local/bin/brew
+    cat /usr/local/Homebrew/Library/Homebrew/brew.sh
+    # Hack to workaround the sudo issues on Travis CI
+    # Change brew so that it can be run as root
+    # Source: https://github.com/Homebrew/brew/blob/master/Library/Homebrew/brew.sh
+    [[ -z "${TRAVIS}" ]] && sed -i -e 's/\(check-run-command-as-root\)$//g' /usr/local/Homebrew/Library/Homebrew/brew.sh
+    which brew
+    cat /usr/local/Homebrew/Library/Homebrew/brew.sh
 }

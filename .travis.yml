@@ -6,7 +6,8 @@ before_install:
   - ./test/customize_environment.sh
 
 install:
-  - ./src/os/setup.sh -y
+  - sed -i -e 's/\(check-run-command-as-root\)$//g' /usr/local/Homebrew/Library/Homebrew/brew.sh
+  - sudo ./src/os/setup.sh -y
 
 language: generic
 
