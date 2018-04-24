@@ -254,10 +254,6 @@ brew_install_with_confirmation "WebStorm" "webstorm" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "WebKit" "webkit-nightly" "caskroom/versions" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "XtraFinder" "xtrafinder" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
