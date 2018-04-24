@@ -254,7 +254,8 @@ brew_install_with_confirmation "WebStorm" "webstorm" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "XtraFinder" "xtrafinder" "caskroom/cask" "cask"
+# xtrafinder seems to be have removed from cask. Have to install manually via https://www.trankynam.com/xtrafinder/
+# brew_install_with_confirmation "XtraFinder" "xtrafinder" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
