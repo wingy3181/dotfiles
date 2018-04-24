@@ -148,6 +148,10 @@ brew_install_with_confirmation "Opera Developer" "opera-developer" "caskroom/ver
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Postman" "postman" "caskroom/versions" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 #https://github.com/sindresorhus/quick-look-plugins
 brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo" "caskroom/cask" "cask"
 
@@ -223,6 +227,10 @@ brew_install_with_confirmation "Transmission" "transmission" "caskroom/cask" "ca
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Tunnelblick" "tunnelblick" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Unarchiver" "the-unarchiver" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -241,6 +249,10 @@ brew_install_with_confirmation "Vim" "vim --with-override-system-vi"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "VLC" "vlc" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+brew_install_with_confirmation "VS Code" "visual-studio-code" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -268,3 +280,8 @@ brew_install_with_confirmation "z" "z"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "Zopfli" "zopfli"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+brew_install_with_confirmation "4K Video Downloader" "4k-video-downloader" "caskroom/cask" "cask"
+
