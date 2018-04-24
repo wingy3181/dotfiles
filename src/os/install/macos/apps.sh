@@ -59,8 +59,8 @@ brew_install_with_confirmation "FFmpeg" "ffmpeg"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "Firefox" "firefox" "caskroom/cask" "cask"
-brew_install_with_confirmation "Firefox Developer" "firefoxdeveloperedition" "caskroom/versions" "cask"
-brew_install_with_confirmation "Firefox Nightly" "firefoxnightly" "caskroom/versions" "cask"
+brew_install_with_confirmation "Firefox Developer" "firefox-developer-edition" "caskroom/versions" "cask"
+brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
