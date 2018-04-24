@@ -149,7 +149,7 @@ brew_install_with_confirmation "Opera Developer" "opera-developer" "caskroom/ver
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 #https://github.com/sindresorhus/quick-look-plugins
-brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package" "caskroom/cask" "cask"
+brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize webpquicklook suspicious-package quicklookase qlvideo" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
