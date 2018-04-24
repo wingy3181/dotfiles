@@ -80,7 +80,7 @@ brew_install_with_confirmation "Git Large File Storage" "git-lfs"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "GPG Tools" "gpgtools" "caskroom/cask" "cask"
+brew_install_with_confirmation "GPG Suite" "gpg-suite" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
