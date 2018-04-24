@@ -354,6 +354,7 @@ main() {
     print_optional_info "Install Microsoft Remote Desktop from App Store"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
     print_optional_info "Install Synergy"
+    print_optional_info "Install Java 7, 9, 10 from Oracle"
     print_optional_info "Set minimalist menu bar with Bartender 2"
     print_optional_info "Set dotfiles/src/bin to PATH in .bash.local"
     print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/

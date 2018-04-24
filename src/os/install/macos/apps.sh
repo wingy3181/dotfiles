@@ -124,7 +124,9 @@ brew_install_with_confirmation "Java 6" "java6" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Java 7" "java7" "caskroom/versions" "cask"
+# java7 removed. See https://github.com/caskroom/homebrew-versions/pull/3914
+# Alternative use zulu or install manually
+#brew_install_with_confirmation "Java 7" "java7" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
