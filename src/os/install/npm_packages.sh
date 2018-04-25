@@ -6,7 +6,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 declare -r -a NPM_PACKAGES=(
-    "angular-cli"
+    "@angular/cli"
     "babel-cli"
     "browser-sync"
     "bower"
