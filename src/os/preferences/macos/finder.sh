@@ -72,6 +72,9 @@ execute "defaults write com.apple.finder ShowRecentTags -bool true" \
 execute "defaults write -g AppleShowAllExtensions -bool true" \
     "Show all filename extensions"
 
+execute "defaults write com.apple.finder AppleShowAllFiles -bool true" \
+    "Show all files (hidden)"
+
 # Finder -> Preferences -> View -> Show View Options -> Icon Size
 execute "/usr/libexec/PlistBuddy -c 'Set :DesktopViewSettings:IconViewSettings:iconSize 72' ~/Library/Preferences/com.apple.finder.plist && \
          /usr/libexec/PlistBuddy -c 'Set :StandardViewSettings:IconViewSettings:iconSize 72' ~/Library/Preferences/com.apple.finder.plist" \
