@@ -206,6 +206,10 @@ brew_install_with_confirmation "Spotify" "spotify" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Squidman" "squidman" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "sshrc" "sshrc"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
