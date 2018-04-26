@@ -134,7 +134,11 @@ brew_install_with_confirmation "Java 6" "java6" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Java 8" "java" "caskroom/cask" "cask"
+brew_install_with_confirmation "Java 8" "java8" "caskroom/versions" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+brew_install_with_confirmation "Java (latest - 10)" "java" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

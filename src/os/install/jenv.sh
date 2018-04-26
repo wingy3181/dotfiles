@@ -106,11 +106,19 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        # By default, use version 1.8 of `java`
+        # By default, use version 10.0 of `java`
 
         execute_without_spinner \
-            "jenv global 1.8" \
-            "jenv (set 1.8 as global default - See ~/.jenv/version)"
+            "jenv global 10.0" \
+            "jenv (set 10.0 as global default - See ~/.jenv/version)"
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        # Re-source ~/.bash_profile to pick jenv in current terminal
+
+        execute_without_spinner \
+            ". '$HOME/.bash_profile'" \
+            "Re-source ~/.bash_profile"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
