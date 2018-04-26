@@ -20,9 +20,9 @@ packages: [
   "minimap"
   "package-sync"
   "pigments"
+  "platformio-ide-terminal"
   "project-manager"
   "script"
-  "terminal-plus"
   "toggle-packages"
-  "vim-mode"
+  "vim-mode-plus"
 ]
