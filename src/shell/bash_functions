@@ -152,6 +152,31 @@ sync-topics-config() {
     fi
 }
 
+# Sync symbolic links for topics folder from topics config
+# Config:
+# - 1st column: Topic relative path from parent topics folder
+# - 2nd column: git clone url
+# - 3rd column: Relative path from parent topics folder to clone topic to
+sync-topics-symbolic-links() {
+    if [[ "$PWD" == *topics ]]
+    then
+        local topicsConfig="$PWD/.topics.config"
+        while read name
+        do
+            local topicsFolderAndSubFolder="$(echo $name | awk '{ print $1 }')"
+            local topicsSymbolicLinkPath="$(echo $name | awk '{ print $3 }')"
+            if [ "$(readlink "${topicsFolderAndSubFolder:1:${#topicsFolderAndSubFolder}}")" == "../$topicsSymbolicLinkPath" ]; 
+            then
+                echo "$topicsFolderAndSubFolder → ../$topicsSymbolicLinkPath already exists"
+            else
+                echo "add-topic "$topicsFolderAndSubFolder" "$topicsSymbolicLinkPath""
+            fi
+        done < $topicsConfig
+    else
+        echo "Please run 'sync-topics-sync-topics-symbolic-links' under 'topics' directory"
+    fi
+}
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Get gzip information (gzipped file size + reduction size)
