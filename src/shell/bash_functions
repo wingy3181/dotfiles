@@ -377,3 +377,38 @@ upgrade-nvm() {
 
     fi
 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Update global npm modules for all node versions installed via nvm
+# NOTE: To copy global npm packages across different node versions, use:
+# `nvm install 8.9.4 --reinstall-packages-from=node`
+# Check global packages list via `npm ls -g --depth 0``
+
+update-global-npm-modules-for-all-node-versions() {
+    # Remember current node version to restore later. Remove 'v' and carriage returns
+    declare CURRENT_NODE_VERSION=$(node --version | sed "s/[v\r]//g")
+
+    # Get all versions of node installed via `nvm`
+    # Delete any text: '(', Delete any text: 'system', Delete any empty lines, Remove any spaces, 'v', '*', '->'
+    mapfile -t NODE_VERSIONS < <(nvm list --no-colors | sed -e "s/.*(.*//g" | sed "s/system//g" | sed "s/[[:space:]]//g" | sed "s/[v*>-]//g" | sed "/^\s*$/d")
+    for i in "${NODE_VERSIONS[@]}"; do
+        # Switch node versions
+        echo "${i}"
+        nvm use "${i}"
+        sleep 1s
+        # Get all globally installed modules for current node version
+        # Delete first line, first 4 characters of each line, Delete line starting with 'npm@', Delete any empty lines
+        mapfile -t GLOBAL_NPM_MODULES < <(npm ls -g --depth 0 | sed -e "1d" | sed "s/^....//g" | sed "/^npm@/d" | sed "/^\s*$/d")
+
+        # [[ "${i}" == "${CURRENT_NODE_VERSION}" ]] && echo '==' || echo '!='
+        for j in "${GLOBAL_NPM_MODULES[@]}"; do
+            echo "Updating global npm module: '${j}' for node version: '${i}'"
+            npm update -g ${j}
+        done
+    done
+    # Restore to previous version that we set via nvm
+    nvm use ${CURRENT_NODE_VERSION}
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
