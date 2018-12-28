@@ -17,10 +17,6 @@ brew_cleanup() {
         "brew cleanup" \
         "brew (cleanup)"
 
-    execute \
-        "brew cask cleanup" \
-        "brew cask (cask cleanup)"
-
 }
 
 brew_install() {

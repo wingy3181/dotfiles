@@ -36,8 +36,7 @@ alias brewr="brew uninstall"
 alias brews="brew search"
 alias brewu="brew update \
                 && brew upgrade \
-                && brew cleanup \
-                && brew cask cleanup"
+                && brew cleanup"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -101,7 +100,6 @@ alias u="sudo softwareupdate --install --all \
             && brew update \
             && brew upgrade \
             && brew cleanup \
-            && brew cask cleanup \
             && bash-it update \
             && upgrade-jenv \
             && sdk selfupdate \
