@@ -54,7 +54,7 @@ download() {
 }
 
 download_dotfiles() {
-    
+
     print_info "Download and extract archive"
 
     local tmpFile=""
@@ -356,6 +356,11 @@ main() {
     print_optional_info "Install Synergy"
     print_optional_info "Install Java 7, 9, 10 from Oracle"
     print_optional_info "Install XtraFinder"
+    print_optional_info "Install npm package 'browser-sync' globally (try to avoid and use local project version)"
+    print_optional_info "Install npm package 'http-server' globally (try to avoid and use local project version)"
+    print_optional_info "Install npm package 'livereload' globally (try to avoid and use local project version)"
+    print_optional_info "Install npm package 'localtunnel' globally (try to avoid and use local project version)"
+    print_optional_info "Install npm package 'npm-check' globally (try to avoid and use local project version)"
     print_optional_info "Set minimalist menu bar with Bartender 2"
     print_optional_info "Set dotfiles/src/bin to PATH in .bash.local"
     print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/

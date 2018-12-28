@@ -5,25 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-declare -r -a NPM_PACKAGES=(
-    "@angular/cli"
-    "babel-cli"
-    "browser-sync"
-    "bower"
-    "eslint"
-    "grunt-cli"
-    "gulp-cli"
-    "http-server"
-    "jshint"
-    "jscs"
-    "karma-cli"
-    "livereload"
-    "localtunnel"
-    "npm-check"
-    "typescript"
-    "webpack"
-    "yo"
-)
+declare -r -a NPM_PACKAGES=()
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
