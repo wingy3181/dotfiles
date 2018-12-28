@@ -80,10 +80,6 @@ brew_install_with_confirmation "Handbrake" "handbrake" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Helium by Jaden Geller" "jadengeller-helium" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "htop" "htop"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
