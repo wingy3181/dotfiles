@@ -270,7 +270,6 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 ### Other
 - [~~**Beyond Compare\***~~](http://www.scootersoftware.com/) - Data comparison application/utility
 - [Docker for Mac](https://docs.docker.com/docker-for-mac/) - Installer to setup Docker environments natively for macOS
-- [Docker Toolbox](https://www.docker.com/products/docker-toolbox) - Installer to setup Docker environments indirectly through a boot2docker virtual machine image. Consists of:
   - [Docker Machine](https://docs.docker.com/machine/) - Docker Machine is a tool that lets you install Docker Engine on virtual hosts, and manage the hosts with `docker-machine` commands
   - [Docker Engine](https://docs.docker.com/engine/) - Engine for building and containerizing applications, and running them via `docker` commands
   - [Docker Compose](https://docs.docker.com/compose/) - Compose is a tool for defining and running multi-container Docker applications via `docker-compose` commands
