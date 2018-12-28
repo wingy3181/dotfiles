@@ -64,7 +64,6 @@ main() {
          && bash-it enable completion npm \
          && bash-it enable completion sdkman \
          && bash-it enable completion tmux \
-         && bash-it enable completion vagrant \
          && bash-it enable completion virtualbox" \
         "Bash-it (enable completions)"
 
