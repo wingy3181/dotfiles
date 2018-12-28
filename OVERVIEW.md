@@ -145,7 +145,6 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [Markdown support](https://plugins.jetbrains.com/plugin/7793)
     - [NodeJS](https://plugins.jetbrains.com/plugin/6098)
     - [Presentation Assistant](https://plugins.jetbrains.com/plugin/7345-presentation-assistant)
-    - [Scala](https://plugins.jetbrains.com/plugin/1347)
 - [Vim](http://www.vim.org/) - Advanced "display-oriented" text editor<br/>  
   > **Learning vim references** :heavy_exclamation_mark:
   >  - http://www.slant.co/search?query=vim
@@ -203,7 +202,9 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 ### SDKs
 - [Java 6 (current)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html) [(archive)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html)
 - [Java 7 (current)](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) [(archive)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html)
-- [Java 8 (current)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) [(archive)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html)
+- [Java 8 (current)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) [(archive)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html)
+- [Java 11 (current)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) [(archive)](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
+
 
 ### Terminal
 - [Bash](https://www.gnu.org/software/bash/) - Bash is the GNU Project's shell. Bash is the Bourne Again SHell. Bash is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh)

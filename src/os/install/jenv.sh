@@ -106,11 +106,11 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        # By default, use version 10.0 of `java`
+        # By default, use version 11.0 of `java`
 
         execute_without_spinner \
-            "jenv global 10.0" \
-            "jenv (set 10.0 as global default - See ~/.jenv/version)"
+            "jenv global 11.0" \
+            "jenv (set 11.0 as global default - See ~/.jenv/version)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -129,11 +129,8 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
             "jenv enable-plugin ant \
              && jenv enable-plugin export \
              && jenv enable-plugin gradle \
-             && jenv enable-plugin grails \
              && jenv enable-plugin groovy \
              && jenv enable-plugin maven \
-             && jenv enable-plugin sbt \
-             && jenv enable-plugin scala \
              && jenv enable-plugin springboot" \
             "jenv (enable plugins)"
 

@@ -113,7 +113,7 @@ brew_install_with_confirmation "Java 6" "java6" "caskroom/versions" "cask"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # java7 removed. See https://github.com/caskroom/homebrew-versions/pull/3914
-# Alternative use zulu or install manually
+# Alternative use zulu @ https://github.com/Homebrew/homebrew-cask-versions/find/master) or install manually
 #brew_install_with_confirmation "Java 7" "java7" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -122,7 +122,12 @@ brew_install_with_confirmation "Java 8" "java8" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Java (latest - 10)" "java" "caskroom/cask" "cask"
+# Curl keeps failing and download fails to download gz file. Not sure why as placing in browser works
+# but after placing in browser seems to work via brew again.
+# As of writing, the latest version and URL is: https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_osx-x64_bin.tar.gz
+# See https://github.com/Homebrew/homebrew-cask/blob/master/Casks/java.rb
+# Alternative use zulu @ https://github.com/Homebrew/homebrew-cask-versions/find/master) or install manually
+brew_install_with_confirmation "Java (latest)" "java" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
