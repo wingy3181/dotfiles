@@ -194,20 +194,11 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [nvm](https://github.com/creationix/nvm) - Node Version Manager
 - [npm](https://www.npmjs.com/) - The default package manager for the JavaScript runtime environment Node.js
   - Packages
-    - [babel-cli](https://www.npmjs.com/package/babel-cli) - Babel command line
-    - [bower](https://www.npmjs.com/package/bower) - The browser package manager
-    - [eslint](https://www.npmjs.com/package/eslint) - An AST-based pattern checker for JavaScript
-    - [grunt-cli](https://www.npmjs.com/package/grunt-cli) - The grunt command line interface
-    - [gulp-cli](https://www.npmjs.com/package/gulp-cli) - Command line interface for gulp
+    - [browser-sync](https://www.npmjs.com/package/browser-sync) - Time-saving synchronised browser testing
     - [http-server](https://www.npmjs.com/package/http-server) - A simple zero-configuration command-line http server
-    - [jshint](https://www.npmjs.com/package/jshint) - Static analysis tool for JavaScript
-    - [jscs](https://www.npmjs.com/package/jscs) - Code style linter and formatter for your style guide
-    - [karma-cli](https://www.npmjs.com/package/karma-cli) - The Karma command line interface
     - [localtunnel](https://www.npmjs.com/package/localtunnel) - Expose `localhost` to the world for easy testing and sharing
     - [npm-check](https://www.npmjs.com/package/npm-check) - Check for outdated, incorrect, and unused dependencies
     - [typescript](https://www.npmjs.com/package/typescript) - TypeScript compiler. TypeScript is a language for application scale JavaScript development
-    - [webpack](https://www.npmjs.com/package/webpack) - Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jade, coffee, css, less, ... and your custom stuff
-    - [yo](https://www.npmjs.com/package/yo) - CLI tool for running Yeoman generators
 
 ### SDKs
 - [Java 6 (current)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html) [(archive)](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html)
