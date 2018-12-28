@@ -25,8 +25,6 @@ declare -a FILES_TO_SYMLINK=(
     "git/gitignore"
     "git/git_commit_message_template"
 
-    "atom/atom"
-
     "npm/npmrc"
 
     "vim/vim"

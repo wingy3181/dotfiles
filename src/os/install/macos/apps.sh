@@ -18,10 +18,6 @@ brew_install_with_confirmation "AppCleaner" "appcleaner" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Atom" "atom" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "Bartender 2" "bartender" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

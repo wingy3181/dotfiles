@@ -131,29 +131,6 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - Install [homebrew](http://brew.sh/) (with [Cask](https://caskroom.github.io/)) via the command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 ### IDEs
-- [Atom](https://atom.io/) - GitHub's text editor<br/>
-    _**NOTE**: `package-sync` is used to sync Atom packages across machines with the use of `dotfiles/src/atom/atom/packages.cson` and navigating to `Packages` -> `Package Sync` -> `Sync Packages` within Atom_
-  - Packages
-    - [angularjs](https://atom.io/packages/angularjs) - AngularJS support in Atom
-    - [atom-beautify](https://atom.io/packages/atom-beautify) - Beautify HTML, CSS, JavaScript, PHP, Python, Ruby, Java, C, C++, C#, Objective-C, CoffeeScript, TypeScript, Coldfusion, SQL, and more in Atom
-    - [autocomplete-emojis](https://atom.io/packages/autocomplete-emojis) - Adds emoji autocompletion to autocomplete+
-    - [autocomplete-json](https://atom.io/packages/autocomplete-json) - Atom autocomplete+ plugin for semantic JSON completions
-    - [editorconfig](https://atom.io/packages/editorconfig) - Helps developers maintain consistent coding styles between different editors
-    - [git-plus](https://atom.io/packages/git-plus) - Do git things without the terminal
-    - [git-time-machine](https://atom.io/packages/git-time-machine) - Visually interact with git commit history for a file
-    - [language-docker](https://atom.io/packages/language-docker) - Dockerfile syntax highlighting
-    - [linter](https://atom.io/packages/linter) - A base linter provider for Atom. See http://atomlinter.github.io/ for a full list of available linters
-    - [linter-docker](https://atom.io/packages/linter-docker) - Linter plugin for Dockerfile's, using dockerlint
-    - [linter-jscs](https://atom.io/packages/linter-jscs) - Linter plugin for JavaScript, using JSCS
-    - [linter-markdown](https://atom.io/packages/linter-markdown) - Lint markdown on the fly, using remark-lint
-    - [logo-file-icons](https://atom.io/packages/logo-file-icons) - Add some nice logo icons to your files in Atom. Logos were taken from http://svgporn.com/
-    - [minimap](https://atom.io/packages/minimap) - A preview of the full source code
-    - [package-sync](https://atom.io/packages/package-sync) - Synchronises packages installed between computers
-    - [pigments](https://atom.io/packages/pigments) - A package to display colors in project and files.
-    - [project-manager](https://atom.io/packages/project-manager) - A package to managing switching projects easily within Atom.
-    - [terminal-plus](https://atom.io/packages/terminal-plus) - A terminal package for  Atom
-    - [toggle-packages](https://atom.io/packages/toggle-packages) - A package for enabling and disabling packages
-    - [vim-mode](https://atom.io/packages/vim-mode) - Add vim modal control
 - [~~**DataGrip\***~~](https://www.jetbrains.com/datagrip/) - JetBrain's integrated development environment for Database/SQL development
 - [WebStorm](https://www.jetbrains.com/webstorm/) - JetBrain's integrated development environment for JavaScript development
 - [Intellij](https://www.jetbrains.com/idea/) - JetBrain's integrated development environment for Java development
