@@ -186,7 +186,6 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 ### SCM
 - [Git](https://git-scm.com) - Distributed version control system
 - [Git Large File Storage](https://git-lfs.github.com/) - Extension to git for versioning large files
-- [SourceTree](https://www.sourcetreeapp.com/) - Git GUI Client (alternatives are [Tower2](https://www.git-tower.com/))
 
 ### SDK managers
 - [jenv](http://www.jenv.be/) - Java environment manager (version manager)
