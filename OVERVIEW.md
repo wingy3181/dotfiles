@@ -131,7 +131,6 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - Install [homebrew](http://brew.sh/) (with [Cask](https://caskroom.github.io/)) via the command `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 ### IDEs
-- [~~**DataGrip\***~~](https://www.jetbrains.com/datagrip/) - JetBrain's integrated development environment for Database/SQL development
 - [WebStorm](https://www.jetbrains.com/webstorm/) - JetBrain's integrated development environment for JavaScript development
 - [Intellij](https://www.jetbrains.com/idea/) - JetBrain's integrated development environment for Java development
   - Plugins
@@ -234,7 +233,6 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [npm](https://github.com/Bash-it/bash-it/blob/master/completion/available/npm.completion.bash)
     - [sdkman](https://github.com/Bash-it/bash-it/blob/master/completion/available/sdkman.completion.bash)
     - [tmux](https://github.com/Bash-it/bash-it/blob/master/completion/available/tmux.completion.bash)
-    - [vagrant](https://github.com/Bash-it/bash-it/blob/master/completion/available/vagrant.completion.bash)
     - [virtualbox](https://github.com/Bash-it/bash-it/blob/master/completion/available/virtualbox.completion.bash)
   - Plugins
     - [base](https://github.com/Bash-it/bash-it/blob/master/plugins/available/base.plugin.bash)
@@ -280,5 +278,3 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 - [Oracle VirtualBox](https://www.virtualbox.org/) - VirtualBox is a general-purpose full virtualizer for x86 hardware
 - [GPGTools](https://gpgtools.org/) - Software tools for email and file encryption. See https://en.wikipedia.org/wiki/GPGTools for more details
 - [**Pygments\***](http://pygments.org/) - Syntax highlighter written in Python that provides `pygmentize` CLI command. Used by bash-it's and installed via command: `sudo easy_install -U Pygments` [`less-pretty-cat`](https://github.com/Bash-it/bash-it/blob/master/plugins/available/less-pretty-cat.plugin.bash) plugin
-- [Vagrant](https://www.vagrantup.com/) - Software that creates and configures virtual development environments
-- [Vagrant Manager](http://vagrantmanager.com/) - Manage your Vagrant machines in one place with Vagrant Manager for OS X and Windows
