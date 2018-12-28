@@ -219,7 +219,7 @@ brew_install_with_confirmation "tmux (pasteboard)" "reattach-to-user-namespace"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Tor Browser" "torbrowser" "caskroom/cask" "cask"
+brew_install_with_confirmation "Tor Browser" "tor-browser" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
