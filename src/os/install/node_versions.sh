@@ -6,6 +6,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # https://nodejs.org/en/download/releases/
 declare -r -a NODE_VERSIONS=(
     "node"
+    "10"
+    "8"
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
