@@ -357,6 +357,7 @@ main() {
     print_optional_info "Install Synergy"
     print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
     print_optional_info "Install XtraFinder"
+    print_optional_info "Install Office 365 (https://www.office.com/)"
     print_optional_info "Install npm package 'browser-sync' globally (try to avoid and use local project version)"
     print_optional_info "Install npm package 'http-server' globally (try to avoid and use local project version)"
     print_optional_info "Install npm package 'livereload' globally (try to avoid and use local project version)"
