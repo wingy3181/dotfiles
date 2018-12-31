@@ -352,6 +352,7 @@ main() {
     print_optional_info "Install LibreOffice or Microsoft Office"
     print_optional_info "Install Bandwidth+ from App Store"
     print_optional_info "Install Helium by Jaden Geller from App Store (https://itunes.apple.com/us/app/helium/id1054607607?ls=1&mt=12)"
+    print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
     print_optional_info "Install Sketch"
