@@ -145,6 +145,15 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
     - [Markdown support](https://plugins.jetbrains.com/plugin/7793)
     - [NodeJS](https://plugins.jetbrains.com/plugin/6098)
     - [Presentation Assistant](https://plugins.jetbrains.com/plugin/7345-presentation-assistant)
+- [VS Code](https://code.visualstudio.com/) - Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications
+  - Plugins
+    > Use [Settings Sync][1] to keep all my settings and plugins the same across platforms and devices
+    - [Settings Sync][1]
+      - [Personal Access Token from GitHub](https://github.com/settings/tokens)
+      - [Github Gist that stores my VS Code Settings](https://gist.github.com/wingy3181/e7b8fde022a14cff76a96b4a1a98ad7f)
+
+[1]: https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
+
 - [Vim](http://www.vim.org/) - Advanced "display-oriented" text editor<br/>  
   > **Learning vim references** :heavy_exclamation_mark:
   >  - http://www.slant.co/search?query=vim
