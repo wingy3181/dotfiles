@@ -188,6 +188,10 @@ username with your own in the [`setup` snippets](#setup) and [in the
 
 ## Tips and Tricks
 
+- ### How to wipe freespace on macbook hard drive?
+  > Run the command `diskutil secureErase freespace 3 /Volumes/Macintosh\ HD`
+  - https://www.backblaze.com/blog/how-to-wipe-a-mac-hard-drive/
+
 - ### How to see currently defined aliases and functions?
   - #### Aliases
 
