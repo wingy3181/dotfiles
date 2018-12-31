@@ -354,6 +354,7 @@ main() {
     print_optional_info "Install Helium by Jaden Geller from App Store (https://itunes.apple.com/us/app/helium/id1054607607?ls=1&mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
+    print_optional_info "Install Sketch"
     print_optional_info "Install Synergy"
     print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
     print_optional_info "Install XtraFinder"
