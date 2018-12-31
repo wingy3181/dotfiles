@@ -133,6 +133,11 @@ Cask extends Homebrew and brings its elegance, simplicity, and speed to macOS ap
 ### IDEs
 - [WebStorm](https://www.jetbrains.com/webstorm/) - JetBrain's integrated development environment for JavaScript development
 - [Intellij](https://www.jetbrains.com/idea/) - JetBrain's integrated development environment for Java development
+  > Use [IDE Settings Sync](https://plugins.jetbrains.com/plugin/9922-ide-settings-sync) to keep all my settings and plugins the same across platforms and devices via Jetbrains account
+  > See https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync for more information
+  > Example sharing through a cloud repository to see the file contents is:
+  > - https://github.com/wingy3181/intellij-settings-sync
+  > - https://github.com/wingy3181/webstorm-settings-sync
   - Plugins
     - [.gitignore](https://plugins.jetbrains.com/plugin/7495)
     - [BashSupport](https://plugins.jetbrains.com/plugin/4230)

@@ -375,6 +375,7 @@ main() {
     # export PATH
     print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/
     print_optional_info "Set user profile picture"
+    print_optional_info "Set Jetbrains IDE settings via IDE Settings Sync and Jetbrains account (https://plugins.jetbrains.com/plugin/9922-ide-settings-sync and https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)"
     print_optional_info "Set VS Code settings via Settings Sync (https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync and https://gist.github.com/wingy3181/e7b8fde022a14cff76a96b4a1a98ad7f)"
 
     printf "\n"
