@@ -356,6 +356,7 @@ main() {
     print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
+    print_optional_info "Install ScanSnap software for Fujitsu s1300i (http://scansnap.fujitsu.com/global/dl/ and http://scansnap.fujitsu.com/global/dl/mac-1014-s1300i.html)"
     print_optional_info "Install Sketch"
     print_optional_info "Install Synergy"
     print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
