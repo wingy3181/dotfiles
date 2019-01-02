@@ -350,6 +350,7 @@ main() {
     print_optional_info "Install DisplayLink Software for dynadock (https://www.displaylink.com/downloads/macos)"
     print_optional_info "Install Evernote"
     print_optional_info "Install Keybase"
+    print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or `brew cask install ledger-live`)"
     print_optional_info "Install LibreOffice or Microsoft Office"
     print_optional_info "Install Bandwidth+ from App Store (https://itunes.apple.com/au/app/bandwidth/id490461369?mt=12)"
     print_optional_info "Install Helium by Jaden Geller from App Store (https://itunes.apple.com/us/app/helium/id1054607607?ls=1&mt=12)"
