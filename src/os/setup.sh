@@ -346,6 +346,7 @@ main() {
 
     print_optional_info "Add favourite locations (home & Development) to Finder sidebar"
     print_optional_info "Install Beyond Compare"
+    print_optional_info "Install Blackvue Viewer for Mac (https://www.blackvue.com/download/blackvue-mac-viewer-cloud/)"
     print_optional_info "Install DataGrip (JetBrains)"
     print_optional_info "Install DisplayLink Software for dynadock (https://www.displaylink.com/downloads/macos)"
     print_optional_info "Install Evernote"
