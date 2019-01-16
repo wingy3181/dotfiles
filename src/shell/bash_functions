@@ -363,7 +363,7 @@ upgrade-jenv() {
 
         # Ensure the latest version of `jenv` is used
 
-        execute \
+        execute_without_spinner \
             "cd $JENV_DIRECTORY \
                 && git fetch --quiet origin \
                 && git checkout --quiet \$(git describe --abbrev=0 --tags) \
@@ -390,7 +390,7 @@ upgrade-nvm() {
 
         # Ensure the latest version of `nvm` is used
 
-        execute \
+        execute_without_spinner \
             "cd $NVM_DIRECTORY \
                 && git fetch --quiet origin \
                 && git checkout --quiet \$(git describe --abbrev=0 --tags) \
