@@ -279,6 +279,10 @@ brew_install_with_confirmation "yarn" "yarn"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "youtube-dl" "youtube-dl"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "z" "z"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
