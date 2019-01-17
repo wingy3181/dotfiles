@@ -147,6 +147,10 @@ brew_install_with_confirmation "NordVPN" "nordvpn" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Notion" "notion" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "nvm-auto-switch" "https://raw.githubusercontent.com/wingy3181/nvm-auto-switch/wingy3181-patch-1/homebrew/nvm-auto-switch.rb"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
