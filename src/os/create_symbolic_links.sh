@@ -34,6 +34,8 @@ declare -a FILES_TO_SYMLINK=(
 
     "sshrc/sshrc"
 
+    "other/ideavimrc"
+
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
