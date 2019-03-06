@@ -27,6 +27,8 @@ declare -a FILES_TO_SYMLINK=(
 
     "npm/npmrc"
 
+    "nvm/nvm/default-packages"
+
     "vim/vim"
     "vim/vimrc"
 
@@ -34,6 +36,7 @@ declare -a FILES_TO_SYMLINK=(
 
     "sshrc/sshrc"
 
+    "other/czrc"
     "other/ideavimrc"
 
 )
