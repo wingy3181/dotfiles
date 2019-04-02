@@ -229,6 +229,10 @@ local.properties
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
+# Markdown Navigator plugin:
+.idea/markdown-navigator.xml
+.idea/markdown-navigator
+
 ## File-based project format:
 *.iws
 
