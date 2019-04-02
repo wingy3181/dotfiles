@@ -279,7 +279,7 @@ brew_install_with_confirmation "WebStorm" "webstorm" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "yarn" "yarn"
+brew_install_with_confirmation "yarn" "yarn --ignore-dependencies"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
