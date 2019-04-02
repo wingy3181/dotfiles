@@ -37,6 +37,7 @@ declare -a FILES_TO_SYMLINK=(
     "sshrc/sshrc"
 
     "other/czrc"
+    "other/cz-config.js"
     "other/ideavimrc"
 
 )
