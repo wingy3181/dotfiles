@@ -122,15 +122,20 @@ brew_install_with_confirmation "Java 6" "java6" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Java 8" "java8" "caskroom/versions" "cask"
+# java8 removed. See https://github.com/Homebrew/homebrew-cask-versions/pull/7261
+# Alternative use zulu @ https://github.com/Homebrew/homebrew-cask-versions/find/master) or install manually
+#brew_install_with_confirmation "Java 8" "java8" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Curl keeps failing and download fails to download gz file. Not sure why as placing in browser works
 # but after placing in browser seems to work via brew again.
-# As of writing, the latest version and URL is: https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_osx-x64_bin.tar.gz
+# As of writing, the latest version and URL is: https://download.oracle.com/otn/java/jdk/12.0.1+12/69cfe15208a647278a19ef0990eea691/jdk-12.0.1_osx-x64_bin.tar.gz
 # See https://github.com/Homebrew/homebrew-cask/blob/master/Casks/java.rb
 # Alternative use zulu @ https://github.com/Homebrew/homebrew-cask-versions/find/master) or install manually
+# See 
+# - https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase12-5440181.html
+# - https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase12-5440181.html
 brew_install_with_confirmation "Java (latest)" "java" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

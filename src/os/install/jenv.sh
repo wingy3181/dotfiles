@@ -106,11 +106,11 @@ if which jenv > /dev/null; then eval \"\$(jenv init -)\"; fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        # By default, use version 11.0 of `java`
+        # By default, use version 12.0 of `java`
 
         execute_without_spinner \
-            "jenv global 11.0" \
-            "jenv (set 11.0 as global default - See ~/.jenv/version)"
+            "jenv global 12.0" \
+            "jenv (set 12.0 as global default - See ~/.jenv/version)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
