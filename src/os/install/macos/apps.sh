@@ -252,7 +252,7 @@ brew_install_with_confirmation "Unarchiver" "the-unarchiver" "caskroom/cask" "ca
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/vim.rb
-brew_install_with_confirmation "Vim" "vim --with-override-system-vi"
+brew_install_with_confirmation "Vim" "vim -- --with-override-system-vi"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
