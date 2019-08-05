@@ -269,6 +269,10 @@ brew_install_with_confirmation "VS Code" "visual-studio-code" "caskroom/cask" "c
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "vysor.io" "vysor" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Web Font Tools: TTF/OTF → WOFF (Zopfli)" "sfnt2woff-zopfli" "bramstein/webfonttools"
 brew_install_with_confirmation "Web Font Tools: TTF/OTF → WOFF" "sfnt2woff" "bramstein/webfonttools"
 brew_install_with_confirmation "Web Font Tools: WOFF2" "woff2" "bramstein/webfonttools"
