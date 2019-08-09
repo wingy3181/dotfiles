@@ -14,6 +14,10 @@ brew_install_with_confirmation "Android File Transfer" "android-file-transfer" "
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Android Platform Tools" "android-platform-tools" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "AppCleaner" "appcleaner" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -192,6 +196,12 @@ brew_install_with_confirmation "sabnzbd" "sabnzbd" "caskroom/cask" "cask"
 if is_supported_version "$(get_os_version)" "10.11.4"; then
     brew_install_with_confirmation "Safari Technology Preview" "safari-technology-preview" "caskroom/versions" "cask"
 fi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# https://github.com/Genymobile/scrcpy
+# https://developer.android.com/studio/command-line/adb.html#wireless
+brew_install_with_confirmation "scrcpy" "scrcpy"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
