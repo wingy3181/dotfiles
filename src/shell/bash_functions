@@ -17,9 +17,10 @@
     if [[ "$result" == *.* ]]; then
         # Improve the output for decimal numbers
         printf "%s" "$result" |
-        sed -e "s/^\./0./"          # add "0" for cases like ".5"` \
-            -e "s/^-\./-0./"        # add "0" for cases like "-.5"`\
-            -e "s/0*$//;s/\.$//"    # remove tailing zeros
+        sed -e "s/^\./0./" -e "s/^-\./-0./" -e "s/0*$//;s/\.$//"
+        #    |              |                └─ remove tailing zeros
+        #    |              └─ add "0" for cases like "-.5"
+        #    └─ add "0" for cases like ".5"
     else
         printf "%s" "$result"
     fi
@@ -103,19 +104,19 @@ git-remotes-list() {
 create-topics-config() {
     if [[ "$PWD" == *topics ]]
     then
-        rm $PWD/.topics.config
+        rm "$PWD/.topics.config"
         find -L . -name .git -type d  -mindepth 2 | while read -r d; do
            cd "$d/.." || exit
            local topicRelativePath="${PWD//$OLDPWD/}"
            local topicAbsolutePath="${PWD}"
-           local topicParentAbsolutePath="$(dirname $topicAbsolutePath)"
-           local symlinkRelativeToTopicPath="$(readlink $topicAbsolutePath)"
+           local topicParentAbsolutePath="$(dirname "$topicAbsolutePath")"
+           local symlinkRelativeToTopicPath="$(readlink "$topicAbsolutePath")"
            local symlinkAbsolutePath="$topicParentAbsolutePath/$symlinkRelativeToTopicPath"
-           local symlinkRelativeToTopicParentPath="$(relpath $symlinkAbsolutePath $OLDPWD)"
+           local symlinkRelativeToTopicParentPath="$(relpath "$symlinkAbsolutePath" "$OLDPWD")"
            local gitUrl="$(git remote get-url origin)"
            local configItem="$topicRelativePath $gitUrl $symlinkRelativeToTopicParentPath"
            echo "$configItem"
-           echo "$configItem" >> $OLDPWD/.topics.config
+           echo "$configItem" >> "$OLDPWD/.topics.config"
            cd "$OLDPWD" || exit
         done
     else
@@ -135,18 +136,18 @@ sync-topics-config() {
     if [[ "$PWD" == *topics ]]
     then
         local topicsConfig="$PWD/.topics.config"
-        while read name
+        while read -r name
         do
-            local gitCloneUrl="$(echo $name | awk '{ print $2 }')"
-            local gitDestinationPath="$(echo $name | awk '{ print $3 }')"
+            local gitCloneUrl="$(echo "$name" | awk '{ print $2 }')"
+            local gitDestinationPath="$(echo "$name" | awk '{ print $3 }')"
             if [[ -d "$gitDestinationPath" ]]
             then
                 echo "$gitDestinationPath already exists"
             else
                 echo "git clone $gitCloneUrl $gitDestinationPath"
-                git clone $gitCloneUrl $gitDestinationPath
+                git clone "$gitCloneUrl" "$gitDestinationPath"
             fi
-        done < $topicsConfig
+        done < "$topicsConfig"
     else
         echo "Please run 'sync-topics-config' under 'topics' directory"
     fi
@@ -161,17 +162,17 @@ sync-topics-symbolic-links() {
     if [[ "$PWD" == *topics ]]
     then
         local topicsConfig="$PWD/.topics.config"
-        while read name
+        while read -r name
         do
-            local topicsFolderAndSubFolder="$(echo $name | awk '{ print $1 }')"
-            local topicsSymbolicLinkPath="$(echo $name | awk '{ print $3 }')"
+            local topicsFolderAndSubFolder="$(echo "$name" | awk '{ print $1 }')"
+            local topicsSymbolicLinkPath="$(echo "$name" | awk '{ print $3 }')"
             if [ "$(readlink "${topicsFolderAndSubFolder:1:${#topicsFolderAndSubFolder}}")" == "../$topicsSymbolicLinkPath" ]; 
             then
                 echo "$topicsFolderAndSubFolder → ../$topicsSymbolicLinkPath already exists"
             else
-                echo "add-topic "$topicsFolderAndSubFolder" "$topicsSymbolicLinkPath""
+                echo "add-topic $topicsFolderAndSubFolder $topicsSymbolicLinkPath"
             fi
-        done < $topicsConfig
+        done < "$topicsConfig"
     else
         echo "Please run 'sync-topics-sync-topics-symbolic-links' under 'topics' directory"
     fi
@@ -429,11 +430,11 @@ update-global-npm-modules-for-all-node-versions() {
         # [[ "${i}" == "${CURRENT_NODE_VERSION}" ]] && echo '==' || echo '!='
         for j in "${GLOBAL_NPM_MODULES[@]}"; do
             echo "Updating global npm module: '${j}' for node version: '${i}'"
-            npm update -g ${j}
+            npm update -g "${j}"
         done
     done
     # Restore to previous version that we set via nvm
-    nvm use ${CURRENT_NODE_VERSION}
+    nvm use "${CURRENT_NODE_VERSION}"
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

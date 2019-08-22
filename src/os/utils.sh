@@ -262,8 +262,8 @@ is_git_repository() {
 
 is_supported_version() {
     # Convert version number parts into array of parts by finding '.' and replacing with ' '
-    declare -a actual_version=(${1//./ })
-    declare -a minimum_version=(${2//./ })
+    declare -a actual_version=("${1//./ }")
+    declare -a minimum_version=("${2//./ }")
     local i=""
 
     # Fill empty positions in actual_version with zeros. Note: ${#array[@]} returns the length of the array
