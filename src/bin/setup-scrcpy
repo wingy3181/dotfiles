@@ -1,0 +1,132 @@
+#!/usr/bin/env bash
+# set -eux
+
+# DESCRIPTION:
+#
+#   Setups wireless scrcpy.
+#
+# SOURCE:
+#
+#   See https://github.com/Genymobile/scrcpy#wireless for source of following steps:
+#
+# USAGE:
+#
+#   setup-scrcpy
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+setupScrcpy() {
+   ###################################################################################################
+   # 1. Connect the device to the same Wi-Fi as your computer.
+   ###################################################################################################
+   ask_for_confirmation "Is the device connected to the same Wi-Fi as your computer?"
+   while ! answer_is_yes; do
+      ask_for_confirmation "Is the device connected to the same Wi-Fi as your computer?"
+   done
+   
+   ###################################################################################################
+   # 2. Get your device IP address (in Settings → About phone → Status).
+   ###################################################################################################
+   # http://rapidprogrammer.com/how-to-get-android-ip-address-from-adb-commandline-shell
+   # - Even on 4G
+   #   - adb shell ip route | awk '{print $9}'
+   # - WiFi only
+   #   - adb shell ip addr show wlan0 | grep "inet\s" | awk '{print $2}' | awk -F'/' '{print $1}'
+   declare phoneIpAddress
+   phoneIpAddress="$(adb shell ip addr show wlan0 | grep "inet\s" | awk '{print $2}' | awk -F'/' '{print $1}')"
+   if [ ! "$phoneIpAddress" ]; then
+      print_error "Could not find the device's ip address."
+      exit
+   fi
+   
+   print_in_green "Found the device at ip address: $phoneIpAddress\n"
+
+   ###################################################################################################
+   # 3. Enable adb over TCP/IP on your device: adb tcpip 6666. (Normally it is 5555)
+   ###################################################################################################
+   declare adbPort=6666
+   print_in_cyan_bold "Enabling adb over tcp/ip on your device on port $adbPort...\n"
+   adb tcpip "$adbPort"
+
+   ###################################################################################################
+   # 4. Unplug your device.
+   ###################################################################################################
+   ask_for_confirmation "Is the device now unplugged from your computer?"
+   while ! answer_is_yes; do
+      ask_for_confirmation "Is the device now unplugged from your computer?"
+   done
+   ###################################################################################################
+   # 5. Connect to your device: adb connect DEVICE_IP:6666 (replace DEVICE_IP).
+   ###################################################################################################
+   print_in_cyan_bold "Connecting to adb through $phoneIpAddress:$adbPort...\n"
+   adb connect "$phoneIpAddress":"$adbPort"
+
+   ###################################################################################################
+   # 6. Run scrcpy as usual.
+   ###################################################################################################
+   print_in_cyan_bold "Starting scrcpy...\n"
+   scrcpy
+
+   ###################################################################################################
+   # 7. To tell the ADB daemon return to listening over USB and restart server to pick up changes.
+   ###################################################################################################
+   # NOTE: If 'adb devices' keeps showing an empty list, try the following commands:
+   # - echo "0x04e8" >> ~/.android/adb_usb.ini
+   # - adb kill-server
+   # - adb devices
+   print_in_cyan_bold "Enabling adb over tcp and disabling adb over tcp/ip on your device on port $adbPort...\n"
+   adb usb
+   print_in_cyan_bold "Restarting adb server...\n"
+   adb kill-server
+   adb start-server
+}
+
+#######################################################################################################
+# START - Copied from https://github.com/wingy3181/dotfiles/blob/master/src/os/utils.sh
+answer_is_yes() {
+    [[ "$REPLY" =~ ^[Yy]$ ]] \
+        && return 0 \
+        || return 1
+}
+
+ask_for_confirmation() {
+    print_question "$1 (y/n) "
+    read -r -n 1
+    printf "\n"
+}
+
+pause() {
+   read -r -p "$*"
+}
+
+print_in_green() {
+    printf "\e[0;32m%b\e[0m" "$1"
+}
+
+print_in_purple() {
+    printf "\e[0;35m%b\e[0m" "$1"
+}
+
+print_in_cyan_bold() {
+    printf "\e[1;36m%b\e[0m" "$1"
+}
+
+print_in_red() {
+    printf "\e[0;31m%b\e[0m" "$1"
+}
+
+print_in_yellow() {
+    printf "\e[0;33m%b\e[0m" "$1"
+}
+
+print_error() {
+    print_in_red "  [✖] $1 $2\n"
+}
+
+print_question() {
+    print_in_yellow "  [?] $1"
+}
+# END - Copied from https://github.com/wingy3181/dotfiles/blob/master/src/os/utils.sh
+#######################################################################################################
+
+setupScrcpy
