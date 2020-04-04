@@ -8,6 +8,7 @@ declare -a FILES_TO_SYMLINK=(
     "shell/bash_aliases"
     "shell/bash_autocomplete"
     "shell/bash_bash-it"
+    "shell/bash_direnv"
     "shell/bash_exports"
     "shell/bash_functions"
     "shell/bash_logout"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Hook direnv into bash shell
+# See:
+# - https://direnv.net/#docs
+# - https://direnv.net/docs/hook.html
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+eval "$(direnv hook bash)"

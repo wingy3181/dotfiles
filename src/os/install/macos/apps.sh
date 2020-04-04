@@ -46,6 +46,10 @@ brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "caskroom/c
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "direnv" "direnv"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "dive (Docker Image Explorer)" "dive"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

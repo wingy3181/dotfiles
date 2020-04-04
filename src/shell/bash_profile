@@ -11,6 +11,7 @@ source_bash_files() {
         "bash_aliases"
         "bash_autocomplete"
         "bash_bash-it"
+        "bash_direnv"
         "bash_exports"
         "bash_functions"
         "bash_options"
