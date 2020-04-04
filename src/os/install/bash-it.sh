@@ -54,7 +54,6 @@ main() {
         "bash-it enable completion bash-it \
          && bash-it enable completion docker \
          && bash-it enable completion docker-compose \
-         && bash-it enable completion docker-machine \
          && bash-it enable completion git \
          && bash-it enable completion gradle \
          && bash-it enable completion grunt \
@@ -71,7 +70,6 @@ main() {
          && bash-it enable plugin base \
          && bash-it enable plugin battery \
          && bash-it enable plugin docker-compose \
-         && bash-it enable plugin docker-machine \
          && bash-it enable plugin docker \
          && bash-it enable plugin explain \
          && bash-it enable plugin history \
