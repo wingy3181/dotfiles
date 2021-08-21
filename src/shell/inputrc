@@ -15,3 +15,7 @@ set completion-ignore-case on
 # Auto list TAB completions
 # This will allow single tab completion as opposed to requiring a double tab. This makes things much more pleasant, in my opinion.
 set show-all-if-ambiguous on
+
+# https://stackoverflow.com/questions/1030182/how-do-i-change-bash-history-completion-to-complete-whats-already-on-the-line
+"\e[A": history-search-backward            # arrow up
+"\e[B": history-search-forward             # arrow down
