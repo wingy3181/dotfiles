@@ -2,3 +2,5 @@ commitizen
 cz-customizable
 mrm
 @wingy3181/mrm-preset-wingy3181
+@lobehub/commit-cli
+prettier
