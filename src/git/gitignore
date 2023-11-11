@@ -214,6 +214,9 @@ local.properties
 .idea/copyright/profiles_settings.xml
 .idea/encodings.xml
 
+# gitignore:
+.idea/.gitignore
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
