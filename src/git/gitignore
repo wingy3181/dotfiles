@@ -229,9 +229,8 @@ local.properties
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
-# Markdown Navigator plugin:
-.idea/markdown-navigator.xml
-.idea/markdown-navigator
+# AWS Toolkit plugin:
+.idea/aws.xml
 
 ## File-based project format:
 *.iws
