@@ -373,7 +373,6 @@ main() {
     print_optional_info "Install npm package 'localtunnel' globally (try to avoid and use local project version)"
     print_optional_info "Install npm package 'npm-check' globally (try to avoid and use local project version)"
     print_optional_info "Symlink ebook folder ('ln -s ~/Dropbox/Documents/ebook/ ~/Documents/ebook')"
-    print_optional_info "Set minimalist menu bar with Bartender 2"
     print_optional_info "Set dotfiles/src/bin to PATH in .bash.local"
     # PATH="/usr/local/bin:/Users/wingy3181/.dotfiles/src/bin:$PATH"
     # export PATH
