@@ -18,6 +18,10 @@ brew_install_with_confirmation "AppCleaner" "appcleaner" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Arc" "arc" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "bat" "bat"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
