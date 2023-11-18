@@ -30,6 +30,10 @@ brew_install_with_confirmation "bat" "bat"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Brave Browser" "brave-browser" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Cheatsheet" "cheatsheet" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
