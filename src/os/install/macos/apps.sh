@@ -96,7 +96,7 @@ brew_install_with_confirmation "Gas Mask" "gas-mask" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "GIMP" "lisanet-gimp" "caskroom/cask" "cask"
+brew_install_with_confirmation "GIMP" "gimp" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
