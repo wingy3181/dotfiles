@@ -58,6 +58,10 @@ brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "caskroom/c
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "DisplayLink USB Graphics Software" "displaylink" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "direnv" "direnv"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

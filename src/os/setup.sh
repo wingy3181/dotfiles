@@ -349,7 +349,6 @@ main() {
     print_optional_info "Install Be Focused from App Store (https://apps.apple.com/au/app/be-focused-pomodoro-timer/id973134470?mt=12 | https://xwavesoft.com/be-focused-pro-for-iphone-ipad-mac-os-x.html)"
     print_optional_info "Install Blackvue Viewer for Mac (https://www.blackvue.com/download/blackvue-mac-viewer-cloud/)"
     print_optional_info "Install DataGrip (JetBrains)"
-    print_optional_info "Install DisplayLink Software for dynadock (https://www.displaylink.com/downloads/macos)"
     print_optional_info "Install Evernote"
     print_optional_info "Install Keybase"
     print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or 'brew cask install ledger-live')"
