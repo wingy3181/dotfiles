@@ -161,6 +161,10 @@ brew_install_with_confirmation "Java (latest)" "java" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Jetbrains Toolbox" "jetbrains-toolbox" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "jq" "jq"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
