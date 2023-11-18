@@ -346,6 +346,7 @@ main() {
 
     print_optional_info "Add favourite locations (home & Development) to Finder sidebar"
     print_optional_info "Install Beyond Compare"
+    print_optional_info "Install Be Focused from App Store (https://apps.apple.com/au/app/be-focused-pomodoro-timer/id973134470?mt=12 | https://xwavesoft.com/be-focused-pro-for-iphone-ipad-mac-os-x.html)"
     print_optional_info "Install Blackvue Viewer for Mac (https://www.blackvue.com/download/blackvue-mac-viewer-cloud/)"
     print_optional_info "Install DataGrip (JetBrains)"
     print_optional_info "Install DeskDock Server (https://fdmobileinventions.blogspot.com/p/deskdock-server.html)"
