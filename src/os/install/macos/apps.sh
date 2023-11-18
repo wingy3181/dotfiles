@@ -121,10 +121,6 @@ brew_install_with_confirmation "htop" "htop"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "ImageAlpha" "imagealpha" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "ImageMagick" "imagemagick -- --with-webp"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
