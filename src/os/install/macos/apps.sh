@@ -129,10 +129,6 @@ brew_install_with_confirmation "ImageOptim" "imageoptim" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Intellij IDEA" "intellij-idea" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # brew_install_with_confirmation "Keybase" "keybase" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
