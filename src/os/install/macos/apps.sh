@@ -22,6 +22,10 @@ brew_install_with_confirmation "Arc" "arc" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Arduino IDE" "arduino-ide" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "bat" "bat"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
