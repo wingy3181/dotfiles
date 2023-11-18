@@ -110,9 +110,6 @@ brew_install_with_confirmation "Git" "git"
 
 brew_install_with_confirmation "Git Large File Storage" "git-lfs"
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-brew_install_with_confirmation "GPG Suite" "gpg-suite" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
