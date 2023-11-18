@@ -354,6 +354,7 @@ main() {
     print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or 'brew cask install ledger-live')"
     print_optional_info "Install LibreOffice or Microsoft Office"
     print_optional_info "Install Bandwidth+ from App Store (https://itunes.apple.com/au/app/bandwidth/id490461369?mt=12)"
+    print_optional_info "Install GoPro Player + ReelSteady from App Store (https://apps.apple.com/us/app/gopro-player/id1460836908?ls=1&mt=12 and https://gopro.com/en/au/info/gopro-player)"
     print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store (https://itunes.apple.com/au/app/microsoft-remote-desktop-10/id1295203466?mt=12)"
     print_optional_info "Install PDF Reader Pro - Lite Edition from App Store (https://itunes.apple.com/au/app/pdf-reader-pro-lite-edition/id919472673?mt=12)"
