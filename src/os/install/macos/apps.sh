@@ -74,6 +74,10 @@ brew_install_with_confirmation "Docker for Mac" "docker" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Dolphin Beta (GameCube Emulator)" "dolphin-beta" "caskroom/versions" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Dropbox" "dropbox" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
