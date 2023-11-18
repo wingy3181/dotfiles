@@ -50,6 +50,10 @@ brew_install_with_confirmation "Chrome Canary" "google-chrome-canary" "caskroom/
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Discord" "discord" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
