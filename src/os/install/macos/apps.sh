@@ -20,7 +20,6 @@ brew_install_with_confirmation "AppCleaner" "appcleaner" "caskroom/cask" "cask"
 
 brew_install_with_confirmation "bat" "bat"
 
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "Cheatsheet" "cheatsheet" "caskroom/cask" "cask"
@@ -110,10 +109,6 @@ brew_install_with_confirmation "ImageOptim" "imageoptim" "caskroom/cask" "cask"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "Intellij IDEA" "intellij-idea" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-brew_install_with_confirmation "iTerm2" "iterm2" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
