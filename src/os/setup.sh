@@ -356,6 +356,7 @@ main() {
     print_optional_info "Install GoPro Player + ReelSteady from App Store (https://apps.apple.com/us/app/gopro-player/id1460836908?ls=1&mt=12 and https://gopro.com/en/au/info/gopro-player)"
     print_optional_info "Install Itemido: Manage Home Inventory from App Store (https://apps.apple.com/us/app/itemido-manage-home-inventory/id1552953842 and https://www.itemido.com/en/index.html)"
     print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox"
+    print_optional_info "Install Kindle from App Store (https://apps.apple.com/us/app/amazon-kindle/id302584613) and rename registered device within Amazon https://www.amazon.com.au/hz/mycd/digital-console/alldevices"
     print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store (https://itunes.apple.com/au/app/microsoft-remote-desktop-10/id1295203466?mt=12)"
     print_optional_info "Install PDF Reader Pro - Lite Edition from App Store (https://itunes.apple.com/au/app/pdf-reader-pro-lite-edition/id919472673?mt=12)"
