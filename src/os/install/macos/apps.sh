@@ -82,6 +82,10 @@ brew_install_with_confirmation "Dropbox" "dropbox" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Microsoft Edge" "microsoft-edge" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "FFmpeg" "ffmpeg"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
