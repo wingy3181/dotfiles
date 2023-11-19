@@ -173,10 +173,6 @@ brew_install_with_confirmation "Lens (Kubernetes IDE)" "lens" "caskroom/cask" "c
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "LICEcap" "licecap" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "NordVPN" "nordvpn" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
