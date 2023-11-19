@@ -338,6 +338,10 @@ brew_install_with_confirmation "Web Font Tools: WOFF2" "woff2" "bramstein/webfon
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Wireshark" "wireshark" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "WhatsApp - Native desktop client for WhatsApp" "whatsapp" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
