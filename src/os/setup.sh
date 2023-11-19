@@ -358,7 +358,6 @@ main() {
     print_optional_info "Install Kindle from App Store (https://apps.apple.com/us/app/amazon-kindle/id302584613) and rename registered device within Amazon https://www.amazon.com.au/hz/mycd/digital-console/alldevices"
     print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store (https://itunes.apple.com/au/app/microsoft-remote-desktop-10/id1295203466?mt=12)"
-    print_optional_info "Install PDF Reader Pro - Lite Edition from App Store (https://itunes.apple.com/au/app/pdf-reader-pro-lite-edition/id919472673?mt=12)"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
     print_optional_info "Install ScanSnap software for Fujitsu s1300i (http://scansnap.fujitsu.com/global/dl/ and http://scansnap.fujitsu.com/global/dl/mac-1014-s1300i.html)"
     print_optional_info "Install Sketch"
