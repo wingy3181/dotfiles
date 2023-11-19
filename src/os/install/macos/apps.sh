@@ -86,6 +86,10 @@ brew_install_with_confirmation "Microsoft Edge" "microsoft-edge" "caskroom/cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "Microsoft Office" "microsoft-office" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "FFmpeg" "ffmpeg"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
