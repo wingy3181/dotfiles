@@ -369,6 +369,7 @@ main() {
     print_optional_info "Symlink ebook folder ('ln -s ~/Dropbox/Documents/ebook/ ~/Documents/ebook')"
     print_optional_info "Assess Liquitext (https://www.liquidtext.net/)"
     print_optional_info "Assess Logseq (https://logseq.com/)"
+    print_optional_info "Assess Parallels (https://www.parallels.com/products/desktop/)"
     print_optional_info "Assess Rewind (https://www.rewind.ai/)"
     print_optional_info "Assess TeamViewer (https://www.teamviewer.com/)"
     print_optional_info "Assess Unity (https://unity.com/)"
