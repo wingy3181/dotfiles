@@ -367,6 +367,7 @@ main() {
     print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
     print_optional_info "Install XtraFinder (http://www.trankynam.com/xtrafinder/)"
     print_optional_info "Symlink ebook folder ('ln -s ~/Dropbox/Documents/ebook/ ~/Documents/ebook')"
+    print_optional_info "Assess Fig (https://fig.io/)"
     print_optional_info "Assess Liquitext (https://www.liquidtext.net/)"
     print_optional_info "Assess Logseq (https://logseq.com/)"
     print_optional_info "Assess Parallels (https://www.parallels.com/products/desktop/)"
