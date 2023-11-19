@@ -316,6 +316,10 @@ brew_install_with_confirmation "Vim" "vim -- --with-override-system-vi"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "VR Virtual Desktop Streamer" "virtual-desktop-streamer" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "VLC" "vlc" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
