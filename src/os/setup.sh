@@ -363,6 +363,7 @@ main() {
     print_optional_info "Install Silicon (https://github.com/DigiDNA/Silicon)"
     print_optional_info "Install Spatial Media Metadata Injector (https://github.com/google/spatial-media/releases and https://github.com/google/spatial-media/issues/261#issuecomment-1590148367)"
     print_optional_info "Install Synergy"
+    print_optional_info "Install Telephone - VoIP SIP softphone (https://apps.apple.com/us/app/telephone/id406825478 and https://www.64characters.com/telephone/ and https://github.com/64characters/Telephone)"
     print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
     print_optional_info "Install XtraFinder (http://www.trankynam.com/xtrafinder/)"
     print_optional_info "Symlink ebook folder ('ln -s ~/Dropbox/Documents/ebook/ ~/Documents/ebook')"
