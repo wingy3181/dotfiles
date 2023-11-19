@@ -369,6 +369,8 @@ main() {
     print_optional_info "Install XtraFinder (http://www.trankynam.com/xtrafinder/)"
     print_optional_info "Install Office 365 (https://www.office.com/)"
     print_optional_info "Symlink ebook folder ('ln -s ~/Dropbox/Documents/ebook/ ~/Documents/ebook')"
+    print_optional_info "Assess Liquitext (https://www.liquidtext.net/)"
+    print_optional_info "Assess Logseq (https://logseq.com/)"
     print_optional_info "Set dotfiles/src/bin to PATH in .bash.local"
     # PATH="/usr/local/bin:/Users/wingy3181/.dotfiles/src/bin:$PATH"
     # export PATH
