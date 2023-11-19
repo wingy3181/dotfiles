@@ -193,12 +193,6 @@ brew_install_with_confirmation "nvm-auto-switch" "https://raw.githubusercontent.
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "Opera" "opera" "caskroom/cask" "cask"
-brew_install_with_confirmation "Opera Beta" "opera-beta" "caskroom/versions" "cask"
-brew_install_with_confirmation "Opera Developer" "opera-developer" "caskroom/versions" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "Postman" "postman" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
