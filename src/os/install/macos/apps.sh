@@ -307,6 +307,10 @@ brew_install_with_confirmation "Unarchiver" "the-unarchiver" "caskroom/cask" "ca
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "UTM - Virtual machines UI using QEMU" "utm" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/vim.rb
 brew_install_with_confirmation "Vim" "vim -- --with-override-system-vi"
 
