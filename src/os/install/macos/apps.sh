@@ -272,7 +272,8 @@ brew_install_with_confirmation "sshrc" "sshrc"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "TeamViewer" "teamviewer" "caskroom/cask" "cask"
+# Re-assess later
+#brew_install_with_confirmation "TeamViewer" "teamviewer" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
