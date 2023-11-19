@@ -100,6 +100,10 @@ brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "caskroom/ver
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "ScanSnap Home" "fujitsu-scansnap-home" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Gas Mask" "gas-mask" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
