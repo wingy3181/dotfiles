@@ -193,6 +193,10 @@ brew_install_with_confirmation "nvm-auto-switch" "https://raw.githubusercontent.
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "PDF Expert" "pdf-expert" "caskroom/cask" "cask"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "Postman" "postman" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
