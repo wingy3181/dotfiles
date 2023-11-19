@@ -361,6 +361,7 @@ main() {
     print_optional_info "Install Presentify from App Store (https://apps.apple.com/app/id1507246666 and https://presentify.compzets.com/)"
     print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
     print_optional_info "Install Silicon (https://github.com/DigiDNA/Silicon)"
+    print_optional_info "Install Spatial Media Metadata Injector (https://github.com/google/spatial-media/releases and https://github.com/google/spatial-media/issues/261#issuecomment-1590148367)"
     print_optional_info "Install Synergy"
     print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
     print_optional_info "Install XtraFinder (http://www.trankynam.com/xtrafinder/)"
