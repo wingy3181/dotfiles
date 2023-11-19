@@ -371,6 +371,7 @@ main() {
     print_optional_info "Assess Logseq (https://logseq.com/)"
     print_optional_info "Assess Rewind (https://www.rewind.ai/)"
     print_optional_info "Assess TeamViewer (https://www.teamviewer.com/)"
+    print_optional_info "Assess Unity (https://unity.com/)"
     print_optional_info "Set dotfiles/src/bin to PATH in .bash.local"
     # PATH="/usr/local/bin:/Users/wingy3181/.dotfiles/src/bin:$PATH"
     # export PATH
