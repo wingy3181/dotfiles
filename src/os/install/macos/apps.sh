@@ -355,7 +355,7 @@ brew_install_with_confirmation "yarn" "yarn --ignore-dependencies"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "youtube-dl" "youtube-dl"
+brew_install_with_confirmation "yt-dlp" "yt-dlp"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
