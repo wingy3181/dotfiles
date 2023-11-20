@@ -100,6 +100,11 @@ brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "caskroom/ver
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# zoxide is optionally dependent on fzf
+brew_install_with_confirmation "fzf" "fzf"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "ScanSnap Home" "fujitsu-scansnap-home" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -356,10 +361,6 @@ brew_install_with_confirmation "yarn" "yarn --ignore-dependencies"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install_with_confirmation "yt-dlp" "yt-dlp"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-brew_install_with_confirmation "z" "z"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

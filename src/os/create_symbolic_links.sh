@@ -15,7 +15,7 @@ declare -a FILES_TO_SYMLINK=(
     "shell/bash_options"
     "shell/bash_profile"
     "shell/bash_prompt"
-    "shell/bash_z"
+    "shell/bash_zoxide"
     "shell/bashrc"
     "shell/curlrc"
     "shell/inputrc"
