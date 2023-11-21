@@ -359,7 +359,6 @@ main() {
     print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
     print_optional_info "Install Microsoft Remote Desktop from App Store (https://itunes.apple.com/au/app/microsoft-remote-desktop-10/id1295203466?mt=12)"
     print_optional_info "Install Presentify from App Store (https://apps.apple.com/app/id1507246666 and https://presentify.compzets.com/)"
-    print_optional_info "Install pygments: 'sudo easy_install -U Pygments'"
     print_optional_info "Install Silicon (https://github.com/DigiDNA/Silicon)"
     print_optional_info "Install Spatial Media Metadata Injector (https://github.com/google/spatial-media/releases and https://github.com/google/spatial-media/issues/261#issuecomment-1590148367)"
     print_optional_info "Install Synergy"
