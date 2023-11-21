@@ -241,7 +241,10 @@ brew_install_with_confirmation "Squidman" "squidman" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "sshrc" "sshrc"
+# https://github.com/Homebrew/homebrew-core/issues/50444
+# https://github.com/ikuwow/homebrew-ikuwow-sshrc
+# https://github.com/ikuwow/sshrc
+brew_install_with_confirmation "sshrc" "ikuwow/ikuwow-sshrc/sshrc"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
