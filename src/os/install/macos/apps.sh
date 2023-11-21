@@ -186,14 +186,6 @@ brew_install_with_confirmation "Postman" "postman" "caskroom/versions" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-#https://github.com/sindresorhus/quick-look-plugins
-# qlimagesize is no longer available via homebrew
-# - https://github.com/Nyx0uf/qlImageSize/issues/30
-# - https://github.com/Homebrew/homebrew-cask/issues/55969
-brew_install_with_confirmation "Quick Look plugins" "qlcolorcode qlstephen qlmarkdown quicklook-json webpquicklook suspicious-package quicklookase qlvideo" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 brew_install_with_confirmation "Raycast" "raycast" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
