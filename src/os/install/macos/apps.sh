@@ -58,6 +58,11 @@ brew_install_with_confirmation "Discord" "discord" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Disk Inventory X is no longer supported and maintained.
+# Look at grandperspective as an alternative
+#brew_install_with_confirmation "GrandPerspective" "grandperspective" "caskroom/cask" "cask"
+# https://github.com/alinradut/Disk-Inventory-X
+# https://grandperspectiv.sourceforge.net/
 brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
