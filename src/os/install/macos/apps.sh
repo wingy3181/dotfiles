@@ -230,6 +230,10 @@ brew_install_with_confirmation "Retina Display Menu" "avibrazil-rdm" "caskroom/c
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "ripgrep" "ripgrep"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "sabnzbd" "sabnzbd" "caskroom/cask" "cask"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -279,10 +283,6 @@ brew_install_with_confirmation "sshrc" "sshrc"
 
 # Re-assess later
 #brew_install_with_confirmation "TeamViewer" "teamviewer" "caskroom/cask" "cask"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-brew_install_with_confirmation "The Silver Searcher (ag)" "the_silver_searcher"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
