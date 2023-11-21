@@ -235,6 +235,9 @@ local.properties
 # AWS Toolkit plugin:
 .idea/aws.xml
 
+# Git ToolBox plugin:
+.idea/git_toolbox_prj.xml
+
 ## File-based project format:
 *.iws
 
