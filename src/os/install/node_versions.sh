@@ -25,7 +25,8 @@ main() {
 export NVM_DIR=\"$NVM_DIRECTORY\"
 
 [ -f \"\$NVM_DIR/nvm.sh\" ] \\
-    && . \"\$NVM_DIR/nvm.sh\"
+    && . \"\$NVM_DIR/nvm.sh\" \\
+    && . \"\$HOME/.bash_nvm\"
 
 [ -f \"\$NVM_DIR/bash_completion\" ] \\
     && . \"\$NVM_DIR/bash_completion\"
@@ -88,30 +89,6 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
         execute \
             "nvm alias default node" \
             "nvm (set default)"
-
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-        local nvmAutoSwitchFilePath=""
-        if nvmAutoSwitchFilePath="$(brew --prefix nvm-auto-switch 2> /dev/null)/nvm-auto-switch.sh"; then
-            declare -r NVM_AUTO_SWITCH_CONFIGS="
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Node Version Manager Auto Switch (https://github.com/lalitkapoor/nvm-auto-switch)
-
-export NVM_AUTOSWITCH_DIR=\"$nvmAutoSwitchFilePath\"
-
-[ -f \"\$NVM_AUTOSWITCH_DIR\" ] \\
-    && . \"\$NVM_AUTOSWITCH_DIR\"
-"
-
-            # '>>' : file to append to
-            execute_without_spinner \
-                "printf '%s' '$NVM_AUTO_SWITCH_CONFIGS' >> $HOME/.bash.local \
-                    && . $HOME/.bash.local" \
-                "nvm-auto-switch (update ~/.bash.local to source $nvmAutoSwitchFilePath)"
-        else
-            print_in_yellow "nvm-auto-switch not installed (skipping update to ~/.bash.local)"
-        fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
