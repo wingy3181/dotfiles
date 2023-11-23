@@ -336,5 +336,9 @@ brew_install_with_confirmation "Zopfli" "zopfli"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+brew_install_with_confirmation "zoxide" "zoxide"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install_with_confirmation "4K Video Downloader" "4k-video-downloader" "caskroom/cask" "cask"
 
