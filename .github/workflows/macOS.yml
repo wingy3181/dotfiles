@@ -1,0 +1,38 @@
+# For more information about the configurations used
+# in this file, please see the GitHub Actions documentation.
+#
+# https://docs.github.com/en/actions
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+#    strategy:
+#      matrix:
+#        include:
+#          - applications-to-install: "^([a-fA-F0-9]|Bash|Java).*$"
+#          - applications-to-install: "^([g-pG-P]|Bash|Java).*$"
+#          - applications-to-install: "^([q-zQ-Z]|Bash|Java).*$"
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: brew install shellcheck
+
+#      - name: Customize (baseline) environment for applications installation
+#        run: ./tests/customize_environment.sh
+#
+#      - name: Install applications in dotfiles
+#        env:
+#          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ matrix.applications-to-install }}
+#        run: ./src/os/setup.sh -y
+
+      - name: Run tests
+        run: ./test/main.sh
+
+name: macOS
+
+on: push

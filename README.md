@@ -1,6 +1,6 @@
 # [Cheong](https://github.com/wingy3181)’s dotfiles
 
-[![Build Status](https://travis-ci.org/wingy3181/dotfiles.svg?branch=master)](https://travis-ci.org/wingy3181/dotfiles)
+[![Build Status](https://github.com/wingy3181/dotfiles/workflows/macOS/badge.svg)](https://github.com/wingy3181/dotfiles/actions?query=workflow%3AmacOS)
 
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
