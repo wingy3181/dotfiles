@@ -141,7 +141,7 @@ get_content_encoding() {
             [ -n "$encoding" ] && encoding="[$encoding]"
 
             if [ "$url" != "$1" ]; then
-                printf "%s %s\n" "$indent$url $encoding"
+                printf "%s %s\n" "$indent$url" "$encoding"
                 indent="  $indent"
             else
                 printf "\n  * %s %s\n" "$1" "$encoding"

@@ -14,9 +14,14 @@ main() {
 
     find \
         ../test \
-        ../src/os \
+        ../src/bin \
         ../src/shell \
+        ../src/os \
         -type f \
+        ! -path '../src/bin/**/linux-32' \
+        ! -path '../src/bin/**/linux-64' \
+        ! -path '../src/bin/**/macos' \
+        ! -path '../src/bin/server.py' \
         ! -path '../src/shell/curlrc' \
         ! -path '../src/shell/inputrc' \
         ! -path '../src/shell/screenrc' \

@@ -124,6 +124,7 @@ execute() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Execute commands in background
     # http://ss64.com/bash/eval.html
     # The arguments are concatenated together into a single command, which is then read and executed,
     # and its exit status returned as the exit status of eval. If there are no arguments or only empty
@@ -131,6 +132,7 @@ execute() {
     if [[ $DOTFILES_DEBUG_MODE = "true" ]]; then
         eval "$CMDS" &
     else
+        # shellcheck disable=SC2261
         eval "$CMDS" \
             &> /dev/null \
             2> "$TMP_FILE" &
@@ -178,6 +180,7 @@ execute_without_spinner() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Execute commands in background
     # http://ss64.com/bash/eval.html
     # The arguments are concatenated together into a single command, which is then read and executed,
     # and its exit status returned as the exit status of eval. If there are no arguments or only empty
@@ -185,6 +188,7 @@ execute_without_spinner() {
     if [[ $DOTFILES_DEBUG_MODE = "true" ]]; then
         eval "$1"
     else
+        # shellcheck disable=SC2261
         eval "$1" \
             &> /dev/null \
             2> "$tmpFile"

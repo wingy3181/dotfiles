@@ -25,6 +25,7 @@ cmd_exists() {
 }
 
 compress_file() {
+    # shellcheck disable=SC2002
     cat "$1" | tee >(gzip > "$2") &> /dev/null
 }
 
@@ -75,6 +76,7 @@ create_heatmap_for_webpage() {
     # page isn't served compressed, `create_heatmap_for_file` will
     # take care of compressing it
 
+    # shellcheck disable=SC2261
     curl "${CURL_DEFAULT_OPTIONS[@]}" "$1" &> /dev/null 1> "$tmpFile" \
         && create_heatmap_for_file "$tmpFile" "$2"
 
