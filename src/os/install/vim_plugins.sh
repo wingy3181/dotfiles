@@ -12,36 +12,38 @@ install_plugins() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Install plugins
+
     execute \
         "rm -rf '$VUNDLE_DIR' \
             && git clone --quiet '$VUNDLE_GIT_REPO_URL' '$VUNDLE_DIR' \
             && printf '\n' | vim +PluginInstall +qall" \
-        "Install Vim plugins"
-
-}
-
-install_additional_things() {
-
-    # In the case of fresh installs, in order for `npm` to be
-    # available, the `~/bash.local` file needs to be sourced
-
-    if ! cmd_exists "npm"; then
-        . "$HOME/.bash.local"
-    fi
+        "Install Vim plugins" \
+        || return 1
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Additional installs
-    # (required by some plugins)
+    # Install additional things required by some plugins
+    # In the case of fresh installs, in order for `npm` to be
+    # available, the `~/bash.local` file needs to be sourced
 
     execute \
         "cd $HOME/.vim/plugins/tern_for_vim \
+            && . $HOME/.bash.local \
             && npm install" \
-        "Install extra parts for 'tern_for_vim'"
+        "Install Vim plugins (extra installs for 'tern_for_vim')"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     print_in_green "\n  ---\n\n"
+
+}
+
+update_plugins() {
+
+    execute \
+        "vim +PluginUpdate +qall" \
+        "Update plugins"
 
 }
 
@@ -52,7 +54,7 @@ main() {
     print_info " Vim"
 
     install_plugins
-    install_additional_things
+    update_plugins
 
 }
 
