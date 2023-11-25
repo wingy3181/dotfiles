@@ -4,10 +4,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../utils.sh"
 
 # https://nodejs.org/en/download/releases/
-declare -r -a NODE_VERSIONS=(
-    "node"
-)
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
@@ -72,21 +68,11 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        # Install the specified `node` versions
-
-        for i in "${NODE_VERSIONS[@]}"; do
-            execute \
-                "nvm install $i" \
-                "nvm (install: $i)"
-        done
-
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-        # By default, use the latest stable version of `node`
-
+        # Install the latest stable version of Node.JS
+        # (this will also set it as the default)
         execute \
-            "nvm alias default node" \
-            "nvm (set default)"
+            "nvm install node" \
+            "nvm (install: node)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
