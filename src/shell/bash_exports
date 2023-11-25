@@ -51,14 +51,9 @@ export LC_ALL="en_AU.UTF-8"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Use custom `less` colors for `man` pages.
-# https://www.gnu.org/software/termutils/manual/termutils-2.0/html_chapter/tput_1.html
-# https://gist.github.com/supermarin/6dca255da372c3f9eb26
-# https://wiki.archlinux.org/index.php/man_page#Colored_man_pages
-# https://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/
-export LESS_TERMCAP_md=$'\e[1;32m'   # begin bold mode (green). See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html
-export LESS_TERMCAP_me=$'\e[0m'      # end bold mode.
-#export LESS_TERMCAP_us=$'\e[4;32m'   # begin underscore mode.
-#export LESS_TERMCAP_ue=$'\e[0m'      # end underscore mode.
+# See https://mywiki.wooledge.org/BashFAQ/037
+export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
+export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

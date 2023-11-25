@@ -323,74 +323,46 @@ print_error_stream() {
     done
 }
 
+print_in_color() {
+    # See https://mywiki.wooledge.org/BashFAQ/037
+    printf "%b" \
+        "$(tput setaf "$2" 2> /dev/null)" \
+        "$1" \
+        "$(tput sgr0 2> /dev/null)"
+}
+
+print_in_bold_color() {
+    # See https://mywiki.wooledge.org/BashFAQ/037
+    printf "%b" \
+        "$(tput setaf "$2" 2> /dev/null)" \
+        "$(tput setaf bold 2> /dev/null)" \
+        "$1" \
+        "$(tput sgr0 2> /dev/null)"
+}
+
 print_in_green() {
     # $1 : print text
-    printf "\e[0;32m%b\e[0m" "$1"
-    #       |  | | ||   └── \e[0m : Return to plain normal mode
-    #       |  | | |└────── %b : Characters from the string argument are printed until the end is reached
-    #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
-    #       |  | | └─────── m : Terminate escape sequence
-    #       |  | └───────── 32 : Foreground colour green (see table in link given below)
-    #       |  └─────────── 0 : Normal text
-    #       └────────────── \e[ : Begin escape sequence
-    # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
-    # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
+    print_in_color "$1" 2print_in_color "$1" 2
 }
 
 print_in_purple() {
     # $1 : print text
-    printf "\e[0;35m%b\e[0m" "$1"
-    #       |  | | ||   └── \e[0m : Return to plain normal mode
-    #       |  | | |└────── %b : Characters from the string argument are printed until the end is reached
-    #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
-    #       |  | | └─────── m : Terminate escape sequence
-    #       |  | └───────── 35 : Foreground colour magenta (see table in link given below)
-    #       |  └─────────── 0 : Normal text
-    #       └────────────── \e[ : Begin escape sequence
-    # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
-    # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
+    print_in_color "$1" 5
 }
 
 print_in_cyan_bold() {
     # $1 : print text
-    printf "\e[1;36m%b\e[0m" "$1"
-    #       |  | | ||   └── \e[0m : Return to plain normal mode
-    #       |  | | |└────── %b : Characters from the string argument are printed until the end is reached
-    #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
-    #       |  | | └─────── m : Terminate escape sequence
-    #       |  | └───────── 36 : Foreground colour cyan (see table in link given below)
-    #       |  └─────────── 1 : Bold text
-    #       └────────────── \e[ : Begin escape sequence
-    # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
-    # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
+    print_in_bold_color "$1" 6
 }
 
 print_in_red() {
     # $1 : print text
-    printf "\e[0;31m%b\e[0m" "$1"
-    #       |  | | ||   └── \e[0m : Return to plain normal mode
-    #       |  | | |└────── %b : Characters from the string argument are printed until the end is reached
-    #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
-    #       |  | | └─────── m : Terminate escape sequence
-    #       |  | └───────── 31 : Foreground colour red (see table in link given below)
-    #       |  └─────────── 0 : Normal text
-    #       └────────────── \e[ : Begin escape sequence
-    # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
-    # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
+    print_in_color "$1" 1
 }
 
 print_in_yellow() {
     # $1 : print text
-    printf "\e[0;33m%b\e[0m" "$1"
-    #       |  | | ||   └── \e[0m : Return to plain normal mode
-    #       |  | | |└────── %b : Characters from the string argument are printed until the end is reached
-    #       |  | | |             and intepret character escapes in backslash notation (see 'man printf')
-    #       |  | | └─────── m : Terminate escape sequence
-    #       |  | └───────── 33 : Foreground colour yellow (see table in link given below)
-    #       |  └─────────── 0 : Normal text
-    #       └────────────── \e[ : Begin escape sequence
-    # See http://www.bashguru.com/2010/01/shell-colors-colorizing-shell-scripts.html for more info
-    # or see mathiasbynens dotfiles (.bash_prompt) on how he uses tput
+    print_in_color "$1" 3
 }
 
 print_optional_info() {
