@@ -15,7 +15,7 @@ enable_color_support() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Load OS specific color support
+    # Load OS specific color support.
 
     . "$(get_os)/bash_colors"
 
@@ -24,9 +24,9 @@ enable_color_support() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # [!] Don't break this function into smaller, more specialized ones
-# as you will only pollute the global space even more (this function
+# as you will only pollute the global space even more. This function
 # cannot be unset because it's called every time the prompt string
-# is shown)
+# is shown.
 
 get_git_repository_details() {
 
@@ -35,7 +35,7 @@ get_git_repository_details() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Check if the current directory is in a Git repository
+    # Check if the current directory is in a Git repository.
 
     ! git rev-parse &>/dev/null \
         && return
@@ -43,14 +43,14 @@ get_git_repository_details() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Check if in `.git/` directory (some of the following
-    # checks don't make sense/won't work in the `.git` directory)
+    # checks don't make sense/won't work in the `.git` directory).
 
     [ "$(git rev-parse --is-inside-git-dir)" == "true" ] \
         && return
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Check for uncommitted changes in the index
+    # Check for uncommitted changes in the index.
 
     if ! git diff --quiet --ignore-submodules --cached; then
         tmp="$tmp+";
@@ -58,7 +58,7 @@ get_git_repository_details() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Check for unstaged changes
+    # Check for unstaged changes.
 
     if ! git diff-files --quiet --ignore-submodules --; then
         tmp="$tmp!";
@@ -66,7 +66,7 @@ get_git_repository_details() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Check for untracked files
+    # Check for untracked files.
 
     if [ -n "$(git ls-files --others --exclude-standard)" ]; then
         tmp="$tmp?";
@@ -74,7 +74,7 @@ get_git_repository_details() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Check for stashed files
+    # Check for stashed files.
 
     if git rev-parse --verify refs/stash &>/dev/null; then
         tmp="$tmp$";
@@ -122,7 +122,7 @@ set_prompts() {
         bold=$(tput bold)
         reset=$(tput sgr0)
 
-        # Solarized colors
+        # Solarized colors.
         # https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized#the-values
 
         # black=$(tput setaf 0)
@@ -154,7 +154,7 @@ set_prompts() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Prompt Statement variables
+    # Prompt Statement variables.
     # http://ss64.com/bash/syntax-prompt.html
     # https://wiki.archlinux.org/index.php/Bash/Prompt_customization
 
@@ -198,7 +198,7 @@ set_prompts() {
     #
     # The GNU `date` command has the `%N` interpreted sequence while
     # other implementations don't (on macOS `gdate` can be used instead
-    # of the native `date` if the `coreutils` package has been installed)
+    # of the native `date` if the `coreutils` package has been installed).
     #
     # local dateCmd=""
     #
@@ -240,7 +240,7 @@ main
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Cleanup
+# Cleanup.
 
 unset -f enable_color_support
 unset -f main

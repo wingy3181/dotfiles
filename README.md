@@ -14,8 +14,8 @@ terminal:
 (:warning: **DO NOT** run the `setup` snippet if you don't fully
 understand [what it does](src/os/setup.sh). Seriously, **DON'T**!)
 
-| OS | Snippet |
-|:---:|:---|
+| OS      | Snippet                                                                                   |
+|:--------|:------------------------------------------------------------------------------------------|
 | `macOS` | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! :sparkles:

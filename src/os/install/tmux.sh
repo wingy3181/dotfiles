@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-main() {
+install_plugins() {
 
     declare -r TPM_DIR="$HOME/.tmux/plugins/tpm"
     declare -r TPM_GIT_REPO_URL="https://github.com/tmux-plugins/tpm.git"
@@ -39,6 +39,14 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     print_in_green "\n  ---\n\n"
+
+}
+
+main() {
+
+    print_in_purple "\n Tmux\n\n"
+
+    install_plugins
 
 }
 

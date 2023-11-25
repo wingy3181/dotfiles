@@ -2,14 +2,14 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Set LSCOLORS (FreeBSD / macOS)
+# Set LSCOLORS (FreeBSD / macOS).
 #
-#  - `ls` displays colors if the `-G` option is passed or if
-#    the `CLICOLOR` environment variable is set
+#  * `ls` displays colors if the `-G` option is passed or if
+#    the `CLICOLOR` environment variable is set.
 #
-#  - the actual colors are configured through the `LSCOLORS`
+#  * The actual colors are configured through the `LSCOLORS`
 #    environment variable (built-in defaults are used if this
-#    variable is not set)
+#    variable is not set).
 #
 # - The order of each two characters determines components
 # - The first character is the foreground colour
@@ -35,6 +35,6 @@ export LSCOLORS
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Enable color support
+# Enable color support.
 
 alias ls="ls -G"

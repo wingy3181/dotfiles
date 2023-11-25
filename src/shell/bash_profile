@@ -16,8 +16,8 @@ source_bash_files() {
         "bash_options"
         "bash_prompt"
         "bash_zoxide"
-        "bash.local"  # for local settings that should
-                      # not be under version control
+        "bash.local"  # For local settings that should
+                      # not be under version control.
     )
 
     local file=""
@@ -52,8 +52,8 @@ unset -f source_bash_files
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Clear system messages (e.g.: system copyright notice, the
-# date and time of the last login, the message of the day, etc.)
+# Clear system messages (system copyright notice, the date
+# and time of the last login, the message of the day, etc.).
 
 if test -z "$TMUX"; then eval clear; fi
 

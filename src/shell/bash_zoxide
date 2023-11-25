@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Hook zoxide into bash shell
+# Hook zoxide into bash shell.
 # See:
 # - https://github.com/ajeetdsouza/zoxide#installation
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

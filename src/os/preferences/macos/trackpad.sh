@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_info " Trackpad"
+print_in_purple "\n Trackpad\n\n"
 
 execute "defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false && \
          defaults write com.apple.AppleMultitouchTrackpad Clicking -int 0 && \

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Automatically call nvm use
+# Automatically call nvm use.
 # See:
 # - https://github.com/nvm-sh/nvm#bash
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

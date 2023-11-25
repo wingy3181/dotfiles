@@ -2,7 +2,7 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Simple Calculator
+# Simple Calculator.
 
 ? () {
 
@@ -15,12 +15,14 @@
     # See https://www.gnu.org/software/bc/manual/html_node/bc_toc.html
 
     if [[ "$result" == *.* ]]; then
-        # Improve the output for decimal numbers
+
+        # Improve the output for decimal numbers.
+
         printf "%s" "$result" |
         sed -e "s/^\./0./" -e "s/^-\./-0./" -e "s/0*$//;s/\.$//"
-        #    |              |                └─ remove tailing zeros
-        #    |              └─ add "0" for cases like "-.5"
-        #    └─ add "0" for cases like ".5"
+        #    |              |                └─ remove tailing zeros.
+        #    |              └─ add "0" for cases like "-.5".
+        #    └─ add "0" for cases like ".5".
     else
         printf "%s" "$result"
     fi
@@ -31,7 +33,7 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Create data URI from a file
+# Create data URI from a file.
 
 datauri() {
     # $1 : file to generate data uri for
@@ -60,7 +62,7 @@ datauri() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Delete files that match a certain pattern from the current directory
+# Delete files that match a certain pattern from the current directory.
 # This lists the files deleted via the -ls option
 
 delete-files() {
@@ -77,7 +79,7 @@ delete-files() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Search git repositories from current director and display report with
-# remote information
+# remote information.
 
 git-remotes-list() {
     echo "*********************************************************************"
@@ -126,7 +128,7 @@ create-topics-config() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Sync config for topics folder from topics config
+# Sync config for topics folder from topics config.
 # Config:
 # - 1st column: Topic relative path from parent topics folder
 # - 2nd column: git clone url
@@ -153,7 +155,7 @@ sync-topics-config() {
     fi
 }
 
-# Sync symbolic links for topics folder from topics config
+# Sync symbolic links for topics folder from topics config.
 # Config:
 # - 1st column: Topic relative path from parent topics folder
 # - 2nd column: git clone url
@@ -180,7 +182,7 @@ sync-topics-symbolic-links() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Get gzip information (gzipped file size + reduction size)
+# Get gzip information (gzipped file size + reduction size).
 
 gz() {
     # $1 : file to get gzip information from
@@ -223,7 +225,7 @@ gz() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Human readable file size
-# (because `du -h` doesn't cut it for me)
+# (because `du -h` doesn't cut it for me).
 
 hrfs() {
     # $1 : number to convert to file size
@@ -262,7 +264,7 @@ hrfs() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Return relative path to $1 from $2
+# Return relative path to $1 from $2.
 # Example:
 #   `relpath /foo/bar /foo/baz/foo` return `../../bar`
 
@@ -275,7 +277,7 @@ relpath() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Adds symbolic link in 'topics' directory with $1 path to $2 optional path or current directory
+# Adds symbolic link in 'topics' directory with $1 path to $2 optional path or current directory.
 # - add-topic topics/subtopics
 # - add-topic topics/subtopics path (optional)
 # - add-topic topics/subtopics /path (optional)
@@ -295,7 +297,7 @@ add-topic() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Create new directories and enter the first one
+# Create new directories and enter the first one.
 
 mkcd() {
     # $* : arguments passed to mkd which is the directories to create
@@ -313,7 +315,7 @@ mkcd() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Search history
+# Search history.
 
 qh() {
     # $* : arguments passed to qh which is the search text
@@ -329,7 +331,7 @@ qh() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Search for text recursively within the current directory
+# Search for text recursively within the current directory.
 
 qt() {
     # $* : arguments passed to qt which is the search text
@@ -354,7 +356,7 @@ update_terminal_cwd() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Upgrade jenv if it is installed
+# Upgrade jenv if it is installed.
 
 upgrade-jenv() {
 
@@ -380,7 +382,7 @@ upgrade-jenv() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Upgrade nvm if it is installed
+# Upgrade nvm if it is installed.
 
 upgrade-nvm() {
 
@@ -407,7 +409,7 @@ upgrade-nvm() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Update global npm modules for all node versions installed via nvm
+# Update global npm modules for all node versions installed via nvm.
 # NOTE: To copy global npm packages across different node versions, use:
 # `nvm install 8.9.4 --reinstall-packages-from=node`
 # Check global packages list via `npm ls -g --depth 0``

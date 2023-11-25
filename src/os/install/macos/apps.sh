@@ -348,7 +348,7 @@ install_apps() {
 
 main() {
 
-    print_info " Applications"
+    print_in_purple "\n Applications\n\n"
 
     install_apps
 

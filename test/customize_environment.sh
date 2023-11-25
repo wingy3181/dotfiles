@@ -8,7 +8,8 @@ declare -a JDKS_DIRECTORIES_TO_REMOVE=()
 
 if [ "$TRAVIS_OS_NAME" = "osx" ]; then
 
-    # Install `ShellCheck` (required for testing)
+    # Install `ShellCheck`
+    # (required for testing).
     brew install shellcheck
 
     # To better simulate a clean macOS install, remove certain things
@@ -27,7 +28,7 @@ fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # To better simulate a clean OS install, remove certain things
-# included by default by Travis CI
+# included by default by Travis CI.
 
 rm -rf "$NVM_DIR"
 for i in "${JDKS_DIRECTORIES_TO_REMOVE[@]}"; do

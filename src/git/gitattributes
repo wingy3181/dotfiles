@@ -1,5 +1,5 @@
-# Automatically normalize line endings for all text-based files
-# due to differences between Windows and Mac/Linux systems on
+# Automatically normalize line endings for all text-based files.
+# Due to differences between Windows and Mac/Linux systems on
 # how they treat line endings (i.e. \r\n versus \n)
 #   https://git-scm.com/docs/gitattributes#_end_of_line_conversion
 #     Set to string value "auto"

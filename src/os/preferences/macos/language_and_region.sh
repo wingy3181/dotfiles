@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_info " Language & Region"
+print_in_purple "\n   Language & Region\n\n"
 
 # System Preferences -> Language & Region
 execute "defaults write -g AppleLanguages -array 'en'" \

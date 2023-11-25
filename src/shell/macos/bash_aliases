@@ -2,10 +2,9 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Clear DNS cache
+# Lock screen.
 
-alias clear-dns-cache="sudo dscacheutil -flushcache; \
-                       sudo killall -HUP mDNSResponder"
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -18,7 +17,7 @@ fi
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Homebrew
+# Shorter commands for `Homebrew`.
 
 alias brewd="brew doctor"
 alias brewi="brew install"
@@ -30,8 +29,16 @@ alias brewu="brew update \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Clear DNS cache.
+
+alias clear-dns-cache="sudo dscacheutil -flushcache; \
+                       sudo killall -HUP mDNSResponder"
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Empty the trash, the main HDD and on all mounted volumes,
-# and clear Apple’s system logs to improve shell startup speed
+# and clear Apple’s system logs to improve shell startup speed.
 #
 # Use 'Console' to view Apple's system logs
 # (https://crucialsecurityblog.harris.com/2011/08/24/the-apple-system-log-%E2%80%93-part-2-%E2%80%93-console-app/)
@@ -46,7 +53,7 @@ alias empty-trash="sudo rm -frv /Volumes/*/.Trashes; \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Hide/Show desktop icons
+# Hide/Show desktop icons.
 
 alias hide-desktop-icons="defaults write com.apple.finder CreateDesktop -bool false \
                             && killall Finder"
@@ -56,7 +63,7 @@ alias show-desktop-icons="defaults write com.apple.finder CreateDesktop -bool tr
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Hide/Show hidden files in Finder
+# Hide/Show hidden files in Finder.
 
 alias hide-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool false \
                             && killall Finder"
@@ -66,25 +73,19 @@ alias show-hidden-files="defaults write com.apple.finder AppleShowAllFiles -bool
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Lock screen
-
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Get local IP
+# Get local IP.
 
 alias local-ip="ipconfig getifaddr en0"   # en0 is typically for ethernet and en1 is typically for wifi. Use ifconfig -a to find out interface name
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Open
+# Open from the terminal.
 
 alias o="open"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Update - doesn't update vundle/tmux + their plugins
+# Update applications and command line tools (CLTs) - doesn't update vundle/tmux + their plugins
 
 alias u="sudo softwareupdate --install --all \
             && brew update \

@@ -16,6 +16,8 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_in_purple "\n\n * Preferences\n"
+
     if $skipQuestions; then
         "./$(get_os)/main.sh" -y
     else

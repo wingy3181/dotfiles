@@ -23,7 +23,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Wait for the server to be available, and once
-    # it is, open its address in the default browser
+    # it is, open its address in the default browser.
 
     while [ $i -lt $MAX_NUMBER_OF_TRIES ]; do
         # lsof : list open files (and remember, in UNIX just about everything (including a network socket) is a file)
@@ -41,7 +41,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Start server
+    # Start server.
 
     "$(dirname "${BASH_SOURCE[0]}")/server.py" "$port"
 

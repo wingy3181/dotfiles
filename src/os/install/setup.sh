@@ -16,6 +16,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_in_purple "\n\n * Install applications\n"
     print_warning "This may take awhile, so please be patient!\n"
 
     if $skipQuestions; then
@@ -28,9 +29,9 @@ main() {
     ./jenv.sh
     ./sdkman.sh
     ./nvm.sh
-    ./npm_packages.sh
-    ./vim_plugins.sh
-    ./tmux_plugins.sh
+    ./npm.sh
+    ./vim.sh
+    ./tmux.sh
 
 }
 

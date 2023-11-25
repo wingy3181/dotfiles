@@ -55,11 +55,11 @@ download() {
 
 download_dotfiles() {
 
-    print_info "Download and extract archive"
-
     local tmpFile=""
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    print_in_purple "\n * Download and extract archive\n\n"
 
     tmpFile="$(mktemp /tmp/XXXXX)"
 
@@ -81,7 +81,7 @@ download_dotfiles() {
             done
         fi
 
-        # Ensure the `dotfiles` directory is available
+        # Ensure the `dotfiles` directory is available.
 
         while [ -e "$dotfilesDirectory" ]; do # -e : True if file exists (regardless of type).
             ask_for_confirmation "'$dotfilesDirectory' already exists, do you want to overwrite it?"
@@ -110,14 +110,12 @@ download_dotfiles() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Extract archive in the `dotfiles` directory
+    # Extract archive in the `dotfiles` directory.
 
     extract "$tmpFile" "$dotfilesDirectory"
     print_result $? "Extract archive" "true"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Remove archive
 
     rm -rf "$tmpFile"
     print_result $? "Remove archive"
@@ -176,7 +174,7 @@ verify_os() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Check if the OS is `macOS` and
-    # it's above the required version
+    # it's above the required version.
 
     os_name="$(uname -s)"
 
@@ -207,7 +205,7 @@ verify_os() {
 main() {
 
     # Ensure that the following actions
-    # are made relative to this file's path
+    # are made relative to this file's path.
 
     cd "$(dirname "${BASH_SOURCE[0]}")" \
         || exit 1
@@ -225,7 +223,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Ensure the OS is supported and
-    # it's above the required version
+    # it's above the required version.
 
     verify_os \
         || exit 1
@@ -241,16 +239,19 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Setup the `dotfiles` if needed.
     # Check if this script was run directly (./<path>/setup.sh),
     # and if not, it most likely means that the dotfiles were not
     # yet set up, and they will need to be downloaded.
 
     printf "%s" "${BASH_SOURCE[0]}" | grep "setup.sh" &> /dev/null \
         || download_dotfiles
+    #if ! cmd_exists "git" \
+    #    || [ "$(git config --get remote.origin.url)" != "$DOTFILES_ORIGIN" ]; then
+    #    download_dotfiles
+    #fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    print_info "Create directories"
 
     if ! $skipQuestions; then
         ask_for_confirmation "Do you want the additional directories to be created?"
@@ -263,8 +264,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_info "Create symbolic links"
-
     if ! $skipQuestions; then
         ./create_symbolic_links.sh
     else
@@ -272,8 +271,6 @@ main() {
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    print_info "Create local config files"
 
     if ! $skipQuestions; then
         ask_for_confirmation "Do you want local config files for bash, git and vim to be created?"
@@ -285,8 +282,6 @@ main() {
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    print_info "Install applications"
 
     if ! $skipQuestions; then
         ask_for_confirmation "Do you want to install the applications/command line tools?"
@@ -300,8 +295,6 @@ main() {
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    print_info "Set preferences"
 
     if ! $skipQuestions; then
         ask_for_confirmation "Do you want to set the custom preferences?"
@@ -319,30 +312,20 @@ main() {
     if cmd_exists "git"; then
 
         if [ "$(git config --get remote.origin.url)" != "$DOTFILES_ORIGIN" ]; then
-            print_info "Initialize Git repository"
             ./initialize_git_repository.sh "$DOTFILES_ORIGIN"
         fi
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         if ! $skipQuestions; then
-
-            print_info "Update content"
-
-            ask_for_confirmation "Do you want to update the content from the 'dotfiles' directory?"
-            printf "\n"
-
-            if answer_is_yes; then
-                ./update_content.sh
-            fi
-
+            ./update_content.sh
         fi
 
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_info "Optional items & reminders"
+    print_in_purple "\n Optional items & reminders\n\n"
 
     print_optional_info "Add favourite locations (home & Development) to Finder sidebar"
     print_optional_info "Install Beyond Compare"
@@ -389,16 +372,7 @@ main() {
 
 
     if ! $skipQuestions; then
-
-        print_info "Restart"
-
-        ask_for_confirmation "Do you want to restart?"
-        printf "\n"
-
-        if answer_is_yes; then
-            ./restart.sh
-        fi
-
+        ./restart.sh
     fi
 
 }

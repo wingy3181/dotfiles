@@ -12,7 +12,7 @@ install_plugins() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Install plugins
+    # Install plugins.
 
     execute \
         "rm -rf '$VUNDLE_DIR' \
@@ -23,13 +23,13 @@ install_plugins() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Install additional things required by some plugins
+    # Install additional things required by some plugins.
     # In the case of fresh installs, in order for `npm` to be
     # available, the `~/bash.local` file needs to be sourced
 
     execute \
-        "cd $HOME/.vim/plugins/tern_for_vim \
-            && . $HOME/.bash.local \
+        ". $HOME/.bash.local \
+            && cd $HOME/.vim/plugins/tern_for_vim \
             && npm install" \
         "Install Vim plugins (extra installs for 'tern_for_vim')"
 
@@ -51,7 +51,7 @@ update_plugins() {
 
 main() {
 
-    print_info " Vim"
+    print_in_purple "\n Vim\n\n"
 
     install_plugins
     update_plugins

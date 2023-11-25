@@ -33,6 +33,6 @@ alias t="tmux"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Load OS specific aliases
+# Load OS specific aliases.
 
 . "$(get_os)/bash_aliases"

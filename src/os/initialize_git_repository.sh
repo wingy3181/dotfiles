@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-main() {
+initialize_git_repository() {
 
     declare -r GIT_ORIGIN="$1"
 
@@ -21,7 +21,7 @@ main() {
     if ! is_git_repository; then
 
         # Run the following Git commands in the root of
-        # the dotfiles directory, not in the `os/` directory
+        # the dotfiles directory, not in the `os/` directory.
 
         cd ../../ \
             || print_error "Failed to 'cd ../../'"
@@ -32,6 +32,13 @@ main() {
 
     fi
 
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+main() {
+    print_in_purple "\n Initialize Git repository\n\n"
+    initialize_git_repository "$1"
 }
 
 main "$1"
