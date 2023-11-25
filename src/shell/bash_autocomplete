@@ -5,4 +5,4 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-. "$(get_os)/bash_autocomplete"
+. "$OS/bash_autocomplete"
