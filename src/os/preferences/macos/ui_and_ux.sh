@@ -14,6 +14,9 @@ execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool
 execute "defaults write com.apple.menuextra.battery ShowPercent -string 'YES'" \
     "Show battery percentage from the menu bar"
 
+execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true" \
+    "Show language menu in the top right corner of the boot screen"
+
 execute "defaults write com.apple.CrashReporter UseUNC 1" \
     "Make crash reports appear as notifications"
 
