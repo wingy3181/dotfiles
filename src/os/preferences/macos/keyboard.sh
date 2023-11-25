@@ -25,14 +25,24 @@ execute "defaults write -g KeyRepeat -int 1" \
 
 # System Preferences -> Keyboard -> Text
 # https://coolestguidesontheplanet.com/turn-autocorrect-osx-mac-mail-skype-10-9-mavericks/
+
+execute "defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false" \
+    "Disable automatic capitalization"
+
+execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
+    "Disable automatic correction"
+
+execute "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" \
+    "Disable automatic period substitution"
+
 execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
         "Disable auto-correct"
 
-execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
-    "Disable smart quotes"
-
 execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
     "Disable smart dashes"
+
+execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
+    "Disable smart quotes"
 
 # https://github.com/diimdeep/dotfiles/blob/master/osx/configure/hotkeys.sh
 # http://krypted.com/mac-os-x/defaults-symbolichotkeys/
