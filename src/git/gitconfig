@@ -3,21 +3,21 @@
     a   = add
     br  = branch
     c   = commit
-    ca  = !git add -A && git commit                 # Commit all changes.
+    ca  = !git add -A && git commit                       # Commit all changes.
     co  = checkout
     cp  = cherry-pick
     d   = diff
     dc  = diff --cached
     f = fetch
-    g   = log --graph --pretty=custom               # Show custom graph.
-    l   = log --pretty=custom                       # Show custom log.
-    lc  = shortlog --summary --numbered             # List contributors.
+    g   = log --graph --pretty=custom                     # Show custom graph.
+    l   = log --pretty=custom                             # Show custom log.
+    lc  = shortlog --email --summary --numbered --summary # List contributors.
     p   = push
     r   = rebase
-    rlc = reset --hard HEAD~1                       # Remove last commit.
+    rlc = reset --hard HEAD~1                             # Remove last commit.
     s   = status
-    t = log --graph --pretty=custom --all           # Show custom tree graph.
-    ulc = reset --soft HEAD~1                       # Undo last commit.
+    t = log --graph --pretty=custom --all                 # Show custom tree graph.
+    ulc = reset --soft HEAD~1                             # Undo last commit.
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
