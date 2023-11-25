@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n  Dashboard\n\n"
+print_info " Dashboard"
 
 # dashboard-enabled-state: 1=off, 2=space, 3=overlay
 execute "defaults write com.apple.dashboard mcx-disabled -bool true && \

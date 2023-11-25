@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n  Keyboard\n\n"
+print_info " Keyboard"
 
 # System Preferences -> Keyboard -> Shortcuts -> 1=Text boxes and lists only, 3=All controls
 #   https://github.com/CamHenlin/imessageclient/issues/6
