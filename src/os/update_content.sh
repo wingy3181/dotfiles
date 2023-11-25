@@ -6,17 +6,19 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 add_ssh_configs() {
+
     printf "%s\n" \
         "Host github.com" \
         "  IdentityFile $1" \
         "  LogLevel ERROR" >> ~/.ssh/config
+
     print_result $? "Add SSH configs"
 }
 
 copy_public_ssh_key_to_clipboard () {
+
     # pbcopy normally means OS X
     if cmd_exists "pbcopy"; then
-
         pbcopy < "$1"
         print_result $? "Copy public SSH key to clipboard"
 
@@ -27,13 +29,16 @@ copy_public_ssh_key_to_clipboard () {
 }
 
 generate_ssh_keys() {
+
     ask "Please provide an email address (email): " && printf "\n"
     ssh-keygen -t rsa -b 4096 -C "$(get_answer)" -f "$1"
     #           │      │       │                  └───── The file name of the key
     #           │      │       └────── Comment for key. The email address prompted is used in this particular case
     #           │      └───────────── number of bits in the key. 4096 in this particular case
     #           └─────────────────── type of key to generate. RSA V2 in this particular case
+
     print_result $? "Generate SSH keys"
+
 }
 
 open_github_ssh_page() {
@@ -66,13 +71,9 @@ set_github_ssh_key() {
     print_info "Set up the SSH keys"
 
     generate_ssh_keys "$sshKeyFileName"
-
     add_ssh_configs "$sshKeyFileName"
-
     copy_public_ssh_key_to_clipboard "${sshKeyFileName}.pub"
-
     open_github_ssh_page
-
     test_ssh_connection \
         && rm "${sshKeyFileName}.pub"
 

@@ -27,7 +27,7 @@ main() {
     ./bash-it.sh
     ./jenv.sh
     ./sdkman.sh
-    ./node.sh
+    ./nvm.sh
     ./npm_packages.sh
     ./vim_plugins.sh
     ./tmux_plugins.sh

@@ -3,50 +3,50 @@
 cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "utils.sh"
 
-declare -a FILES_TO_SYMLINK=(
-
-    "shell/bash_aliases"
-    "shell/bash_autocomplete"
-    "shell/bash_bash-it"
-    "shell/bash_direnv"
-    "shell/bash_exports"
-    "shell/bash_functions"
-    "shell/bash_logout"
-    "shell/bash_nvm"
-    "shell/bash_options"
-    "shell/bash_profile"
-    "shell/bash_prompt"
-    "shell/bash_zoxide"
-    "shell/bashrc"
-    "shell/curlrc"
-    "shell/inputrc"
-    "shell/screenrc"
-
-    "git/gitattributes"
-    "git/gitconfig"
-    "git/gitignore"
-    "git/git_commit_message_template"
-
-    "npm/npmrc"
-
-    "nvm/nvm/default-packages"
-
-    "vim/vim"
-    "vim/vimrc"
-
-    "tmux/tmux.conf"
-
-    "sshrc/sshrc"
-
-    "other/czrc"
-    "other/cz-config.js"
-    "other/ideavimrc"
-
-)
-
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-main() {
+create_symlinks() {
+
+    declare -a FILES_TO_SYMLINK=(
+
+        "shell/bash_aliases"
+        "shell/bash_autocomplete"
+        "shell/bash_bash-it"
+        "shell/bash_direnv"
+        "shell/bash_exports"
+        "shell/bash_functions"
+        "shell/bash_logout"
+        "shell/bash_nvm"
+        "shell/bash_options"
+        "shell/bash_profile"
+        "shell/bash_prompt"
+        "shell/bash_zoxide"
+        "shell/bashrc"
+        "shell/curlrc"
+        "shell/inputrc"
+        "shell/screenrc"
+
+        "git/gitattributes"
+        "git/gitconfig"
+        "git/gitignore"
+        "git/git_commit_message_template"
+
+        "npm/npmrc"
+
+        "nvm/nvm/default-packages"
+
+        "vim/vim"
+        "vim/vimrc"
+
+        "tmux/tmux.conf"
+
+        "sshrc/sshrc"
+
+        "other/czrc"
+        "other/cz-config.js"
+        "other/ideavimrc"
+
+    )
 
     local i=""
     local sourceFile=""
@@ -104,6 +104,13 @@ main() {
 
     done
 
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+main() {
+    print_info "Create symbolic links"
+    create_symlinks "$@"
 }
 
 # Pass '-y' to script to skip questions

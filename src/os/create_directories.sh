@@ -22,12 +22,19 @@ declare -a DIRECTORIES=(
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-main() {
+create_directories() {
 
     for i in "${DIRECTORIES[@]}"; do
         mkd "$i"
     done
 
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+main() {
+    print_info "Create directories"
+    create_directories
 }
 
 main
