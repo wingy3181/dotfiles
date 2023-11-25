@@ -42,33 +42,33 @@ execute "defaults write com.apple.spaces spans-displays -bool false" \
     "Enable 'Displays have separate Spaces'"
 
 # System Preferences -> General -> Use dark menu bar and Dock
-execute "defaults write NSGlobalDomain AppleInterfaceStyle -string 'Dark'" \
+execute "defaults write -g AppleInterfaceStyle -string 'Dark'" \
     "Use dark menu bar and Dock"
 
 # http://osxdaily.com/2014/10/27/change-font-smoothing-text-os-x-yosemite/
-execute "defaults write NSGlobalDomain AppleFontSmoothing -int 2" \
+execute "defaults write -g AppleFontSmoothing -int 2" \
     "Enable subpixel font rendering on non-Apple LCDs"
 
 # System Preferences -> General -> Show scrollsbars -> Automatically based on mouse or trackpad
-execute "defaults write NSGlobalDomain AppleShowScrollBars -string 'Automatic'" \
+execute "defaults write -g AppleShowScrollBars -string 'Automatic'" \
     "Show scrollbars automatically based on mouse or trackpad"
 
 # http://osxdaily.com/2012/05/15/disable-automatic-termination-of-apps-in-mac-os-x/
-execute "defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true" \
+execute "defaults write -g NSDisableAutomaticTermination -bool true" \
     "Disable automatic termination of inactive apps"
 
 # https://www.tekrevue.com/tip/expanded-save-dialog-os-x/
-execute "defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true" \
+execute "defaults write -g NSNavPanelExpandedStateForSaveMode -bool true" \
     "Expand save panel by default"
 
 # System Preferences -> General -> Sidebar icon size -> 1=Small, 2=Medium, 3=Large
 #   http://www.macobserver.com/tmo/article/os_x_lion_changing_sidebar_icon_sizes
-execute "defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1" \
+execute "defaults write -g NSTableViewDefaultSizeMode -int 1" \
     "Set sidebar icon size to small"
 
 # Occurs when tabbing between fields in dialogs
 #   http://arstechnica.com/apple/2014/10/os-x-10-10/5/
-execute "defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false" \
+execute "defaults write -g NSUseAnimatedFocusRing -bool false" \
     "Disable the over-the-top focus ring animation"
 
 # System Preferences -> General -> Close windows when quiting an app
@@ -77,7 +77,7 @@ execute "defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false" \
 execute "defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false" \
     "Disable resume system-wide"
 
-execute "defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true" \
+execute "defaults write -g PMPrintingExpandedStateForPrint -bool true" \
     "Expand print panel by default"
 
 # http://osxdaily.com/2011/07/19/automatically-restart-your-mac-if-it-freezes-in-os-x-lion/
