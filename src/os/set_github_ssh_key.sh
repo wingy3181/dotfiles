@@ -36,7 +36,7 @@ copy_public_ssh_key_to_clipboard () {
 
 generate_ssh_keys() {
 
-    ask "Please provide an email address (email): " && printf "\n"
+    ask "Please provide an email address: " && printf "\n"
     ssh-keygen -t rsa -b 4096 -C "$(get_answer)" -f "$1"
 
     print_result $? "Generate SSH keys"
