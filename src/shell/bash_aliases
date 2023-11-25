@@ -30,6 +30,7 @@ alias hosts='sudo $EDITOR /etc/hosts'                           # Open hosts fil
 alias scrcpyw="setup-scrcpy"
 alias ssh="sshrc"
 alias t="tmux"
+alias y="yarn"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
