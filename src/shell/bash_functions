@@ -335,7 +335,7 @@ qh() {
 
 qt() {
     # $* : arguments passed to qt which is the search text
-    grep -ir --color=always "$*" --exclude-dir=".git" . | /usr/bin/less -RX
+    grep -ir --color=always "$*" --exclude-dir=".git" --exclude-dir="node_modules" . | /usr/bin/less -RX
     #     │└─ search all files under each directory, recursively
     #     └─ ignore case
 }
