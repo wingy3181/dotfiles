@@ -125,8 +125,12 @@
 
     frag = magenta
     meta = yellow
+
     new = green
     old = red
+
+    newMoved = cyan
+    oldMoved = blue
 
 [color "status"]
 
@@ -149,6 +153,15 @@
 
     gpgsign = false
     template = ~/.git_commit_message_template
+
+[diff]
+
+    # Show blocks of moved text of at least 20
+    # alphanumeric characters differently than adds/deletes.
+    #
+    # https://git-scm.com/docs/git-diff#git-diff-zebra
+
+    colorMoved = zebra
 
 [diff "bin"]
 
