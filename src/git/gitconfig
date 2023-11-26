@@ -33,27 +33,6 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Find commits by source code.
-    # $1 : text to search for in source code that changed or the filename itself
-    #      See https://git-scm.com/docs/git-log and search for pickaxe.
-
-    cc = "!f() { \
-        git log --date=short --decorate --pretty=custom -S\"$1\"; \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Find commits by commit message.
-    # $1 : text to search for in commit messages.
-    #      Some characters should be escaped with \\
-    #      e.g. \\[os\\]
-
-    cm = "!f() { \
-        git log --date=short --decorate --pretty=custom --grep=\"$1\"; \
-    }; f"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     co  = checkout
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -202,6 +181,27 @@
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     s   = status
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Search commits by source code.
+    # $1 : text to search for in source code that changed or the filename itself
+    #      See https://git-scm.com/docs/git-log and search for pickaxe.
+
+    sc = "!f() { \
+        git log --date=short --decorate --pretty=custom -S\"$1\"; \
+    }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Search commits by commit message.
+    # $1 : text to search for in commit messages.
+    #      Some characters should be escaped with \\
+    #      e.g. \\[os\\]
+
+    sm = "!f() { \
+        git log --date=short --decorate --pretty=custom --grep=\"$1\"; \
+    }; f"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
