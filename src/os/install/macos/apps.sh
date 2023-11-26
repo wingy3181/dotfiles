@@ -8,11 +8,11 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 install_apps() {
 
-    brew_install_with_confirmation "Android File Transfer" "android-file-transfer" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Android File Transfer" "android-file-transfer" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Android Platform Tools" "android-platform-tools" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Android Platform Tools" "android-platform-tools" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -20,15 +20,15 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "AppCleaner" "appcleaner" "caskroom/cask" "cask"
+    brew_install_with_confirmation "AppCleaner" "appcleaner" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Arc" "arc" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Arc" "arc" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Arduino IDE" "arduino-ide" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Arduino IDE" "arduino-ide" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -36,19 +36,19 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Brave Browser" "brave-browser" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Brave Browser" "brave-browser" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Calibre" "calibre" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Calibre" "calibre" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Cheatsheet" "cheatsheet" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Cheatsheet" "cheatsheet" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Chrome" "google-chrome" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Chrome" "google-chrome" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -56,20 +56,20 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Discord" "discord" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Discord" "discord" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Disk Inventory X is no longer supported and maintained.
     # Look at grandperspective as an alternative
-    #brew_install_with_confirmation "GrandPerspective" "grandperspective" "caskroom/cask" "cask"
+    #brew_install_with_confirmation "GrandPerspective" "grandperspective" "homebrew/cask" "cask"
     # https://github.com/alinradut/Disk-Inventory-X
     # https://grandperspectiv.sourceforge.net/
-    brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "DisplayLink USB Graphics Software" "displaylink" "caskroom/cask" "cask"
+    brew_install_with_confirmation "DisplayLink USB Graphics Software" "displaylink" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -81,23 +81,23 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Docker for Mac" "docker" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Docker for Mac" "docker" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Dolphin Beta (GameCube Emulator)" "dolphin-beta" "caskroom/versions" "cask"
+    brew_install_with_confirmation "Dolphin Beta (GameCube Emulator)" "dolphin-beta" "homebrew/cask-versions" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Dropbox" "dropbox" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Dropbox" "dropbox" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Microsoft Edge" "microsoft-edge" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Microsoft Edge" "microsoft-edge" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Microsoft Office" "microsoft-office" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Microsoft Office" "microsoft-office" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -105,7 +105,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Firefox" "firefox" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Firefox" "firefox" "homebrew/cask" "cask"
     brew_install_with_confirmation "Firefox Developer" "firefox-developer-edition" "homebrew/cask-versions" "cask"
     brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "homebrew/cask-versions" "cask"
 
@@ -116,19 +116,19 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "ScanSnap Home" "fujitsu-scansnap-home" "caskroom/cask" "cask"
+    brew_install_with_confirmation "ScanSnap Home" "fujitsu-scansnap-home" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Gas Mask" "gas-mask" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Gas Mask" "gas-mask" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "GIMP" "gimp" "caskroom/cask" "cask"
+    brew_install_with_confirmation "GIMP" "gimp" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Gifox" "gifox" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Gifox" "gifox" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -141,7 +141,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Handbrake" "handbrake" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Handbrake" "handbrake" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -153,15 +153,15 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "ImageOptim" "imageoptim" "caskroom/cask" "cask"
+    brew_install_with_confirmation "ImageOptim" "imageoptim" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # brew_install_with_confirmation "Keybase" "keybase" "caskroom/cask" "cask"
+    # brew_install_with_confirmation "Keybase" "keybase" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Jetbrains Toolbox" "jetbrains-toolbox" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Jetbrains Toolbox" "jetbrains-toolbox" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -169,35 +169,35 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Lens (Kubernetes IDE)" "lens" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Lens (Kubernetes IDE)" "lens" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "NordVPN" "nordvpn" "caskroom/cask" "cask"
+    brew_install_with_confirmation "NordVPN" "nordvpn" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Notion" "notion" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Notion" "notion" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "PDF Expert" "pdf-expert" "caskroom/cask" "cask"
+    brew_install_with_confirmation "PDF Expert" "pdf-expert" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Postman" "postman" "caskroom/versions" "cask"
+    brew_install_with_confirmation "Postman" "postman" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Raycast" "raycast" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Raycast" "raycast" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Responsively" "responsively˚" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Responsively" "responsively˚" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Retina Display Menu" "avibrazil-rdm" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Retina Display Menu" "avibrazil-rdm" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -205,7 +205,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "sabnzbd" "sabnzbd" "caskroom/cask" "cask"
+    brew_install_with_confirmation "sabnzbd" "sabnzbd" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -228,19 +228,19 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "SideQuest" "sidequest" "caskroom/cask" "cask"
+    brew_install_with_confirmation "SideQuest" "sidequest" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Snagit" "snagit" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Snagit" "snagit" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Spotify" "spotify" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Spotify" "spotify" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Squidman" "squidman" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Squidman" "squidman" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -252,7 +252,7 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Re-assess later
-    #brew_install_with_confirmation "TeamViewer" "teamviewer" "caskroom/cask" "cask"
+    #brew_install_with_confirmation "TeamViewer" "teamviewer" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -262,7 +262,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Tor Browser" "tor-browser" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Tor Browser" "tor-browser" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -270,19 +270,19 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Transmission" "transmission" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Transmission" "transmission" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Tunnelblick" "tunnelblick" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Tunnelblick" "tunnelblick" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Unarchiver" "the-unarchiver" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Unarchiver" "the-unarchiver" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "UTM - Virtual machines UI using QEMU" "utm" "caskroom/cask" "cask"
+    brew_install_with_confirmation "UTM - Virtual machines UI using QEMU" "utm" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -291,19 +291,19 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "VR Virtual Desktop Streamer" "virtual-desktop-streamer" "caskroom/cask" "cask"
+    brew_install_with_confirmation "VR Virtual Desktop Streamer" "virtual-desktop-streamer" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "VLC" "vlc" "caskroom/cask" "cask"
+    brew_install_with_confirmation "VLC" "vlc" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "VS Code" "visual-studio-code" "caskroom/cask" "cask"
+    brew_install_with_confirmation "VS Code" "visual-studio-code" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "vysor.io" "vysor" "caskroom/cask" "cask"
+    brew_install_with_confirmation "vysor.io" "vysor" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -313,16 +313,16 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Wireshark" "wireshark" "caskroom/cask" "cask"
+    brew_install_with_confirmation "Wireshark" "wireshark" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "WhatsApp - Native desktop client for WhatsApp" "whatsapp" "caskroom/cask" "cask"
+    brew_install_with_confirmation "WhatsApp - Native desktop client for WhatsApp" "whatsapp" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # xtrafinder seems to be have removed from cask. Have to install manually via https://www.trankynam.com/xtrafinder/
-    # brew_install_with_confirmation "XtraFinder" "xtrafinder" "caskroom/cask" "cask"
+    # brew_install_with_confirmation "XtraFinder" "xtrafinder" "homebrew/cask" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -342,7 +342,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "4K Video Downloader" "4k-video-downloader" "caskroom/cask" "cask"
+    brew_install_with_confirmation "4K Video Downloader" "4k-video-downloader" "homebrew/cask" "cask"
 
 }
 
