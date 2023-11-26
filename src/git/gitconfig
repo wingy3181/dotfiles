@@ -98,7 +98,7 @@
     #    4. Checkout current/specified branch
     #    5. Merge PR branch into current/specified branch (should be a fast-forward)
     #    6. Delete PR branch
-    #    7. Amend last commit's message and adds 'Close #<PR number>''
+    #    7. Amend last commit's message and adds 'Close: #<PR number>''
     #       -1 = limit number of commits to 1
     #       %B = raw body (unwrapped subject and body)
 
@@ -112,7 +112,7 @@
             git checkout -B $branch && \
             git merge pr/$1 && \
             git branch -D pr/$1 && \
-            git commit --amend -m \"$(git log -1 --pretty=%B)\n\nClose #$1\"; \
+            git commit --amend -m \"$(git log -1 --pretty=%B)\n\nClose: #$1\"; \
         fi \
     }; f"
 
