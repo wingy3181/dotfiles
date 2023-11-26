@@ -292,6 +292,9 @@
     # https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_help_autocorrect
 
     autocorrect = 20
+    # If a command is mistyped, make Git automatically
+    # run the command it thinks the user wanted to type.
+    #autoCorrect = immediate
 
 [init]
 
