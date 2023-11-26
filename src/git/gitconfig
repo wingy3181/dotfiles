@@ -1,23 +1,28 @@
 [alias]
 
-    a   = add
-    br  = branch
-    c   = commit
-    ca  = !git add -A && git commit                       # Commit all changes.
-    co  = checkout
-    cp  = cherry-pick
-    d   = diff -- . ':!*package-lock.json' ':!*yarn.lock'
-    dc  = diff --cached -- . ':!*package-lock.json' ':!*yarn.lock'
-    f = fetch
-    g   = log --graph --pretty=custom                     # Show custom graph.
-    git = !exec git                                       # Allow `$ git git git...`
-    l   = log --pretty=custom                             # Show custom log.
-    lc  = shortlog --email --summary --numbered --summary # List contributors.
-    p   = push
-    r   = rebase
-    s   = status
-    t = log --graph --pretty=custom --all                 # Show custom tree graph.
-    u = commit --amend --no-edit                          # Update
+    a = add
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Update the content of the last commit by including all
+    # staged changes as well as allow the user to change its
+    # commit message.
+
+    am = commit --amend
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    br = branch
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    c = commit
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Commit all changes.
+
+    ca = !git add --all && git commit
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -39,6 +44,14 @@
     cm = "!f() { \
         git log --pretty=custom --decorate --date=short --grep=\"$1\"; \
     }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    co  = checkout
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    cp  = cherry-pick
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -74,6 +87,42 @@
     cup = "!f() { \
         git config user.name \"Cheong Yip\" && git config user.email \"wingy3181@gmail.com\"; \
     }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    d   = diff -- . ':!*package-lock.json' ':!*yarn.lock'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    dc  = diff --cached -- . ':!*package-lock.json' ':!*yarn.lock'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    f = fetch
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Show custom text-based graphical log of the commit history.
+
+    g   = log --graph --pretty=custom
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Allow `$ git git git...`
+
+    git = !exec git
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Show custom log of the commit history.
+
+    l   = log --pretty=custom
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # List contributors.
+
+    lc  = shortlog --email --summary --numbered --summary
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -118,6 +167,14 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    p   = push
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    r   = rebase
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # Remove the tag with the specified tag name if
     # exists and tag the latest commit with that name.
 
@@ -134,6 +191,27 @@
         declare n=\"${1:-1}\"; \
         git reset --hard \"HEAD~$n\"; \
     }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    s   = status
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Show custom tree graph.
+
+    t = log --graph --pretty=custom --all
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Update the content of the last commit by including all
+    # staged changes.
+    #
+    # Note: "Update" is used loosely. Git doesn't actually
+    # update the last commit, but instead, creates a new commit
+    # based on the last commit and replaces it.
+
+    u = commit --amend --no-edit
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
