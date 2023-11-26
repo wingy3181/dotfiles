@@ -32,7 +32,6 @@ main() {
     else
         ./computer_name.sh
     fi
-    ./dashboard.sh
     ./dock.sh
     ./finder.sh
     ./firefox.sh
