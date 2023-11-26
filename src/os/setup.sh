@@ -280,9 +280,9 @@ main() {
     fi
 
     if $skipQuestions; then
-        ./install/setup.sh -y
+        ./installs/setup.sh -y
     elif answer_is_yes; then
-        ./install/setup.sh
+        ./installs/setup.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
