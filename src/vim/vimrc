@@ -373,6 +373,7 @@ function! ToggleLimits()
     " [81]
     "
     "   * general use
+    "     https://daniel.haxx.se/blog/2020/11/30/i-am-an-80-column-purist/
 
     if ( &colorcolumn == "73" )
         set colorcolumn+=51,81
