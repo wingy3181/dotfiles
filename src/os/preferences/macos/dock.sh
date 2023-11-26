@@ -39,6 +39,10 @@ execute "defaults write com.apple.dock mru-spaces -bool false" \
 execute "defaults write com.apple.dock show-process-indicators -bool true" \
     "Show indicator lights for open applications"
 
+# System Preferences -> Dock -> Show suggested and recent apps in Dock
+execute "defaults write com.apple.dock show-recents -bool false" \
+    "Do not show recent applications in Dock"
+
 # System Preferences -> Dock -> Automatically hide and show the Dock
 #   http://osxdaily.com/2010/06/22/make-hidden-application-icons-translucent-in-the-dock/
 execute "defaults write com.apple.dock showhidden -bool true" \
