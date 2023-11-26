@@ -103,6 +103,8 @@ hs_err_pid*
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Runtime data
 pids
