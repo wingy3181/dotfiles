@@ -52,4 +52,38 @@ execute "defaults write com.apple.dock showhidden -bool true" \
 execute "defaults write com.apple.dock tilesize -int 40" \
     "Set icon size"
 
+# System Preferences -> Desktop & Screen Saver -> Hot Corners...
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
+# Top right screen corner → no-op
+execute "defaults write com.apple.dock wvous-tr-corner -int 0 && \
+         defaults write com.apple.dock wvous-tr-modifier -int 0" \
+    "Set Hot Corner - Top right to 'no-op'"
+
+# Top left screen corner → no-op
+execute "defaults write com.apple.dock wvous-tl-corner -int 0 && \
+         defaults write com.apple.dock wvous-tl-modifier -int 0" \
+    "Set Hot Corner - Top left to 'no-op'"
+
+# Bottom right screen corner → Desktop
+execute "defaults write com.apple.dock wvous-br-corner -int 4 && \
+         defaults write com.apple.dock wvous-br-modifier -int 0" \
+    "Set Hot Corner - Bottom right to 'Show Desktop'"
+
+# Bottom left screen corner → Start screen saver
+execute "defaults write com.apple.dock wvous-bl-corner -int 5 && \
+         defaults write com.apple.dock wvous-bl-modifier -int 0" \
+    "Set Hot Corner - Bottom left to 'Start screen saver'"
+
 killall "Dock" &> /dev/null
