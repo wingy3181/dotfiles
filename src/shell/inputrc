@@ -28,6 +28,12 @@ set bell-style audible
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Use the `vi` set of key bindings (default is `emacs`).
+
+set editing-mode vi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Use case-insensitive TAB autocompletion.
 
 set completion-ignore-case on
