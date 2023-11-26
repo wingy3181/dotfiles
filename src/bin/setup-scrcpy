@@ -82,7 +82,7 @@ setupScrcpy() {
 }
 
 #######################################################################################################
-# START - Copied from https://github.com/wingy3181/dotfiles/blob/master/src/os/utils.sh
+# START - Copied from https://github.com/wingy3181/dotfiles/blob/main/src/os/utils.sh
 answer_is_yes() {
     [[ "$REPLY" =~ ^[Yy]$ ]] \
         && return 0 \
@@ -126,7 +126,7 @@ print_error() {
 print_question() {
     print_in_yellow "  [?] $1"
 }
-# END - Copied from https://github.com/wingy3181/dotfiles/blob/master/src/os/utils.sh
+# END - Copied from https://github.com/wingy3181/dotfiles/blob/main/src/os/utils.sh
 #######################################################################################################
 
 setupScrcpy
