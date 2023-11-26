@@ -540,6 +540,12 @@ map <leader>cs <Esc>:noh<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+" [,h] Show hex dump.
+
+nmap <leader>h :%!xxd<CR>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 " [,l ] Toggle `set list`.
 
 nmap <leader>l :set list!<CR>
@@ -555,12 +561,6 @@ nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
 " [,pp] Pretty print
 
 map <Leader>pp :call PrettyPrint()<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [,sh] Show hex dump.
-
-nmap <leader>sh :%!xxd<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
