@@ -16,12 +16,3 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-[*.md]
-
-# Markdown uses the trailing whitespaces.
-# https://daringfireball.net/projects/markdown/syntax#block
-
-trim_trailing_whitespace = false
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
