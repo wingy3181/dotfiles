@@ -40,6 +40,7 @@ main() {
     ./maps.sh
     ./photos.sh
     ./safari.sh
+    ./security_and_privacy.sh
     ./terminal.sh
     ./textedit.sh
     ./trackpad.sh
