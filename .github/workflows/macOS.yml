@@ -22,16 +22,13 @@ jobs:
       - name: Install dependencies
         run: brew install shellcheck
 
-#      - name: Customize (baseline) environment for applications installation
-#        run: ./tests/customize_environment.sh
-#
 #      - name: Install applications in dotfiles
 #        env:
 #          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ matrix.applications-to-install }}
 #        run: ./src/os/setup.sh -y
 
       - name: Run tests
-        run: ./test/main.sh
+        run: ./tests/main.sh
 
 name: macOS
 
