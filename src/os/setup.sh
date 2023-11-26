@@ -348,9 +348,6 @@ main() {
     print_optional_info "Assess TeamViewer (https://www.teamviewer.com/)"
     print_optional_info "Assess Unity (https://unity.com/)"
     print_optional_info "Assess Warp (https://www.warp.dev/)"
-    print_optional_info "Set dotfiles/src/bin to PATH in .bash.local"
-    # PATH="/usr/local/bin:/Users/wingy3181/.dotfiles/src/bin:$PATH"
-    # export PATH
     print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/
     print_optional_info "Set user profile picture"
     print_optional_info "Set GPG key used for Keybase and GPG suite"
