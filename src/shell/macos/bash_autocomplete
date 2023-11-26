@@ -27,6 +27,6 @@ if command -v brew &> /dev/null &&
 # -f : True if file exists and is a regular file.
 elif [ -f /etc/bash_completion ]; then
 
-    source /etc/bash_completion;
+    . /etc/bash_completion;
 
 fi
