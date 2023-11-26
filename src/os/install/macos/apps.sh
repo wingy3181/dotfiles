@@ -149,7 +149,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "ImageMagick" "imagemagick -- --with-webp"
+    brew_install_with_confirmation "ImageMagick" "imagemagick"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -287,7 +287,7 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # https://github.com/Homebrew/homebrew-core/blob/master/Formula/vim.rb
-    brew_install_with_confirmation "Vim" "vim -- --with-override-system-vi"
+    brew_install_with_confirmation "Vim" "vim"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -326,7 +326,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "yarn" "yarn --ignore-dependencies"
+    brew_install_with_confirmation "yarn" "yarn"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
