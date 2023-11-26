@@ -35,9 +35,6 @@ execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
 execute "defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false" \
     "Disable automatic period substitution"
 
-execute "defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false" \
-        "Disable auto-correct"
-
 execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
     "Disable smart dashes"
 
