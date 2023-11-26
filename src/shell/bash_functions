@@ -377,7 +377,7 @@ mkcd() {
 
 # Search history.
 
-qh() {
+sh() {
     # $* : arguments passed to qh which is the search text
     # HISTFILE : https://www.gnu.org/software/bash/manual/html_node/Bash-History-Facilities.html
     #
@@ -393,7 +393,7 @@ qh() {
 
 # Search for text recursively within the current directory.
 
-qt() {
+st() {
     # $* : arguments passed to qt which is the search text
     grep -ir --color=always "$*" --exclude-dir=".git" --exclude-dir="node_modules" . | /usr/bin/less -RX
     #     │└─ search all files under each directory, recursively
