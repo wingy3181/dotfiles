@@ -52,7 +52,7 @@ install_apps() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    brew_install_with_confirmation "Chrome Canary" "google-chrome-canary" "caskroom/versions" "cask"
+    brew_install_with_confirmation "Chrome Canary" "google-chrome-canary" "homebrew/cask-versions" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -106,8 +106,8 @@ install_apps() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     brew_install_with_confirmation "Firefox" "firefox" "caskroom/cask" "cask"
-    brew_install_with_confirmation "Firefox Developer" "firefox-developer-edition" "caskroom/versions" "cask"
-    brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "caskroom/versions" "cask"
+    brew_install_with_confirmation "Firefox Developer" "firefox-developer-edition" "homebrew/cask-versions" "cask"
+    brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "homebrew/cask-versions" "cask"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -213,7 +213,7 @@ install_apps() {
     # https://github.com/alrra/dotfiles/issues/26
 
     if is_supported_version "$(get_os_version)" "10.11.4"; then
-        brew_install_with_confirmation "Safari Technology Preview" "safari-technology-preview" "caskroom/versions" "cask"
+        brew_install_with_confirmation "Safari Technology Preview" "safari-technology-preview" "homebrew/cask-versions" "cask"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
