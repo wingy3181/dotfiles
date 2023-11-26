@@ -58,7 +58,7 @@ export PATH
     # (macOS uses by default an older version of `Bash`).
 
     chsh -s "$newShellPath" &> /dev/null
-        print_result $? "Bash (use latest version)"
+        print_result $? "Make OS use the latest version of Bash"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
