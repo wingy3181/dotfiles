@@ -353,7 +353,6 @@ main() {
     install_apps
 
     printf "\n"
-    brew_cleanup
 
 }
 
