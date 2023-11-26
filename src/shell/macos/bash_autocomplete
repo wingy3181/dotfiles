@@ -1,17 +1,32 @@
 #!/usr/bin/env bash
 
-declare -r BASH_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/share/bash-completion/bash_completion"
+declare -r BASH_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/profile.d/bash_completion.sh"
 
-# -f : True if file exists and is a regular file.
-if [ -f "$BASH_COMPLETION_PATH" ]; then
+# -r : True if file exists and read permission is granted
+if which brew &> /dev/null &&
+   [ -r "$BASH_COMPLETION_PATH" ]; then
+
+    # Ensure existing `bash-completion@1` continues to work.
+    # https://github.com/Homebrew/homebrew-core/pull/36254
+
+    export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Use the latest `bash-completion`.
 
     . "$BASH_COMPLETION_PATH"
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # Make Bash complete the `g` alias just like it does `git`.
     # https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html
 
     complete -o default -o nospace -F _git g
+
+# -f : True if file exists and is a regular file.
+elif [ -f /etc/bash_completion ]; then
+
+    source /etc/bash_completion;
 
 fi
