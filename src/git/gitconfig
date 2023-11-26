@@ -17,6 +17,7 @@
     r   = rebase
     s   = status
     t = log --graph --pretty=custom --all                 # Show custom tree graph.
+    u = commit --amend --no-edit                          # Update
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
