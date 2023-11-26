@@ -322,6 +322,20 @@ endfunction
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+function! PrettyPrint()
+
+    if ( &filetype == 'json' && (has('python3') || has('python')) )
+        %!python -m json.tool
+        norm! ggVG==
+    elseif ( &filetype == 'svg' || &filetype == 'xml' )
+        set formatexpr=xmlformat#Format()
+        norm! Vgq
+    endif
+
+endfunction
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 function! StripTrailingWhitespaces()
 
     " Save last search and cursor position.
@@ -533,6 +547,12 @@ nmap <leader>l :set list!<CR>
 " [,n ] Toggle `set relativenumber`.
 
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,pp] Pretty print
+
+map <Leader>pp :call PrettyPrint()<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
