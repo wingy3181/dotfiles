@@ -168,19 +168,15 @@ verify_os() {
 
     declare -r MINIMUM_MACOS_VERSION="10.10"
 
-    local os_name=""
-    local os_version=""
+    local os_name="$(get_os)"
+    local os_version="$(get_os_version)"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # Check if the OS is `macOS` and
     # it's above the required version.
 
-    os_name="$(uname -s)"
-
-    if [ "$os_name" == "Darwin" ]; then
-
-        os_version="$(sw_vers -productVersion)"
+    if [ "$os_name" == "macos" ]; then
 
         if is_supported_version "$os_version" "$MINIMUM_MACOS_VERSION"; then
             return 0
