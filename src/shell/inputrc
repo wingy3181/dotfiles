@@ -5,6 +5,22 @@
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# If there are multiple matches for completion,
+# make TAB cycle through them.
+
+TAB: menu-complete
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Searching files via partial match.
+# https://stackoverflow.com/questions/1030182/how-do-i-change-bash-history-completion-to-complete-whats-already-on-the-line
+# ↑
+"\e[A":history-search-backward
+# ↓
+"\e[B":history-search-forward
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Enable beeping and window flashing.
 # 'none', 'audible', 'visible'
 
@@ -18,11 +34,13 @@ set completion-ignore-case on
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Auto list TAB completions.
-# This will allow single tab completion as opposed to requiring a double tab. This makes things much more pleasant, in my opinion.
+# Perform partial completion on the first Tab press, and
+# only start cycling full results on the second Tab press.
+
+set menu-complete-display-prefix on
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Display a list of the matching files
 
 set show-all-if-ambiguous on
-
-# https://stackoverflow.com/questions/1030182/how-do-i-change-bash-history-completion-to-complete-whats-already-on-the-line
-"\e[A": history-search-backward            # arrow up
-"\e[B": history-search-forward             # arrow down
