@@ -41,10 +41,13 @@ execute "defaults write -g NSAutomaticDashSubstitutionEnabled -bool false" \
 execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
     "Disable smart quotes"
 
-# https://github.com/diimdeep/dotfiles/blob/master/osx/configure/hotkeys.sh
+execute "defaults write com.apple.HIToolbox AppleFnUsageType -int 2" \
+    "Remap the emoji picker to the Fn key"
+
+# https://github.com/dii  mdeep/dotfiles/blob/master/osx/configure/hotkeys.sh
 # http://krypted.com/mac-os-x/defaults-symbolichotkeys/
 # http://stackoverflow.com/questions/21878482/what-do-the-parameter-values-in-applesymbolichotkeys-plist-dict-represent
-# System Preferenes -> Keyboard -> Shortcuts -> Launchpad & Dock -> Show Launchpad (alt-command-l)
+# System Preferences -> Keyboard -> Shortcuts -> Launchpad & Dock -> Show Launchpad (alt-command-l)
 execute "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 160 \" \
       <dict> \
         <key>enabled</key><true/> \
