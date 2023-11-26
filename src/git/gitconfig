@@ -12,6 +12,13 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Update the content of the last commit by including all
+    # local changes.
+
+    ama = !git add --all && git commit --amend --no-edit
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     br = branch
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
