@@ -27,6 +27,7 @@ alias rm="rm -rf --"
 alias :q="exit"
 alias c="clear"
 alias ch="history -c && > ~/.bash_history"                      # clear history
+alias d="cd ~/Desktop"                                          # change working directory to ~/Desktop
 alias e="vim --"                                                # -- to indicate end of options in case filename starts with -
 alias g="git"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"   # myip.opendns.com: name of resource record to lookup, @resolver1.opendns.com: name server to query
