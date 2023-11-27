@@ -345,7 +345,7 @@ print_in_bold_color() {
 
 print_in_green() {
     # $1 : print text
-    print_in_color "$1" 2print_in_color "$1" 2
+    print_in_color "$1" 2
 }
 
 print_in_purple() {

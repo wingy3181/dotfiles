@@ -13,7 +13,7 @@ main() {
     #  (from: https://twitter.com/astarasikov/status/568825996532707330)
 
     find \
-        ../test \
+        ../tests \
         ../src/bin \
         ../src/shell \
         ../src/os \
@@ -31,6 +31,7 @@ main() {
                 -e SC1090 \
                 -e SC1091 \
                 -e SC2155 \
+                -e SC2164 \
         {} +
 
     print_result $? "Run code through ShellCheck"
