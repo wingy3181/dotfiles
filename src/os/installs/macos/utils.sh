@@ -9,8 +9,8 @@ brew_install() {
 
     declare -r FORMULA_READABLE_NAME="$1"
     declare -r FORMULA="$2"
-    declare -r TAP_VALUE="$3"
-    declare -r CMD="$4"
+    declare -r ARGUMENTS="$3"
+    declare -r TAP_VALUE="$4"
 
     # If environment variable is set and readable name does not match regex, then exit and don't bother installation
     if [[ -n "$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX" && ! "$FORMULA_READABLE_NAME" =~ $INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX ]]; then
@@ -44,11 +44,11 @@ brew_install() {
     # Install the specified formula.
 
     # shellcheck disable=SC2086
-    if brew $CMD list "$FORMULA" &> /dev/null; then
+    if brew list "$FORMULA" &> /dev/null; then
         print_success "$FORMULA_READABLE_NAME"
     else
         execute \
-            "brew $CMD install $FORMULA" \
+            "brew install $FORMULA $ARGUMENTS" \
             "$FORMULA_READABLE_NAME"
     fi
 
