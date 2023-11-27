@@ -15,6 +15,7 @@ create_symlinks() {
         "shell/bash_direnv"
         "shell/bash_exports"
         "shell/bash_functions"
+        "shell/bash_init"
         "shell/bash_logout"
         "shell/bash_nvm"
         "shell/bash_options"

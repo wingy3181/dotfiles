@@ -7,6 +7,8 @@ source_bash_files() {
     declare -r CURRENT_DIRECTORY="$(pwd)"
 
     declare -r -a FILES_TO_SOURCE=(
+        "bash_init"
+
         "bash_aliases"
         "bash_autocomplete"
         "bash_bash-it"
@@ -16,6 +18,7 @@ source_bash_files() {
         "bash_options"
         "bash_prompt"
         "bash_zoxide"
+
         "bash.local"  # For local settings that should
                       # not be under version control.
     )
