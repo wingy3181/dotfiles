@@ -1,0 +1,23 @@
+# For more information about the configurations used
+# in this file, please see the GitHub Actions documentation.
+#
+# https://docs.github.com/en/actions
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check links
+        run: ./tests/check_links.sh
+
+name: Check links
+
+on:
+  schedule:
+    - cron: "0 0 * * SAT"

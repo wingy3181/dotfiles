@@ -8,6 +8,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 main() {
 
     ./shellcheck.sh
+    ./check_links.sh
 
 }
 
