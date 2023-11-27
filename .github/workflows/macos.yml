@@ -27,8 +27,14 @@ jobs:
 #          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ matrix.applications-to-install }}
 #        run: ./src/os/setup.sh -y
 
-      - name: Run tests
-        run: ./tests/main.sh
+      - name: Lint shell files
+        run: ./scripts/lint/shell.sh
+
+      - name: Lint Markdown files
+        run: ./scripts/lint/markdown.sh
+
+      - name: Check links from Markdown file
+        run: ./scripts/check_links/markdown.sh
 
 name: macOS
 
