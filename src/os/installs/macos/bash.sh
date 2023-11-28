@@ -48,7 +48,7 @@ export PATH
     if ! grep "$newShellPath" < /etc/shells &> /dev/null; then
         execute \
             "printf '%s\n' '$newShellPath' | sudo tee -a /etc/shells" \
-            "Bash (add '$newShellPath' in '/etc/shells')" \
+            "Add '$newShellPath' in '/etc/shells'" \
         || return 1
     fi
 
@@ -69,14 +69,14 @@ export PATH
         execute \
             "printf '%s' '$configs' >> $LOCAL_SHELL_CONFIG_FILE \
                 && . $LOCAL_SHELL_CONFIG_FILE" \
-            "Bash (update $LOCAL_SHELL_CONFIG_FILE)"
+            "Update '$LOCAL_SHELL_CONFIG_FILE'"
     fi
 
 }
 
 main() {
 
-    print_in_purple "\n Bash\n\n"
+    print_in_purple "\n   Bash\n\n"
 
     brew_install "Bash" "bash" \
         && change_default_bash

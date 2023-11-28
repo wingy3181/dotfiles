@@ -34,18 +34,15 @@ install_plugins() {
             && git clone --quiet '$TPM_GIT_REPO_URL' '$TPM_DIR' \
             && $TPM_DIR/bin/install_plugins \
             && $TPM_DIR/bin/update_plugins all" \
-        "Install tmux plugins"
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    print_in_green "\n  ---\n\n"
+        "Install plugins"
 
 }
 
 main() {
 
-    print_in_purple "\n Tmux\n\n"
+    print_in_purple "\n   Tmux\n\n"
 
+    "./$(get_os)/tmux.sh"
     install_plugins
 
 }

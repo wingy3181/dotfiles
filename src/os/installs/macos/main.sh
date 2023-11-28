@@ -30,7 +30,37 @@ main() {
     ./xcode.sh
     ./homebrew.sh
     ./bash.sh
-    ./apps.sh
+
+    ./git.sh
+
+    ./../nvm.sh
+    ./../npm.sh
+
+    ./../bash-it.sh   #
+    ./android_tools.sh
+    ./browsers.sh
+    ./capture_tools.sh
+    ./cli_utilities.sh
+    ./communication_tools.sh
+    ./compression_tools.sh
+    ./desktop_utilities.sh
+    ./development_tools.sh
+    ./downloaders.sh
+    ./gaming.sh
+    ./image_tools.sh
+    ./../jenv.sh      #
+    ./misc_tools.sh
+    ./music.sh
+    ./networking_tools.sh
+    ./office_tools.sh
+    ./remote_access_tools.sh
+
+    ./../sdkman.sh    #
+    ./system_tools.sh
+    ./../tmux.sh
+    ./video_tools.sh
+    ./virtualisation_tools.sh
+    ./../vim.sh
 
 }
 

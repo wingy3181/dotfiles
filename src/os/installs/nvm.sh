@@ -27,7 +27,7 @@ export NVM_DIR=\"$NVM_DIRECTORY\"
     execute_without_spinner \
         "printf '%s' '$CONFIGS' >> $LOCAL_SHELL_CONFIG_FILE \
             && . $LOCAL_SHELL_CONFIG_FILE" \
-        "nvm (update $LOCAL_SHELL_CONFIG_FILE)"
+        "Update '$LOCAL_SHELL_CONFIG_FILE'"
 
 }
 
@@ -40,7 +40,7 @@ install_latest_stable_node() {
     execute \
         ". $LOCAL_SHELL_CONFIG_FILE \
             && nvm install --lts" \
-        "nvm (Install Node LTS)"
+        "Install Node LTS"
 
 }
 
@@ -51,7 +51,7 @@ install_nvm() {
 
     execute \
         "git clone --quiet $NVM_GIT_REPO_URL $NVM_DIRECTORY" \
-        "nvm (install)" \
+        "Install" \
     && add_nvm_configs
 
 }
@@ -63,7 +63,7 @@ update_nvm() {
             && git fetch --quiet origin \
             && git checkout --quiet \$(git describe --abbrev=0 --tags) \
             && . $NVM_DIRECTORY/nvm.sh" \
-        "nvm (upgrade)"
+        "Upgrade"
 
 }
 
@@ -71,7 +71,7 @@ update_nvm() {
 
 main() {
 
-    print_in_purple "\n nvm\n\n"
+    print_in_purple "\n   nvm\n\n"
 
     if [ ! -d "$NVM_DIRECTORY" ]; then # -d : True if file exists and is a directory.
         install_nvm

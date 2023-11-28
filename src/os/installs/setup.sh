@@ -16,7 +16,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_in_purple "\n\n * Install applications\n"
+    print_in_purple "\n\n * Installs\n"
     print_warning "This may take awhile, so please be patient!\n"
 
     if $skipQuestions; then
@@ -24,15 +24,6 @@ main() {
     else
         "./$(get_os)/main.sh"
     fi
-
-    ./bash-it.sh
-    ./jenv.sh
-    ./sdkman.sh
-    ./nvm.sh
-    ./npm.sh
-    ./vim.sh
-    ./tmux.sh
-
 }
 
 # Pass '-y' to script to skip questions

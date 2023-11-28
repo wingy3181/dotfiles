@@ -6,7 +6,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-add_homebrew_to_path() {
+add_to_path() {
 
     # Check if `brew` is available.
 
@@ -36,7 +36,7 @@ add_homebrew_to_path() {
     # Inform the user about the availability of `brew`.
 
     command -v brew &> /dev/null
-    print_result $? "Homebrew (add to PATH)"
+    print_result $? "Add to PATH"
 }
 
 get_homebrew_git_config_file_path() {
@@ -49,13 +49,13 @@ get_homebrew_git_config_file_path() {
         printf "%s" "$path"
         return 0
     else
-        print_error "Homebrew (get config file path)"
+        print_error "Get Homebrew git config file path"
         return 1
     fi
 
 }
 
-install_homebrew() {
+install() {
 
     if ! cmd_exists "brew"; then
         ask_for_sudo
@@ -63,7 +63,7 @@ install_homebrew() {
         #  └─ simulate the ENTER keypress
     fi
 
-    print_result $? "Homebrew (install)"
+    print_result $? "Install"
 
 }
 
@@ -85,7 +85,7 @@ opt_out_of_analytics() {
 
     if [ "$(git config --file="$path" --get homebrew.analyticsdisabled)" != "true" ]; then
         git config --file="$path" --replace-all homebrew.analyticsdisabled true &> /dev/null
-        print_result $? "Homebrew (opt-out of analytics)"
+        print_result $? "Opt-out of analytics"
     fi
 
 }
@@ -94,10 +94,10 @@ opt_out_of_analytics() {
 
 main() {
 
-    print_in_purple "\n Homebrew\n\n"
+    print_in_purple "\n   Homebrew\n\n"
 
-    install_homebrew
-    add_homebrew_to_path
+    install
+    add_to_path
     opt_out_of_analytics
 
     brew_update
