@@ -34,8 +34,6 @@ create_symlinks() {
 
         "npm/npmrc"
 
-        "nvm/nvm/default-packages"
-
         "vim/vim"
         "vim/vimrc"
 

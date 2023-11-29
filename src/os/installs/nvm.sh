@@ -56,6 +56,27 @@ install_nvm() {
 
 }
 
+configure_nvm_default_packages() {
+
+    # Configure default global packages from file when
+    # installing a new node version
+    #
+    # https://github.com/nvm-sh/nvm#default-global-packages-from-file-while-installing
+    declare -r DEFAULT_PACKAGES_CONFIG="commitizen
+cz-customizable
+mrm
+@wingy3181/mrm-preset-wingy3181
+@lobehub/commit-cli
+prettier
+"
+
+    # '>>' : file to append to
+    execute_without_spinner \
+        "printf '%s' '$DEFAULT_PACKAGES_CONFIG' >> $HOME/.nvm/default-packages" \
+           "Update '$HOME/.nvm/default-packages'"
+
+}
+
 update_nvm() {
 
     execute \
@@ -73,8 +94,9 @@ main() {
 
     print_in_purple "\n   nvm\n\n"
 
-    if [ ! -d "$NVM_DIRECTORY" ] || [ -d "$NVM_DIRECTORY" ] && [ "$(find "$NVM_DIRECTORY" -maxdepth 1 ! -type d | wc -l)" -eq 1 ]; then # -d : True if file exists and is a directory.
+    if [ ! -d "$NVM_DIRECTORY" ]; then # -d : True if file exists and is a directory.
         install_nvm
+        configure_nvm_default_packages
     else
         # Ensure the latest version of `nvm` is used
         update_nvm
