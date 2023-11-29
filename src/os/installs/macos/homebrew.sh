@@ -90,6 +90,19 @@ opt_out_of_analytics() {
 
 }
 
+update() {
+    execute \
+        "brew update" \
+        "Update"
+}
+
+upgrade() {
+    execute \
+        "brew upgrade" \
+        "Upgrade"
+}
+
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
@@ -100,8 +113,9 @@ main() {
     add_to_path
     opt_out_of_analytics
 
-    brew_update
-    brew_upgrade
+    update
+    upgrade
+
 }
 
 main
