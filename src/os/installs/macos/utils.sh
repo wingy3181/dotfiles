@@ -79,7 +79,7 @@ brew_install_with_confirmation() {
             print_warning "$FORMULA_READABLE_NAME (not installed)"
         fi
 
-        previousInstallApplicationConfirmationReply="$(get_answer)"
+        export previousInstallApplicationConfirmationReply="$(get_answer)"
     fi
 
 }
