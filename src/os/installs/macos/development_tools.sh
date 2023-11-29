@@ -6,6 +6,12 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+#install_plugin() {
+#    execute "code --install-extension $1" "$2 (plugin)"
+#}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 print_in_purple "\n   Development Tools\n\n"
 
 brew_install_with_confirmation "Arduino IDE" "arduino-ide" "--cask"
@@ -17,6 +23,14 @@ brew_install_with_confirmation "ShellCheck" "shellcheck"
 brew_install_with_confirmation "VS Code" "visual-studio-code" "--cask"
 brew_install_with_confirmation "yarn" "yarn"
 
+#printf "\n"
+
+# Install the VSCode plugins - https://marketplace.visualstudio.com/vscode
+# https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+#install_plugin "EditorConfig.EditorConfig" "EditorConfig"
+
+# Close VSCode
+#osascript -e 'quit app "Visual Studio Code"'
 
 
 
