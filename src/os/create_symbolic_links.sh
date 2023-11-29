@@ -68,12 +68,17 @@ create_symlinks() {
         # using regex '.*\/\(.*\)' and replacing topic folder with its contents
         # For example, 'shell/bash_aliases' to 'bash_aliases'
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/[^\/]*\/\(.*\)/\1/g")"
+        targetFolder="$(printf "%s" "$targetFile" | sed "s|/[^/]*$||")"
 
         if [ "$(readlink "$targetFile")" == "$sourceFile" ]; then
 
             print_success "$targetFile → $sourceFile"
 
         elif [ ! -e "$targetFile" ] || $skipQuestions; then # -e : True if file exists (regardless of type).
+
+            if [ "$targetFolder" != "$HOME" ]; then
+              mkdir -p "$targetFolder"
+            fi
 
             execute_without_spinner \
                 "ln -fs $sourceFile $targetFile" \
@@ -90,6 +95,10 @@ create_symlinks() {
                 if answer_is_yes; then
 
                     rm -rf "$targetFile"
+
+                    if [ "$targetFolder" != "$HOME" ]; then
+                      mkdir -p "$targetFolder"
+                    fi
 
                     execute_without_spinner \
                         "ln -fs $sourceFile $targetFile" \
