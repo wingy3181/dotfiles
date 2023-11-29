@@ -73,7 +73,7 @@ main() {
 
     print_in_purple "\n   nvm\n\n"
 
-    if [ ! -d "$NVM_DIRECTORY" ]; then # -d : True if file exists and is a directory.
+    if [ ! -d "$NVM_DIRECTORY" ] || [ -d "$NVM_DIRECTORY" ] && [ "$(find "$NVM_DIRECTORY" -maxdepth 1 ! -type d | wc -l)" -eq 1 ]; then # -d : True if file exists and is a directory.
         install_nvm
     else
         # Ensure the latest version of `nvm` is used
