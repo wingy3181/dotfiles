@@ -327,6 +327,7 @@ main() {
     print_optional_info "Install Keybase"
     print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or 'brew cask install ledger-live')"
     print_optional_info "Install Bandwidth+ from App Store (https://itunes.apple.com/au/app/bandwidth/id490461369?mt=12)"
+    print_optional_info "Install EasyRes from App Store (https://itunes.apple.com/au/app/easyres/id688211836?mt=12)"
     print_optional_info "Install GoPro Player + ReelSteady from App Store (https://apps.apple.com/us/app/gopro-player/id1460836908?ls=1&mt=12 and https://gopro.com/en/au/info/gopro-player)"
     print_optional_info "Install Itemido: Manage Home Inventory from App Store (https://apps.apple.com/us/app/itemido-manage-home-inventory/id1552953842 and https://www.itemido.com/en/index.html)"
     print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox"
