@@ -28,6 +28,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     ./xcode.sh
+    ./rosetta_2.sh
     ./homebrew.sh
     ./bash.sh
 
