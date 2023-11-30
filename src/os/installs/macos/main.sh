@@ -49,14 +49,11 @@ main() {
     ./downloaders.sh
     ./gaming.sh
     ./image_tools.sh
-    ./../jenv.sh      #
     ./misc_tools.sh
     ./music.sh
     ./networking_tools.sh
     ./office_tools.sh
     ./remote_access_tools.sh
-
-    ./../sdkman.sh    #
     ./system_tools.sh
     ./../tmux.sh
     ./video_tools.sh
