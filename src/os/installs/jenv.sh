@@ -10,6 +10,8 @@ declare -a JAVA_VERSIONS=()
 
 main() {
 
+    print_in_purple "\n   jenv\n\n"
+
     local os=""
     os="$(get_os)" \
         || print_error "failed to get the kernel name"

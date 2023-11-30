@@ -7,6 +7,8 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 main() {
 
+    print_in_purple "\n   SDKMAN!\n\n"
+
     declare -r SDKMAN_DIRECTORY="$HOME/.sdkman"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
