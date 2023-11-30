@@ -338,7 +338,7 @@ print_in_bold_color() {
     # See https://mywiki.wooledge.org/BashFAQ/037
     printf "%b" \
         "$(tput setaf "$2" 2> /dev/null)" \
-        "$(tput setaf bold 2> /dev/null)" \
+        "$(tput bold 2> /dev/null)" \
         "$1" \
         "$(tput sgr0 2> /dev/null)"
 }
