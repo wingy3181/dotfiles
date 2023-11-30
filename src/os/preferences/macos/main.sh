@@ -46,7 +46,7 @@ main() {
     ./trackpad.sh
     ./transmission.sh
     ./ui_and_ux.sh
-    ./xtrafinder.sh
+    #./xtrafinder.sh
 
 }
 
