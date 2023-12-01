@@ -27,17 +27,20 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    # Without install application confirmation prompt
     ./xcode.sh
     ./rosetta_2.sh
     ./homebrew.sh
-    ./bash.sh
+    ./../bash.sh
 
     ./git.sh
 
     ./../nvm.sh
     ./../npm.sh
+    ./../tmux.sh
+    ./../vim.sh
 
-    ./../bash-it.sh   #
+    # With install application confirmation prompt
     ./android_tools.sh
     ./browsers.sh
     ./capture_tools.sh
@@ -55,10 +58,8 @@ main() {
     ./office_tools.sh
     ./remote_access_tools.sh
     ./system_tools.sh
-    ./../tmux.sh
     ./video_tools.sh
     ./virtualisation_tools.sh
-    ./../vim.sh
 
 }
 

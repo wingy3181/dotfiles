@@ -245,6 +245,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
+        printf "\n\n\n"
         ask_for_confirmation "Do you want the additional directories to be created?"
         printf "\n"
     fi
@@ -264,6 +265,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
+        printf "\n\n\n"
         ask_for_confirmation "Do you want local config files for bash, git and vim to be created?"
         printf "\n"
     fi
@@ -275,6 +277,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
+        printf "\n\n\n"
         ask_for_confirmation "Do you want to install the applications/command line tools?"
         printf "\n"
     fi
@@ -288,6 +291,7 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
+        printf "\n\n\n"
         ask_for_confirmation "Do you want to set the custom preferences?"
         printf "\n"
     fi
@@ -316,47 +320,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_in_purple "\n Optional items & reminders\n\n"
-
-    print_optional_info "Add favourite locations (home & Development) to Finder sidebar"
-    print_optional_info "Activate gifox license"
-    print_optional_info "Install Beyond Compare"
-    print_optional_info "Install Be Focused from App Store (https://apps.apple.com/au/app/be-focused-pomodoro-timer/id973134470?mt=12 | https://xwavesoft.com/be-focused-pro-for-iphone-ipad-mac-os-x.html)"
-    print_optional_info "Install Blackvue Viewer for Mac (https://www.blackvue.com/download/blackvue-mac-viewer-cloud/)"
-    print_optional_info "Install Evernote"
-    print_optional_info "Install Keybase"
-    print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or 'brew cask install ledger-live')"
-    print_optional_info "Install Bandwidth+ from App Store (https://itunes.apple.com/au/app/bandwidth/id490461369?mt=12)"
-    print_optional_info "Install EasyRes from App Store (https://itunes.apple.com/au/app/easyres/id688211836?mt=12)"
-    print_optional_info "Install GoPro Player + ReelSteady from App Store (https://apps.apple.com/us/app/gopro-player/id1460836908?ls=1&mt=12 and https://gopro.com/en/au/info/gopro-player)"
-    print_optional_info "Install Itemido: Manage Home Inventory from App Store (https://apps.apple.com/us/app/itemido-manage-home-inventory/id1552953842 and https://www.itemido.com/en/index.html)"
-    print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox"
-    print_optional_info "Install Kindle from App Store (https://apps.apple.com/us/app/amazon-kindle/id302584613) and rename registered device within Amazon https://www.amazon.com.au/hz/mycd/digital-console/alldevices"
-    print_optional_info "Install Magnet from App Store (https://itunes.apple.com/au/app/magnet/id441258766?mt=12)"
-    print_optional_info "Install Microsoft Remote Desktop from App Store (https://itunes.apple.com/au/app/microsoft-remote-desktop-10/id1295203466?mt=12)"
-    print_optional_info "Install Presentify from App Store (https://apps.apple.com/app/id1507246666 and https://presentify.compzets.com/)"
-    print_optional_info "Install Silicon (https://github.com/DigiDNA/Silicon)"
-    print_optional_info "Install Spatial Media Metadata Injector (https://github.com/google/spatial-media/releases and https://github.com/google/spatial-media/issues/261#issuecomment-1590148367)"
-    print_optional_info "Install Synergy"
-    print_optional_info "Install Telephone - VoIP SIP softphone (https://apps.apple.com/us/app/telephone/id406825478 and https://www.64characters.com/telephone/ and https://github.com/64characters/Telephone)"
-    print_optional_info "Install Java 7, 11 from Oracle (https://www.oracle.com/downloads/ and https://www.oracle.com/technetwork/java/javase/downloads/index.html)"
-    print_optional_info "Install XtraFinder (http://www.trankynam.com/xtrafinder/) + setup preferences at src/os/preferences/macos/xtrafinder.sh"
-    print_optional_info "Symlink ebook folder ('ln -s ~/Dropbox/Documents/ebook/ ~/Documents/ebook')"
-    print_optional_info "Assess Fig (https://fig.io/)"
-    print_optional_info "Assess Liquitext (https://www.liquidtext.net/)"
-    print_optional_info "Assess Logseq (https://logseq.com/)"
-    print_optional_info "Assess Parallels (https://www.parallels.com/products/desktop/)"
-    print_optional_info "Assess Rewind (https://www.rewind.ai/)"
-    print_optional_info "Assess TeamViewer (https://www.teamviewer.com/)"
-    print_optional_info "Assess Unity (https://unity.com/)"
-    print_optional_info "Assess Warp (https://www.warp.dev/)"
-    print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/
-    print_optional_info "Set user profile picture"
-    print_optional_info "Set GPG key used for Keybase and GPG suite"
-    print_optional_info "Set Jetbrains IDE settings via IDE Settings Sync and Jetbrains account (https://plugins.jetbrains.com/plugin/9922-ide-settings-sync and https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)"
-    print_optional_info "Set VS Code settings via Settings Sync (https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync and https://gist.github.com/wingy3181/e7b8fde022a14cff76a96b4a1a98ad7f)"
-
-    printf "\n"
+    ./print_optional_manual_items.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

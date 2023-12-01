@@ -76,8 +76,6 @@ export PATH
 
 main() {
 
-    print_in_purple "\n   Bash\n\n"
-
     brew_install "Bash" "bash" \
         && change_default_bash
 

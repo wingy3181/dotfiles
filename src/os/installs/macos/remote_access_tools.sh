@@ -8,6 +8,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Remote Access Tools\n\n"
 
+brew_install_with_confirmation "Microsoft Remote Desktop" "microsoft-remote-desktop" "--cask"
 # https://github.com/Genymobile/scrcpy
 # https://developer.android.com/studio/command-line/adb.html#wireless
 brew_install_with_confirmation "scrcpy" "scrcpy"

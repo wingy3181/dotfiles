@@ -20,7 +20,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_in_purple "\n  UI & UX\n\n"
+    print_in_purple "\n   UI & UX\n\n"
 
     declare -r netBiosName=$(defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName 2> /dev/null)
     declare -r computerName=$(scutil --get ComputerName 2> /dev/null)

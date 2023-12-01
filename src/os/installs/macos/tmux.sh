@@ -5,6 +5,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-brew_install_with_confirmation "tmux" "tmux"
-brew_install_with_confirmation "tmux (pasteboard)" "reattach-to-user-namespace"
-brew_install_with_confirmation "tmuxinator" "tmuxinator"
+brew_install "tmux" "tmux"
+brew_install "tmux (pasteboard)" "reattach-to-user-namespace"
+brew_install "tmuxinator" "tmuxinator"

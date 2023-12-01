@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-print_in_purple "\n  XtraFinder\n\n"
+print_in_purple "\n   XtraFinder\n\n"
 
 execute "defaults write com.apple.finder XtraFinder_ShowStatusBarIcon -bool false" \
     "Tools -> Hide Menu Bar Icon (enable)"

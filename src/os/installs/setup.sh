@@ -16,7 +16,7 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_in_purple "\n\n * Installs\n"
+    print_in_purple "\n * Installs\n"
     print_warning "This may take awhile, so please be patient!\n"
 
     if $skipQuestions; then

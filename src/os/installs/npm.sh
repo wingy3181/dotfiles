@@ -21,7 +21,7 @@ main() {
     print_in_purple "\n   npm\n\n"
 
     install_npm_package "Update npm" "npm"
-    printf "\n"
+    #printf "\n"
     # Install the specified `npm` packages
     # [!]: IMPORTANT - These only get installed on the default version of node set by nvm
     #       and have to get re-installed when switching node versions via nvm

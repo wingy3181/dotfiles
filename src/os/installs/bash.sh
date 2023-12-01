@@ -5,7 +5,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-main() {
+install_bash_it() {
 
     declare -r BASHIT_DIR="$HOME/.bash_it"
     declare -r BASHIT_GIT_REPO_URL="https://github.com/Bash-it/bash-it.git"
@@ -26,7 +26,7 @@ main() {
     execute \
         "rm -rf '$BASHIT_DIR' \
             && git clone --quiet '$BASHIT_GIT_REPO_URL' '$BASHIT_DIR'" \
-        "Install Bash-it"
+        "Bash-it"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -34,7 +34,7 @@ main() {
 
     execute_without_spinner \
         ". '$HOME/.bash_profile'" \
-        "Re-source ~/.bash_profile"
+        "Bash-it (Re-source ~/.bash_profile)"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -55,14 +55,8 @@ main() {
          && bash-it enable completion docker \
          && bash-it enable completion docker-compose \
          && bash-it enable completion git \
-         && bash-it enable completion gradle \
-         && bash-it enable completion grunt \
-         && bash-it enable completion gulp \
-         && bash-it enable completion maven \
          && bash-it enable completion npm \
-         && bash-it enable completion sdkman \
-         && bash-it enable completion tmux \
-         && bash-it enable completion virtualbox" \
+         && bash-it enable completion tmux" \
         "Bash-it (enable completions)"
 
     execute \
@@ -77,9 +71,16 @@ main() {
          && bash-it enable plugin proxy" \
         "Bash-it (enable plugins)"
 
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+}
 
-    print_in_green "\n  ---\n\n"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+main() {
+
+    print_in_purple "\n   Bash\n\n"
+
+    "./$(get_os)/bash.sh"
+    install_bash_it
 
 }
 

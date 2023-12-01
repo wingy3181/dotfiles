@@ -6,4 +6,4 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/v/vim.rb
-brew_install_with_confirmation "Vim" "vim"
+brew_install "vim" "vim"
