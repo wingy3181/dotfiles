@@ -29,7 +29,7 @@ add_to_path() {
         print_error "Homebrew is only supported on Intel and ARM processors!"
     fi
 
-    PATH="$prefix/bin:$PATH"
+    export PATH="$prefix/bin:$PATH"q
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
