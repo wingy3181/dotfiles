@@ -19,13 +19,30 @@ fi
 
 # Shorter commands for `Homebrew`.
 
+alias brewb="brew bundle"
 alias brewd="brew doctor"
+alias brewo="brew outdated --greedy"
 alias brewi="brew install"
 alias brewr="brew uninstall"
 alias brews="brew search"
+alias brewl="brew list --full-name"
 alias brewu="brew update --quiet \
                 && brew upgrade \
+                && brew-upgrade-casks \
                 && brew cleanup"
+
+alias brew-tap-list="brew tap"
+alias brew-tap-details="brew tap-info --installed"
+
+# https://gist.github.com/christopheranderton/9929502185dd0a6545c900cca0f5f614
+alias brew-upgrade-casks='brew upgrade --cask $(brew outdated --cask --greedy --quiet)'
+alias brew-upgrade-casks-testing="brew upgrade --cask --greedy"
+
+# https://github.com/Homebrew/homebrew-bundle
+# https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
+alias brew-bundle-write-dump='brew bundle dump --file=$HOME/.dotfiles/src/os/installs/macos/Brewfile --force'
+alias brew-bundle-sync-system-with-dump='brew bundle --force cleanup'
+alias brew-bundle-read-dump='brew bundle install --file=$HOME/.dotfiles/src/os/installs/macos/Brewfile'
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -90,6 +107,7 @@ alias o="open"
 alias u="sudo softwareupdate --install --all \
             && brew update \
             && brew upgrade \
+            && brew-upgrade-casks \
             && brew cleanup \
             && bash-it update \
             && upgrade-jenv \
