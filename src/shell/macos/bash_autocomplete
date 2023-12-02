@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 declare -r BASH_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/profile.d/bash_completion.sh"
+declare -r GIT_BASH_COMPLETION_PATH="$(brew --prefix 2> /dev/null)/etc/bash_completion.d/git-completion.bash"
 
 # -r : True if file exists and read permission is granted
 if command -v brew &> /dev/null &&
@@ -19,10 +20,14 @@ if command -v brew &> /dev/null &&
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Make Bash complete the `g` alias just like it does `git`.
-    # https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html
+    if [ -r "GIT_BASH_COMPLETION_PATH" ]; then
 
-    __git_complete g git
+        # Make Bash complete the `g` alias just like it does `git`.
+        # https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html
+
+        . "$GIT_BASH_COMPLETION_PATH"
+        __git_complete g git
+    fi
 
 # -f : True if file exists and is a regular file.
 elif [ -f /etc/bash_completion ]; then
