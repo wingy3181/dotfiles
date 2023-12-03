@@ -492,11 +492,17 @@ upgrade-tpm() {
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         # Ensure the latest version of `tpm` is used
+        #
+        # Replace:
+        # `&& git checkout --quiet master \`
+        # with:
+        # `&& git checkout --quiet \$(git describe --abbrev=0 --tags) \`
+        # when release tags are properly updated/maintained.
 
         execute_without_spinner \
             "cd $TPM_DIR \
                 && git fetch --quiet origin \
-                && git checkout --quiet \$(git describe --abbrev=0 --tags) \
+                && git checkout --quiet master \
                 && cd -" \
             "tpm (upgrade)"
 
