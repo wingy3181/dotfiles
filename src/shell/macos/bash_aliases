@@ -114,4 +114,6 @@ alias u="sudo softwareupdate --install --all \
             && sdk selfupdate \
             && upgrade-nvm \
             && npm install -g npm \
-            && npm update -g"
+            && npm update -g \
+            && upgrade-tpm \
+            && install-update-tpm-plugins"

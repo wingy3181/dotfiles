@@ -481,6 +481,58 @@ upgrade-nvm() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Upgrade tpm if it is installed.
+
+upgrade-tpm() {
+
+    declare -r TPM_DIR="$HOME/.tmux/plugins/tpm"
+
+    if [ -d "$TPM_DIR" ]; then # -d : True if file exists and is a directory.
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        # Ensure the latest version of `tpm` is used
+
+        execute_without_spinner \
+            "cd $TPM_DIR \
+                && git fetch --quiet origin \
+                && git checkout --quiet \$(git describe --abbrev=0 --tags) \
+                && cd -" \
+            "tpm (upgrade)"
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Install/update tpm plugins if it is installed.
+
+install-update-tpm-plugins() {
+
+    declare -r TPM_DIR="$HOME/.tmux/plugins/tpm"
+
+    if [ -d "$TPM_DIR" ]; then # -d : True if file exists and is a directory.
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        # Ensure the latest version of `tpm` is used
+
+        execute_without_spinner \
+            "cd $TPM_DIR \
+                && $TPM_DIR/bin/install_plugins \
+                && $TPM_DIR/bin/update_plugins all \
+                && cd -" \
+            "tpm plugins (Install/Update)"
+
+        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Update global npm modules for all node versions installed via nvm.
 # NOTE: To copy global npm packages across different node versions, use:
 # `nvm install 8.9.4 --reinstall-packages-from=node`
