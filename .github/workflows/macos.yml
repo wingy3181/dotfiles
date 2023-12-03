@@ -8,12 +8,14 @@
 jobs:
   macOS:
     runs-on: macos-latest
-#    strategy:
-#      matrix:
-#        include:
+    strategy:
+      matrix:
+        include:
+          - applications-to-install: "^(Chrome).*$"
 #          - applications-to-install: "^([a-fA-F0-9]|Bash|Java).*$"
 #          - applications-to-install: "^([g-pG-P]|Bash|Java).*$"
 #          - applications-to-install: "^([q-zQ-Z]|Bash|Java).*$"
+
     steps:
 
       - name: Checkout repository
@@ -22,11 +24,11 @@ jobs:
       - name: Install dependencies
         run: brew install shellcheck
 
-#      - name: Install applications in dotfiles
-#        env:
-#          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ matrix.applications-to-install }}
-#          TERM: xterm-256color
-#        run: ./src/os/setup.sh -y
+      - name: Install applications in dotfiles
+        env:
+          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ matrix.applications-to-install }}
+          TERM: xterm-256color
+        run: ./src/os/setup.sh -y
 
       - name: Lint shell files
         run: ./scripts/lint/shell.sh
