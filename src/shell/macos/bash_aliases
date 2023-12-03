@@ -102,7 +102,7 @@ alias o="open"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Update applications and command line tools (CLTs) - doesn't update vundle/tmux + their plugins
+# Update applications and command line tools (CLTs)
 
 alias u="sudo softwareupdate --install --all \
             && brew update \
@@ -116,4 +116,5 @@ alias u="sudo softwareupdate --install --all \
             && npm install -g npm \
             && npm update -g \
             && upgrade-tpm \
-            && install-update-tpm-plugins"
+            && install-update-tpm-plugins \
+            && update-vim-plugins"

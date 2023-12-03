@@ -539,6 +539,18 @@ install-update-tpm-plugins() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Update vim plugins
+
+update-vim-plugins() {
+
+    execute_without_spinner \
+        "vim +PluginUpdate +qall" \
+        "vim Plugins (/Update)"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Update global npm modules for all node versions installed via nvm.
 # NOTE: To copy global npm packages across different node versions, use:
 # `nvm install 8.9.4 --reinstall-packages-from=node`
