@@ -1,0 +1,33 @@
+# For more information about the configurations used
+# in this file, please see the GitHub Actions documentation.
+#
+# https://docs.github.com/en/actions
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install applications
+        env:
+          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ inputs.applicationsToInstall }}
+          TERM: xterm-256color
+        run: ./src/os/setup.sh -y
+
+name: Manual trigger to install applications
+
+on:
+  workflow_dispatch:
+    inputs:
+      applicationsToInstall:
+        description: 'Applications to install (whitelisted regex)'
+        required: true
+        default: '^(Chrome).*$'
+        type: string
