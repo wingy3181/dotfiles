@@ -13,11 +13,3 @@
 # Below statement to stop sdkman install script from adding it's initialisation in both .bashrc and .bash_profile files
 # See 'Attempt update of bash profiles' in install script at https://get.sdkman.io/
 # sdkman-init.sh
-
-# pnpm
-export PNPM_HOME="/Users/wingy3181/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
