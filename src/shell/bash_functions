@@ -530,7 +530,7 @@ install-update-tpm-plugins() {
                 && $TPM_DIR/bin/install_plugins \
                 && $TPM_DIR/bin/update_plugins all \
                 && cd -" \
-            "tpm plugins (Install/Update)"
+            "tpm plugins (install/update)"
 
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -545,7 +545,7 @@ update-vim-plugins() {
 
     execute_without_spinner \
         "vim +PluginUpdate +qall" \
-        "vim Plugins (/Update)"
+        "vim plugins (update)"
 
 }
 
