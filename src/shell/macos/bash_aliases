@@ -124,8 +124,6 @@ alias u="sudo softwareupdate --install --all \
             && brew cleanup \
             && mas upgrade \
             && bash-it update \
-            && upgrade-jenv \
-            && sdk selfupdate \
             && upgrade-nvm \
             && npm install -g npm \
             && npm update -g \

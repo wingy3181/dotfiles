@@ -428,32 +428,6 @@ update_terminal_cwd() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Upgrade jenv if it is installed.
-
-upgrade-jenv() {
-
-    declare -r JENV_DIRECTORY="$HOME/.jenv"
-
-    if [ -d "$JENV_DIRECTORY" ]; then # -d : True if file exists and is a directory.
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-        # Ensure the latest version of `jenv` is used
-
-        execute_without_spinner \
-            "cd $JENV_DIRECTORY \
-                && git fetch --quiet origin \
-                && git checkout --quiet \$(git describe --abbrev=0 --tags) \
-                && . $HOME/.bash.local \
-                && cd -" \
-            "jenv (upgrade)"
-
-        # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    fi
-}
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 # Upgrade nvm if it is installed.
 
 upgrade-nvm() {
