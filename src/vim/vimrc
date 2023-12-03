@@ -2,243 +2,414 @@
 " | General Settings                                                   |
 " ----------------------------------------------------------------------
 
-set nocompatible                    " Don't make Vim vi-compatibile.
+" Don't make Vim vi-compatibile.
 
-syntax on                           " Enable syntax highlighting.
+set nocompatible
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Enable syntax highlighting.
+
+syntax on
 
 if has('autocmd')
     filetype plugin indent on
-    "           │     │    └──────── Enable file type detection.
-    "           │     └───────────── Enable loading of indent file.
-    "           └─────────────────── Enable loading of plugin files.
+    "           │     │    └─ Enable file type detection.
+    "           │     └────── Enable loading of indent file.
+    "           └──────────── Enable loading of plugin files.
 endif
 
-set autoindent                      " Copy indent to the new line.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set backspace=indent                " ┐
-set backspace+=eol                  " │ Allow `backspace`
-set backspace+=start                " ┘ in insert mode.
+" Copy indent to the new line.
 
-set backupdir=~/.vim/backups        " Set directory for backup files.
+set autoindent
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Allow backspace in insert mode.
+
+set backspace=indent
+set backspace+=eol
+set backspace+=start
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Set directory for backup files.
+
+set backupdir=~/.vim/backups
 
 if has('wildignore')
-    set backupskip=/tmp/*           " ┐ Don't create backups
-    set backupskip+=/private/tmp/*  " ┘ for certain files.
+
+    " Don't create backups for certain files.
+
+    set backupskip='/tmp/*'
+    set backupskip+='/private/tmp/*'
+
 endif
 
-set clipboard=unnamed               " ┐
-                                    " │ Use the system clipboard
-if has('unnamedplus')               " │ as the default register.
-    set clipboard+=unnamedplus      " │
-endif                               " ┘
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set cpoptions+=$                    " When making a change, don't
-                                    " redisplay the line, and instead,
-                                    " put a `$` sign at the end of
-                                    " the changed text.
+" Use the system clipboard as the default register.
+
+set clipboard=unnamed
+
+if has('unnamedplus')
+    set clipboard+=unnamedplus
+endif
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" When making a change don't redisplay the line and
+" instead put a `$` sign at the end of the changed text.
+
+set cpoptions+=$
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 if has('syntax')
-    set colorcolumn=73              " Highlight certain column(s).
-    set cursorline                  " Highlight the current line.
+
+    " Highlight certain column(s).
+    set colorcolumn=73
+
+    " Highlight the current line.
+    set cursorline
+
 endif
 
-set directory=~/.vim/swaps          " Set directory for swap files.
-set encoding=utf-8 nobomb           " Use UTF-8 without BOM.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Set directory for swap files.
+
+set directory=~/.vim/swaps
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Use UTF-8 without BOM.
+
+set encoding=utf-8 nobomb
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Increase command line history.
 
 if has('cmdline_hist')
-    set history=5000                " Increase command line history.
+    set history=5000
 endif
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Search settings.
 
 if has('extra_search')
 
-    set hlsearch                    " Enable search highlighting.
+    " Enable search highlighting.
+    set hlsearch
 
-    set incsearch                   " Highlight search pattern
-                                    " as it is being typed.
+    " Highlight search pattern as it is being typed.
+    set incsearch
+
 endif
 
-set ignorecase                      " Ignore case in search patterns.
+" Ignore case in search patterns.
+
+set ignorecase
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Always show the status line.
+
+set laststatus=2
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Do not redraw the screen while executing macros,
+" registers, and other commands that have not been typed.
+
+set lazyredraw
 
 
-set laststatus=2                    " Always show the status line.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set lazyredraw                      " Do not redraw the screen while
-                                    " executing macros, registers
-                                    " and other commands that have
-                                    " not been typed.
+" Use custom symbols to represent invisible characters.
 
-set listchars=tab:▸\                " ┐
-set listchars+=trail:·              " │ Use custom symbols to
-set listchars+=eol:↴                " │ represent invisible characters.
-set listchars+=nbsp:_               " ┘
+set listchars=tab:▸\
+set listchars+=trail:·
+set listchars+=eol:↴
+set listchars+=nbsp:_
 
-set magic                           " Enable extended regexp.
-set mouse=a                         " Enable use of mouse clicks
-set mousehide                       " Hide mouse pointer while typing.
-set noerrorbells                    " Disable error bells.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set nojoinspaces                    " When using the join command,
-                                    " only insert a single space
-                                    " after a `.`, `?`, or `!`.
+" Enable extended regexp.
 
-set nomodeline                      " Disable for security reasons.
-                                    " https://github.com/numirias/security/blob/cf4f74e0c6c6e4bbd6b59823aa1b85fa913e26eb/doc/2019-06-04_ace-vim-neovim.md#readme
+set magic
 
-set nostartofline                   " Kept the cursor on the same column.
-set number                          " Show line number.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Enable use of mouse clicks
+
+set mouse=a
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Hide mouse pointer while typing.
+
+set mousehide
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Disable error bells.
+
+set noerrorbells
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" When using the join command only insert a single
+" space after a `.`, `?`, or `!`.
+
+set nojoinspaces
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Disable for security reasons.
+" https://github.com/numirias/security/blob/cf4f74e0c6c6e4bbd6b59823aa1b85fa913e26eb/doc/2019-06-04_ace-vim-neovim.md#readme
+
+set nomodeline
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Kept the cursor on the same column.
+
+set nostartofline
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Show line number.
+
+set number
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Increase the minimal number of columns used for the `line number`.
 
 if has('linebreak')
-    set numberwidth=5               " Increase the minimal number of
-                                    " columns used for the `line number`.
+    set numberwidth=5
 endif
 
-set report=0                        " Report the number of lines changed.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Report the number of lines changed.
+
+set report=0
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Show cursor position.
 
 if has('cmdline_info')
-    set ruler                       " Show cursor position.
+    set ruler
 endif
 
-set scrolloff=5                     " When scrolling, keep the cursor
-                                    " 5 lines below the top and 5 lines
-                                    " above the bottom of the screen.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set shortmess=aAItW                 " Avoid all the hit-enter prompts.
+" When scrolling keep the cursor 5 lines below
+" the top and 5 lines above the bottom of the screen.
+
+set scrolloff=5
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Avoid all the hit-enter prompts.
+
+set shortmess=aAItW
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Show the command being typed.
 
 if has('cmdline_info')
-    set showcmd                     " Show the command being typed.
+    set showcmd
 endif
 
-set showmode                        " Show current mode.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Show current mode.
+
+set showmode
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Set the spellchecking language.
 
 if has('syntax')
-    set spelllang=en_au             " Set the spellchecking language.
+    set spelllang=en_us
 endif
 
-set smartcase                       " Override `ignorecase` option
-                                    " if the search pattern contains
-                                    " uppercase characters.
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Override `ignorecase` option if the search pattern
+" contains uppercase characters.
+
+set smartcase
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Limit syntax highlighting.
+" This avoids the very slow redrawing when files contain long lines.
 
 if has('syntax')
-    set synmaxcol=2500              " Limit syntax highlighting (this
-                                    " avoids the very slow redrawing
-                                    " when files contain long lines).
+    set synmaxcol=2500
 endif
 
-set tabstop=4                       " ┐
-set softtabstop=4                   " │ Set global <TAB> settings.
-set shiftwidth=4                    " │
-set expandtab                       " ┘
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-set ttyfast                         " Enable fast terminal connection.
+" Set global <tab> settings.
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Enable fast terminal connection.
+
+set ttyfast
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 if has('persistent_undo')
-    set undodir=~/.vim/undos        " Set directory for undo files.
-    set undofile                    " Automatically save undo history.
+
+    " Set directory for undo files.
+    set undodir=~/.vim/undos
+
+    " Automatically save undo history.
+    set undofile
+
 endif
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Allow cursor to be anywhere.
 
 if has('virtualedit')
-    set virtualedit=all             " Allow cursor to be anywhere.
+    set virtualedit=all
 endif
 
-set visualbell                      " ┐
-set noerrorbells                    " │ Disable beeping and window flashing.
-set t_vb=                           " ┘ https://vim.wikia.com/wiki/Disable_beeping
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Disable beeping and window flashing.
+" https://vim.wikia.com/wiki/Disable_beeping
+
+set visualbell
+set noerrorbells
+set t_vb=
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Enable enhanced command-line completion.
+"
+" By hitting <tab> in command mode, Vim will show the possible
+" matches just above the command line with the first match being
+" highlighted.
 
 if has('wildmenu')
-    set wildmenu                    " Enable enhanced command-line
-endif                               " completion (by hitting <TAB> in
-                                    " command mode, Vim will show the
-                                    " possible matches just above the
-                                    " command line with the first
-                                    " match highlighted).
-if has('windows')
-    set winminheight=0              " Allow windows to be squashed.
+    set wildmenu
 endif
 
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Allow windows to be squashed.
+
+if has('windows')
+    set winminheight=0
+endif
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 " Prevent `Q` in `normal` mode from entering `Ex` mode.
+
 nmap Q <Nop>
 
 " ----------------------------------------------------------------------
 " | Plugins                                                            |
 " ----------------------------------------------------------------------
 
-" Use Vundle to manage the Vim plugins.
-" https://github.com/VundleVim/Vundle.vim
+" Use `minpac` to manage the Vim plugins.
+" https://github.com/k-takata/minpac
+
+function! InitPlugins() abort
+
+    packadd minpac
+
+    call minpac#init()
+    call minpac#add('k-takata/minpac', { 'type': 'opt' })
+
+    call minpac#add('altercation/vim-colors-solarized')
+    call minpac#add('ap/vim-css-color')
+    call minpac#add('chrisbra/unicode.vim')
+    call minpac#add('chrisbra/vim-xml-runtime')
+    call minpac#add('editorconfig/editorconfig-vim')
+    call minpac#add('godlygeek/tabular')
+    call minpac#add('isRuslan/vim-es6')
+    call minpac#add('jelera/vim-javascript-syntax')
+    call minpac#add('ctrlpvim/ctrlp.vim')
+    call minpac#add('marijnh/tern_for_vim', { 'do': ':silent ! cd $HOME/.vim/pack/minpac/start/tern_for_vim && npm i &> /dev/null' })
+    call minpac#add('mattn/emmet-vim')
+    call minpac#add('mattn/webapi-vim', { 'type': 'opt' })
+    call minpac#add('mhinz/vim-signify')
+    call minpac#add('moll/vim-node')
+    call minpac#add('mtscout6/syntastic-local-eslint.vim')
+    call minpac#add('nathanaelkane/vim-indent-guides')
+    call minpac#add('raimondi/delimitmate')
+    call minpac#add('scrooloose/nerdtree')
+    call minpac#add('scrooloose/syntastic')
+    call minpac#add('sheerun/vim-polyglot', { 'type': 'opt' })
+    call minpac#add('shougo/neocomplcache.vim')
+    call minpac#add('shougo/neosnippet')
+    call minpac#add('shougo/neosnippet-snippets')
+    call minpac#add('thiagoalessio/rainbow_levels.vim')
+    call minpac#add('tomtom/tcomment_vim')
+    call minpac#add('tpope/vim-commentary')
+    call minpac#add('tpope/vim-fugitive')
+    call minpac#add('tpope/vim-repeat')
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('tpope/vim-unimpaired')
+    call minpac#add('wellle/targets.vim')
+
+endfunction
+
+silent! packadd webapi-vim
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" Disable file type detection
-" (this is required by Vundle).
+" Define custom commands for managing plugins.
 
-filetype off
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Include Vundle in the runtime path.
-
-set runtimepath+=~/.vim/plugins/Vundle.vim
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Initialize Vundle and specify the path
-" where the plugins should be installed.
-
-call vundle#begin("~/.vim/plugins")
-
-    " Let Vundle manage Vundle (this is important!)
-    Plugin 'VundleVim/Vundle.vim'
-
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'ap/vim-css-color'
-    Plugin 'chrisbra/unicode.vim'
-    Plugin 'editorconfig/editorconfig-vim'
-    Plugin 'godlygeek/tabular'
-    Plugin 'isRuslan/vim-es6'
-    Plugin 'jelera/vim-javascript-syntax'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'marijnh/tern_for_vim'
-    Plugin 'mattn/emmet-vim'
-    Plugin 'mattn/webapi-vim'
-    Plugin 'nathanaelkane/vim-indent-guides'
-    Plugin 'othree/html5.vim'
-    Plugin 'plasticboy/vim-markdown'
-    Plugin 'raimondi/delimitmate'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'shougo/neocomplcache.vim'
-    Plugin 'shougo/neosnippet'
-    Plugin 'shougo/neosnippet-snippets'
-    Plugin 'tomtom/tcomment_vim'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'tpope/vim-repeat'
-    Plugin 'tpope/vim-surround'
-
-call vundle#end()
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Re-enable file type detection
-" (disabling it was required by Vundle).
-
-filetype on
-
+command! PluginsClean   call InitPlugins() | call minpac#clean()
+command! PluginsSetup   call InitPlugins() | call minpac#update('', { 'do': 'quit! | quit!' })
+command! PluginsStatus  call InitPlugins() | call minpac#status()
+command! PluginsUpdate  call InitPlugins() | call minpac#update('', { 'do': 'call minpac#status() | quit! | quit!' })
 
 " ----------------------------------------------------------------------
 " | Plugins - Emmet                                                    |
 " ----------------------------------------------------------------------
 
-" Redefine trigger key for Emmet.
-" http://docs.emmet.io/cheat-sheet/
+" Redefine trigger key.
 
-let g:user_emmet_leader_key="<C-E>"
+let g:user_emmet_leader_key=","
+
+" Only enable normal mode functions.
+
+let g:user_emmet_mode='a'
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" Load custom Emmet snippets.
-" http://docs.emmet.io/customization/snippets/
+" Load custom snippets.
 
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand("~/.vim/snippets/emmet.json")), "\n"))
+if &runtimepath =~ 'webapi-vim'
+    let g:user_emmet_settings = webapi#json#decode(join(readfile(expand("~/.vim/snippets/emmet.json")), "\n"))
+endif
 
 
 " ----------------------------------------------------------------------
@@ -280,9 +451,24 @@ let g:neocomplcache_enable_at_startup=1
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" Make `<TAB>` autocomplete.
+" Make `Tab` autocomplete.
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Make `Shift+Tab` insert `Tab` character.
+
+inoremap <S-TAB> <C-V><TAB>
+
+" ----------------------------------------------------------------------
+" | Plugins - Signify                                                  |
+" ----------------------------------------------------------------------
+
+" Disable Signify by default.
+" https://github.com/mhinz/vim-signify
+
+let g:signify_disable_by_default=1
 
 
 " ----------------------------------------------------------------------
@@ -290,10 +476,9 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " ----------------------------------------------------------------------
 
 " Inform Syntastic which checkers to use based on file types.
-" https://github.com/scrooloose/syntastic#3-faq
+" https://github.com/scrooloose/syntastic#faq
 
-let g:syntastic_html_checkers = [ "eslint" ]
-let g:syntastic_javascript_checkers = [ "eslint" ]
+let g:syntastic_javascript_checkers = [ 'eslint' ]
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -366,6 +551,7 @@ function! StripTrailingWhitespaces()
 
     let @/ = searchHistory
     call cursor(cursorLine, cursorColumn)
+
 
 endfunction
 
@@ -474,10 +660,10 @@ if has("autocmd")
 
         autocmd InsertLeave * :set relativenumber
 
+
     augroup END
 
     " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
     " Automatically strip whitespaces when files are saved.
 
@@ -507,15 +693,19 @@ endif
 " | Color Scheme                                                       |
 " ----------------------------------------------------------------------
 
-set t_Co=256                   " Enable full-color support.
+" Enable full-color support.
 
-set background=dark            " Use colors that look good
-                               " on a dark background.
+set t_Co=256
+
+" Use colors that look good on a dark background.
+
+set background=dark
+
 
 " Set custom configurations for when the
-" Solarized theme is used from vim's Terminal mode.
+" Solarized theme is used from Vim's Terminal mode.
 "
-" http://ethanschoonover.com/solarized/vim-colors-solarized#advanced-configuration
+" https://github.com/altercation/vim-colors-solarized
 
 if !has("gui_running")
     let g:solarized_contrast = "high"
@@ -524,8 +714,7 @@ if !has("gui_running")
     let g:solarized_visibility = "high"
 endif
 
-colorscheme solarized          " Use custom color scheme.
-
+silent! colorscheme solarized  " Use custom color scheme.
 
 " ----------------------------------------------------------------------
 " | Key Mappings                                                       |
@@ -537,108 +726,120 @@ let mapleader = ","
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,* ] Search and replace the word under the cursor.
+" [,*  ] Search and replace the word under the cursor.
 
-nmap <leader>* :%s/\<<C-r><C-w>\>//<Left>
+nmap <leader>* :%s/\<<c-r><c-w>\>//<left>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,cc] Toggle code comments.
+" [,cc ] Toggle code comments.
 " https://github.com/tomtom/tcomment_vim
 
-map <leader>cc :TComment<CR>
+map <leader>cc :TComment<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,cr] Calculate result.
+" [,cr ] Calculate result.
 " http://vimcasts.org/e/56
 
-nmap <leader>cr 0yt=A<C-r>=<C-r>"<CR><Esc>
+nmap <leader>cr 0yt=A<C-r>=<C-r>"<cr><esc>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,cs] Clear search.
+" [,cs ] Clear search.
 
-map <leader>cs <Esc>:noh<CR>
+map <leader>cs <esc>:noh<cr>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,gd ] Toggle Git differences.
+
+map <leader>gd :SignifyToggle<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 " [,ffu] Convert file to use Unix line endings.
 " See also: https://vim.fandom.com/wiki/File_format
 
-map <leader>ffu :edit ++fileformat=dos <bar> :setlocal fileformat=unix <bar> :write!<CR><CR>
+map <leader>ffu :edit ++fileformat=dos <bar> :setlocal fileformat=unix <bar> :write!<cr><cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,h] Show hex dump.
+" [,h  ] Show hex dump.
 
-nmap <leader>h :%!xxd<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [,l ] Toggle `set list`.
-
-nmap <leader>l :set list!<CR>
+nmap <leader>h :%!xxd<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,n ] Toggle `set relativenumber`.
+" [,l  ] Toggle `set list`.
 
-nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [,pp] Pretty print
-
-map <leader>pp :call PrettyPrint()<CR>
+nmap <leader>l :set list!<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,sb] Strip BOM (Byte Order Mark).
+" [,n  ] Toggle `set relativenumber`.
 
-nmap <leader>sb :call StripBOM()<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [,sw] Strip trailing whitespace.
-
-nmap <leader>sw :call StripTrailingWhitespaces()<CR>
+nmap <leader>n :call ToggleRelativeLineNumbers()<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,t ] Toggle NERDTree.
+" [,pp ] Pretty print
 
-map <leader>t :NERDTreeToggle<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [,ti] Toggle indent.
-
-nmap <leader>ti <Plug>IndentGuidesToggle
+map <leader>pp :call PrettyPrint()<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,tl] Toggle show limits.
+" [,rl ] Toggle `RainbowLevels`.
 
-nmap <leader>tl :call ToggleLimits()<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [,ts] Toggle Syntastic.
-
-nmap <leader>ts :SyntasticToggleMode<CR>
+map <leader>rl :RainbowLevelsToggle<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,v ] Make the opening of the `.vimrc` file easier.
+" [,sb ] Strip BOM (Byte Order Mark).
 
-nmap <leader>v :vsp $MYVIMRC<CR>
+nmap <leader>sb :call StripBOM()<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,W ] Sudo write.
+" [,sw ] Strip trailing whitespace.
 
-map <leader>W :w !sudo tee %<CR>
+nmap <leader>sw :call StripTrailingWhitespaces()<cr>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,t  ] Toggle NERDTree.
+
+map <leader>t :NERDTreeToggle<cr>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,ti ] Toggle indent.
+
+nmap <leader>ti <plug>IndentGuidesToggle
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,tl ] Toggle show limits.
+
+nmap <leader>tl :call ToggleLimits()<cr>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,ts ] Toggle Syntastic.
+
+nmap <leader>ts :SyntasticToggleMode \| w<cr>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,v  ] Make the opening of the `.vimrc` file easier.
+
+nmap <leader>v :vsp $MYVIMRC<cr>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,W  ] Sudo write.
+
+map <leader>W :w !sudo tee %<cr>
 
 
 " ----------------------------------------------------------------------
@@ -679,27 +880,27 @@ highlight User1
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 set statusline=
-set statusline+=%1*                            " User1 highlight
-set statusline+=\ [%n]                         " Buffer number
-set statusline+=\ %{GetGitBranchName()}        " Git branch name
-set statusline+=\ [%f]                         " File path
-set statusline+=%m                             " Modified flag
-set statusline+=%r                             " Readonly flag
-set statusline+=%h                             " Help file flag
-set statusline+=%w                             " Preview window flag
-set statusline+=%y                             " File type
+set statusline+=%1*                             " User1 highlight
+set statusline+=\ [%n]                          " Buffer number
+set statusline+=\ %{GetGitBranchName()}         " Git branch name
+set statusline+=\ [%f]                          " File path
+set statusline+=%m                              " Modified flag
+set statusline+=%r                              " Readonly flag
+set statusline+=%h                              " Help file flag
+set statusline+=%w                              " Preview window flag
+set statusline+=%y                              " File type
 set statusline+=[
-set statusline+=%{&ff}                         " File format
+set statusline+=%{&ff}                          " File format
 set statusline+=:
-set statusline+=%{strlen(&fenc)?&fenc:'none'}  " File encoding
+set statusline+=%{strlen(&fenc)?&fenc:'none'}   " File encoding
 set statusline+=]
-set statusline+=%=                             " Left/Right separator
-set statusline+=%c                             " File encoding
+set statusline+=%=                              " Left/Right separator
+set statusline+=%c                              " File encoding
 set statusline+=,
-set statusline+=%l                             " Current line number
+set statusline+=%l                              " Current line number
 set statusline+=/
-set statusline+=%L                             " Total number of lines
-set statusline+=\ (%P)\                        " Percent through file
+set statusline+=%L                              " Total number of lines
+set statusline+=\ (%P)\                         " Percent through file
 
 " Example result:
 "
@@ -712,9 +913,9 @@ set statusline+=\ (%P)\                        " Percent through file
 
 " Load local settings if they exist.
 "
-" [!]: The following needs to remain at the end of this file in
-"       order to allow any of the above settings to be overwritten
-"       by the local ones.
+" [!] The following needs to remain at the end of this file in
+"     order to allow any of the above settings to be overwritten
+"     by the local ones.
 
 if filereadable(glob("~/.vimrc.local"))
     source ~/.vimrc.local

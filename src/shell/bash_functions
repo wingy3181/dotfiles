@@ -544,7 +544,7 @@ install-update-tpm-plugins() {
 update-vim-plugins() {
 
     execute_without_spinner \
-        "vim +PluginUpdate +qall" \
+        "vim +PluginsSetup" \
         "vim plugins (update)"
 
 }
