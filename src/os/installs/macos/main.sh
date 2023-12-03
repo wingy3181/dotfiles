@@ -32,6 +32,7 @@ main() {
     ./rosetta_2.sh
     ./homebrew.sh
     . "./homebrew.sh" && add_homebrew_to_path
+    ./mas-cli.sh
     ./../bash.sh
 
     ./git.sh

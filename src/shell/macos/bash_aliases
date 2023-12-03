@@ -46,6 +46,19 @@ alias brew-bundle-read-dump='brew bundle install --file=$HOME/.dotfiles/src/os/i
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Shorter commands for `Mac App Store command line interface`.
+
+# https://github.com/mas-cli/mas
+# https://github.com/mas-cli/mas/tree/main/Sources/MasKit/Commands
+alias maso="mas outdated"
+alias masi="mas install"
+alias masr="mas uninstall"
+alias mass="mas search"
+alias masl="mas list"
+alias masu="mas upgrade"
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Clear DNS cache.
 
 alias clear-dns-cache="sudo dscacheutil -flushcache; \
@@ -109,6 +122,7 @@ alias u="sudo softwareupdate --install --all \
             && brew upgrade \
             && brew-upgrade-casks \
             && brew cleanup \
+            && mas upgrade \
             && bash-it update \
             && upgrade-jenv \
             && sdk selfupdate \

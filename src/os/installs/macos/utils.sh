@@ -119,3 +119,66 @@ brew_upgrade() {
         "Homebrew (upgrade)"
 
 }
+
+mas_install() {
+
+    declare -r APP_STORE_READABLE_NAME="$1"
+    declare -r APP_STORE_IDENTIFIER="$2"
+
+    # If environment variable is set and readable name does not match regex, then exit and don't bother installation
+    if [[ -n "$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX" && ! "$APP_STORE_READABLE_NAME" =~ $INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX ]]; then
+        print_warning "$APP_STORE_READABLE_NAME not installed as readable name did not match regex: \"$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX\""
+        return 1
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if `Mac App Store command line interface` is installed.
+
+    if ! cmd_exists "mas"; then
+        print_error "$APP_STORE_READABLE_NAME ('Mac App Store command line interface' is not installed)"
+        return 1
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Install the specified formula.
+
+
+    execute \
+        "mas install $APP_STORE_IDENTIFIER" \
+        "$APP_STORE_READABLE_NAME (https://apps.apple.com/au/app/id$APP_STORE_IDENTIFIER)"
+
+}
+
+mas_install_with_confirmation() {
+
+    declare -r APP_STORE_READABLE_NAME="$1"
+    declare -r APP_STORE_IDENTIFIER="$2"
+    declare -r APP_STORE_NAME_WITH_LINK="$APP_STORE_READABLE_NAME (https://apps.apple.com/au/app/id$APP_STORE_IDENTIFIER)"
+
+    # Install application if previous confirmation reply was 'install all'
+    if [[ "$previousInstallApplicationConfirmationReply" =~ ^[aA]$ ]]; then
+        mas_install "$@"
+    # DON'T install application if previous confirmation reply was 'skip all'
+    elif [[ "$previousInstallApplicationConfirmationReply" =~ ^[sS]$ ]]; then
+        print_warning "$APP_STORE_NAME_WITH_LINK (not installed)"
+    # Otherwise, prompt user and install application based on reply
+    else
+        local installApplicationConfirmationReply=""
+        # Until a valid reply has been entered, keep prompting user
+        while [[ -z "$installApplicationConfirmationReply" || "$installApplicationConfirmationReply" =~ ^[^yYnNaAsS]$ ]]; do
+            ask_for_install_application_confirmation "Do you want to install $APP_STORE_NAME_WITH_LINK?"
+            installApplicationConfirmationReply="$(get_answer)"
+        done
+
+        if answer_is_yes || answer_is_yes_to_all; then
+            mas_install "$@"
+        elif answer_is_no || answer_is_skip_all; then
+            print_warning "$APP_STORE_NAME_WITH_LINK (not installed)"
+        fi
+
+        previousInstallApplicationConfirmationReply="$(get_answer)"
+    fi
+
+}
