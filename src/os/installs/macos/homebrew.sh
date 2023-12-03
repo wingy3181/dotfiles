@@ -6,7 +6,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-add_to_path() {
+add_homebrew_to_path() {
 
     # Check if `brew` is available.
 
@@ -29,7 +29,8 @@ add_to_path() {
         print_error "Homebrew is only supported on Intel and ARM processors!"
     fi
 
-    PATH="$prefix/bin:$PATH"
+    #PATH="$prefix/bin:$PATH"
+    eval "$($prefix/bin/brew shellenv)"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -110,7 +111,7 @@ main() {
     print_in_purple "\n   Homebrew\n\n"
 
     install
-    add_to_path
+    add_homebrew_to_path
     opt_out_of_analytics
 
     update
