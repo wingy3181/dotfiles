@@ -25,6 +25,7 @@ jobs:
 #      - name: Install applications in dotfiles
 #        env:
 #          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ matrix.applications-to-install }}
+#          TERM: xterm-256color
 #        run: ./src/os/setup.sh -y
 
       - name: Lint shell files
