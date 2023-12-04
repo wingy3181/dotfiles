@@ -17,6 +17,8 @@ jobs:
       - name: Install all applications
         env:
           INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ^.*$
+          SHOW_SPINNER_ON_CI: false
+          DOTFILES_DEBUG_MODE: false
           TERM: xterm-256color
         run: ./src/os/setup.sh -y
 

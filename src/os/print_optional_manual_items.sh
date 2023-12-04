@@ -41,7 +41,7 @@ main() {
     print_optional_info "Assess Unity (https://unity.com/)"
 
     print_in_purple "\n   Desktop Utilities\n\n"
-    print_optional_info "Install XtraFinder (http://www.trankynam.com/xtrafinder/) + setup preferences at src/os/preferences/macos/xtrafinder.sh"
+    print_optional_info "[NOT RECOMMENDED as per README!!!] Install XtraFinder (http://www.trankynam.com/xtrafinder/) + setup preferences at src/os/preferences/macos/xtrafinder.sh"
 
     print_in_purple "\n   Miscellaneous Tools\n\n"
     print_optional_info "Install Keybase"

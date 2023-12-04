@@ -383,7 +383,7 @@ mkcd() {
 # Search history.
 
 sh() {
-    # $* : arguments passed to qh which is the search text
+    # $* : arguments passed to sh which is the search text
     # HISTFILE : https://www.gnu.org/software/bash/manual/html_node/Bash-History-Facilities.html
     #
     #           ┌─ Enable colors for pipe.
@@ -400,7 +400,7 @@ sh() {
 # Search for text recursively within the current directory.
 
 st() {
-    # $* : arguments passed to qt which is the search text
+    # $* : arguments passed to st which is the search text
     grep --color=always "$*" \
          --exclude-dir=".git" \
          --exclude-dir="node_modules" \

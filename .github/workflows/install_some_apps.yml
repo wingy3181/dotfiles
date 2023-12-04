@@ -21,6 +21,7 @@ jobs:
         env:
           INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ${{ inputs.applicationsToInstall }}
           SHOW_SPINNER_ON_CI: ${{ inputs.showSpinnerOnCI }}
+          DOTFILES_DEBUG_MODE: ${{ inputs.debugMode }}
           TERM: xterm-256color
         run: ./src/os/setup.sh -y
 
@@ -32,10 +33,15 @@ on:
       applicationsToInstall:
         description: 'Applications to install (whitelisted regex)'
         required: true
-        default: '^(Chrome).*$'
+        default: '^.*$'
         type: string
       showSpinnerOnCI:
         description: 'Show the execution spinner on CI'
+        required: false
+        default: false
+        type: boolean
+      debugMode:
+        description: 'Enable debug mode'
         required: false
         default: false
         type: boolean
