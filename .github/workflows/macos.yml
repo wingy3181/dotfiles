@@ -43,5 +43,3 @@ name: macOS
 
 on:
   push:
-  schedule:
-      - cron: '0 0 1 * *' # Run at 00:00 on the first day of every month.
