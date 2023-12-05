@@ -59,7 +59,7 @@ main() {
     ./networking_tools.sh
     ./office_tools.sh
     ./remote_access_tools.sh
-    ./system_tools.sh
+    ./system_utilities.sh
     ./video_tools.sh
     ./virtualisation_tools.sh
 
