@@ -470,7 +470,7 @@ show_spinner() {
 
         if [ "$CI" != "true" ]; then
             printf "%s\n" "$frameText"
-        else
+        elif [ "$SHOW_SPINNER_ON_CI" == "true" ]; then
             printf "%s" "$frameText"
         fi
 
@@ -482,7 +482,7 @@ show_spinner() {
 
         if [ "$CI" != "true" ]; then
             tput rc
-        else
+        elif [ "$SHOW_SPINNER_ON_CI" == "true" ]; then
             printf "\r"
         fi
     done
