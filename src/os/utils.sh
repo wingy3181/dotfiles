@@ -435,11 +435,11 @@ show_spinner() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # Note: In order for the Travis CI site to display
+    # Note: In order for the CI site to display
     # things correctly, it needs special treatment, hence,
-    # the "is Travis CI?" checks.
+    # the "is CI?" checks.
 
-    if [ "$TRAVIS" != "true" ]; then
+    if [ "$CI" != "true" ]; then
 
         # Provide more space so that the text hopefully
         # doesn't reach the bottom line of the terminal window.
@@ -468,7 +468,7 @@ show_spinner() {
 
         # Print frame text.
 
-        if [ "$TRAVIS" != "true" ]; then
+        if [ "$CI" != "true" ]; then
             printf "%s\n" "$frameText"
         else
             printf "%s" "$frameText"
@@ -480,7 +480,7 @@ show_spinner() {
 
         # Clear frame text.
 
-        if [ "$TRAVIS" != "true" ]; then
+        if [ "$CI" != "true" ]; then
             tput rc
         else
             printf "\r"
