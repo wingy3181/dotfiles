@@ -1,0 +1,27 @@
+# For more information about the configurations used
+# in this file, please see the GitHub Actions documentation.
+#
+# https://docs.github.com/en/actions
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+jobs:
+  macOS:
+    runs-on: macos-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install all applications
+        env:
+          INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX: ^.*$
+          TERM: xterm-256color
+        run: ./src/os/setup.sh -y
+
+name: Install all applications
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Run at 00:00 on the first day of every month.
