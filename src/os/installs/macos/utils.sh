@@ -125,9 +125,8 @@ mas_install() {
     declare -r APP_STORE_READABLE_NAME="$1"
     declare -r APP_STORE_IDENTIFIER="$2"
 
-    # If environment variable is set and readable name does not match regex, then exit and don't bother installation
-    if [[ -n "$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX" && ! "$APP_STORE_READABLE_NAME" =~ $INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX ]]; then
-        print_warning "$APP_STORE_READABLE_NAME not installed as readable name did not match regex: \"$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX\""
+    if [ "$CI" == "true" ]; then
+        print_warning "$APP_STORE_READABLE_NAME not installed as CI is running and cannot support Mac App Store applications"
         return 1
     fi
 
