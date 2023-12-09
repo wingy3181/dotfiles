@@ -17,6 +17,7 @@ find \
     ! -path 'src/bin/**/linux-32' \
     ! -path 'src/bin/**/linux-64' \
     ! -path 'src/bin/**/macos' \
+    ! -path 'src/os/**/Brewfile' \
     ! -path 'src/os/**/*.applescript' \
     ! -path 'src/os/**/*.terminal' \
     ! -path 'src/shell/curlrc' \
