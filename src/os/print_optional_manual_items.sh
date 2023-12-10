@@ -33,7 +33,7 @@ main() {
     print_in_purple "\n   -- Applications --\n\n"
 
     print_in_purple "\n   Development Tools\n\n"
-    print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox"
+    print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox) and add /opt/homebrew/bin/bash as terminal"
     print_optional_info "Install Beyond Compare"
     print_optional_info "Install Chrome Apps - excalidraw, devdocs"
     print_optional_info "Assess Fig (https://fig.io/)"
