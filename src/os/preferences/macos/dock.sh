@@ -67,9 +67,9 @@ execute "defaults write com.apple.dock tilesize -int 40" \
 # 12: Notification Center
 
 # Top right screen corner → no-op
-execute "defaults write com.apple.dock wvous-tr-corner -int 0 && \
+execute "defaults write com.apple.dock wvous-tr-corner -int 11 && \
          defaults write com.apple.dock wvous-tr-modifier -int 0" \
-    "Set Hot Corner - Top right to 'no-op'"
+    "Set Hot Corner - Top right to 'Show Launchpad'"
 
 # Top left screen corner → no-op
 execute "defaults write com.apple.dock wvous-tl-corner -int 0 && \

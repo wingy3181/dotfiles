@@ -50,7 +50,7 @@ execute "defaults write com.apple.HIToolbox AppleFnUsageType -int 2" \
 # System Preferences -> Keyboard -> Shortcuts -> Launchpad & Dock -> Show Launchpad (alt-command-l)
 execute "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -dict-add 160 \" \
       <dict> \
-        <key>enabled</key><true/> \
+        <key>false</key><true/> \
         <key>value</key><dict> \
           <key>type</key><string>standard</string> \
           <key>parameters</key> \
@@ -62,4 +62,4 @@ execute "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -di
         </dict> \
       </dict> \
     \"" \
-    "Enable keyboard shortcut <alt-command-l> to 'Show Launchpad'"
+    "Disable keyboard shortcut <alt-command-l> to 'Show Launchpad'"
