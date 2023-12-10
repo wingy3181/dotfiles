@@ -26,7 +26,7 @@ printf "\n"
 
 brew_install_with_confirmation "Chrome" "google-chrome" "--cask"
 brew_install_with_confirmation "Chrome Canary" "google-chrome-canary" "--cask" "homebrew/cask-versions"
-brew_install_with_confirmation "Chromium" "chromium" "--cask"
+brew_install_with_confirmation "Chromium" "chromium" "--cask --no-quarantine"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
