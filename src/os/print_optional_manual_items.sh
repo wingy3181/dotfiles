@@ -46,6 +46,10 @@ main() {
     print_in_purple "\n   Miscellaneous Tools\n\n"
     print_optional_info "Install Keybase"
     print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or 'brew install --cask ledger-live')"
+    # https://github.com/mas-cli/mas/issues/321
+    # https://www.itemido.com/en/index.html
+    # mas_install_with_confirmation  "Itemido: Manage Home Inventory" "1552953842"
+    print_optional_info "Install Itemido: Manage Home Inventory from App Store for iPadOS (https://apps.apple.com/au/app/id1552953842)"
     print_optional_info "Assess Rewind (https://www.rewind.ai/)"
 
     print_in_purple "\n   Remote Access Tools\n\n"
