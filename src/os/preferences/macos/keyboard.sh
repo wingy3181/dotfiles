@@ -44,7 +44,7 @@ execute "defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false" \
 execute "defaults write com.apple.HIToolbox AppleFnUsageType -int 2" \
     "Remap the emoji picker to the Fn key"
 
-# https://github.com/dii  mdeep/dotfiles/blob/master/osx/configure/hotkeys.sh
+# https://github.com/diimdeep/dotfiles/blob/master/osx/configure/hotkeys.sh
 # http://krypted.com/mac-os-x/defaults-symbolichotkeys/
 # http://stackoverflow.com/questions/21878482/what-do-the-parameter-values-in-applesymbolichotkeys-plist-dict-represent
 # System Preferences -> Keyboard -> Shortcuts -> Launchpad & Dock -> Show Launchpad (alt-command-l)
@@ -63,3 +63,49 @@ execute "defaults write com.apple.symbolichotkeys.plist AppleSymbolicHotKeys -di
       </dict> \
     \"" \
     "Disable keyboard shortcut <alt-command-l> to 'Show Launchpad'"
+
+# System Preferences -> Keyboard -> Keyboard Shortcuts -> Services -> Text -> Open man Page in Terminal (alt-command-m) => Un-check
+execute "defaults write pbs NSServicesStatus -dict-add 'com.apple.Terminal - Open man Page in Terminal - openManPage' \" \
+      <dict> \
+        <key>enabled_context_menu</key><false/> \
+        <key>enabled_services_menu</key><false/> \
+        <key>presentation_modes</key> \
+        <dict> \
+          <key>ContextMenu</key><false/> \
+          <key>ServicesMenu</key><false/> \
+        </dict> \
+      </dict> \
+    \"" \
+    "Disable keyboard shortcut <alt-command-m> to 'Open man Page in Terminal'"
+
+# System Preferences -> Keyboard -> Keyboard Shortcuts -> Services -> Text -> Search man Page in Terminal (alt-command-a) => Un-check
+execute "defaults write pbs NSServicesStatus -dict-add 'com.apple.Terminal - Search man Page Index in Terminal - searchManPages' \" \
+      <dict> \
+        <key>enabled_context_menu</key><false/> \
+        <key>enabled_services_menu</key><false/> \
+        <key>presentation_modes</key> \
+        <dict> \
+          <key>ContextMenu</key><false/> \
+          <key>ServicesMenu</key><false/> \
+        </dict> \
+      </dict> \
+    \"" \
+    "Disable keyboard shortcut <alt-command-a> to 'Search man Page Index in Terminal'"
+
+# System Preferences -> Keyboard -> Keyboard Shortcuts -> Services -> Searching -> Search With Google (shift-command-l) => Un-check
+execute "defaults write pbs NSServicesStatus -dict-add 'com.apple.Safari - Search With %WebSearchProvider@ - searchWithWebSearchProvider' \" \
+      <dict> \
+        <key>enabled_context_menu</key><false/> \
+        <key>enabled_services_menu</key><false/> \
+        <key>presentation_modes</key> \
+        <dict> \
+          <key>ContextMenu</key><false/> \
+          <key>ServicesMenu</key><false/> \
+        </dict> \
+      </dict> \
+    \"" \
+    "Disable keyboard shortcut <shift-command-l> to 'Search with Google'"
+
+# System Preferences -> Keyboard -> Keyboard Shortcuts -> Function Keys -> Use F1, F2, etc. keys as standard function keys => Toggled on
+execute "defaults write -g com.apple.keyboard.fnState -int 1" \
+    "Enable keyboard shortcut <fn> to 'Use F1, F2, etc. keys as standard function keys'"
