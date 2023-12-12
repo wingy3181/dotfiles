@@ -44,6 +44,7 @@ main() {
     print_optional_info "[NOT RECOMMENDED as per README!!!] Install XtraFinder (http://www.trankynam.com/xtrafinder/) + setup preferences at src/os/preferences/macos/xtrafinder.sh"
 
     print_in_purple "\n   Miscellaneous Tools\n\n"
+    print_optional_info "Install Authy (https://authy.com/download/ or 'brew install --cask authy') on primary laptop only"
     print_optional_info "Install Keybase"
     print_optional_info "Install Ledger Live (https://www.ledger.com/pages/ledger-live or 'brew install --cask ledger-live')"
     # https://github.com/mas-cli/mas/issues/321
