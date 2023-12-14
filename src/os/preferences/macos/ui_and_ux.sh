@@ -11,7 +11,7 @@ execute "defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool
          defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true" \
     "Avoid creating '.DS_Store' files on network or USB volumes"
 
-execute "defaults write com.apple.menuextra.battery ShowPercent -string 'YES'" \
+execute "defaults -currentHost write com.apple.controlcenter.plist BatteryShowPercentage -bool true" \
     "Show battery percentage from the menu bar"
 
 execute "sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true" \
@@ -90,6 +90,12 @@ execute "defaults write -g PMPrintingExpandedStateForPrint -bool true" \
 execute "sudo systemsetup -setrestartfreeze on" \
     "Restart automatically if the computer freezes"
 
+# https://community.jamf.com/t5/jamf-pro/show-bluetooth-in-menu-bar/m-p/243945
+# Show = defaults -currentHost write com.apple.controlcenter.plist Bluetooth -int 18
+# Hide = defaults -currentHost write com.apple.controlcenter.plist Bluetooth -int 24
+execute "defaults -currentHost write com.apple.controlcenter.plist Bluetooth -int 18" \
+    "Show Bluetooth in menu bar"
+
 execute "sudo defaults write /Library/Preferences/com.apple.Bluetooth.plist ControllerPowerState 1 && \
          sudo launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist && \
          sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist" \
@@ -113,4 +119,14 @@ execute "defaults write com.apple.systemuiserver menuExtras -array \
         " \
     "Show Keychain, AirPort, Battery and Clock icons on the menu bar"
 
+# https://github.com/tech-otaku/menu-bar-clock/tree/main
+# https://macos-defaults.com/menubar/dateformat.html
+execute "defaults write com.apple.menuextra.clock DateFormat -string \"EEE d MMM HH:mm:ss\" && \
+         defaults write com.apple.menuextra.clock.plist ShowDate -int 1 && \
+         defaults write com.apple.menuextra.clock.plist ShowSeconds -bool true && \
+         defaults delete -g AppleICUForce12HourTime &> /dev/null || true && \
+         defaults write com.apple.menuextra.clock.plist Show24Hour -bool true" \
+    "Set menubar digital clock format to \"EEE d MMM HH:mm:ss\""
+
 killall "SystemUIServer" &> /dev/null
+killall "ControlCenter" &> /dev/null

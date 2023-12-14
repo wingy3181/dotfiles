@@ -18,6 +18,7 @@ main() {
 
     print_in_purple "\n * Preferences\n"
 
+    # https://macos-defaults.com/
     if $skipQuestions; then
         "./$(get_os)/main.sh" -y
     else
