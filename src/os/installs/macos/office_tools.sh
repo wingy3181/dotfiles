@@ -8,7 +8,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 print_in_purple "\n   Office Tools\n\n"
 
-brew_install_with_confirmation "Dropbox" "dropbox" "--cask"
 brew_install_with_confirmation "Calibre" "calibre" "--cask"
 # Rename registered device within Amazon https://www.amazon.com.au/hz/mycd/digital-console/alldevices
 mas_install_with_confirmation  "Kindle" "302584613"
