@@ -15,6 +15,7 @@ main() {
     print_optional_info "Symlink ebook folder ('ln -s ~/Library/CloudStorage/OneDrive/Documents/Study/ebooks ~/Documents/ebooks')"
     print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/
     print_optional_info "Set user profile picture"
+    print_optional_info "Setup ~/.ssh/config"
 
     print_in_purple "\n   -- Account setup + licensing --\n\n"
 
