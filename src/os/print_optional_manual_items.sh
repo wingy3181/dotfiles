@@ -26,10 +26,11 @@ main() {
     print_optional_info "Login to Authy"
     print_optional_info "Login to Ledger Live"
 
-    print_optional_info "Set Jetbrains IDE settings via IDE Settings Sync and Jetbrains account (https://plugins.jetbrains.com/plugin/15525-ide-settings-sync and https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)"
-    print_optional_info "Set VS Code settings via Settings Sync (https://code.visualstudio.com/docs/editor/settings-sync)"
+    print_optional_info "Configure Jetbrains IDE settings via IDE Settings Sync and Jetbrains account (https://plugins.jetbrains.com/plugin/15525-ide-settings-sync and https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)"
+    print_optional_info "Configure VS Code settings via Settings Sync (https://code.visualstudio.com/docs/editor/settings-sync)"
     print_optional_info "Activate licenses for 4kdownloader, bartender, beyond compare, gifox, jetbrains, synergy"
-    print_optional_info "Set GPG key used for Keybase"
+    print_optional_info "Configure GPG key used for Keybase"
+    print_optional_info "Configure sabnzbd (servers + download locations)"
 
     print_in_purple "\n   -- Applications --\n\n"
 
