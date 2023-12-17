@@ -31,11 +31,14 @@ main() {
     print_optional_info "Activate licenses for 4kdownloader, bartender, beyond compare, gifox, jetbrains, synergy"
     print_optional_info "Configure GPG key used for Keybase"
     print_optional_info "Configure sabnzbd (servers + download locations)"
+    print_optional_info "Configure 'Telephone - VoIP SIP softphone' with voip account"
 
     print_in_purple "\n   -- Applications --\n\n"
 
     print_in_purple "\n   Development Tools\n\n"
-    print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox) and add /opt/homebrew/bin/bash as terminal"
+    print_optional_info "Install JetBrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox)"
+    print_optional_info "Configure Jetbrains products (WebStorm, IntelliJ, DataGrip via JetBrains Toolbox): Tools -> Terminal -> Application Settings -> Shell path -> '/opt/homebrew/bin/bash'"
+    print_optional_info "Configure Jetbrains Toolbox: Settings -> Tools -> Generate shell scripts -> Shell scripts location -> '~/Library/Application Support/Jetbrains/Toolbox/scripts' => Add this to PATH in ~/.bash.local"
     print_optional_info "Install Beyond Compare"
     print_optional_info "Install Chrome Apps - excalidraw, devdocs"
     print_optional_info "Assess Fig (https://fig.io/)"

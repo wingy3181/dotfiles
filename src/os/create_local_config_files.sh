@@ -14,6 +14,7 @@ create_bash_local() {
    if [ ! -e "$FILE_PATH" ] || [ -z "$FILE_PATH" ]; then
 
         DOTFILES_BIN_DIR="$(dirname "$(pwd)")/bin/"
+        JETBRAINS_TOOLBOX_SCRIPTS_DIR="$HOME/Library/Application Support/Jetbrains/Toolbox/scripts/"
 
         printf "%s\n" \
 "#!/bin/bash
@@ -22,7 +23,7 @@ create_bash_local() {
 
 # Set PATH additions.
 
-PATH=\"$DOTFILES_BIN_DIR:\$PATH\"
+PATH=\"$DOTFILES_BIN_DIR:$JETBRAINS_TOOLBOX_SCRIPTS_DIR:\$PATH\"
 
 export PATH" \
         >> "$FILE_PATH"
