@@ -37,7 +37,7 @@ Setup
 To set up the `dotfiles`:
 
 1. Grant full disk access to the 'Terminal Application' in
-   'System Preferences > Security & Privacy > Full Disk Access'.
+   'System Preferences > Privacy & Security > Full Disk Access'.
    Otherwise, there will be issues with the customization of preferences.
 
    | ![Adding Terminal for Full Disk Access][terminal-app-full-disk-access] |
@@ -237,6 +237,9 @@ Tips and Tricks
 4. (Optional) Before running and starting the VM, move the image to an external
    SSD.
 5. Run the VM and install the dotfiles as per the [setup](#setup) instructions.
+6. Within the macOS virtual machine due to the limitation of signing into your
+   Apple ID account, XCode needs to be manually downloaded and installed from
+   [here](https://xcodereleases.com/).
 
 ### How to wipe freespace on macbook hard drive?
 
