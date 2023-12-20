@@ -11,8 +11,13 @@ main() {
 
     print_in_purple "\n   -- Customisations --\n\n"
 
-    print_optional_info "Add favourite locations (home & Development) to Finder sidebar"
-    print_optional_info "Symlink ebook folder ('ln -s ~/Library/CloudStorage/OneDrive/Documents/Study/ebooks ~/Documents/ebooks')"
+    print_optional_info "Add favourite locations (home, Development & Videos) to Finder sidebar"
+    print_optional_info "Symlink ebooks folder ('ln -s ~/Library/CloudStorage/OneDrive-Personal/Documents/Study/ebooks ~/Documents/ebooks')"
+    print_optional_info "Symlink Videos folder ('ln -s ~/Library/CloudStorage/OneDrive-Personal/Videos ~/Videos')"
+    print_optional_info "Configure 4Kdownloader+ 'Save to folder' as '~/Library/CloudStorage/OneDrive-Personal/Videos/_to-organise/4Kdownloader+'"
+    print_optional_info "Configure Arduino IDE 'Preferences -> Settings -> Sketchbook location:' as '~/Development/code/playground/Arduino'"
+    print_optional_info "Configure Gifox 'Preferences -> General -> Output directory:' as '~/Desktop/Screenshots/Gifox'"
+    print_optional_info "Configure Snagit 'Settings -> Advanced -> Library Location:' as '~/Desktop/Screenshots/Snagit'"
     print_optional_info "Set wallpaper" # http://osxdaily.com/2015/08/28/set-wallpaper-command-line-macosx/
     print_optional_info "Set user profile picture"
     print_optional_info "Setup ~/.ssh/config"
