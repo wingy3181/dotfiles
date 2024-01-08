@@ -34,6 +34,10 @@ Table of Contents
 Setup
 -----
 
+> [!CAUTION]
+> __DO NOT__ run the `setup` script if you do not fully understand
+> [what it does][setup]. Seriously, __DON'T__!
+
 To set up the `dotfiles`:
 
 1. Grant full disk access to the 'Terminal Application' in
@@ -44,9 +48,6 @@ To set up the `dotfiles`:
    |:----------------------------------------------------------------------:|
 
 2. Run the appropriate snippet in the terminal:
-
-   (⚠️  __DO NOT__ run the `setup` script if you do not fully understand
-   [what it does][setup]. Seriously, __DON'T__!)
 
    | With confirmation prompts? | Snippet                                                                                    |
    |:---------------------------|:-------------------------------------------------------------------------------------------|
