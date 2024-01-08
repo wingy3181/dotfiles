@@ -74,7 +74,7 @@ main() {
     print_optional_info "Assess Logseq (https://logseq.com/)"
 
     print_in_purple "\n   Video Tools\n\n"
-    print_optional_info "Install Spatial Media Metadata Injector (https://github.com/google/spatial-media/releases and https://github.com/google/spatial-media/issues/261#issuecomment-1590148367)"
+    print_optional_info "Install Spatial Media Metadata Injector (https://github.com/wingy3181/spatial-media/blob/doc-step-build-run-spatialmedia/dist/Spatial%20Media%20Metadata%20Injector.zip OR https://github.com/wingy3181/spatial-media/blob/doc-step-build-run-spatialmedia/scripts/REFERENCES.md OR https://github.com/google/spatial-media/releases and https://github.com/google/spatial-media/issues/261#issuecomment-1590148367)"
     print_optional_info "Install Blackvue Viewer for Mac (https://www.blackvue.com/download/blackvue-mac-viewer-cloud/)"
 
     print_in_purple "\n   Virtualisation Tools\n\n"
