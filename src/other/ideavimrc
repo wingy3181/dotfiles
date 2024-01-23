@@ -1,13 +1,284 @@
+" My personal configuration for [IdeaVim](https://github.com/JetBrains/ideavim)
+" Practice vim by using `docker run -it --rm taspotts/vim-be-good:stable`
+"
+" References
+" - https://towardsdatascience.com/the-essential-ideavim-remaps-291d4cd3971b
+" - https://kietcthe.medium.com/unleash-the-power-of-ideavimrc-enhance-your-intellij-idea-experience-with-advanced-features-5531c3c0641e
+" - https://github.com/JetBrains/ideavim/
+"   - https://github.com/JetBrains/ideavim/wiki/set-commands.md
+"   - https://github.com/JetBrains/ideavim/wiki/sethandler"
+" - [Share your ~/.ideavimrc](https://github.com/JetBrains/ideavim/discussions/303)
+
+" ----------------------------------------------------------------------
+" | General Settings                                                   |
+" ----------------------------------------------------------------------
+
+""" Clipboard integration behaviour
+
+" yank and paste to system clipboard
+
 set clipboard+=unnamed
-nmap <S-Up> v<Up>
-nmap <S-Down> v<Down>
-nmap <S-Left> v<Left>
-nmap <S-Right> v<Right>
-vmap <S-Up> <Up>
-vmap <S-Down> <Down>
-vmap <S-Left> <Left>
-vmap <S-Right> <Right>
-imap <S-Up> <Esc>v<Up>
-imap <S-Down> <Esc>v<Down>
-imap <S-Left> <Esc>v<Left>
-imap <S-Right> <Esc>v<Right>
+
+" yank and paste to jetbrains IDE clipboard
+
+set clipboard+=ideaput
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Select mode + keymodel settings - to avoid weird behaviour in IDEAvim with Shift arrow keys
+" Ref: https://stackoverflow.com/a/77114183/23300257
+
+set selectmode=key
+set keymodel+=startsel,stopsel,stopselect
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Search settings.
+
+" Enable search highlighting.
+set hlsearch
+
+" Highlight search pattern as it is being typed.
+set incsearch
+
+" Ignore case in search patterns.
+set ignorecase
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Show line number.
+
+set number
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" When scrolling keep the cursor 5 lines below
+" the top and 5 lines above the bottom of the screen.
+
+set scrolloff=5
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Show current mode.
+
+set showmode
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Override `ignorecase` option if the search pattern
+" contains uppercase characters.
+
+set smartcase
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Use ctrl-c as an ide shortcut in normal and visual modes
+" e.g.) sethandler <c-x> n-v:ide i:vim
+
+" [<c-a>] Custom alternative to <leader> key for ideavim
+sethandler <c-d> a:vim
+
+" [<c-d>] Scroll half-page down
+sethandler <c-d> a:vim
+
+" [<c-g>] Add Selection for Next Occurrence
+sethandler <c-g> a:ide
+
+" [<c-r>] Redo changes
+sethandler <c-r> a:vim
+
+" [<c-r>] Refactor this
+sethandler <c-t> a:ide
+
+" ----------------------------------------------------------------------
+" | Plugins                                                            |
+" ----------------------------------------------------------------------
+
+" easymotion (required idea plugins: IdeaVim-EasyMotion, AceJump)
+" usage: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+set easymotion
+let g:WhichKeyDesc_easymotion = "<Space><Space> EasyMotion prefix"
+
+" nerdtree (bundled plugin)
+" usage: https://raw.githubusercontent.com/wiki/JetBrains/ideavim/NERDTree-support.md
+" support: https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+set NERDTree
+
+" surround (bundled plugin)
+" usage: https://github.com/tpope/vim-surround
+" TLDR:
+" 1. <s-s> to enter surround mode after visual selection
+" 2a. f if want to surround with function
+" 2b. t if want to surround with tags
+" 2c  chars if you want to surround with <
+" 2d quote,single quote, etc. if you want to surround with that character
+" ds/cs to delete/change surround
+set surround
+
+" Display available keybindings in a popup (required idea plugin: WhichKey)
+" and configure timeout for popup to display for
+set which-key
+set timeoutlen=2500
+
+" ----------------------------------------------------------------------
+" | Helper Functions                                                   |
+" ----------------------------------------------------------------------
+
+function! ToggleRelativeLineNumbers()
+
+    if ( &relativenumber == 1 )
+        set number norelativenumber
+    else
+        set number relativenumber
+    endif
+
+endfunction
+
+" ----------------------------------------------------------------------
+" | Key Mappings (vim)                                                 |
+" ----------------------------------------------------------------------
+
+" Use a different mapleader (default is "\").
+
+let mapleader = " "
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,*  ] Search and replace the word under the cursor.
+
+nmap <leader>* viwy \| :%s/\<<c-r>+\>//g<left><left>
+let g:WhichKeyDesc_replace_word_under_cursor = "<leader>* Replace the word under the cursor"
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [,n  ] Toggle `set relativenumber`.
+
+let g:WhichKeyDesc_toggle = "<leader>t Toggle"
+nmap <leader>tr :call ToggleRelativeLineNumbers()<cr>
+let g:WhichKeyDesc_toggle_relative_line_numbers = "<leader>tr Relative line numbers"
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" Re-center view after:
+" - half-page up
+" - half-page down
+" - Search - Next search pattern match
+" - Search - Previous match
+" Refs:
+" - https://youtu.be/KfENDDEpCsI?si=2CVMBUAZQsKVX3b1&t=183
+" - https://youtu.be/KfENDDEpCsI?si=hkn8WfiuHXMYGMyI&t=320
+
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" ----------------------------------------------------------------------
+" | Key Mappings (IDEA)                                                |
+" ----------------------------------------------------------------------
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editing and Reloading the Config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Open ~/.ideavimrc for editing
+
+nnoremap \e :e ~/.ideavimrc<CR>
+let g:WhichKeyDesc_edit_ideavimrc = "\\e Open IdeaVim config"
+
+" Reload the configuration for ideavim
+
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+let g:WhichKeyDesc_reload_ideavimrc = "\\r Reload IdeaVim"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editor Window Mode Management
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle Distraction Free mode
+
+nmap <leader>td <Action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_toggle_distraction_free_mode = "<leader>td Distraction Free mode"
+
+" Toggle Zen mode
+
+nmap <leader>tz <Action>(ToggleZenMode)
+let g:WhichKeyDesc_toggle_zen_mode = "<leader>tz Zen mode"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editor Tabs Management/Navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Split/Move Editor Tabs
+nmap <c-a><s-\> <Action>(SplitVertically)
+nmap <c-a>- <Action>(SplitHorizontally)
+nmap <c-a>x <Action>(Unsplit)
+nmap <c-a>] <Action>(MoveEditorToOppositeTabGroup)
+nmap <c-a>[ <Action>(MoveEditorToOppositeTabGroup)
+
+" Resize Editor Tabs
+nmap <c-a><s-h> <Action>(StretchSplitToLeft)
+nmap <c-a><s-l> <Action>(StretchSplitToRight)
+nmap <c-a><s-j> <Action>(StretchSplitToBottom)
+nmap <c-a><s-k> <Action>(StretchSplitToTop)
+
+" Navigate between Split Editor Tabs
+nmap <c-a>h <c-w>h
+nmap <c-a>l <c-w>l
+nmap <c-a>j <c-w>j
+nmap <c-a>k <c-w>k
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source Code Navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:WhichKeyDesc_previous = "[ Previous"
+nmap [c <Action>(VcsShowPrevChangeMarker)
+let g:WhichKeyDesc_previous_change = "[c Change"
+nmap [m <Action>(MethodUp)
+let g:WhichKeyDesc_previous_method = "[m Method"
+let g:WhichKeyDesc_next = "] Next"
+nmap ]c <Action>(VcsShowNextChangeMarker)
+let g:WhichKeyDesc_next_change = "]c Change"
+nmap ]m <Action>(MethodDown)
+let g:WhichKeyDesc_next_method = "]m Method"
+
+let g:WhichKeyDesc_goto = "<leader>g Go to"
+nmap <leader>gd <Action>(GotoDeclaration)
+let g:WhichKeyDesc_goto_declaration = "<leader>gd Declaration"
+nmap <leader>gi <Action>(GotoImplementation)
+let g:WhichKeyDesc_goto_implementation = "<leader>gi Implementation"
+nmap <leader>gs <Action>(GotoSuperMethod)
+let g:WhichKeyDesc_goto_super_method = "<leader>gs Super Method"
+nmap <leader>gt <Action>(GotoTest)
+let g:WhichKeyDesc_goto_test = "<leader>gt Test"
+
+let g:WhichKeyDesc_file_find = "<leader>f File|Find"
+nmap <leader>fs <Action>(FileStructurePopup)
+let g:WhichKeyDesc_file_structure = "<leader>fs Structure"
+nmap <leader>fu <Action>(FindUsages)
+let g:WhichKeyDesc_find_usages = "<leader>fu Usages"
+
+let g:WhichKeyDesc_call = "<leader>c Call"
+nmap <leader>ch <Action>(CallHierarchy)
+let g:WhichKeyDesc_call_hierarchy = "<leader>ch Hierarchy"
+
+" [,tn  ] Toggle NERDTree.
+nmap <leader>tn :NERDTreeToggle<cr>
+let g:WhichKeyDesc_call_hierarchy = "<leader>ch NERDTree"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source Code Editing
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:WhichKeyDesc_manipulate = "<leader>m Manipulate"
+" manipulate string (required idea plugin: String Manipulation)
+nmap <leader>ms <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
+let g:WhichKeyDesc_manipulate_string = "<leader>ms String"
+
+let g:WhichKeyDesc_rename = "<leader>r Rename"
+" rename file
+nmap <leader>rf <Action>(RenameFile)
+let g:WhichKeyDesc_rename_file = "<leader>rf File"
