@@ -582,9 +582,9 @@ endfunction
 function! ToggleRelativeLineNumbers()
 
     if ( &relativenumber == 1 )
-        set number
+        set number norelativenumber
     else
-        set relativenumber
+        set number relativenumber
     endif
 
 endfunction
@@ -717,12 +717,30 @@ endif
 silent! colorscheme solarized  " Use custom color scheme.
 
 " ----------------------------------------------------------------------
-" | Key Mappings                                                       |
+" | Key Mappings (overrides)                                           |
+" ----------------------------------------------------------------------
+
+" Re-center view after:
+" - half-page up
+" - half-page down
+" - Search - Next search pattern match
+" - Search - Previous match
+" Refs:
+" - https://youtu.be/KfENDDEpCsI?si=2CVMBUAZQsKVX3b1&t=183
+" - https://youtu.be/KfENDDEpCsI?si=hkn8WfiuHXMYGMyI&t=320
+
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" ----------------------------------------------------------------------
+" | Key Mappings (custom)                                              |
 " ----------------------------------------------------------------------
 
 " Use a different mapleader (default is "\").
 
-let mapleader = ","
+let mapleader = " "
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
