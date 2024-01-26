@@ -15,6 +15,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 print_in_purple "\n   Development Tools\n\n"
 
 brew_install_with_confirmation "Arduino IDE" "arduino-ide" "--cask"
+brew_install_with_confirmation "codewhisperer" "codewhisperer" "--cask"
 brew_install_with_confirmation "direnv" "direnv"
 brew_install_with_confirmation "Jetbrains Toolbox" "jetbrains-toolbox" "--cask"
 brew_install_with_confirmation "pnpm" "pnpm"
