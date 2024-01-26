@@ -202,6 +202,11 @@ let g:WhichKeyDesc_reload_ideavimrc = "\\r Reload IdeaVim"
 nmap <leader>td <Action>(ToggleDistractionFreeMode)
 let g:WhichKeyDesc_toggle_distraction_free_mode = "<leader>td Distraction Free mode"
 
+" Toggle Presentation Free mode
+
+nmap <leader>tp <Action>(TogglePresentationAssistantAction)
+let g:WhichKeyDesc_toggle_presentation_free_mode = "<leader>tp Presentation Free mode"
+
 " Toggle Zen mode
 
 nmap <leader>tz <Action>(ToggleZenMode)
@@ -267,7 +272,7 @@ let g:WhichKeyDesc_call_hierarchy = "<leader>ch Hierarchy"
 
 " [,tn  ] Toggle NERDTree.
 nmap <leader>tn :NERDTreeToggle<cr>
-let g:WhichKeyDesc_call_hierarchy = "<leader>ch NERDTree"
+let g:WhichKeyDesc_call_hierarchy = "<leader>tn NERDTree"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source Code Editing
