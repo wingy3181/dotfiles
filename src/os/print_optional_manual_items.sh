@@ -52,6 +52,7 @@ main() {
     print_optional_info "Assess Unity (https://unity.com/)"
 
     print_in_purple "\n   Desktop Utilities\n\n"
+    print_optional_info "Install Homerow (https://www.homerow.app/ OR https://github.com/dexterleng/homerow#user-guide)"
     print_optional_info "[NOT RECOMMENDED as per README!!!] Install XtraFinder (http://www.trankynam.com/xtrafinder/) + setup preferences at src/os/preferences/macos/xtrafinder.sh"
 
     print_in_purple "\n   Miscellaneous Tools\n\n"
