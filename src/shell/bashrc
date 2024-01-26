@@ -1,3 +1,5 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash"
 #!/usr/bin/env bash
 
 # http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
@@ -13,3 +15,7 @@
 # Below statement to stop sdkman install script from adding it's initialisation in both .bashrc and .bash_profile files
 # See 'Attempt update of bash profiles' in install script at https://get.sdkman.io/
 # sdkman-init.sh
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.post.bash"
+
