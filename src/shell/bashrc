@@ -1,6 +1,7 @@
+#!/usr/bin/env bash
+
 # CodeWhisperer pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/bashrc.pre.bash"
-#!/usr/bin/env bash
 
 # http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
 #  .bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells (e.g. subshells).
