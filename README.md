@@ -268,7 +268,7 @@ Tips and Tricks
 > [`~\.bash_it\plugins\enabled\*.plugin.bash`](https://github.com/Bash-it/bash-it/tree/master/plugins/available)
 <!-- markdownlint-enable MD033 -->
 
-* `declare -F` - list name of all functions defined [(source)](http://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell)
+* `declare -F` - list name of all functions defined [(source)](https://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell)
 * `type <function name>` - show function definition
 * `glossary` - show functions enabled via bash-it with short description of
   each function
