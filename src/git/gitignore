@@ -241,7 +241,7 @@ local.properties
 .idea/git_toolbox_prj.xml
 
 # GitHub Co-pilot plugin:
-.idea/git_toolbox_prj.xml
+.idea/copilot
 
 ## File-based project format:
 *.iws
