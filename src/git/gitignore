@@ -243,6 +243,9 @@ local.properties
 # GitHub Co-pilot plugin:
 .idea/copilot
 
+# Snyk plugin:
+.idea/snyk.project.settings.xml
+
 ## File-based project format:
 *.iws
 
