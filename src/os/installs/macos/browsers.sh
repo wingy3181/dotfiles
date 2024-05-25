@@ -25,7 +25,7 @@ brew_install_with_confirmation "Brave Browser" "brave-browser" "--cask"
 printf "\n"
 
 brew_install_with_confirmation "Chrome" "google-chrome" "--cask"
-brew_install_with_confirmation "Chrome Canary" "google-chrome-canary" "--cask" "homebrew/cask-versions"
+brew_install_with_confirmation "Chrome Canary" "google-chrome@canary" "--cask" "homebrew/cask-versions"
 brew_install_with_confirmation "Chromium" "chromium" "--cask --no-quarantine"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -33,8 +33,8 @@ brew_install_with_confirmation "Chromium" "chromium" "--cask --no-quarantine"
 printf "\n"
 
 brew_install_with_confirmation "Firefox" "firefox" "--cask"
-brew_install_with_confirmation "Firefox Developer" "firefox-developer-edition" "--cask" "homebrew/cask-versions"
-brew_install_with_confirmation "Firefox Nightly" "firefox-nightly" "--cask" "homebrew/cask-versions"
+brew_install_with_confirmation "Firefox Developer" "firefox@developer-edition" "--cask" "homebrew/cask-versions"
+brew_install_with_confirmation "Firefox Nightly" "firefox@nightly" "--cask" "homebrew/cask-versions"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
