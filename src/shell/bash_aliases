@@ -42,7 +42,6 @@ alias mrmp="mrm --preset @wingy3181/mrm-preset-wingy3181"
 alias n="npm"
 alias nr="npm run"
 alias path='printf "%b\n" "${PATH//:/\\n}"'
-alias q="exit"
 alias hosts='sudo $EDITOR /etc/hosts'                           # Open hosts file in default editor
 alias scrcpyw="setup-scrcpy"
 alias ssh="sshrc"
