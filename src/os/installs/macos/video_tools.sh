@@ -15,6 +15,8 @@ mas_install_with_confirmation  "GoPro Quik Video Photo Editor" "561350520"
 # https://gopro.com/en/au/info/gopro-player
 mas_install_with_confirmation  "GoPro Player + ReelSteady" "1460836908"
 brew_install_with_confirmation "Handbrake" "handbrake" "--cask"
+# https://www.insta360.com/download/app/studio2019
+brew_install_with_confirmation "Insta360 Studio" "insta360-studio" "--cask"
 brew_install_with_confirmation "VLC" "vlc" "--cask"
 
 
