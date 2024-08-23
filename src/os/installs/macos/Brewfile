@@ -1,5 +1,5 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-versions"
+tap "homebrew/services"
 tap "ikuwow/ikuwow-sshrc"
 brew "apktool"
 brew "bash"
@@ -14,6 +14,7 @@ brew "htop"
 brew "imagemagick"
 brew "jq"
 brew "mas"
+brew "pnpm"
 brew "reattach-to-user-namespace"
 brew "ripgrep"
 brew "scrcpy"
@@ -28,11 +29,13 @@ brew "zopfli"
 brew "zoxide"
 brew "ikuwow/ikuwow-sshrc/sshrc"
 cask "4k-video-downloaderplus"
+cask "amazon-q"
 cask "android-file-transfer"
 cask "android-platform-tools"
 cask "appcleaner"
 cask "arc"
 cask "arduino-ide"
+cask "bartender"
 cask "brave-browser"
 cask "calibre"
 cask "cheatsheet"
@@ -43,16 +46,16 @@ cask "displaylink"
 cask "docker"
 cask "dolphin@beta"
 cask "firefox"
-cask "firefox@developer-edition"
-cask "firefox@nightly"
+cask "firefox-developer-edition"
 cask "fujitsu-scansnap-home"
 cask "gas-mask"
 cask "gifox"
 cask "gimp"
 cask "google-chrome"
-cask "google-chrome@canary"
+cask "google-chrome-canary"
 cask "handbrake"
 cask "imageoptim"
+cask "insta360-studio"
 cask "jetbrains-toolbox"
 cask "lens"
 cask "microsoft-auto-update"
@@ -83,11 +86,13 @@ cask "vlc"
 cask "vysor"
 cask "whatsapp"
 cask "wireshark"
-mas "au.id.haroldchu.mac.Bandwidth", id: 490461369
+mas "Bandwidth+", id: 490461369
 mas "Be Focused", id: 973134470
+mas "DaVinci Resolve", id: 571213070
 mas "EasyRes", id: 688211836
 mas "GarageBand", id: 682658836
 mas "GoPro Player", id: 1460836908
+mas "GoPro Quik", id: 561350520
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
@@ -95,5 +100,6 @@ mas "Magnet", id: 441258766
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Presentify", id: 1507246666
+mas "Remote Desktop", id: 409907375
 mas "Telephone", id: 406825478
 mas "Xcode", id: 497799835
