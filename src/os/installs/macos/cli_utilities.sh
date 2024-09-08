@@ -10,6 +10,7 @@ print_in_purple "\n   CLI Utilities\n\n"
 
 brew_install_with_confirmation "Amazon Q" "amazon-q" "--cask"
 brew_install_with_confirmation "bat" "bat"
+brew_install_with_confirmation "delta" "delta"
 brew_install_with_confirmation "jq" "jq"
 # zoxide is optionally dependent on fzf
 brew_install_with_confirmation "fzf" "fzf"

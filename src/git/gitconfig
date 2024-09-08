@@ -76,11 +76,35 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    d   = diff -- . ':!*package-lock.json' ':!*yarn.lock'
+    d = diff -- . ':!*package-lock.json' ':!*yarn.lock'
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    dc  = diff --cached -- . ':!*package-lock.json' ':!*yarn.lock'
+    dc = diff --cached -- . ':!*package-lock.json' ':!*yarn.lock'
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    dd = "!f() { \
+        git d | delta; \
+    }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    ddc = "!f() { \
+        git dc | delta; \
+    }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    dds = "!f() { \
+        git d | delta --side-by-side; \
+    }; f"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    ddcs = "!f() { \
+        git dc | delta --side-by-side; \
+    }; f"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -90,7 +114,7 @@
 
     # Show custom text-based graphical log of the commit history.
 
-    g   = log --graph --pretty=custom
+    g = log --graph --pretty=custom
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -102,13 +126,13 @@
 
     # Show custom log of the commit history.
 
-    l   = log --pretty=custom
+    l = log --pretty=custom
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # List contributors.
 
-    lc  = shortlog --email --summary --numbered --summary
+    lc = shortlog --email --summary --numbered --summary
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -150,11 +174,11 @@
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    p   = push
+    p = push
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    r   = rebase
+    r = rebase
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
