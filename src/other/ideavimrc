@@ -217,7 +217,9 @@ let g:WhichKeyDesc_toggle_zen_mode = "<leader>tz Zen mode"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Split/Move Editor Tabs
-nmap <c-a><s-\> <Action>(SplitVertically)
+" https://youtrack.jetbrains.com/issue/VIM-3635/Unable-to-enter-character-during-insert-mode
+"nmap <c-a><s-\> <Action>(SplitVertically)
+nmap <c-a>\ <Action>(SplitVertically)
 nmap <c-a>- <Action>(SplitHorizontally)
 nmap <c-a>x <Action>(Unsplit)
 nmap <c-a>] <Action>(MoveEditorToOppositeTabGroup)
