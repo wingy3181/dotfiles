@@ -55,6 +55,9 @@ main() {
     print_optional_info "Install Homerow (https://www.homerow.app/ OR https://github.com/dexterleng/homerow#user-guide)"
     print_optional_info "[NOT RECOMMENDED as per README!!!] Install XtraFinder (http://www.trankynam.com/xtrafinder/) + setup preferences at src/os/preferences/macos/xtrafinder.sh"
 
+    print_in_purple "\n   Gaming\n\n"
+    print_optional_info "Install Meta Quest Remote Desktop (https://www.oculus.com/desktop/)"
+
     print_in_purple "\n   Miscellaneous Tools\n\n"
     print_optional_info "Install Authy (https://authy.com/download/ or 'brew install --cask authy') on primary laptop only"
     print_optional_info "Install Keybase"
