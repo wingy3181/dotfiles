@@ -26,6 +26,11 @@ brew_install_with_confirmation "ShellCheck" "shellcheck"
 brew_install_with_confirmation "VS Code" "visual-studio-code" "--cask"
 brew_install_with_confirmation "yarn" "yarn"
 
+# Mobile/Expo/React-Native
+# https://reactnative.dev/docs/set-up-your-environment
+brew_install_with_confirmation "cocoapods" "cocoapods"
+brew_install_with_confirmation "watchman" "watchman"
+
 #printf "\n"
 
 # Install the VSCode plugins - https://marketplace.visualstudio.com/vscode
