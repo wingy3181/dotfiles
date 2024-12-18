@@ -16,6 +16,7 @@ mas_install_with_confirmation  "Be Focused - Pomodoro Timer" "973134470"
 brew_install_with_confirmation "Cheatsheet" "cheatsheet" "--cask"
 brew_install_with_confirmation "DisplayLink USB Graphics Software" "displaylink" "--cask"
 mas_install_with_confirmation  "EasyRes" "688211836"
+brew_install_with_confirmation "KeyCastr" "keycastr" "--cask"
 mas_install_with_confirmation  "Magnet" "441258766"
 # https://presentify.compzets.com/
 mas_install_with_confirmation  "Presentify - Screen Annotation" "1507246666"
