@@ -43,6 +43,7 @@ main() {
     ./../vim.sh
 
     # With install application confirmation prompt
+    ./core_tools.sh
     ./ai_tools.sh
     ./android_tools.sh
     ./browsers.sh
