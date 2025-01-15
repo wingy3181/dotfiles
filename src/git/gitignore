@@ -99,6 +99,10 @@ hs_err_pid*
 # | Node                                                               |
 # ----------------------------------------------------------------------
 
+# Environment variables
+
+.env
+
 # Logs
 logs
 *.log
