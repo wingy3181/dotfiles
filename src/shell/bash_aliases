@@ -33,7 +33,7 @@ alias g="git"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"   # myip.opendns.com: name of resource record to lookup, @resolver1.opendns.com: name server to query
                                                                 # This asks the IP address of myip.opendns.com from the name server resolver1.opendns.com
                                                                 # which will return your external IP address
-alias ll="ls -l"
+alias ll="ls -lA"
 alias m="man"
 alias map="xargs -n1"                                           # map space delimited string to one item per row. Only enter input afterwards
                                                                 # See http://www.thegeekstuff.com/2013/12/xargs-examples/
