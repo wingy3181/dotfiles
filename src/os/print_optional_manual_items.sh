@@ -47,6 +47,7 @@ main() {
     print_optional_info "Install Beyond Compare"
     print_optional_info "Install Chrome Apps - excalidraw, devdocs"
     print_optional_info "Install nRF Connect for Desktop (https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop) for nRF52840 dongles"
+    print_optional_info "Add GitHub Copilot CLI aliases to ~/.bash.local (echo \"\$(gh copilot alias -- bash)\" >> ~/.bash.local)"
     print_optional_info "Assess Fig (https://fig.io/)"
     print_optional_info "Assess Warp (https://www.warp.dev/)"
     print_optional_info "Assess Unity (https://unity.com/)"
