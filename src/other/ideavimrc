@@ -110,8 +110,8 @@ set NERDTree
 " 1. <s-s> to enter surround mode after visual selection
 " 2a. f if want to surround with function
 " 2b. t if want to surround with tags
-" 2c  chars if you want to surround with <
-" 2d quote,single quote, etc. if you want to surround with that character
+" 2c. chars if you want to surround with <
+" 2d. quote,single quote, etc. if you want to surround with that character
 " ds/cs to delete/change surround
 set surround
 
@@ -133,6 +133,129 @@ function! ToggleRelativeLineNumbers()
     endif
 
 endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Human readable description for `g:WhichKey_ShowVimActions="true"`
+" Ref:
+" - https://github.com/TheBlob42/idea-which-key/issues/82
+" - https://github.com/TheBlob42/idea-which-key/pull/99
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:WhichKey_ShowVimActions = "true"
+"" Whichkey goto descriptions let g:WhichKeyDesc_vanilla_goto="g goto..." let g:WhichKeyDesc_vanilla_goto_hash="g# jump to previous instance of word under cursor" let g:WhichKeyDesc_vanilla_goto_dollar="g$ jump to last visible character on line" let g:WhichKeyDesc_vanilla_goto_percent="g% Cycle match groups (eg. if, else, end)" let g:WhichKeyDesc_vanilla_goto_amp="g& repeat last substitute (:s)" let g:WhichKeyDesc_vanilla_goto_quote="g' jump to mark (without populating jumplist)" let g:WhichKeyDesc_vanilla_goto_open_bracket="g( jump to previous end of sentence" let g:WhichKeyDesc_vanilla_goto_close_bracket="g) jump to next end of sentence" let g:WhichKeyDesc_vanilla_goto_star="g* jump to next instance of word under cursor"
+
+let g:WhichKeyDesc_vanilla_goto_0="g0 jump to first visible character on line"
+let g:WhichKeyDesc_vanilla_goto_8="g8 print hex values of character under cursor"
+
+let g:WhichKeyDesc_vanilla_goto_C_g="g print cursor position"
+let g:WhichKeyDesc_vanilla_goto_C_h="g start select mode, blockwise"
+
+let g:WhichKeyDesc_vanilla_goto_down="g same as gj"
+let g:WhichKeyDesc_vanilla_goto_end="g same as g$"
+let g:WhichKeyDesc_vanilla_goto_home="g same as g0"
+let g:WhichKeyDesc_vanilla_goto_up="g same as gk"
+
+let g:WhichKeyDesc_vanilla_goto_at="g@ call operatorfunc on motion"
+let g:WhichKeyDesc_vanilla_goto_caret="g^ jump to first visible non-whitespace character on line"
+let g:WhichKeyDesc_vanilla_goto_underscore="g_ jump to last visible non-whitespace character on line"
+let g:WhichKeyDesc_vanilla_goto_backtick="g` jump to mark (without populating jumplist)"
+
+let g:WhichKeyDesc_vanilla_goto_a="ga character info"
+let g:WhichKeyDesc_vanilla_goto_c="gc commentary..."
+let g:WhichKeyDesc_vanilla_goto_c_c="gcc comment line"
+let g:WhichKeyDesc_vanilla_goto_c_u="gcu add comment above line"
+let g:WhichKeyDesc_vanilla_goto_D="gD go to declaration"
+let g:WhichKeyDesc_vanilla_goto_d="gd go to definition"
+let g:WhichKeyDesc_vanilla_goto_E="gE jump to end of prev WORD"
+let g:WhichKeyDesc_vanilla_goto_e="ge jump to end of prev word"
+let g:WhichKeyDesc_vanilla_goto_g="gg jump to first line"
+let g:WhichKeyDesc_vanilla_goto_h="gh start select mode, characterwise"
+let g:WhichKeyDesc_vanilla_goto_H="gH start select mode, linewise"
+let g:WhichKeyDesc_vanilla_goto_I="gI insert text in column 1 [count] times"
+let g:WhichKeyDesc_vanilla_goto_i="gi jump to last insertion and INSERT"
+let g:WhichKeyDesc_vanilla_goto_j="gj down (honor soft-wrapping)"
+let g:WhichKeyDesc_vanilla_goto_J="gJ join next line preserve spaces"
+let g:WhichKeyDesc_vanilla_goto_k="gk up (honor soft-wrapping)"
+let g:WhichKeyDesc_vanilla_goto_m="gm jump to middle of the screen"
+let g:WhichKeyDesc_vanilla_goto_n="gn select up to next match"
+let g:WhichKeyDesc_vanilla_goto_N="gN select up to prev match"
+let g:WhichKeyDesc_vanilla_goto_o="go jump to [count]th character in file"
+let g:WhichKeyDesc_vanilla_goto_p="gp paste after cursor and move cursor after new text"
+let g:WhichKeyDesc_vanilla_goto_P="gP paste before cursor and move cursor after new text"
+let g:WhichKeyDesc_vanilla_goto_q="gq format line (wrap at textwidth)"
+let g:WhichKeyDesc_vanilla_goto_t="gt jump to next tab"
+let g:WhichKeyDesc_vanilla_goto_T="gT jump to previous tab"
+let g:WhichKeyDesc_vanilla_goto_u="gu change to lowercase"
+let g:WhichKeyDesc_vanilla_goto_U="gU change to uppercase"
+let g:WhichKeyDesc_vanilla_goto_v="gv reselect visual select"
+
+let g:WhichKeyDesc_vanilla_goto_tilde="g~ toggle character case"
+
+""" Whichkey Prev/Next descriptions
+let g:WhichKeyDesc_vanilla_next="] next..."
+let g:WhichKeyDesc_vanilla_prev="[ prev..."
+let g:WhichKeyDesc_vanilla_next_close_square="]] jump [count] sections forward or next {"
+let g:WhichKeyDesc_vanilla_next_open_square="][ jump [count] sections forward or next }"
+let g:WhichKeyDesc_vanilla_prev_open_square="[[ jump [count] sections back or previous {"
+let g:WhichKeyDesc_vanilla_prev_close_square="[] jump [count] sections forward or previous }"
+let g:WhichKeyDesc_vanilla_prev_open_bracket="[( jump to [count] previous unmatched ("
+let g:WhichKeyDesc_vanilla_prev_open_curly="[{ jump to [count] previous unmatched {"
+let g:WhichKeyDesc_vanilla_next_close_bracket="]) jump to [count] next unmatched )"
+let g:WhichKeyDesc_vanilla_next_close_curly="]} jump to [count] next unmatched }"
+let g:WhichKeyDesc_vanilla_prev_b="[b jump to start of prev Word (smartcase)"
+let g:WhichKeyDesc_vanilla_next_b="]b jump to end of prev Word (smartcase)"
+let g:WhichKeyDesc_vanilla_prev_M="[M jump to end of prev method"
+let g:WhichKeyDesc_vanilla_next_M="]M jump to end of next method"
+let g:WhichKeyDesc_vanilla_prev_m="[m jump to start of prev method"
+let g:WhichKeyDesc_vanilla_next_m="]m jump to start of next method"
+let g:WhichKeyDesc_vanilla_prev_p="[p paste before cursor without align"
+let g:WhichKeyDesc_vanilla_prev_P="[P paste before cursor without align"
+let g:WhichKeyDesc_vanilla_next_p="]p paste after cursor without align"
+let g:WhichKeyDesc_vanilla_next_P="]P paste before cursor without align"
+let g:WhichKeyDesc_vanilla_prev_s="[s to prev misspelled word"
+let g:WhichKeyDesc_vanilla_next_s="]s to next misspelled word"
+let g:WhichKeyDesc_vanilla_prev_w="[w jump to start of next Word (smartcase)"
+let g:WhichKeyDesc_vanilla_next_w="]w jump to end of next Word (smartcase)"
+
+""" Whichkey Z menu descriptions
+let g:WhichKeyDesc_vanilla_Z="Z Z menu..."
+let g:WhichKeyDesc_vanilla_Z_Z="ZZ save and quit (window)"
+let g:WhichKeyDesc_vanilla_Z_Q="ZQ quit without saving"
+
+""" Whichkey view mode descriptions
+let g:WhichKeyDesc_vanilla_view="z view mode..."
+let g:WhichKeyDesc_vanilla_view_plus="z+ jump to first line of next screen"
+let g:WhichKeyDesc_vanilla_view_caret="z^ jump to last line of prev screen"
+let g:WhichKeyDesc_vanilla_view_minus="z- scroll to bottom of screen and puts cursor at the start of the line"
+let g:WhichKeyDesc_vanilla_view_period="z. scroll to middle of screen and puts cursor at the start of the line"
+let g:WhichKeyDesc_vanilla_view_enter="z scroll to top of screen and puts cursor at the start of the line"
+let g:WhichKeyDesc_vanilla_view_left="z same as zh"
+let g:WhichKeyDesc_vanilla_view_right="z same as zl"
+
+let g:WhichKeyDesc_vanilla_view_A="zA toggle all folds under cursor"
+let g:WhichKeyDesc_vanilla_view_a="za toggle fold under cursor"
+let g:WhichKeyDesc_vanilla_view_b="zb scroll to bottom"
+let g:WhichKeyDesc_vanilla_view_C="zC close all folds under cursor"
+let g:WhichKeyDesc_vanilla_view_c="zc close fold under cursor"
+let g:WhichKeyDesc_vanilla_view_e="ze scroll horizontally to put cursor on last column"
+let g:WhichKeyDesc_vanilla_view_h="zh scroll 1 column horizontally to the left"
+let g:WhichKeyDesc_vanilla_view_H="zH scroll horizontally half a screen"
+let g:WhichKeyDesc_vanilla_view_j="zj go to start of next fold"
+let g:WhichKeyDesc_vanilla_view_k="zk go to end of previous fold"
+let g:WhichKeyDesc_vanilla_view_l="zl scroll 1 column horizontally to the right"
+let g:WhichKeyDesc_vanilla_view_L="zL scroll horizontally half a screen"
+let g:WhichKeyDesc_vanilla_view_M="zM close all folds"
+let g:WhichKeyDesc_vanilla_view_m="zm fold more"
+let g:WhichKeyDesc_vanilla_view_O="zO open all folds under cursor"
+let g:WhichKeyDesc_vanilla_view_o="zo open fold under cursor"
+let g:WhichKeyDesc_vanilla_view_r="zr fold less"
+let g:WhichKeyDesc_vanilla_view_R="zR open all folds"
+let g:WhichKeyDesc_vanilla_view_R="zR unfold all"
+let g:WhichKeyDesc_vanilla_view_s="zs scroll horizontally to put cursor on first column"
+let g:WhichKeyDesc_vanilla_view_t="zt scroll line to top"
+let g:WhichKeyDesc_vanilla_view_v="zv open folds to show cursor line"
+let g:WhichKeyDesc_vanilla_view_x="zx update folds"
+let g:WhichKeyDesc_vanilla_view_z="zz scroll to center"
 
 " ----------------------------------------------------------------------
 " | Key Mappings (vim)                                                 |
@@ -156,6 +279,15 @@ let g:WhichKeyDesc_replace_word_under_cursor = "<leader>* Replace the word under
 let g:WhichKeyDesc_toggle = "<leader>t Toggle"
 nmap <leader>tr :call ToggleRelativeLineNumbers()<cr>
 let g:WhichKeyDesc_toggle_relative_line_numbers = "<leader>tr Relative line numbers"
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+" [jj  ] Map `jj` to <Esc> in insert mode for quicker exit from insert mode
+" without having to reach for the escape key.
+
+let g:WhichKeyDesc_exit = "j Exit"
+inoremap jj <Esc>
+let g:WhichKeyDesc_exit_insert_mode = "jj Insert mode"
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
