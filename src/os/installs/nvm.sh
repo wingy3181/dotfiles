@@ -64,8 +64,6 @@ configure_nvm_default_packages() {
     # https://github.com/nvm-sh/nvm#default-global-packages-from-file-while-installing
     declare -r DEFAULT_PACKAGES_CONFIG="commitizen
 cz-customizable
-mrm
-@wingy3181/mrm-preset-wingy3181
 @lobehub/commit-cli
 prettier
 "
