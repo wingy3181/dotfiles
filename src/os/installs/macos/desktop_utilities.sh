@@ -21,7 +21,7 @@ mas_install_with_confirmation  "Magnet" "441258766"
 # https://presentify.compzets.com/
 mas_install_with_confirmation  "Presentify - Screen Annotation" "1507246666"
 brew_install_with_confirmation "Raycast" "raycast" "--cask"
-brew_install_with_confirmation "Silicon" "silicon" "--cask"
+brew_install_with_confirmation "Silicon" "silicon-app" "--cask"
 brew_install_with_confirmation "Unarchiver" "the-unarchiver" "--cask"
 
 # xtrafinder seems to be have removed from cask. Have to install manually via https://www.trankynam.com/xtrafinder/

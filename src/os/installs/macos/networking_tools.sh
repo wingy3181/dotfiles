@@ -12,7 +12,7 @@ brew_install_with_confirmation "Gas Mask" "gas-mask" "--cask"
 brew_install_with_confirmation "NordVPN" "nordvpn" "--cask"
 brew_install_with_confirmation "Squidman" "squidman" "--cask"
 brew_install_with_confirmation "Tunnelblick" "tunnelblick" "--cask"
-brew_install_with_confirmation "Wireshark" "wireshark" "--cask"
+brew_install_with_confirmation "Wireshark" "wireshark-app" "--cask"
 
 
 
