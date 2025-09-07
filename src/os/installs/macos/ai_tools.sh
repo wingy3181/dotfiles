@@ -18,5 +18,8 @@ brew_install_with_confirmation "ollama" "ollama-app" "--cask"
 # Image
 brew_install_with_confirmation "Diffusion Bee" "diffusionbee" "--cask"
 
+# Speech to Text/Transcription/Dictation
+brew_install_with_confirmation "VoiceInk" "voiceink" "--cask"
+
 # Development/Coding
 brew_install_with_confirmation "Cursor" "cursor" "--cask"
