@@ -247,6 +247,10 @@ local.properties
 
 # GitHub Co-pilot plugin:
 .idea/copilot
+.idea/copilot.data.migration.agent.xml
+.idea/copilot.data.migration.ask.xml
+.idea/copilot.data.migration.ask2agent.xml
+.idea/copilot.data.migration.edit.xml
 
 # Snyk plugin:
 .idea/snyk.project.settings.xml
