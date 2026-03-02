@@ -343,7 +343,8 @@ References
 
 * [GitHub does dotfiles](https://dotfiles.github.io/)
 * [Awesome dotfiles](https://github.com/webpro/awesome-dotfiles)
-* [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles.](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
+<!-- markdown-link-check-disable-next-line -->
+* [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles.](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 
 License
 -------

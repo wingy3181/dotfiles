@@ -257,7 +257,8 @@ Inspiration and code was taken from many sources, including:
 * [GitHub does dotfiles](https://dotfiles.github.io/)
 * [Awesome dotfiles](https://github.com/webpro/awesome-dotfiles)
 * [Setting up a new (OS X) development machine: Part 3 - Dotfiles and custom SSH config](https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-3-dotfiles-rc-files-and-ssh-config)
-* [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles - Part 1](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
+<!-- markdown-link-check-disable-next-line -->
+* [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles - Part 1](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 * [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles - Part 2](http://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles-part-2--cms-23145)
 
 ### OSX Commands
