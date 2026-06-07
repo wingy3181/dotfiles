@@ -1,6 +1,28 @@
 # Run `npm login` or `npm adduser` to add auth token to npm registry but DON'T check that in to my dotfiles!!!!
+# npm security hardening.
+# References:
+# - https://www.youtube.com/watch?v=Fs6YDVJq5As
+# - https://x.com/lowleveltweets/status/2054166740527898799
+# - https://github.com/lirantal/npm-security-best-practices/#faq
+# One-off override examples:
+# - npm install --ignore-scripts=false
+# - npm install --min-release-age=0
+# - npm install --allow-git=all
 init-author-name=Cheong Yip
 init-author-email=wingy3181@gmail.com
 init-author-url=https://wingcheongyip.com/
 init-license=MIT
+
+# Pin saved dependency versions and keep lockfiles enabled.
 save-exact=true
+package-lock=true
+
+# Block package lifecycle scripts by default; run vetted scripts manually when needed.
+ignore-scripts=true
+
+# Reject git-sourced dependencies, which bypass npm registry security controls.
+allow-git=none
+
+# Avoid brand-new package versions and fail audits on high/critical vulnerabilities.
+min-release-age=7
+audit-level=high

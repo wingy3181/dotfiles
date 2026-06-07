@@ -1,0 +1,22 @@
+# npm security hardening.
+# References:
+# - https://www.youtube.com/watch?v=Fs6YDVJq5As
+# - https://x.com/lowleveltweets/status/2054166740527898799
+# - https://github.com/lirantal/npm-security-best-practices/#faq
+# One-off override examples:
+# - pnpm install --config.minimumReleaseAge=0
+# - pnpm install --config.strictDepBuilds=false
+# Per-project override: set minimumReleaseAge/strictDepBuilds/blockExoticSubdeps
+# in that repo's pnpm-workspace.yaml.
+
+# Block packages newer than 7 days.
+minimumReleaseAge: 10080
+
+# Reject versions whose publish-time trust signal regressed.
+trustPolicy: no-downgrade
+
+# Fail if a dependency wants to run an unapproved build script.
+strictDepBuilds: true
+
+# Reject git/tarball-style exotic sources in transitive dependencies.
+blockExoticSubdeps: true

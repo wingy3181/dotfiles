@@ -33,6 +33,8 @@ create_symlinks() {
         "git/git_commit_message_template"
 
         "npm/npmrc"
+        "pnpm/config.yaml"
+        "bun/bunfig.toml"
 
         "vim/vim"
         "vim/vimrc"
@@ -66,6 +68,11 @@ create_symlinks() {
         # using regex '.*\/\(.*\)' and replacing topic folder with its contents
         # For example, 'shell/bash_aliases' to 'bash_aliases'
         targetFile="$HOME/.$(printf "%s" "$i" | sed "s/[^\/]*\/\(.*\)/\1/g")"
+
+        if [ "$i" == "pnpm/config.yaml" ]; then
+            targetFile="$HOME/Library/Preferences/pnpm/config.yaml"
+        fi
+
         targetFolder="$(printf "%s" "$targetFile" | sed "s|/[^/]*$||")"
 
         if [ "$(readlink "$targetFile")" == "$sourceFile" ]; then

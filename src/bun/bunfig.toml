@@ -1,0 +1,13 @@
+[install]
+# npm security hardening.
+# References:
+# - https://www.youtube.com/watch?v=Fs6YDVJq5As
+# - https://x.com/lowleveltweets/status/2054166740527898799
+# - https://github.com/lirantal/npm-security-best-practices/#faq
+# Per-project override example:
+# [install]
+# minimumReleaseAge = 0
+#
+# Bun disables dependency postinstall scripts by default. Allow per-project
+# trustedDependencies only after review.
+minimumReleaseAge = 604800
