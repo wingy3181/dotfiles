@@ -238,8 +238,14 @@ local.properties
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
+# Amazon Q plugin:
+# EOL in April 30, 2027
+# See https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/
+.idea/amazonq.xml
+
 # AWS Toolkit plugin:
 .idea/aws.xml
+.idea/awsToolkit.xml
 
 # Git ToolBox plugin:
 .idea/git_toolbox_prj.xml
