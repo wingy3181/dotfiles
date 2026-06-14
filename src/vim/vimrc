@@ -373,6 +373,7 @@ function! InitPlugins() abort
     call minpac#add('tomtom/tcomment_vim')
     call minpac#add('tpope/vim-commentary')
     call minpac#add('tpope/vim-fugitive')
+    call minpac#add('tpope/vim-obsession')
     call minpac#add('tpope/vim-repeat')
     call minpac#add('tpope/vim-surround')
     call minpac#add('tpope/vim-unimpaired')
