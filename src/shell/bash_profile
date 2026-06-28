@@ -19,6 +19,7 @@ source_bash_files() {
         "bash_functions"
         "bash_options"
         "bash_prompt"
+        "bash_tmux_resurrect"
         "bash_zoxide"
 
         "bash.local"  # For local settings that should

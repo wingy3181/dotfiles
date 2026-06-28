@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Workaround for restoring bash history in tmux panes with tmux-resurrect.
+# See:
+# - https://github.com/tmux-plugins/tmux-resurrect/blob/master/docs/restoring_bash_history.md
+# - Modified original after consulting codex
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Per-pane-ish bash history for tmux-resurrect.
+# This avoids pane_title because pane titles are easily overwritten and may not
+# be restored by tmux-resurrect.
+#
+# Trade-off:
+# This is not a perfect stable pane ID. If you reorder windows/panes, history may
+# follow the index. But it works well when resurrect restores the same layout.
+
+HISTS_DIR="$HOME/.bash_history.d"
+mkdir -p "$HISTS_DIR"
+
+if [ -n "${TMUX_PANE:-}" ]; then
+  pane_id_prefix="resurrect_"
+  session_name="$(tmux display-message -p '#{session_name}' 2>/dev/null)"
+  window_index="$(tmux display-message -p '#{window_index}' 2>/dev/null)"
+  pane_index="$(tmux display-message -p '#{pane_index}' 2>/dev/null)"
+  pane_current_path="$(tmux display-message -p '#{pane_current_path}' 2>/dev/null)"
+
+  safe_session="$(printf '%s' "$session_name" | LC_ALL=C tr -cs 'A-Za-z0-9_.-' '_')"
+  safe_path="$(printf '%s' "$pane_current_path" | LC_ALL=C tr -cs 'A-Za-z0-9_.-' '_')"
+
+  export HISTFILE="$HISTS_DIR/bash_history_tmux_${pane_id_prefix}_${safe_session}_w${window_index}_p${pane_index}_${safe_path}"
+else
+  export HISTFILE="$HISTS_DIR/bash_history_no_tmux"
+fi
+
+# Append new commands immediately so history survives crashes/restarts.
+case ";${PROMPT_COMMAND:-};" in
+  *";history -a;"*) ;;
+  *) PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }history -a" ;;
+esac
+
+export PROMPT_COMMAND

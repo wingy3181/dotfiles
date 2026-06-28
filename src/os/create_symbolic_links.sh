@@ -21,6 +21,7 @@ create_symlinks() {
         "shell/bash_options"
         "shell/bash_profile"
         "shell/bash_prompt"
+        "shell/bash_tmux_resurrect"
         "shell/bash_zoxide"
         "shell/bashrc"
         "shell/curlrc"
