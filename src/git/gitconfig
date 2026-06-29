@@ -353,6 +353,14 @@
     # point to commits that are being rebased.
     updateRefs = true
 
+[tag]
+
+    # Sorts tags by version number (i.e. v1.2 before v1.10) instead
+    # of lexicographic order (i.e. v1.10 before v1.2).
+
+    sort = version:refname
+
+
 [user]
 
     # Do not guess the user's identity.
