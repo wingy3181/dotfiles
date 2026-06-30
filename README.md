@@ -1,5 +1,4 @@
-[Cheong][repo]’s dotfiles
-==========================
+# [Cheong][repo]’s dotfiles
 
 [![CI status for macOS][ci badge macos]][ci link macos]
 
