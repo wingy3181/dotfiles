@@ -14,5 +14,8 @@ print_in_purple "\n   System Utilities\n\n"
 # https://github.com/alinradut/Disk-Inventory-X
 # https://grandperspectiv.sourceforge.net/
 brew_install_with_confirmation "Disk Inventory X" "disk-inventory-x" "--cask"
+# https://github.com/tw93/mole
+# https://mole.fit/
+brew_install_with_confirmation "Mole" "mole"
 brew_install_with_confirmation "htop" "htop"
 
