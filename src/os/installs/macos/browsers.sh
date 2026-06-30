@@ -26,7 +26,8 @@ printf "\n"
 
 brew_install_with_confirmation "Chrome" "google-chrome" "--cask"
 brew_install_with_confirmation "Chrome Canary" "google-chrome@canary" "--cask"
-brew_install_with_confirmation "Chromium" "chromium" "--cask --no-quarantine"
+brew_install_with_confirmation "Chromium" "chromium" "--cask"
+remove_quarantine_attribute "/Applications/Chromium.app" "Chromium"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
