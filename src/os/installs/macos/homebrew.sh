@@ -64,7 +64,7 @@ update() {
 
 upgrade() {
     execute \
-        "brew upgrade" \
+        "brew upgrade --yes" \
         "Upgrade"
 }
 
