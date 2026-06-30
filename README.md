@@ -7,8 +7,7 @@ These are the base dotfiles that I start with when I set up
 a new environment (for more specific local needs I use the
 [`*.local`](#local-settings) files).
 
-Table of Contents
------------------
+## Table of Contents
 
 * [🔧 Setup](#setup)
 * [📸 Screenshots](#screenshots)
@@ -31,8 +30,7 @@ Table of Contents
 * [📚 References](#references)
 * [📑 License](#license)
 
-Setup
------
+## Setup
 
 > [!CAUTION]
 > __DO NOT__ run the `setup` script if you do not fully understand
@@ -79,8 +77,7 @@ Setup process in action:
 
 <!-- markdownlint-enable MD033 -->
 
-Screenshots
------------
+## Screenshots
 
 ### Git
 
@@ -99,8 +96,7 @@ Output for `git log`:
 | ![tmux and Vim on macOS][vim macos] |
 |:-----------------------------------:|
 
-Customize
----------
+## Customize
 
 ### Environment Variables
 
@@ -210,15 +206,13 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 ```
 
-Update
-------
+## Update
 
 To update the dotfiles you can either run the [`setup` script][setup]
 or, if you want to update one particular part, run the appropriate
 [`os` script](src/os).
 
-Tips and Tricks
----------------
+## Tips and Tricks
 
 ### How to test dotfiles?
 
@@ -293,8 +287,7 @@ Tips and Tricks
 * [`st <searchtext>`](src/shell/bash_functions) - Search for text recursively
   within the current directory
 
-FAQs
-----
+## FAQs
 
 ### Should you install XtraFinder?
 
@@ -318,8 +311,7 @@ XtraFinder and [custom preferences](src/os/preferences/macos/main.sh)
 for it in the dotfiles. However, it is not recommended to install it due to
 the security risks mentioned.
 
-Acknowledgements
-----------------
+## Acknowledgements
 
 A majority of this code is taken
 from [Cătălin Mariș'](https://github.com/alrra) [dotfiles](https://github.com/alrra/dotfiles).
@@ -336,8 +328,7 @@ Inspiration and code was taken from many sources, including:
 * [Sourabh Bajaj's "Mac OS X Setup Guide"](http://sourabhbajaj.com/mac-setup/)
 * [Ryan Winchester's "Set up OS X for Web Development in 10 Minutes".](https://ryanwinchester.ca/posts/set-up-os-x-for-web-development-in-10-minutes)
 
-References
-----------
+## References
 
 ### dotfiles
 
@@ -346,8 +337,7 @@ References
 <!-- markdown-link-check-disable-next-line -->
 * [Setting Up a Mac Dev Machine From Zero to Hero With Dotfiles.](https://code.tutsplus.com/tutorials/setting-up-a-mac-dev-machine-from-zero-to-hero-with-dotfiles--net-35449)
 
-License
--------
+## License
 
 The code is available under the [MIT license][license].
 
