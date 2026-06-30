@@ -207,7 +207,7 @@ sync-topics-symbolic-links() {
         do
             local topicsFolderAndSubFolder="$(echo "$name" | awk '{ print $1 }')"
             local topicsSymbolicLinkPath="$(echo "$name" | awk '{ print $3 }')"
-            if [ "$(readlink "${topicsFolderAndSubFolder:1:${#topicsFolderAndSubFolder}}")" == "../$topicsSymbolicLinkPath" ]; 
+            if [ "$(readlink "${topicsFolderAndSubFolder:1:${#topicsFolderAndSubFolder}}")" == "../$topicsSymbolicLinkPath" ];
             then
                 echo "$topicsFolderAndSubFolder → ../$topicsSymbolicLinkPath already exists"
             else
@@ -221,7 +221,7 @@ sync-topics-symbolic-links() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Execute Vim macro
+# Execute Vim macro.
 
 evm() {
 

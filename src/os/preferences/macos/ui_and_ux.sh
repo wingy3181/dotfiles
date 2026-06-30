@@ -41,7 +41,7 @@ execute "defaults write com.apple.screencapture type -string 'png'" \
 
 execute "defaults write com.apple.screensaver askForPassword -int 1 && \
          defaults write com.apple.screensaver askForPasswordDelay -int 0"\
-    "Require password immediately after into sleep or screen saver mode"
+    "Require password immediately after entering sleep or screen saver mode"
 
 # System Preferences -> Mission Control -> Displays have separate Spaces (requires logout)
 execute "defaults write com.apple.spaces spans-displays -bool false" \
