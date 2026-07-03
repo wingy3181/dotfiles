@@ -94,6 +94,11 @@ sethandler <c-t> a:ide
 " | Plugins                                                            |
 " ----------------------------------------------------------------------
 
+" VimEverywhere
+" https://github.com/JetBrains/ideavim/blob/master/doc/IdeaVim%20Plugins.md#vimeverywhere-keyboard-driven-ide-navigation-outside-the-editor
+" https://github.com/JetBrains/ideavim/blob/master/src/main/resources/whatsnew-2.40.0.html
+set VimEverywhere
+
 " easymotion (required idea plugins: IdeaVim-EasyMotion, AceJump)
 " usage: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
 set easymotion
