@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "utils.sh"
+    && . "utils.sh" \
+    && . "profiles.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -26,29 +27,46 @@ create_symlinks() {
         "shell/bashrc"
         "shell/curlrc"
         "shell/inputrc"
-        "shell/screenrc"
-
         "git/gitattributes"
         "git/gitconfig"
         "git/gitignore"
         "git/git_commit_message_template"
-
-        "npm/npmrc"
-        "pnpm/config.yaml"
-        "bun/bunfig.toml"
-
-        "vim/vim"
-        "vim/vimrc"
-
-        "tmux/tmux.conf"
-
-        "sshrc/sshrc"
-
-        "other/czrc"
-        "other/cz-config.js"
-        "other/ideavimrc"
-
     )
+
+    if dotfiles_profile_is_enabled "workstation"; then
+        FILES_TO_SYMLINK+=(
+            "shell/screenrc"
+
+            "npm/npmrc"
+            "pnpm/config.yaml"
+            "bun/bunfig.toml"
+
+            "vim/vim"
+            "vim/vimrc"
+
+            "tmux/tmux.conf"
+
+            "sshrc/sshrc"
+
+            "other/czrc"
+            "other/cz-config.js"
+            "other/ideavimrc"
+        )
+    fi
+
+    if dotfiles_profile_is_enabled "agent-host" \
+        && ! dotfiles_profile_is_enabled "workstation"; then
+        FILES_TO_SYMLINK+=("tmux/tmux.conf")
+    fi
+
+    if dotfiles_profile_is_enabled "node-dev" \
+        && ! dotfiles_profile_is_enabled "workstation"; then
+        FILES_TO_SYMLINK+=(
+            "npm/npmrc"
+            "pnpm/config.yaml"
+            "bun/bunfig.toml"
+        )
+    fi
 
     local i=""
     local sourceFile=""
@@ -125,6 +143,8 @@ create_symlinks() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
+
+    dotfiles_parse_profile_arguments "$@" || exit 1
 
     print_in_purple "\n\n * Create symbolic links\n\n"
 

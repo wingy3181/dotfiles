@@ -413,12 +413,11 @@ set_trap() {
 
 skip_questions() {
 
-     while :; do
-        case $1 in
-            -y|--yes) return 0;;
-                   *) break;;
+    while [ "$#" -gt 0 ]; do
+        case "$1" in
+            -y|--yes) return 0 ;;
         esac
-        shift 1
+        shift
     done
 
     return 1

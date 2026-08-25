@@ -21,7 +21,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Include user-installed CLI tools such as mise.
+# Include user-installed CLI tools such as Cursor Agent and mise.
 
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$HOME/.local/bin:$PATH"

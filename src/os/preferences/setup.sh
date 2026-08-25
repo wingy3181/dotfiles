@@ -1,28 +1,24 @@
 #!/usr/bin/env bash
 
 cd "$(dirname "${BASH_SOURCE[0]}")" \
-    && . "../utils.sh"
+    && . "../utils.sh" \
+    && . "../profiles.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
 
-    local skipQuestions=false
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    skip_questions "$@" \
-        && skipQuestions=true
+    dotfiles_parse_profile_arguments "$@" || exit 1
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     print_in_purple "\n * Preferences\n"
 
     # https://macos-defaults.com/
-    if $skipQuestions; then
-        "./$(get_os)/main.sh" -y
-    else
-        "./$(get_os)/main.sh"
+    if dotfiles_profile_is_enabled "workstation"; then
+        "./$(get_os)/main.sh" "$@"
+    elif dotfiles_profile_is_enabled "agent-host"; then
+        "./$(get_os)/agent_host.sh"
     fi
 
 }

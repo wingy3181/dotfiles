@@ -78,13 +78,25 @@ set_xcode_developer_directory() {
 
 main() {
 
+    local commandLineToolsOnly=false
+
+    while [ "$#" -gt 0 ]; do
+        case "$1" in
+            --command-line-tools-only) commandLineToolsOnly=true ;;
+        esac
+        shift
+    done
+
     print_in_purple "   Xcode\n\n"
 
     install_xcode_command_line_tools
-    install_xcode
-    set_xcode_developer_directory
-    agree_with_xcode_licence
+
+    if ! $commandLineToolsOnly; then
+        install_xcode
+        set_xcode_developer_directory
+        agree_with_xcode_licence
+    fi
 
 }
 
-main
+main "$@"

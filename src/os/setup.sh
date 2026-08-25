@@ -5,10 +5,11 @@
 # ----------------------------------------------------------------------
 
 declare -r GITHUB_REPOSITORY="wingy3181/dotfiles"
+declare -r DOTFILES_REF="${DOTFILES_REF:-refs/heads/main}"
 
 declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
-declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/main"
-declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/main/src/os/utils.sh"
+declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/archive/$DOTFILES_REF.tar.gz"
+declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$DOTFILES_REF/src/os/utils.sh"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -242,6 +243,17 @@ main() {
     printf "%s" "${BASH_SOURCE[0]}" | grep "setup.sh" &> /dev/null \
         || download_dotfiles
 
+    # Resolve the selected machine role and optional development capabilities.
+    # This happens after downloading so remote bootstrap invocations can load
+    # the profile resolver from the newly extracted repository.
+
+    . "./profiles.sh" || exit 1
+    dotfiles_parse_profile_arguments "$@" || exit 1
+    skipQuestions="$DOTFILES_SKIP_QUESTIONS"
+
+    printf "\n"
+    dotfiles_print_resolved_profiles
+
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
@@ -251,15 +263,15 @@ main() {
     fi
 
     if $skipQuestions || answer_is_yes; then
-        ./create_directories.sh
+        ./create_directories.sh "$@"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     if ! $skipQuestions; then
-        ./create_symbolic_links.sh
+        ./create_symbolic_links.sh "$@"
     else
-        ./create_symbolic_links.sh -y
+        ./create_symbolic_links.sh "$@"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -283,9 +295,9 @@ main() {
     fi
 
     if $skipQuestions; then
-        ./installs/setup.sh -y
+        ./installs/setup.sh "$@"
     elif answer_is_yes; then
-        ./installs/setup.sh
+        ./installs/setup.sh "$@"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -297,9 +309,9 @@ main() {
     fi
 
     if $skipQuestions; then
-        ./preferences/setup.sh -y
+        ./preferences/setup.sh "$@"
     elif answer_is_yes; then
-        ./preferences/setup.sh
+        ./preferences/setup.sh "$@"
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -320,7 +332,9 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./print_optional_manual_items.sh
+    if dotfiles_profile_is_enabled "workstation"; then
+        ./print_optional_manual_items.sh
+    fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

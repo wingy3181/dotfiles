@@ -46,10 +46,12 @@ To set up the `dotfiles`:
 
 2. Run the appropriate snippet in the terminal:
 
-   | With confirmation prompts? | Snippet                                                                                    |
-   |:---------------------------|:-------------------------------------------------------------------------------------------|
-   | Yes                        | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh)"`    |
-   | No                         | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh) -y"` |
+   | With confirmation prompts?                     | Snippet                                                                                                                                                                                                                    |
+   |:-----------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | Yes                                            | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh)"`                                                                                                                                    |
+   | No                                             | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh) -y"`                                                                                                                                 |
+   | No (`agent-host,node-dev`)                     | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh)" -- --profile agent-host,node-dev -y`                                                                                                |
+   | No (`agent-host,node-dev` from feature branch) | `DOTFILES_REF=refs/heads/feat/remote-agent-profiles bash -c "$(curl -LsS https://raw.githubusercontent.com/wingy3181/dotfiles/refs/heads/feat/remote-agent-profiles/src/os/setup.sh)" -- --profile agent-host,node-dev -y` |
 
    [//]: # (Alternative command with no confirmation prompt: `curl -LsS https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh | bash -s -- -y`)
 
@@ -97,11 +99,71 @@ Output for `git log`:
 
 ## Customize
 
+### Machine Profiles
+
+The setup composes machine roles and development capabilities from the
+`base` profile. If no profile is provided, `workstation` is used to preserve
+the existing setup behaviour:
+
+```shell
+./src/os/setup.sh
+./src/os/setup.sh --profile workstation
+./src/os/setup.sh --profile agent-host,node-dev
+```
+
+The currently supported profiles are:
+
+* `base`
+* `workstation`
+* `agent-host`
+* `node-dev`
+* `ios-dev`
+
+`workstation` and `agent-host` are mutually exclusive machine roles. Development
+capabilities such as `node-dev` and `ios-dev` can be added to either role.
+
+Passing `-y` or `--yes` continues to skip confirmation prompts. `workstation`
+preserves the original full installation path. Other selections install the
+minimal `base` toolset, then add only the requested machine role and development
+capabilities.
+
+For a spare Mac that will run remote coding tasks:
+
+```shell
+./src/os/setup.sh --profile agent-host,node-dev -y
+```
+
+The setup installs the local tools, but account enrolment remains interactive.
+
+For Codex Remote, follow the
+[official setup guide](https://learn.chatgpt.com/docs/remote). Open ChatGPT and
+enable `Settings > Connections > Control this Mac`, then connect your phone by
+scanning the QR code.
+
+For Cursor, follow the official
+[My Machines guide](https://cursor.com/docs/cloud-agent/self-hosted-guides/my-machines).
+Sign in, then start the worker from the Git repository you want Cursor to use:
+
+```shell
+agent login
+agent worker start
+```
+
+Keep the Mac plugged in, awake, and online while it is available for remote
+work.
+
 ### Environment Variables
 
 The `dotfiles` can be controlled during the installation by using the
 following environment variables (This is mainly used for the GitHub
 Actions CI build):
+
+#### `DOTFILES_REF`
+
+The `DOTFILES_REF` environment variable selects the Git branch, tag, or commit
+used to download the dotfiles archive and bootstrap utilities. It defaults to
+`refs/heads/main`. Use a full ref such as `refs/heads/feature-name` or
+`refs/tags/v1.0.0`, or provide a commit SHA for a reproducible installation.
 
 #### `DOTFILES_DEBUG_MODE`
 

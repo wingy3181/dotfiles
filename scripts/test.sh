@@ -13,6 +13,8 @@ main() {
     print_result $? "Lint Markdown files"
     ./check_links/markdown.sh
     print_result $? "Check links from Markdown file"
+    ./test/profiles.sh
+    print_result $? "Test profile resolution"
     ./test/exit_trap.sh
     print_result $? "Test exit trap registration"
 
