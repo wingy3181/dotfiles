@@ -21,8 +21,24 @@ install_cursor_agent_cli() {
         "Cursor Agent CLI"
 }
 
+# Pi's standalone installer keeps the agent-host profile independent of the
+# optional node-dev profile.
+# https://pi.dev/
+install_pi_coding_agent() {
+    if cmd_exists "pi" || [ -x "$HOME/.local/bin/pi" ]; then
+        print_success "Pi Coding Agent"
+        return
+    fi
+
+    execute \
+        "curl -fsSL https://pi.dev/install.sh | sh" \
+        "Pi Coding Agent"
+}
+
 print_in_purple "\n   Remote Agent Host\n\n"
 
 brew_install "ChatGPT" "chatgpt" "--cask"
 brew_install "Codex" "codex" "--cask"
+brew_install "OpenCode" "opencode" "" "anomalyco/tap"
 install_cursor_agent_cli
+install_pi_coding_agent

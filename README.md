@@ -151,6 +151,8 @@ For a spare Mac that will run remote coding tasks:
 ```
 
 The setup installs the local tools, but account enrolment remains interactive.
+The `agent-host` profile includes Codex, Cursor Agent, Pi Coding Agent, and
+OpenCode.
 
 For Codex Remote, follow the
 [official setup guide](https://learn.chatgpt.com/docs/remote). Open ChatGPT and
@@ -165,6 +167,13 @@ Sign in, then start the worker from the Git repository you want Cursor to use:
 agent login
 agent worker start
 ```
+
+For Pi, see the [official documentation](https://pi.dev/) and run `pi`. Use
+`/login` inside Pi to authenticate with a supported provider.
+
+For OpenCode, follow the
+[official provider setup guide](https://opencode.ai/docs/providers/). Run
+`opencode`, then use `/connect` to add a provider.
 
 Keep the Mac plugged in, awake, and online while it is available for remote
 work.
