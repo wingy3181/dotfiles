@@ -121,9 +121,12 @@ The currently supported profiles are:
 * `ios-dev`
 
 `workstation` and `agent-host` are mutually exclusive machine roles. Both roles
-automatically include `personal`, which installs Vim, Chrome, Raycast, Magnet,
-Mole, and shared macOS preferences. Development capabilities such as `node-dev`
-and `ios-dev` can be added to either role.
+automatically include `personal`, which installs Vim, Chrome, Docker Desktop,
+Ghostty, Herdr, Raycast, Magnet, Mole, `fzf`, `tree`, `yq`, and shared macOS
+preferences. It also installs FFmpeg and `yt-dlp` for media downloads and
+processing, plus `tmuxinator` and `reattach-to-user-namespace` for the existing
+tmux workflow. The inherited `base` profile provides `jq` and tmux. Development
+capabilities such as `node-dev` and `ios-dev` can be added to either role.
 
 Add software wanted on every personal Mac to
 `src/os/installs/macos/personal.sh`, and add shared macOS settings to
