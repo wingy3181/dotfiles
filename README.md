@@ -108,7 +108,7 @@ preserve the existing setup behaviour:
 ```shell
 ./src/os/setup.sh
 ./src/os/setup.sh --profile workstation
-./src/os/setup.sh --profile agent-host,node-dev
+./src/os/setup.sh --profile agent-host,node-dev,document-tools
 ```
 
 The currently supported profiles are:
@@ -119,16 +119,20 @@ The currently supported profiles are:
 * `agent-host`
 * `node-dev`
 * `ios-dev`
+* `document-tools`
 
 `workstation` and `agent-host` are mutually exclusive machine roles. Both roles
 automatically include `personal`, which installs Vim, Chrome, Docker Desktop,
 Ghostty, Herdr, Raycast, Magnet, Mole, `fzf`, `tree`, `yq`, and shared macOS
 preferences. It also installs FFmpeg and `yt-dlp` for media downloads and
 processing, plus `tmuxinator` and `reattach-to-user-namespace` for the existing
-tmux workflow. Docling and MarkItDown are installed in isolated Python 3.12
-environments using `uv`. The inherited `base` profile provides `jq` and tmux.
-Development capabilities such as `node-dev` and `ios-dev` can be added to either
-role.
+tmux workflow. The inherited `base` profile provides `jq` and tmux. Development
+capabilities such as `node-dev`, `ios-dev`, and `document-tools` can be added to
+either role.
+
+`document-tools` installs Docling and MarkItDown in isolated Python 3.12
+environments using `uv`. It is optional because Docling includes substantial
+machine-learning dependencies.
 
 Add software wanted on every personal Mac to
 `src/os/installs/macos/personal.sh`, and add shared macOS settings to
@@ -143,7 +147,7 @@ and development capabilities.
 For a spare Mac that will run remote coding tasks:
 
 ```shell
-./src/os/setup.sh --profile agent-host,node-dev -y
+./src/os/setup.sh --profile agent-host,node-dev,document-tools -y
 ```
 
 The setup installs the local tools, but account enrolment remains interactive.

@@ -66,6 +66,11 @@ main() {
         ./system_utilities.sh
         ./video_tools.sh
         ./virtualisation_tools.sh
+
+        if dotfiles_profile_is_enabled "document-tools"; then
+            ./document_tools.sh
+        fi
+
         return
     fi
 
@@ -96,6 +101,10 @@ main() {
         ./rosetta_2.sh
         brew_install "CocoaPods" "cocoapods"
         brew_install "Watchman" "watchman"
+    fi
+
+    if dotfiles_profile_is_enabled "document-tools"; then
+        ./document_tools.sh
     fi
 
 }

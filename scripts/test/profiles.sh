@@ -38,6 +38,10 @@ dotfiles_parse_profile_arguments --profile=personal
 assert_equals "$(resolved_profiles)" "base,personal" \
     "Personal tools can be selected without a machine role"
 
+dotfiles_parse_profile_arguments --profile=document-tools
+assert_equals "$(resolved_profiles)" "base,document-tools" \
+    "Document tools can be selected as an optional capability"
+
 dotfiles_parse_profile_arguments --profile=base
 assert_equals "$(resolved_profiles)" "base" \
     "Base can be selected by itself"
