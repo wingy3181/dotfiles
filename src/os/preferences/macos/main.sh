@@ -19,27 +19,16 @@ main() {
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     ./init.sh
-    ./app_store.sh
-    ./chrome.sh
     if $skipQuestions; then
-        ./computer_name.sh -y
+        ./personal.sh -y
     else
-        ./computer_name.sh
+        ./personal.sh
     fi
-    ./dock.sh
-    ./finder.sh
     ./firefox.sh
-    ./keyboard.sh
-    ./language_and_region.sh
     ./maps.sh
     ./photos.sh
     ./safari.sh
-    ./security_and_privacy.sh
-    ./terminal.sh
-    ./textedit.sh
-    ./trackpad.sh
     ./transmission.sh
-    ./ui_and_ux.sh
     #./xtrafinder.sh
 
 }

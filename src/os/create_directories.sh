@@ -12,6 +12,10 @@ create_directories() {
         "$HOME/Development/code/github"
     )
 
+    if dotfiles_profile_is_enabled "personal"; then
+        DIRECTORIES+=("$HOME/Desktop/Screenshots")
+    fi
+
     if dotfiles_profile_is_enabled "workstation"; then
         DIRECTORIES+=(
             "$HOME/Desktop/Screenshots/Gifox"

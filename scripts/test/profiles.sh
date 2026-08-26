@@ -27,19 +27,23 @@ resolved_profiles() {
 }
 
 dotfiles_parse_profile_arguments
-assert_equals "$(resolved_profiles)" "base,workstation" \
-    "No arguments default to base plus workstation"
+assert_equals "$(resolved_profiles)" "base,personal,workstation" \
+    "No arguments default to base plus personal and workstation"
 
 dotfiles_parse_profile_arguments --profile agent-host,node-dev
-assert_equals "$(resolved_profiles)" "base,agent-host,node-dev" \
-    "Requested profiles compose from base"
+assert_equals "$(resolved_profiles)" "base,personal,agent-host,node-dev" \
+    "Agent hosts include personal tools and compose from base"
+
+dotfiles_parse_profile_arguments --profile=personal
+assert_equals "$(resolved_profiles)" "base,personal" \
+    "Personal tools can be selected without a machine role"
 
 dotfiles_parse_profile_arguments --profile=base
 assert_equals "$(resolved_profiles)" "base" \
     "Base can be selected by itself"
 
 dotfiles_parse_profile_arguments --profile workstation,workstation
-assert_equals "$(resolved_profiles)" "base,workstation" \
+assert_equals "$(resolved_profiles)" "base,personal,workstation" \
     "Duplicate profiles are removed"
 
 dotfiles_parse_profile_arguments --yes --profile ios-dev

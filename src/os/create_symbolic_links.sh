@@ -33,6 +33,13 @@ create_symlinks() {
         "git/git_commit_message_template"
     )
 
+    if dotfiles_profile_is_enabled "personal"; then
+        FILES_TO_SYMLINK+=(
+            "vim/vim"
+            "vim/vimrc"
+        )
+    fi
+
     if dotfiles_profile_is_enabled "workstation"; then
         FILES_TO_SYMLINK+=(
             "shell/screenrc"
@@ -40,9 +47,6 @@ create_symlinks() {
             "npm/npmrc"
             "pnpm/config.yaml"
             "bun/bunfig.toml"
-
-            "vim/vim"
-            "vim/vimrc"
 
             "tmux/tmux.conf"
 

@@ -24,7 +24,6 @@ brew_install_with_confirmation "Brave Browser" "brave-browser" "--cask"
 
 printf "\n"
 
-brew_install_with_confirmation "Chrome" "google-chrome" "--cask"
 brew_install_with_confirmation "Chrome Canary" "google-chrome@canary" "--cask"
 brew_install_with_confirmation "Chromium" "chromium" "--cask"
 remove_quarantine_attribute "/Applications/Chromium.app" "Chromium"
@@ -58,4 +57,3 @@ fi
 printf "\n"
 
 brew_install_with_confirmation "Tor Browser" "tor-browser" "--cask"
-

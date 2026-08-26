@@ -36,7 +36,6 @@ main() {
         ./rosetta_2.sh
         ./homebrew.sh
         . "./homebrew.sh" && add_homebrew_to_path
-        ./mas-cli.sh
         ./../bash.sh
 
         ./git.sh
@@ -44,7 +43,7 @@ main() {
         ./../nvm.sh
         ./../npm.sh
         ./../tmux.sh
-        ./../vim.sh
+        ./personal.sh
 
         ./core_tools.sh
         ./ai_tools.sh
@@ -77,6 +76,10 @@ main() {
     ./../bash.sh
     ./git.sh
     ./base_tools.sh
+
+    if dotfiles_profile_is_enabled "personal"; then
+        ./personal.sh
+    fi
 
     if dotfiles_profile_is_enabled "agent-host"; then
         ./agent_host.sh

@@ -17,7 +17,11 @@ main() {
     # https://macos-defaults.com/
     if dotfiles_profile_is_enabled "workstation"; then
         "./$(get_os)/main.sh" "$@"
-    elif dotfiles_profile_is_enabled "agent-host"; then
+    elif dotfiles_profile_is_enabled "personal"; then
+        "./$(get_os)/personal.sh" "$@"
+    fi
+
+    if dotfiles_profile_is_enabled "agent-host"; then
         "./$(get_os)/agent_host.sh"
     fi
 

@@ -101,9 +101,9 @@ Output for `git log`:
 
 ### Machine Profiles
 
-The setup composes machine roles and development capabilities from the
-`base` profile. If no profile is provided, `workstation` is used to preserve
-the existing setup behaviour:
+The setup composes machine roles, personal tools, and development capabilities
+from the `base` profile. If no profile is provided, `workstation` is used to
+preserve the existing setup behaviour:
 
 ```shell
 ./src/os/setup.sh
@@ -114,18 +114,26 @@ the existing setup behaviour:
 The currently supported profiles are:
 
 * `base`
+* `personal`
 * `workstation`
 * `agent-host`
 * `node-dev`
 * `ios-dev`
 
-`workstation` and `agent-host` are mutually exclusive machine roles. Development
-capabilities such as `node-dev` and `ios-dev` can be added to either role.
+`workstation` and `agent-host` are mutually exclusive machine roles. Both roles
+automatically include `personal`, which installs Vim, Chrome, Raycast, Magnet,
+Mole, and shared macOS preferences. Development capabilities such as `node-dev`
+and `ios-dev` can be added to either role.
+
+Add software wanted on every personal Mac to
+`src/os/installs/macos/personal.sh`, and add shared macOS settings to
+`src/os/preferences/macos/personal.sh`. Setup can be run again after extending
+either file; existing installations and settings are safe to reapply.
 
 Passing `-y` or `--yes` continues to skip confirmation prompts. `workstation`
-preserves the original full installation path. Other selections install the
-minimal `base` toolset, then add only the requested machine role and development
-capabilities.
+preserves the original full installation set. Other selections install the
+minimal `base` toolset, then add only the requested personal tools, machine role,
+and development capabilities.
 
 For a spare Mac that will run remote coding tasks:
 

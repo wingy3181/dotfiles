@@ -10,7 +10,7 @@ declare DOTFILES_SKIP_QUESTIONS=false
 
 dotfiles_profile_is_supported() {
     case "$1" in
-        base|workstation|agent-host|node-dev|ios-dev) return 0 ;;
+        base|personal|workstation|agent-host|node-dev|ios-dev) return 0 ;;
         *) return 1 ;;
     esac
 }
@@ -18,7 +18,8 @@ dotfiles_profile_is_supported() {
 dotfiles_profile_dependencies() {
     case "$1" in
         base) ;;
-        workstation|agent-host|node-dev|ios-dev) printf "base\n" ;;
+        personal|node-dev|ios-dev) printf "base\n" ;;
+        workstation|agent-host) printf "personal\n" ;;
     esac
 }
 
