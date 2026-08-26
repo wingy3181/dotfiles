@@ -4,6 +4,21 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
     && . "../../utils.sh" \
     && . "./utils.sh"
 
+install_uv_tool() {
+    declare -r readableName="$1"
+    declare -r package="$2"
+    declare -r executable="$3"
+
+    if cmd_exists "$executable"; then
+        print_success "$readableName"
+        return
+    fi
+
+    execute \
+        "uv tool install --python 3.12 '$package'" \
+        "$readableName"
+}
+
 # Applications and tools used on every personal Mac. Keep this list small;
 # machine-specific software belongs in a role or capability installer.
 
@@ -11,6 +26,10 @@ print_in_purple "\n   Personal Tools\n\n"
 
 ./mas-cli.sh
 ./../vim.sh
+
+brew_install "uv" "uv"
+install_uv_tool "Docling" "docling" "docling"
+install_uv_tool "MarkItDown" "markitdown[all]" "markitdown"
 
 brew_install_with_confirmation "Chrome" "google-chrome" "--cask"
 brew_install_with_confirmation "Docker Desktop" "docker-desktop" "--cask"
