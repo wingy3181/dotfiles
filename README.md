@@ -124,11 +124,15 @@ The currently supported profiles are:
 `workstation` and `agent-host` are mutually exclusive machine roles. Both roles
 automatically include `personal`, which installs Vim, Chrome, Docker Desktop,
 Ghostty, Herdr, Raycast, Magnet, Mole, `fzf`, `tree`, `yq`, and shared macOS
-preferences. It also installs FFmpeg and `yt-dlp` for media downloads and
-processing, plus `tmuxinator` and `reattach-to-user-namespace` for the existing
-tmux workflow. The inherited `base` profile provides `jq` and tmux. Development
-capabilities such as `node-dev`, `ios-dev`, and `document-tools` can be added to
-either role.
+preferences. It also installs `mise` for runtime and task management, FFmpeg
+and `yt-dlp` for media downloads and processing, plus `tmuxinator` and
+`reattach-to-user-namespace` for the existing tmux workflow. The inherited
+`base` profile provides `jq` and tmux. Development capabilities such as
+`node-dev`, `ios-dev`, and `document-tools` can be added to either role.
+
+`mise` uses its preferred standalone installer, activates through the shared
+`bash_mise` shell configuration, and is kept current by the `u` shell alias
+with `mise self-update` alongside the other system tools.
 
 `document-tools` installs Docling and MarkItDown in isolated Python 3.12
 environments using `uv`. It is optional because Docling includes substantial
