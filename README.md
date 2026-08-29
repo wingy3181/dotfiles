@@ -52,7 +52,7 @@ To set up the `dotfiles`:
    | No                                             | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh) -y"`                                                                                                                                 |
    | No (`agent-host,node-dev`)                     | `bash -c "$(curl -LsS https://raw.github.com/wingy3181/dotfiles/main/src/os/setup.sh)" -- --profile agent-host,node-dev -y`                                                                                                |
    | No (`agent-host,node-dev` from feature branch) | `DOTFILES_REF=refs/heads/feat/remote-agent-profiles bash -c "$(curl -LsS https://raw.githubusercontent.com/wingy3181/dotfiles/refs/heads/feat/remote-agent-profiles/src/os/setup.sh)" -- --profile agent-host,node-dev -y` |
-   | No (all agent-host profiles from feature branch) | `DOTFILES_REF=refs/heads/feat/remote-agent-profiles bash -c "$(curl -LsS https://raw.githubusercontent.com/wingy3181/dotfiles/refs/heads/feat/remote-agent-profiles/src/os/setup.sh)" -- --profile agent-host,node-dev,document-tools -y` |
+   | No (all agent-host profiles from feature branch) | `DOTFILES_REF=refs/heads/feat/remote-agent-profiles bash -c "$(curl -LsS https://raw.githubusercontent.com/wingy3181/dotfiles/refs/heads/feat/remote-agent-profiles/src/os/setup.sh)" -- --profile agent-host,node-dev,ios-dev,document-tools -y` |
 
    [//]: # (Alternative command with no confirmation prompt: `curl -LsS https://raw.github.com/wingy3181/dotfiles/master/src/os/setup.sh | bash -s -- -y`)
 
