@@ -39,6 +39,7 @@ print_in_purple "\n   Remote Agent Host\n\n"
 
 brew_install "ChatGPT" "chatgpt" "--cask"
 brew_install "Codex" "codex" "--cask"
+brew_install "Cursor" "cursor" "--cask"
 brew_install "OpenCode" "opencode" "" "anomalyco/tap"
 install_cursor_agent_cli
 install_pi_coding_agent

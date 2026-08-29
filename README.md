@@ -178,8 +178,8 @@ For a spare Mac that will run remote coding tasks:
 ```
 
 The setup installs the local tools, but account enrolment remains interactive.
-The `agent-host` profile includes Codex, Cursor Agent, Pi Coding Agent, and
-OpenCode.
+The `agent-host` profile includes Codex, the Cursor IDE, Cursor Agent,
+Pi Coding Agent, and OpenCode.
 
 For Codex Remote, follow the
 [official setup guide](https://learn.chatgpt.com/docs/remote). Open ChatGPT and
