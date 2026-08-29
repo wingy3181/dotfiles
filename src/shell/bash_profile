@@ -23,6 +23,7 @@ source_bash_files() {
 
         "bash.local"  # For local settings that should
                       # not be under version control.
+        "bash_mise"
     )
 
     local file=""

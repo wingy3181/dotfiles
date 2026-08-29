@@ -5,6 +5,44 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+execute_install_with_confirmation() {
+
+    declare -r INSTALL_READABLE_NAME="$1"
+    declare -r INSTALL_COMMAND="$2"
+
+    if [[ -n "$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX" \
+        && ! "$INSTALL_READABLE_NAME" =~ $INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX ]]; then
+        print_warning "$INSTALL_READABLE_NAME not installed as readable name did not match regex: \"$INSTALL_APPLICATION_IF_READABLE_NAME_MATCH_REGEX\""
+        return 1
+    fi
+
+    if [[ "$previousInstallApplicationConfirmationReply" =~ ^[aA]$ ]]; then
+        execute "$INSTALL_COMMAND" "$INSTALL_READABLE_NAME"
+    elif [[ "$previousInstallApplicationConfirmationReply" =~ ^[sS]$ ]]; then
+        print_warning "$INSTALL_READABLE_NAME (not installed)"
+    else
+        local installApplicationConfirmationReply=""
+
+        while [[ -z "$installApplicationConfirmationReply" \
+            || "$installApplicationConfirmationReply" =~ ^[^yYnNaAsS]$ ]]; do
+            ask_for_install_application_confirmation \
+                "Do you want to install $INSTALL_READABLE_NAME?"
+            installApplicationConfirmationReply="$(get_answer)"
+        done
+
+        if answer_is_yes || answer_is_yes_to_all; then
+            execute "$INSTALL_COMMAND" "$INSTALL_READABLE_NAME"
+        elif answer_is_no || answer_is_skip_all; then
+            print_warning "$INSTALL_READABLE_NAME (not installed)"
+        fi
+
+        previousInstallApplicationConfirmationReply="$(get_answer)"
+    fi
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install() {
 
     declare -r FORMULA_READABLE_NAME="$1"

@@ -17,6 +17,7 @@ create_symlinks() {
         "shell/bash_functions"
         "shell/bash_init"
         "shell/bash_logout"
+        "shell/bash_mise"
         "shell/bash_nvm"
         "shell/bash_options"
         "shell/bash_profile"

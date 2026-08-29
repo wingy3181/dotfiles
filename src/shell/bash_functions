@@ -428,6 +428,28 @@ update_terminal_cwd() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Upgrade mise if it is installed.
+
+upgrade-mise() {
+
+    local miseCommand=""
+
+    if command -v "mise" &> /dev/null; then
+        miseCommand="mise"
+    elif [ -x "$HOME/.local/bin/mise" ]; then
+        miseCommand="\"$HOME/.local/bin/mise\""
+    else
+        return 0
+    fi
+
+    execute_without_spinner \
+        "$miseCommand self-update --yes" \
+        "mise (upgrade)"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Upgrade nvm if it is installed.
 
 upgrade-nvm() {

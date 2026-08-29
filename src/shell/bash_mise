@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Activate mise when its standalone binary is installed.
+# https://mise.jdx.dev/getting-started.html#_3-activate-mise-optional
+
+if [ -x "$HOME/.local/bin/mise" ]; then
+    eval "$("$HOME/.local/bin/mise" activate bash)"
+fi

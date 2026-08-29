@@ -6,6 +6,20 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Use mise's optimized standalone release rather than the Homebrew build. It
+# installs to ~/.local/bin and supports `mise self-update`.
+# https://mise.jdx.dev/installing-mise.html#mise-run
+install_mise() {
+    if cmd_exists "mise" || [ -x "$HOME/.local/bin/mise" ]; then
+        print_success "mise"
+        return
+    fi
+
+    execute_install_with_confirmation \
+        "mise" \
+        "curl -fsSL https://mise.run | /bin/sh"
+}
+
 #install_plugin() {
 #    execute "code --install-extension $1" "$2 (plugin)"
 #}
@@ -20,6 +34,7 @@ brew_install_with_confirmation "direnv" "direnv"
 brew_install_with_confirmation "ghostty" "ghostty" "--cask"
 brew_install_with_confirmation "GitHub CLI" "gh"
 brew_install_with_confirmation "Jetbrains Toolbox" "jetbrains-toolbox" "--cask"
+install_mise
 brew_install_with_confirmation "pnpm" "pnpm"
 brew_install_with_confirmation "Postman" "postman" "--cask"
 brew_install_with_confirmation "Responsively" "responsively" "--cask"
@@ -40,6 +55,3 @@ brew_install_with_confirmation "watchman" "watchman"
 
 # Close VSCode
 #osascript -e 'quit app "Visual Studio Code"'
-
-
-

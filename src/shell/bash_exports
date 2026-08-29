@@ -21,6 +21,14 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+# Include user-installed CLI tools such as mise.
+
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 # Make vim the default editor.
 export EDITOR="vim"
 
