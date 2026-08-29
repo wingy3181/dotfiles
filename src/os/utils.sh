@@ -403,8 +403,11 @@ print_warning() {
 
 set_trap() {
 
-    trap -p "$1" | grep "$2" &> /dev/null \
-        || trap '$2' "$1"
+    if ! trap -p "$1" | grep "$2" &> /dev/null; then
+        # Expand the command now so the trap cannot read caller arguments later.
+        # shellcheck disable=SC2064
+        trap "$2" "$1"
+    fi
 
 }
 
